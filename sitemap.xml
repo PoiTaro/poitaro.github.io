@@ -1,48 +1,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://PoiTaro.github.io/blog/</loc>
-    <lastmod>2025-08-30T11:59:24.218Z</lastmod>
+    <lastmod>2025-08-30T13:41:46.743Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://PoiTaro.github.io/blog/index.html</loc>
-    <lastmod>2025-08-30T11:59:24.218Z</lastmod>
+    <lastmod>2025-08-30T13:41:46.743Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://PoiTaro.github.io/blog/articles_html/Point-LINE.html</loc>
-    <lastmod>2025-08-30T11:59:17.416Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://PoiTaro.github.io/blog/articles_html/paypay-points-5-tips.html</loc>
-    <lastmod>2025-08-30T11:59:17.416Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://PoiTaro.github.io/blog/articles_html/policy.html</loc>
-    <lastmod>2025-08-30T11:59:17.416Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
     <loc>https://PoiTaro.github.io/blog/articles_html/rakuten-spu-guide.html</loc>
-    <lastmod>2025-08-30T11:59:17.416Z</lastmod>
+    <lastmod>2025-08-30T13:41:42.436Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/blog/articles_html/recommended-point-sites.html</loc>
-    <lastmod>2025-08-30T11:59:17.416Z</lastmod>
+    <lastmod>2025-08-30T13:41:42.436Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://PoiTaro.github.io/blog/articles_html/Point-LINE.html</loc>
+    <lastmod>2025-08-30T13:41:42.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://PoiTaro.github.io/blog/articles_html/fridayTV.html</loc>
+    <lastmod>2025-08-30T13:41:42.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://PoiTaro.github.io/blog/articles_html/paypay-points-5-tips.html</loc>
+    <lastmod>2025-08-30T13:41:42.435Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://PoiTaro.github.io/blog/articles_html/policy.html</loc>
+    <lastmod>2025-08-30T13:41:42.435Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
