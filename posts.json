@@ -1,39 +1,5 @@
 [
     {
-        "slug": "rakuten-spu-guide",
-        "url": "articles_html/rakuten-spu-guide.html",
-        "title": "楽天経済圏は本当にお得？SPUを攻略してポイントを最大化！",
-        "date": "2025-08-10",
-        "category": "楽天ポイント",
-        "categoryColor": "red",
-        "image": "https://placehold.co/600x400/ef4444/ffffff?text=Rakuten",
-        "description": "楽天の各種サービスを連携させて、お買い物マラソンで大量ポイントを獲得する秘訣を伝授します。",
-        "tags": [
-            "楽天",
-            "SPU",
-            "ポイ活",
-            "楽天市場"
-        ],
-        "content": "<p>楽天経済圏の魅力と、SPU（スーパーポイントアッププログラム）を攻略する方法について詳しく解説します。この記事を読めば、あなたも楽天ポイントマスターになれるはずです。</p>\n<h2>SPU（スーパーポイントアッププログラム）とは？</h2>\n<p>SPUは、楽天グループの対象サービスを使えば使うほど、楽天市場でのお買い物のポイント倍率がアップするプログラムです。楽天カードの利用、楽天モバイルの契約、楽天証券でのポイント投資など、様々な条件があります。</p>\n<h3>主要なSPU対象サービス</h3>\n<table>\n<thead>\n<tr>\n<th align=\"left\">サービス名</th>\n<th align=\"left\">達成条件</th>\n<th align=\"left\">ポイント倍率</th>\n</tr>\n</thead>\n<tbody><tr>\n<td align=\"left\">楽天カード</td>\n<td align=\"left\">通常利用</td>\n<td align=\"left\">+1倍</td>\n</tr>\n<tr>\n<td align=\"left\">楽天モバイル</td>\n<td align=\"left\">契約</td>\n<td align=\"left\">+1倍</td>\n</tr>\n<tr>\n<td align=\"left\">楽天ひかり</td>\n<td align=\"left\">契約</td>\n<td align=\"left\">+1倍</td>\n</tr>\n<tr>\n<td align=\"left\">楽天証券</td>\n<td align=\"left\">月1回500円以上のポイント投資</td>\n<td align=\"left\">+0.5倍</td>\n</tr>\n</tbody></table>\n<p>これらのサービスを組み合わせることで、ポイント倍率はどんどん上がっていきます。無理のない範囲で、自分に合ったサービスを利用することが攻略の鍵です。</p>\n"
-    },
-    {
-        "slug": "recommended-point-sites",
-        "url": "articles_html/recommended-point-sites.html",
-        "title": "【初心者必見】おすすめポイントサイト5選！安全な選び方とは",
-        "date": "2025-08-05",
-        "category": "ポイントサイト",
-        "categoryColor": "blue",
-        "image": "https://placehold.co/600x400/2563eb/ffffff?text=PointSite",
-        "description": "数あるポイントサイトの中から、本当に稼げる安全なサイトを厳選。登録から換金までの流れも解説。",
-        "tags": [
-            "ポイントサイト",
-            "ポイ活",
-            "初心者",
-            "副業"
-        ],
-        "content": "<p>ポイ活を始めるなら、ポイントサイトの登録は必須です。しかし、サイトが多すぎてどれを選べばいいか分からない、という方も多いのではないでしょうか。ここでは、安全で稼ぎやすいおすすめのポイントサイトを5つ厳選してご紹介します。</p>\n<h2>安全なポイントサイトの選び方</h2>\n<p>選ぶ際の基準は以下の3つです。</p>\n<ol>\n<li><strong>運営会社の信頼性:</strong> 運営歴が長く、上場企業が運営しているサイトは安心です。</li>\n<li><strong>プライバシーマークの有無:</strong> 個人情報を適切に扱っている証です。</li>\n<li><strong>会員数:</strong> 会員数が多いサイトは、それだけ多くの人に支持されている証拠です。</li>\n</ol>\n<h2>おすすめポイントサイト比較</h2>\n<table>\n<thead>\n<tr>\n<th align=\"left\">サイト名</th>\n<th align=\"left\">最低交換額</th>\n<th align=\"left\">特徴</th>\n</tr>\n</thead>\n<tbody><tr>\n<td align=\"left\">モッピー</td>\n<td align=\"left\">300円</td>\n<td align=\"left\">案件数が業界トップクラス。初心者から上級者まで満足できる。</td>\n</tr>\n<tr>\n<td align=\"left\">ハピタス</td>\n<td align=\"left\">300円</td>\n<td align=\"left\">お買い物保証制度があり、ショッピング案件に強い。</td>\n</tr>\n<tr>\n<td align=\"left\">ポイントインカム</td>\n<td align=\"left\">500円</td>\n<td align=\"left\">会員ステータスが一度上がると下がらない。ボーナスが豊富。</td>\n</tr>\n<tr>\n<td align=\"left\">ちょびリッチ</td>\n<td align=\"left\">500円</td>\n<td align=\"left\">モニター案件や無料コンテンツが充実。</td>\n</tr>\n<tr>\n<td align=\"left\">ECナビ</td>\n<td align=\"left\">300円</td>\n<td align=\"left\">アンケートやリサーチ案件に強く、コツコツ貯められる。</td>\n</tr>\n</tbody></table>\n<p>まずはこの中から2〜3サイト登録してみて、自分に合ったサイトを見つけるのがおすすめです。</p>\n"
-    },
-    {
         "slug": "Point-LINE",
         "url": "articles_html/Point-LINE.html",
         "title": "【2025年最新裏ワザ】LINEポイントを裏技級に超簡単に貯める方法！学生へもオススメ！",
@@ -89,5 +55,39 @@
         "description": "プライバシーポリシーです。",
         "tags": [],
         "content": "<h1>プライバシーポリシーを設定しました。</h1>\n<p>こんにちは。下記、「プライバシーポリシー」に関して記載致しましたので、ご一読願います。</p>\n<h3>当サイトが使用しているアクセス解析ツールについて</h3>\n<p>当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を利用しています。\nこのGoogleアナリティクスはトラフィックデータの収集のためにCookieを使用しています。\nこのトラフィックデータは匿名で収集されており、個人を特定するものではありません。\nこの機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。</p>\n<h3>当サイトへのコメントについて</h3>\n<p>全てのコメントは管理人が事前にその内容を確認し、承認した上での掲載となりますことをあらかじめご了承下さい。\n加えて、次の各号に掲げる内容を含むコメントは管理人の裁量によって承認せず、削除する事があります。</p>\n<ul>\n<li>特定の自然人または法人を誹謗し、中傷するもの。\n極度にわいせつな内容を含むもの。</li>\n<li>禁制品の取引に関するものや、他者を害する行為の依頼など、法律によって禁止されている物品、行為の依頼や斡旋などに関するもの。</li>\n<li>その他、公序良俗に反し、または管理人によって承認すべきでないと認められるもの。</li>\n</ul>\n<h3>免責事項</h3>\n<p>当サイトで掲載している画像の著作権・肖像権等は各権利所有者に帰属致します。権利を侵害する目的ではございません。記事の内容や掲載画像等に問題がございましたら、各権利所有者様本人が直接メールでご連絡下さい。確認後、対応させて頂きます。\n当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について一切の責任を負いません。</p>\n<p>当サイトのコンテンツ・情報につきまして、可能な限り正確な情報を掲載するよう努めておりますが、誤情報が入り込んだり、情報が古くなっていることもございます。\n当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねますのでご了承ください。\nプライバシーポリシーの変更について\n当サイトは、個人情報に関して適用される日本の法令を遵守するとともに、本ポリシーの内容を適宜見直しその改善に努めます。\n修正された最新のプライバシーポリシーは常に本ページにて開示されます。</p>\n"
+    },
+    {
+        "slug": "rakuten-spu-guide",
+        "url": "articles_html/rakuten-spu-guide.html",
+        "title": "楽天経済圏は本当にお得？SPUを攻略してポイントを最大化！",
+        "date": "2025-08-10",
+        "category": "楽天ポイント",
+        "categoryColor": "red",
+        "image": "https://placehold.co/600x400/ef4444/ffffff?text=Rakuten",
+        "description": "楽天の各種サービスを連携させて、お買い物マラソンで大量ポイントを獲得する秘訣を伝授します。",
+        "tags": [
+            "楽天",
+            "SPU",
+            "ポイ活",
+            "楽天市場"
+        ],
+        "content": "<p>楽天経済圏の魅力と、SPU（スーパーポイントアッププログラム）を攻略する方法について詳しく解説します。この記事を読めば、あなたも楽天ポイントマスターになれるはずです。</p>\n<h2>SPU（スーパーポイントアッププログラム）とは？</h2>\n<p>SPUは、楽天グループの対象サービスを使えば使うほど、楽天市場でのお買い物のポイント倍率がアップするプログラムです。楽天カードの利用、楽天モバイルの契約、楽天証券でのポイント投資など、様々な条件があります。</p>\n<h3>主要なSPU対象サービス</h3>\n<table>\n<thead>\n<tr>\n<th align=\"left\">サービス名</th>\n<th align=\"left\">達成条件</th>\n<th align=\"left\">ポイント倍率</th>\n</tr>\n</thead>\n<tbody><tr>\n<td align=\"left\">楽天カード</td>\n<td align=\"left\">通常利用</td>\n<td align=\"left\">+1倍</td>\n</tr>\n<tr>\n<td align=\"left\">楽天モバイル</td>\n<td align=\"left\">契約</td>\n<td align=\"left\">+1倍</td>\n</tr>\n<tr>\n<td align=\"left\">楽天ひかり</td>\n<td align=\"left\">契約</td>\n<td align=\"left\">+1倍</td>\n</tr>\n<tr>\n<td align=\"left\">楽天証券</td>\n<td align=\"left\">月1回500円以上のポイント投資</td>\n<td align=\"left\">+0.5倍</td>\n</tr>\n</tbody></table>\n<p>これらのサービスを組み合わせることで、ポイント倍率はどんどん上がっていきます。無理のない範囲で、自分に合ったサービスを利用することが攻略の鍵です。</p>\n"
+    },
+    {
+        "slug": "recommended-point-sites",
+        "url": "articles_html/recommended-point-sites.html",
+        "title": "【初心者必見】おすすめポイントサイト5選！安全な選び方とは",
+        "date": "2025-08-05",
+        "category": "ポイントサイト",
+        "categoryColor": "blue",
+        "image": "https://placehold.co/600x400/2563eb/ffffff?text=PointSite",
+        "description": "数あるポイントサイトの中から、本当に稼げる安全なサイトを厳選。登録から換金までの流れも解説。",
+        "tags": [
+            "ポイントサイト",
+            "ポイ活",
+            "初心者",
+            "副業"
+        ],
+        "content": "<p>ポイ活を始めるなら、ポイントサイトの登録は必須です。しかし、サイトが多すぎてどれを選べばいいか分からない、という方も多いのではないでしょうか。ここでは、安全で稼ぎやすいおすすめのポイントサイトを5つ厳選してご紹介します。</p>\n<h2>安全なポイントサイトの選び方</h2>\n<p>選ぶ際の基準は以下の3つです。</p>\n<ol>\n<li><strong>運営会社の信頼性:</strong> 運営歴が長く、上場企業が運営しているサイトは安心です。</li>\n<li><strong>プライバシーマークの有無:</strong> 個人情報を適切に扱っている証です。</li>\n<li><strong>会員数:</strong> 会員数が多いサイトは、それだけ多くの人に支持されている証拠です。</li>\n</ol>\n<h2>おすすめポイントサイト比較</h2>\n<table>\n<thead>\n<tr>\n<th align=\"left\">サイト名</th>\n<th align=\"left\">最低交換額</th>\n<th align=\"left\">特徴</th>\n</tr>\n</thead>\n<tbody><tr>\n<td align=\"left\">モッピー</td>\n<td align=\"left\">300円</td>\n<td align=\"left\">案件数が業界トップクラス。初心者から上級者まで満足できる。</td>\n</tr>\n<tr>\n<td align=\"left\">ハピタス</td>\n<td align=\"left\">300円</td>\n<td align=\"left\">お買い物保証制度があり、ショッピング案件に強い。</td>\n</tr>\n<tr>\n<td align=\"left\">ポイントインカム</td>\n<td align=\"left\">500円</td>\n<td align=\"left\">会員ステータスが一度上がると下がらない。ボーナスが豊富。</td>\n</tr>\n<tr>\n<td align=\"left\">ちょびリッチ</td>\n<td align=\"left\">500円</td>\n<td align=\"left\">モニター案件や無料コンテンツが充実。</td>\n</tr>\n<tr>\n<td align=\"left\">ECナビ</td>\n<td align=\"left\">300円</td>\n<td align=\"left\">アンケートやリサーチ案件に強く、コツコツ貯められる。</td>\n</tr>\n</tbody></table>\n<p>まずはこの中から2〜3サイト登録してみて、自分に合ったサイトを見つけるのがおすすめです。</p>\n"
     }
 ]
