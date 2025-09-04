@@ -3,7 +3,7 @@
 <head>
     <meta name="robots" content="noindex, nofollow">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>高機能Markdownエディタ</title>
     
     <!-- Tailwind CSS with Typography Plugin -->
@@ -49,146 +49,16 @@
     </script>
     <style>
         /* Editor-specific styles */
-        input[type="text"], input[type="date"], textarea { 
-            width: 100%; 
-            padding: 0.75rem; 
-            border-radius: 0.5rem; 
-            font-family: 'Noto Sans JP', sans-serif; 
-            font-size: 16px; 
-            background-color: #F5F3FF; 
-            border: 2px solid #8B5CF6; 
-            transition: box-shadow 0.2s, border-color 0.2s;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-        }
-        
-        input[type="text"]:focus, input[type="date"]:focus, textarea:focus { 
-            outline: none; 
-            border-color: #6D28D9; 
-            box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.5); 
-        }
-        
-        /* Mobile-optimized textarea */
-        textarea#markdown-input { 
-            min-height: 300px; 
-            resize: vertical; 
-            font-family: 'Courier New', 'Monaco', monospace; 
-            font-size: 14px; 
-            line-height: 1.5;
-        }
-        
-        @media (min-width: 768px) {
-            textarea#markdown-input { 
-                min-height: 400px; 
-                font-size: 16px; 
-            }
-        }
-        
-        input[type="color"] { 
-            width: 50px; 
-            height: 40px; 
-            padding: 0; 
-            border: 2px solid #8B5CF6; 
-            border-radius: 0.5rem;
-            cursor: pointer; 
-        }
-        
-        /* Enhanced button styles */
-        .blog-btn { 
-            font-family: 'Inter', sans-serif; 
-            border: none; 
-            border-radius: 0.5rem; 
-            padding: 0.75rem 1rem; 
-            font-size: 0.875rem; 
-            cursor: pointer; 
-            transition: all 0.2s ease-in-out;
-            touch-action: manipulation;
-            user-select: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 44px; /* Touch target size */
-        }
-        
-        .blog-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .blog-btn:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .blog-btn.active { 
-            background-color: #f59e0b !important; 
-            box-shadow: 0 4px 8px rgba(245, 158, 11, 0.3);
-        }
-        
-        .file-ops-btn { 
-            padding: 0.75rem 1.5rem; 
-            font-size: 1rem; 
-            border-radius: 50px; 
-            min-width: 120px;
-        }
-        
-        /* Mobile-optimized toolbar */
-        .toolbar-group {
-            margin-bottom: 0.5rem;
-        }
-        
-        .toolbar-label {
-            font-size: 0.75rem;
-            color: #6b7280;
-            margin-right: 0.5rem;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-        
-        @media (max-width: 640px) {
-            .toolbar-label {
-                display: none;
-            }
-            
-            .blog-btn {
-                padding: 0.5rem 0.75rem;
-                font-size: 0.75rem;
-                min-height: 40px;
-            }
-            
-            .file-ops-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.875rem;
-                min-width: 100px;
-            }
-        }
-        
-        /* Enhanced preview area */
-        .markdown-preview { 
-            background-color: rgba(255, 255, 255, 0.95); 
-            backdrop-filter: blur(8px); 
-            padding: 1.5rem; 
-            border-radius: 0.75rem; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-            min-height: 200px; 
-            overflow-wrap: break-word; 
-            border: 2px solid #f59e0b;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        
-        .form-group { 
-            margin-bottom: 1rem; 
-        }
-        
-        .form-group label { 
-            display: block; 
-            font-weight: 600; 
-            margin-bottom: 0.5rem; 
-            font-family: 'Noto Sans JP', sans-serif; 
-            font-size: 0.875rem;
-        }
+        input[type="text"], input[type="date"], textarea { width: 100%; padding: 0.5rem; border-radius: 0.25rem; font-family: 'Noto Sans JP', sans-serif; font-size: 16px; background-color: #F5F3FF; border: 4px solid #8B5CF6; transition: box-shadow 0.2s, border-color 0.2s; }
+        input[type="text"]:focus, input[type="date"]:focus, textarea:focus { outline: none; border-color: #6D28D9; box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.5); }
+        textarea#markdown-input { min-height: 400px; resize: vertical; font-family: monospace; font-size: 16px; }
+        input[type="color"] { width: 50px; height: 30px; padding: 0; border: none; cursor: pointer; }
+        .blog-btn { font-family: 'Inter', sans-serif; border: none; border-radius: 10px; padding: 0.5rem 1rem; font-size: 0.9rem; cursor: pointer; transition: all 0.1s ease-in-out; }
+        .blog-btn.active { background-color: #f59e0b !important; }
+        .file-ops-btn { padding: 0.75rem 1.5rem; font-size: 1rem; border-radius: 50px; }
+        .markdown-preview { background-color: rgba(255, 255, 255, 0.8); backdrop-filter: blur(4px); padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); min-height: 150px; overflow-wrap: break-word; border: 4px dashed #f59e0b; }
+        .form-group { margin-bottom: 0.75rem; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 0.25rem; font-family: 'Noto Sans JP', sans-serif; }
 
         /* Typography-Plugin-Styles */
         .prose h2 {
@@ -202,386 +72,98 @@
             font-style: normal;
             border-left-width: 4px;
         }
-        
-        /* Tab navigation improvements */
-        .tab-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 50;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid #e5e7eb;
-        }
-        
-        .tab-button {
-            padding: 1rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            border-radius: 0;
-            min-height: 52px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        @media (max-width: 640px) {
-            .tab-button {
-                padding: 0.75rem 1rem;
-                font-size: 0.875rem;
-                min-height: 48px;
-            }
-        }
-        
-        /* Floating action button for mobile */
-        .fab {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: #f59e0b;
-            color: white;
-            border: none;
-            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            z-index: 40;
-            transition: all 0.3s ease;
-        }
-        
-        .fab:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 16px rgba(245, 158, 11, 0.5);
-        }
-        
-        /* Search and replace mobile optimization */
-        .search-replace-container {
-            background: #f9fafb;
-            border-radius: 0.75rem;
-            padding: 1rem;
-            margin-top: 1rem;
-        }
-        
-        @media (max-width: 640px) {
-            .search-replace-container .flex {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            
-            .search-replace-container input {
-                margin-bottom: 0.5rem;
-            }
-        }
-        
-        /* Content spacing for tab view */
-        .tab-content {
-            padding-top: 4rem;
-            padding-bottom: 2rem;
-        }
-        
-        @media (max-width: 640px) {
-            .tab-content {
-                padding-top: 3.5rem;
-            }
-        }
-        
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Loading indicator */
-        .loading {
-            opacity: 0.7;
-            pointer-events: none;
-        }
-        
-        /* Touch feedback */
-        .blog-btn:active,
-        .tab-button:active {
-            background-color: rgba(0, 0, 0, 0.1) !important;
-        }
     </style>
 </head>
 <body class="bg-white dark:bg-gray-900 font-sans text-gray-700 dark:text-gray-300 antialiased">
 
-    <main class="container mx-auto px-4 py-6 max-w-7xl">
-        <!-- Mobile-optimized layout toggle -->
-        <div id="layout-toggle" class="mb-6 flex justify-center gap-3 sticky top-4 z-40" style="margin-top:2rem;">
-            <button id="btn-split-view" class="blog-btn bg-primary-500 hover:bg-primary-600 text-white text-sm md:text-base px-4 py-3 hidden md:flex">
-                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 002-2M9 7a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2V9a2 2 0 00-2-2H9z"></path>
-                </svg>
-                分割ビュー
-            </button>
-            <button id="btn-tab-view" class="blog-btn bg-gray-600 hover:bg-gray-700 text-white text-sm md:text-base px-4 py-3 active">
-                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                </svg>
-                タブビュー
-            </button>
+    <main class="container mx-auto px-2 py-4 md:px-4">
+        <div id="layout-toggle" class="mb-4 flex justify-center gap-2" style="margin-top:30px;">
+            <button id="btn-split-view" class="blog-btn bg-primary-500 hover:bg-primary-600 text-white text-sm md:text-base px-3 py-2">分割ビュー</button>
+            <button id="btn-tab-view" class="blog-btn bg-secondary-500 hover:bg-secondary-600 text-white ml-2 text-sm md:text-base px-3 py-2 active">タブビュー</button>
         </div>
 
         <!-- Tab View -->
         <div id="tab-view">
-            <div class="tab-nav flex border-b bg-white dark:bg-gray-900">
-                <button id="tab-editor" class="tab-button flex-1 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white border-r">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-                    </svg>
-                    <span class="hidden sm:inline">エディタ</span>
-                    <span class="sm:hidden">編集</span>
-                </button>
-                <button id="tab-preview" class="tab-button flex-1 bg-white dark:bg-gray-900 text-gray-500 dark:text-gray-400">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                    </svg>
-                    <span class="hidden sm:inline">プレビュー</span>
-                    <span class="sm:hidden">表示</span>
-                </button>
+            <div class="flex border-b bg-white dark:bg-gray-900 fixed top-0 left-0 right-0 z-50">
+                <button id="tab-editor" class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white border-r">エディタ</button>
+                <button id="tab-preview" class="px-4 py-2 bg-white dark:bg-gray-900 text-gray-500 dark:text-gray-400">プレビュー</button>
             </div>
-            <div id="tab-editor-content" class="tab-content p-4">
+            <div id="tab-editor-content" class="p-4 pt-16">
             </div>
-            <div id="tab-preview-content" class="tab-content p-4 hidden">
+            <div id="tab-preview-content" class="p-4 pt-16 hidden">
             </div>
         </div>
 
         <!-- Split View -->
-        <div id="split-view" class="hidden grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <section class="space-y-6">
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-                    <div class="bg-gradient-to-r from-purple-500 to-pink-500 p-4">
-                        <h2 class="text-xl font-bold text-white flex items-center">
-                            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                            記事情報 (Frontmatter)
-                        </h2>
-                    </div>
-                    <div class="p-6 space-y-4">
-                        <div class="form-group">
-                            <label for="fm-title" class="text-gray-900 dark:text-white">タイトル:</label>
-                            <input type="text" id="fm-title" placeholder="記事のタイトル" class="dark:bg-gray-700 dark:text-white">
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="form-group">
-                                <label for="fm-date" class="text-gray-900 dark:text-white">日付:</label>
-                                <input type="date" id="fm-date" class="dark:bg-gray-700 dark:text-white">
-                            </div>
-                            <div class="form-group">
-                                <label for="fm-category" class="text-gray-900 dark:text-white">カテゴリ:</label>
-                                <input type="text" id="fm-category" placeholder="例: イベント, グッズ" class="dark:bg-gray-700 dark:text-white">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="fm-image" class="text-gray-900 dark:text-white">画像URL:</label>
-                            <input type="text" id="fm-image" placeholder="https://example.com/image.jpg" class="dark:bg-gray-700 dark:text-white">
-                        </div>
-                        <div class="form-group flex items-center space-x-3">
-                            <div class="flex-grow">
-                                <label for="fm-categoryColor" class="text-gray-900 dark:text-white">カテゴリ色:</label>
-                                <input type="text" id="fm-categoryColor" class="dark:bg-gray-700 dark:text-white" placeholder="例: blue, red, green">
-                            </div>
-                            <div class="pt-6">
-                                <input type="color" id="fm-colorPicker" value="#4299e1">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="fm-description" class="text-gray-900 dark:text-white">説明 (description):</label>
-                            <textarea id="fm-description" rows="3" placeholder="記事の簡単な説明" class="dark:bg-gray-700 dark:text-white"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="fm-tags" class="text-gray-900 dark:text-white">タグ (カンマ区切り):</label>
-                            <input type="text" id="fm-tags" placeholder="例: サンプル, Markdown, テスト" class="dark:bg-gray-700 dark:text-white">
-                        </div>
-                    </div>
+        <div id="split-view" class="hidden grid grid-cols-1 md:grid-cols-2 gap-6">
+            <section>
+                <h2 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">記事情報 (Frontmatter)</h2>
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md mb-4">
+                    <div class="form-group"><label for="fm-title" class="text-gray-900 dark:text-white">タイトル:</label><input type="text" id="fm-title" placeholder="記事のタイトル" class="dark:bg-gray-700 dark:text-white"></div>
+                    <div class="form-group"><label for="fm-date" class="text-gray-900 dark:text-white">日付:</label><input type="date" id="fm-date" class="dark:bg-gray-700 dark:text-white"></div>
+                    <div class="form-group"><label for="fm-image" class="text-gray-900 dark:text-white">画像URL:</label><input type="text" id="fm-image" placeholder="https://example.com/image.jpg" class="dark:bg-gray-700 dark:text-white"></div>
+                    <div class="form-group"><label for="fm-category" class="text-gray-900 dark:text-white">カテゴリ:</label><input type="text" id="fm-category" placeholder="例: イベント, グッズ" class="dark:bg-gray-700 dark:text-white"></div>
+                    <div class="form-group flex items-center"><label for="fm-categoryColor" class="mr-2 text-gray-900 dark:text-white">カテゴリ色:</label><input type="text" id="fm-categoryColor" class="flex-grow dark:bg-gray-700 dark:text-white" placeholder="例: blue, red, green"><input type="color" id="fm-colorPicker" class="ml-2" value="#4299e1"></div>
+                    <div class="form-group"><label for="fm-description" class="text-gray-900 dark:text-white">説明 (description):</label><textarea id="fm-description" rows="2" placeholder="記事の簡単な説明" class="dark:bg-gray-700 dark:text-white"></textarea></div>
+                    <div class="form-group"><label for="fm-tags" class="text-gray-900 dark:text-white">タグ (カンマ区切り):</label><input type="text" id="fm-tags" placeholder="例: サンプル, Markdown, テスト" class="dark:bg-gray-700 dark:text-white"></div>
                 </div>
 
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-                    <div class="bg-gradient-to-r from-blue-500 to-cyan-500 p-4">
-                        <h2 class="text-xl font-bold text-white flex items-center">
-                            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-                            </svg>
-                            Markdown入力
-                        </h2>
+                <h2 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Markdown入力</h2>
+                <!-- Toolbar -->
+                <div class="bg-gray-100 dark:bg-gray-800 p-2 rounded-lg mb-2">
+                    <!-- Headings Row -->
+                    <div class="flex flex-wrap gap-1 mb-2 items-center">
+                        <span class="text-xs text-gray-600 dark:text-gray-400 mr-2 font-medium">見出し:</span>
+                        <button id="btn-h1" class="blog-btn bg-green-600 hover:bg-green-700 text-white text-xs px-2 py-1" title="見出し1">H1</button>
+                        <button id="btn-h2" class="blog-btn bg-green-600 hover:bg-green-700 text-white text-xs px-2 py-1" title="見出し2">H2</button>
+                        <button id="btn-h3" class="blog-btn bg-green-600 hover:bg-green-700 text-white text-xs px-2 py-1" title="見出し3">H3</button>
                     </div>
-                    <div class="p-6 space-y-4">
-                        <!-- Enhanced Toolbar -->
-                        <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg space-y-3">
-                            <!-- Headings Row -->
-                            <div class="toolbar-group flex flex-wrap gap-2 items-center">
-                                <span class="toolbar-label">見出し:</span>
-                                <button id="btn-h1" class="blog-btn bg-green-600 hover:bg-green-700 text-white" title="見出し1">H1</button>
-                                <button id="btn-h2" class="blog-btn bg-green-600 hover:bg-green-700 text-white" title="見出し2">H2</button>
-                                <button id="btn-h3" class="blog-btn bg-green-600 hover:bg-green-700 text-white" title="見出し3">H3</button>
-                            </div>
-                            <!-- Formatting Row -->
-                            <div class="toolbar-group flex flex-wrap gap-2 items-center">
-                                <span class="toolbar-label">書式:</span>
-                                <button id="btn-bold" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white" title="太字"><b>B</b></button>
-                                <button id="btn-italic" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white" title="斜体"><i>I</i></button>
-                                <button id="btn-strike" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white" title="打ち消し線"><s>S</s></button>
-                                <button id="btn-linebreak" class="blog-btn bg-blue-600 hover:bg-blue-700 text-white" title="改行">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                            <!-- Elements Row -->
-                            <div class="toolbar-group flex flex-wrap gap-2 items-center">
-                                <span class="toolbar-label">要素:</span>
-                                <button id="btn-link" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white" title="リンク">Link</button>
-                                <button id="btn-image" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white" title="画像">Img</button>
-                                <button id="btn-code" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white" title="コード">Code</button>
-                                <button id="btn-quote" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white" title="引用">Quote</button>
-                                <button id="btn-table" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white" title="表">Table</button>
-                            </div>
-                        </div>
-                        <textarea id="markdown-input" class="w-full p-4 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white dark:border-gray-600" placeholder="ここにMarkdownを記述してください..."></textarea>
-                        
-                        <!-- Search and Replace -->
-                        <div class="search-replace-container">
-                            <h3 class="text-lg font-semibold mb-3 text-gray-900 dark:text-white flex items-center">
-                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                </svg>
-                                検索・置換
-                            </h3>
-                            <div class="space-y-3">
-                                <div class="flex flex-col sm:flex-row gap-3">
-                                    <input type="text" id="search-input" placeholder="検索するテキスト" class="flex-1 p-3 border-2 border-gray-200 rounded-lg dark:bg-gray-700 dark:text-white dark:border-gray-600">
-                                    <input type="text" id="replace-input" placeholder="置換するテキスト" class="flex-1 p-3 border-2 border-gray-200 rounded-lg dark:bg-gray-700 dark:text-white dark:border-gray-600">
-                                </div>
-                                <div class="flex flex-wrap gap-2">
-                                    <button id="btn-search" class="blog-btn bg-blue-500 hover:bg-blue-600 text-white">検索</button>
-                                    <button id="btn-replace" class="blog-btn bg-orange-500 hover:bg-orange-600 text-white">置換</button>
-                                    <button id="btn-replace-all" class="blog-btn bg-red-500 hover:bg-red-600 text-white">すべて置換</button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- File Operations -->
-                        <div class="flex flex-wrap gap-3 pt-4">
-                            <button id="btn-file-open" class="blog-btn file-ops-btn bg-blue-500 hover:bg-blue-600 text-white">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                                </svg>
-                                ファイルを開く
-                            </button>
-                            <input type="file" id="file-input" accept=".md" class="hidden">
-                            <button id="btn-template" class="blog-btn file-ops-btn bg-indigo-500 hover:bg-indigo-600 text-white">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                                </svg>
-                                テンプレート
-                            </button>
-                            <button id="btn-history" class="blog-btn file-ops-btn bg-teal-500 hover:bg-teal-600 text-white">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                履歴
-                            </button>
-                            <button id="btn-reset" class="blog-btn file-ops-btn bg-red-500 hover:bg-red-600 text-white">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
-                                </svg>
-                                リセット
-                            </button>
-                            <button id="btn-copy" class="blog-btn file-ops-btn bg-green-500 hover:bg-green-600 text-white">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                                </svg>
-                                全文をコピー
-                            </button>
-                            <button id="btn-download" class="blog-btn file-ops-btn bg-purple-500 hover:bg-purple-600 text-white">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                                </svg>
-                                .mdでダウンロード
-                            </button>
-                        </div>
+                    <!-- Formatting Row -->
+                    <div class="flex flex-wrap gap-1 mb-2 items-center">
+                        <span class="text-xs text-gray-600 dark:text-gray-400 mr-2 font-medium">書式:</span>
+                        <button id="btn-bold" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white text-xs px-2 py-1" title="太字"><b>B</b></button>
+                        <button id="btn-italic" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white text-xs px-2 py-1" title="斜体"><i>I</i></button>
+                        <button id="btn-strike" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white text-xs px-2 py-1" title="打ち消し線"><s>S</s></button>
+                        <button id="btn-linebreak" class="blog-btn bg-blue-600 hover:bg-blue-700 text-white text-xs px-2 py-1" title="改行">⏎</button>
                     </div>
+                    <!-- Elements Row -->
+                    <div class="flex flex-wrap gap-1 items-center">
+                        <span class="text-xs text-gray-600 dark:text-gray-400 mr-2 font-medium">要素:</span>
+                        <button id="btn-link" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white text-xs px-2 py-1" title="リンク">Link</button>
+                        <button id="btn-image" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white text-xs px-2 py-1" title="画像">Img</button>
+                        <button id="btn-code" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white text-xs px-2 py-1" title="コード">Code</button>
+                        <button id="btn-quote" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white text-xs px-2 py-1" title="引用">Quote</button>
+                        <button id="btn-table" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white text-xs px-2 py-1" title="表">Table</button>
+                    </div>
+                </div>
+                <textarea id="markdown-input" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-800 dark:text-white" placeholder="ここにMarkdownを記述してください..."></textarea>
+                <div class="mt-4 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">検索・置換</h3>
+                    <div class="flex flex-wrap gap-2 mb-2">
+                        <input type="text" id="search-input" placeholder="検索するテキスト" class="flex-grow p-2 border border-gray-300 rounded-lg dark:bg-gray-700 dark:text-white">
+                        <input type="text" id="replace-input" placeholder="置換するテキスト" class="flex-grow p-2 border border-gray-300 rounded-lg dark:bg-gray-700 dark:text-white">
+                    </div>
+                    <div class="flex gap-2">
+                        <button id="btn-search" class="blog-btn bg-blue-500 hover:bg-blue-600 text-white">検索</button>
+                        <button id="btn-replace" class="blog-btn bg-orange-500 hover:bg-orange-600 text-white">置換</button>
+                        <button id="btn-replace-all" class="blog-btn bg-red-500 hover:bg-red-600 text-white">すべて置換</button>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <button id="btn-file-open" class="blog-btn file-ops-btn bg-blue-500 hover:bg-blue-600 text-white">ファイルを開く</button>
+                    <input type="file" id="file-input" accept=".md" class="hidden">
+                    <button id="btn-template" class="blog-btn file-ops-btn bg-indigo-500 hover:bg-indigo-600 text-white">テンプレート</button>
+                    <button id="btn-history" class="blog-btn file-ops-btn bg-teal-500 hover:bg-teal-600 text-white">履歴</button>
+                    <button id="btn-reset" class="blog-btn file-ops-btn bg-red-500 hover:bg-red-600 text-white">リセット</button>
+                    <button id="btn-copy" class="blog-btn file-ops-btn bg-green-500 hover:bg-green-600 text-white">全文をコピー</button>
+                    <button id="btn-download" class="blog-btn file-ops-btn bg-purple-500 hover:bg-purple-600 text-white">.mdでダウンロード</button>
                 </div>
             </section>
 
-            <section class="space-y-6">
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden sticky top-24">
-                    <div class="bg-gradient-to-r from-green-500 to-teal-500 p-4">
-                        <h2 class="text-xl font-bold text-white flex items-center">
-                            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                            </svg>
-                            プレビュー
-                        </h2>
-                    </div>
-                    <div class="p-6">
-                        <div id="preview-area" class="markdown-preview prose lg:prose-xl max-w-none dark:prose-invert"></div>
-                    </div>
-                </div>
+            <section>
+                <h2 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">プレビュー</h2>
+                <div id="preview-area" class="markdown-preview prose lg:prose-xl max-w-none dark:prose-invert"></div>
             </section>
-        </div>
-        
-        <!-- Mobile Floating Action Button -->
-        <button id="mobile-fab" class="fab md:hidden">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-            </svg>
-        </button>
-        
-        <!-- Mobile Quick Actions Menu -->
-        <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
-            <div class="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 rounded-t-2xl p-6 transform translate-y-full transition-transform duration-300" id="mobile-menu-content">
-                <div class="w-12 h-1 bg-gray-300 rounded-full mx-auto mb-4"></div>
-                <h3 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white">クイックアクション</h3>
-                <div class="grid grid-cols-2 gap-3">
-                    <button id="mobile-bold" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2"></path>
-                        </svg>
-                        太字
-                    </button>
-                    <button id="mobile-italic" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4l8 8-8 8"></path>
-                        </svg>
-                        斜体
-                    </button>
-                    <button id="mobile-h2" class="blog-btn bg-green-600 hover:bg-green-700 text-white">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                        見出し2
-                    </button>
-                    <button id="mobile-link" class="blog-btn bg-blue-600 hover:bg-blue-700 text-white">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
-                        </svg>
-                        リンク
-                    </button>
-                    <button id="mobile-save" class="blog-btn bg-green-500 hover:bg-green-600 text-white">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path>
-                        </svg>
-                        保存
-                    </button>
-                    <button id="mobile-copy" class="blog-btn bg-purple-500 hover:bg-purple-600 text-white">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                        </svg>
-                        コピー
-                    </button>
-                </div>
-            </div>
         </div>
     </main>
 
@@ -660,18 +242,7 @@
             }, 300);
 
             const saveContent = () => {
-                const content = { 
-                    title: fmTitle.value, 
-                    date: fmDate.value, 
-                    image: fmImage.value, 
-                    category: fmCategory.value, 
-                    categoryColor: fmCategoryColor.value, 
-                    description: fmDescription.value, 
-                    tags: fmTags.value, 
-                    markdownBody: markdownInput.value,
-                    cursorPosition: markdownInput.selectionStart,
-                    scrollPosition: markdownInput.scrollTop
-                };
+                const content = { title: fmTitle.value, date: fmDate.value, image: fmImage.value, category: fmCategory.value, categoryColor: fmCategoryColor.value, description: fmDescription.value, tags: fmTags.value, markdownBody: markdownInput.value };
                 localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(content));
             };
 
@@ -856,7 +427,7 @@ A: 回答2
 
                     updatePreview();
                     saveContent();
-                    showNotification('テンプレートを適用しました！', 'success');
+                    alert('テンプレートを適用しました！');
                 } else if (selectedNum === templateNames.length + 1) {
                     // Create new template
                     createNewTemplate();
@@ -882,13 +453,13 @@ A: 回答2
                 };
 
                 saveCustomTemplates(customTemplates);
-                showNotification(`テンプレート"${templateName}"を保存しました！`, 'success');
+                alert(`テンプレート"${templateName}"を保存しました！`);
             };
 
             // History selection
             const selectHistory = () => {
                 if (history.length === 0) {
-                    showNotification('履歴がありません。', 'info');
+                    alert('履歴がありません。');
                     return;
                 }
                 const historyList = history.map((item, i) =>
@@ -907,7 +478,7 @@ A: 回答2
                     markdownInput.value = version.markdownBody || '';
                     updatePreview();
                     saveContent();
-                    showNotification('過去のバージョンに復元しました！', 'success');
+                    alert('過去のバージョンに復元しました！');
                 }
             };
 
@@ -943,7 +514,7 @@ A: 回答2
                             } else {
                                 e.preventDefault();
                                 saveContent();
-                                showNotification('保存しました！', 'success');
+                                alert('保存しました！');
                             }
                             break;
                         case '1':
@@ -993,7 +564,7 @@ A: 回答2
                         reader.onload = (e) => parseAndLoadMarkdown(e.target.result);
                         reader.readAsText(file);
                     } else {
-                        showNotification('Markdownファイルのみ対応しています。', 'error');
+                        alert('Markdownファイルのみ対応しています。');
                     }
                 }
             });
@@ -1011,7 +582,7 @@ A: 回答2
                     markdownInput.selectionStart = index;
                     markdownInput.selectionEnd = index + text.length;
                 } else {
-                    showNotification('見つかりませんでした。', 'info');
+                    alert('見つかりませんでした。');
                     searchIndex = -1;
                 }
             };
@@ -1043,7 +614,7 @@ A: 回答2
                 markdownInput.value = content.replaceAll(text, replace);
                 updatePreview(); saveContent();
                 searchIndex = -1;
-                showNotification('すべて置換しました。', 'success');
+                alert('すべて置換しました。');
             };
 
             const wrapText = (before, after, placeholder = '') => {
@@ -1082,9 +653,9 @@ A: 回答2
             const copyMarkdown = () => {
                 const fullContent = generateFullMarkdown();
                 navigator.clipboard.writeText(fullContent).then(() => {
-                    showNotification('全文がクリップボードにコピーされました！', 'success');
+                    alert('全文がクリップボードにコピーされました！');
                 }, () => {
-                    showNotification('コピーに失敗しました。ブラウザの権限を確認してください。', 'error');
+                    alert('コピーに失敗しました。ブラウザの権限を確認してください。');
                 });
             };
 
@@ -1094,7 +665,6 @@ A: 回答2
                     fmDate.valueAsDate = new Date();
                     localStorage.removeItem(LOCAL_STORAGE_KEY);
                     updatePreview();
-                    showNotification('エディタをリセットしました。', 'info');
                 }
             };
 
@@ -1142,23 +712,6 @@ A: 回答2
                     fmDescription.value = content.description || '';
                     fmTags.value = content.tags || '';
                     markdownInput.value = content.markdownBody || '';
-                    
-                    // Restore cursor position if saved
-                    if (content.cursorPosition !== undefined) {
-                        savedCursorPosition = content.cursorPosition;
-                        setTimeout(() => {
-                            markdownInput.selectionStart = savedCursorPosition;
-                            markdownInput.selectionEnd = savedCursorPosition;
-                        }, 100);
-                    }
-                    
-                    // Restore scroll position if saved
-                    if (content.scrollPosition !== undefined) {
-                        markdownInputScrollTop = content.scrollPosition;
-                        setTimeout(() => {
-                            markdownInput.scrollTop = markdownInputScrollTop;
-                        }, 100);
-                    }
                 } else {
                     fmDate.valueAsDate = new Date();
                 }
@@ -1204,7 +757,7 @@ A: 回答2
                 a.click();
                 document.body.removeChild(a);
                 URL.revokeObjectURL(url);
-                showNotification('Markdownファイルがダウンロードされました！', 'success');
+                alert('Markdownファイルがダウンロードされました！');
             });
             btnSearch.addEventListener('click', searchText);
             btnReplace.addEventListener('click', replaceText);
@@ -1222,117 +775,41 @@ A: 回答2
                     splitView.classList.remove('hidden');
                     btnSplitView.classList.add('active');
                     btnTabView.classList.remove('active');
-                    
-                    // Move sections back to split view if they're in tab view
-                    const editorInTab = tabEditorContent.querySelector('section');
-                    const previewInTab = tabPreviewContent.querySelector('section');
-                    
-                    if (editorInTab) {
-                        splitView.appendChild(editorInTab);
+                    // Move sections back to split view
+                    while (tabEditorContent.firstChild) {
+                        splitView.appendChild(tabEditorContent.firstChild);
                     }
-                    if (previewInTab) {
-                        splitView.appendChild(previewInTab);
+                    while (tabPreviewContent.firstChild) {
+                        splitView.appendChild(tabPreviewContent.firstChild);
                     }
                 } else {
-                    // Show notification that we're already in split view
-                    showNotification('すでに分割ビューです。', 'info');
+                    alert('すでに分割ビューです。');
                 }
             };
 
             const switchToTabView = () => {
-                if (splitView.classList.contains('hidden')) {
-                    // Already in tab view, just show notification
-                    showNotification('すでにタブビューです。', 'info');
-                    return;
-                }
-                
                 splitView.classList.add('hidden');
                 tabView.classList.remove('hidden');
                 btnTabView.classList.add('active');
                 btnSplitView.classList.remove('active');
-                
                 // Move editor section to tab-editor-content
-                const editorSection = splitView.querySelector('section:first-child');
-                const previewSection = splitView.querySelector('section:last-child');
-                
-                if (editorSection) {
-                    tabEditorContent.appendChild(editorSection);
-                }
-                if (previewSection) {
-                    tabPreviewContent.appendChild(previewSection);
-                }
-                
-                // Create preview area in tab view if it doesn't exist
-                if (!tabPreviewContent.querySelector('#preview-area')) {
-                    const previewDiv = document.createElement('div');
-                    previewDiv.innerHTML = `
-                        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-                            <div class="bg-gradient-to-r from-green-500 to-teal-500 p-4">
-                                <h2 class="text-xl font-bold text-white flex items-center">
-                                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                                    </svg>
-                                    プレビュー
-                                </h2>
-                            </div>
-                            <div class="p-6">
-                                <div id="preview-area" class="markdown-preview prose lg:prose-xl max-w-none dark:prose-invert"></div>
-                            </div>
-                        </div>
-                    `;
-                    if (!previewSection) {
-                        tabPreviewContent.appendChild(previewDiv);
-                    }
-                }
-            };
-
-            // Notification system
-            const showNotification = (message, type = 'success') => {
-                const notification = document.createElement('div');
-                notification.className = `fixed top-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg transition-all duration-300 transform translate-x-full`;
-                
-                switch (type) {
-                    case 'success':
-                        notification.className += ' bg-green-500 text-white';
-                        break;
-                    case 'error':
-                        notification.className += ' bg-red-500 text-white';
-                        break;
-                    case 'info':
-                        notification.className += ' bg-blue-500 text-white';
-                        break;
-                    default:
-                        notification.className += ' bg-gray-500 text-white';
-                }
-                
-                notification.textContent = message;
-                document.body.appendChild(notification);
-                
-                // Animate in
-                setTimeout(() => {
-                    notification.classList.remove('translate-x-full');
-                }, 100);
-                
-                // Animate out and remove
-                setTimeout(() => {
-                    notification.classList.add('translate-x-full');
-                    setTimeout(() => {
-                        document.body.removeChild(notification);
-                    }, 300);
-                }, 3000);
+                tabEditorContent.appendChild(editorSection);
+                // Move preview section to tab-preview-content
+                tabPreviewContent.appendChild(previewSection);
+                // Re-bind events if necessary (but since elements are moved, events should persist)
             };
 
             btnSplitView.addEventListener('click', switchToSplitView);
             btnTabView.addEventListener('click', switchToTabView);
 
-            // Tab switching with improved mobile experience
+            // Scroll position storage
+            let editorScrollTop = 0;
+            let previewScrollTop = 0;
+
+            // Tab switching
             tabEditor.addEventListener('click', () => {
                 // Save preview scroll position
-                const currentPreviewArea = tabPreviewContent.querySelector('#preview-area') || previewArea;
-                if (currentPreviewArea) {
-                    previewScrollTop = currentPreviewArea.scrollTop;
-                }
+                previewScrollTop = tabPreviewContent.scrollTop;
 
                 tabEditorContent.classList.remove('hidden');
                 tabPreviewContent.classList.add('hidden');
@@ -1341,40 +818,22 @@ A: 回答2
                 tabPreview.classList.remove('bg-gray-100', 'dark:bg-gray-800', 'text-gray-900', 'dark:text-white');
                 tabPreview.classList.add('bg-white', 'dark:bg-gray-900', 'text-gray-500', 'dark:text-gray-400');
 
-                // Restore editor scroll position and cursor position
+                // Scroll to Markdown input area
                 setTimeout(() => {
-                    // Restore editor content scroll position
-                    tabEditorContent.scrollTop = editorScrollTop;
-                    
-                    const markdownInput = document.getElementById('markdown-input');
+                    const markdownInput = tabEditorContent.querySelector('#markdown-input');
                     if (markdownInput) {
-                        // Restore markdown input scroll position and cursor position
-                        if (typeof markdownInputScrollTop !== 'undefined') {
-                            markdownInput.scrollTop = markdownInputScrollTop;
-                        }
-                        if (typeof savedCursorPosition !== 'undefined') {
-                            markdownInput.selectionStart = savedCursorPosition;
-                            markdownInput.selectionEnd = savedCursorPosition;
-                        }
-                        
-                        // Focus on markdown input only for mobile or if user was previously editing
-                        if (window.innerWidth <= 768 || typeof savedCursorPosition !== 'undefined') {
-                            markdownInput.focus();
-                        }
+                        markdownInput.scrollIntoView({ behavior: 'auto', block: 'start' });
                     }
-                }, 50);
+                }, 10);
             });
 
             tabPreview.addEventListener('click', () => {
-                // Save editor scroll position and markdown input state
+                // Save editor scroll position
                 editorScrollTop = tabEditorContent.scrollTop;
-                
-                const markdownInput = document.getElementById('markdown-input');
-                if (markdownInput) {
-                    // Save cursor position and scroll position
-                    savedCursorPosition = markdownInput.selectionStart;
-                    markdownInputScrollTop = markdownInput.scrollTop;
-                }
+                // Restore preview scroll position
+                setTimeout(() => {
+                    tabPreviewContent.scrollTop = previewScrollTop;
+                }, 0);
 
                 tabPreviewContent.classList.remove('hidden');
                 tabEditorContent.classList.add('hidden');
@@ -1382,188 +841,7 @@ A: 回答2
                 tabPreview.classList.remove('bg-white', 'dark:bg-gray-900', 'text-gray-500', 'dark:text-gray-400');
                 tabEditor.classList.remove('bg-gray-100', 'dark:bg-gray-800', 'text-gray-900', 'dark:text-white');
                 tabEditor.classList.add('bg-white', 'dark:bg-gray-900', 'text-gray-500', 'dark:text-gray-400');
-                
                 updatePreview();
-                
-                // Restore preview scroll position
-                setTimeout(() => {
-                    const currentPreviewArea = tabPreviewContent.querySelector('#preview-area') || previewArea;
-                    if (currentPreviewArea) {
-                        currentPreviewArea.scrollTop = previewScrollTop;
-                    }
-                }, 100);
-            });
-
-            // Mobile FAB and menu functionality
-            const mobileFab = document.getElementById('mobile-fab');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileMenuContent = document.getElementById('mobile-menu-content');
-
-            mobileFab.addEventListener('click', () => {
-                mobileMenu.classList.remove('hidden');
-                setTimeout(() => {
-                    mobileMenuContent.classList.remove('translate-y-full');
-                }, 10);
-            });
-
-            mobileMenu.addEventListener('click', (e) => {
-                if (e.target === mobileMenu) {
-                    closeMobileMenu();
-                }
-            });
-
-            const closeMobileMenu = () => {
-                mobileMenuContent.classList.add('translate-y-full');
-                setTimeout(() => {
-                    mobileMenu.classList.add('hidden');
-                }, 300);
-            };
-
-            // Mobile quick actions
-            document.getElementById('mobile-bold').addEventListener('click', () => {
-                wrapText('**', '**', '太字');
-                closeMobileMenu();
-                focusMarkdownInput();
-            });
-
-            document.getElementById('mobile-italic').addEventListener('click', () => {
-                wrapText('*', '*', '斜体');
-                closeMobileMenu();
-                focusMarkdownInput();
-            });
-
-            document.getElementById('mobile-h2').addEventListener('click', () => {
-                insertMarkdown('## ', '見出し2');
-                closeMobileMenu();
-                focusMarkdownInput();
-            });
-
-            document.getElementById('mobile-link').addEventListener('click', () => {
-                insertLink();
-                closeMobileMenu();
-                focusMarkdownInput();
-            });
-
-            document.getElementById('mobile-save').addEventListener('click', () => {
-                saveContent();
-                showNotification('保存しました！', 'success');
-                closeMobileMenu();
-            });
-
-            document.getElementById('mobile-copy').addEventListener('click', () => {
-                copyMarkdown();
-                closeMobileMenu();
-            });
-
-            const focusMarkdownInput = () => {
-                setTimeout(() => {
-                    const markdownInput = document.getElementById('markdown-input');
-                    if (markdownInput) {
-                        markdownInput.focus();
-                        // Restore cursor position if available
-                        if (typeof savedCursorPosition !== 'undefined') {
-                            markdownInput.selectionStart = savedCursorPosition;
-                            markdownInput.selectionEnd = savedCursorPosition;
-                        }
-                        // Restore scroll position if available
-                        if (typeof markdownInputScrollTop !== 'undefined') {
-                            markdownInput.scrollTop = markdownInputScrollTop;
-                        }
-                    }
-                }, 100);
-            };
-
-            // Enhanced touch support for mobile
-            const addTouchSupport = () => {
-                // Add touch feedback to buttons
-                document.querySelectorAll('.blog-btn, .tab-button').forEach(button => {
-                    button.addEventListener('touchstart', function() {
-                        this.style.transform = 'scale(0.95)';
-                    });
-                    
-                    button.addEventListener('touchend', function() {
-                        this.style.transform = '';
-                    });
-                    
-                    button.addEventListener('touchcancel', function() {
-                        this.style.transform = '';
-                    });
-                });
-
-                // Prevent zoom on input focus for mobile
-                if (window.innerWidth <= 768) {
-                    const inputs = document.querySelectorAll('input, textarea');
-                    inputs.forEach(input => {
-                        input.addEventListener('focus', () => {
-                            document.querySelector('meta[name="viewport"]').setAttribute('content', 
-                                'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
-                        });
-                        
-                        input.addEventListener('blur', () => {
-                            document.querySelector('meta[name="viewport"]').setAttribute('content', 
-                                'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes');
-                        });
-                    });
-                }
-            };
-
-            // Initialize touch support
-            addTouchSupport();
-
-            // Handle orientation change
-            window.addEventListener('orientationchange', () => {
-                setTimeout(() => {
-                    updatePreview();
-                    addTouchSupport();
-                }, 500);
-            });
-
-            // Auto-hide mobile FAB when scrolling
-            let lastScrollTop = 0;
-            window.addEventListener('scroll', () => {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                if (scrollTop > lastScrollTop && scrollTop > 100) {
-                    // Scrolling down
-                    mobileFab.style.transform = 'translateY(100px)';
-                } else {
-                    // Scrolling up
-                    mobileFab.style.transform = 'translateY(0)';
-                }
-                lastScrollTop = scrollTop;
-            });
-
-            // Initialize with tab view for mobile
-            if (window.innerWidth <= 768) {
-                switchToTabView();
-            }
-
-            // Scroll position storage for better UX
-            let editorScrollTop = 0;
-            let previewScrollTop = 0;
-            let markdownInputScrollTop = 0;
-            let savedCursorPosition = 0;
-
-            // Additional event listeners to track markdown input state changes
-            markdownInput.addEventListener('scroll', () => {
-                markdownInputScrollTop = markdownInput.scrollTop;
-            });
-
-            // Use input event to track cursor position changes more efficiently
-            markdownInput.addEventListener('input', () => {
-                savedCursorPosition = markdownInput.selectionStart;
-            });
-
-            // Track cursor position on focus, click and keyup
-            markdownInput.addEventListener('focus', () => {
-                savedCursorPosition = markdownInput.selectionStart;
-            });
-
-            markdownInput.addEventListener('click', () => {
-                savedCursorPosition = markdownInput.selectionStart;
-            });
-
-            markdownInput.addEventListener('keyup', () => {
-                savedCursorPosition = markdownInput.selectionStart;
             });
 
             loadContent();
