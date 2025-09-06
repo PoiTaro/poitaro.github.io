@@ -308,6 +308,48 @@
         .tab-button:active {
             background-color: rgba(0, 0, 0, 0.1) !important;
         }
+
+        /* Modal styles */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 60;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .2s ease;
+        }
+        .modal-overlay.show { opacity: 1; pointer-events: auto; }
+        .modal-container {
+            width: calc(100% - 2rem);
+            max-width: 560px;
+            background: white;
+            color: #111827;
+            border-radius: 0.75rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+            transform: translateY(10px) scale(.98);
+            transition: transform .2s ease;
+        }
+        .dark .modal-container { background: #1f2937; color: #e5e7eb; }
+        .modal-overlay.show .modal-container { transform: translateY(0) scale(1); }
+        .modal-header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 1rem 1.25rem; border-bottom: 1px solid #e5e7eb;
+            background: linear-gradient(90deg, #8b5cf6, #f59e0b);
+            color: white;
+        }
+        .modal-body { padding: 1rem 1.25rem; }
+        .modal-footer { padding: 1rem 1.25rem; border-top: 1px solid #e5e7eb; display:flex; gap:.5rem; justify-content:flex-end; }
+        .modal-close { background: transparent; border:none; color: white; font-size: 1.25rem; cursor: pointer; }
+        .modal-input { width: 100%; padding: .75rem 1rem; border: 2px solid #e5e7eb; border-radius: .5rem; font-size: .95rem; }
+        .dark .modal-input { background: #374151; border-color:#4b5563; color:#e5e7eb; }
+        .modal-label { display:block; font-weight:600; margin-bottom:.4rem; }
+        .modal-actions .blog-btn { min-width: 96px; }
     </style>
 </head>
 <body class="bg-white dark:bg-gray-900 font-sans text-gray-700 dark:text-gray-300 antialiased">
@@ -444,6 +486,8 @@
                                 <button id="btn-code" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white" title="コード">Code</button>
                                 <button id="btn-quote" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white" title="引用">Quote</button>
                                 <button id="btn-table" class="blog-btn bg-primary-600 hover:bg-primary-700 text-white" title="表">Table</button>
+                                <button id="btn-map" class="blog-btn bg-emerald-600 hover:bg-emerald-700 text-white" title="地図を挿入">Map</button>
+                                <button id="btn-ad" class="blog-btn bg-pink-600 hover:bg-pink-700 text-white" title="広告HTMLを挿入">Ad</button>
                             </div>
                         </div>
                         <textarea id="markdown-input" class="w-full p-4 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white dark:border-gray-600" placeholder="ここにMarkdownを記述してください..."></textarea>
@@ -585,6 +629,9 @@
         </div>
     </main>
 
+    <!-- App Modal Root (for styled modals) -->
+    <div id="modal-root"></div>
+
     <footer class="bg-gray-100 dark:bg-gray-950">
         <div class="container mx-auto px-6 py-12 text-center text-gray-500 dark:text-gray-400">
             <p>&copy; 2025 ポイ活Pay太郎. All Rights Reserved.</p>
@@ -615,6 +662,8 @@
             const btnCode = document.getElementById('btn-code');
             const btnQuote = document.getElementById('btn-quote');
             const btnTable = document.getElementById('btn-table');
+            const btnMap = document.getElementById('btn-map');
+            const btnAd = document.getElementById('btn-ad');
             const btnFileOpen = document.getElementById('btn-file-open');
             const fileInput = document.getElementById('file-input');
             const btnReset = document.getElementById('btn-reset');
@@ -638,6 +687,132 @@
             const tabPreviewContent = document.getElementById('tab-preview-content');
 
             const LOCAL_STORAGE_KEY = 'markdownEditorContent';
+
+            // ---------------- Modal helpers ----------------
+            const modalRoot = document.getElementById('modal-root');
+            const closeModal = (overlay) => {
+                if (!overlay) return;
+                overlay.classList.remove('show');
+                setTimeout(() => overlay.remove(), 200);
+            };
+
+            const showFormModal = ({ title, fields, submitText = 'OK', cancelText = 'キャンセル' }) => {
+                return new Promise((resolve, reject) => {
+                    const overlay = document.createElement('div');
+                    overlay.className = 'modal-overlay';
+                    const bodyHtml = fields.map(f => {
+                        const common = `id="${f.id}" class="modal-input" placeholder="${f.placeholder || ''}"`;
+                        if ((f.type || 'text') === 'textarea') {
+                            const rows = f.rows || 6;
+                            return `<div><label class="modal-label" for="${f.id}">${f.label}</label><textarea ${common} rows="${rows}">${f.value || ''}</textarea></div>`;
+                        }
+                        if ((f.type || 'text') === 'select') {
+                            const opts = (f.options || []).map(o => `<option value="${o.value}">${o.label}</option>`).join('');
+                            return `<div><label class="modal-label" for="${f.id}">${f.label}</label><select ${common}>${opts}</select></div>`;
+                        }
+                        return `<div><label class="modal-label" for="${f.id}">${f.label}</label><input ${common} type="${f.type || 'text'}" value="${f.value || ''}"></div>`;
+                    }).join('');
+                    overlay.innerHTML = `
+                        <div class="modal-container">
+                            <div class="modal-header">
+                                <h3 class="text-base font-semibold">${title}</h3>
+                                <button class="modal-close" aria-label="close">×</button>
+                            </div>
+                            <div class="modal-body space-y-4">${bodyHtml}</div>
+                            <div class="modal-footer modal-actions">
+                                <button class="blog-btn bg-gray-200 text-gray-800 hover:bg-gray-300" data-action="cancel">${cancelText}</button>
+                                <button class="blog-btn bg-primary-600 text-white hover:bg-primary-700" data-action="ok">${submitText}</button>
+                            </div>
+                        </div>
+                    `;
+                    modalRoot.appendChild(overlay);
+                    requestAnimationFrame(() => overlay.classList.add('show'));
+
+                    const cleanUp = () => closeModal(overlay);
+                    overlay.addEventListener('click', (e) => { if (e.target === overlay) cleanUp(); });
+                    overlay.querySelector('.modal-close').addEventListener('click', cleanUp);
+                    overlay.querySelector('[data-action="cancel"]').addEventListener('click', () => { cleanUp(); reject('cancel'); });
+                    overlay.querySelector('[data-action="ok"]').addEventListener('click', () => {
+                        const values = {};
+                        fields.forEach(f => {
+                            const el = overlay.querySelector(`#${f.id}`);
+                            values[f.id] = el ? el.value : '';
+                        });
+                        cleanUp();
+                        resolve(values);
+                    });
+                });
+            };
+
+            const showConfirmModal = ({ title, message, okText = 'OK', cancelText = 'キャンセル', tone = 'warning' }) => {
+                return new Promise((resolve, reject) => {
+                    const overlay = document.createElement('div');
+                    overlay.className = 'modal-overlay';
+                    overlay.innerHTML = `
+                        <div class="modal-container">
+                            <div class="modal-header">
+                                <h3 class="text-base font-semibold">${title}</h3>
+                                <button class="modal-close" aria-label="close">×</button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="text-sm">${message}</p>
+                            </div>
+                            <div class="modal-footer modal-actions">
+                                <button class="blog-btn bg-gray-200 text-gray-800 hover:bg-gray-300" data-action="cancel">${cancelText}</button>
+                                <button class="blog-btn ${tone === 'danger' ? 'bg-red-600 hover:bg-red-700' : 'bg-primary-600 hover:bg-primary-700'} text-white" data-action="ok">${okText}</button>
+                            </div>
+                        </div>
+                    `;
+                    modalRoot.appendChild(overlay);
+                    requestAnimationFrame(() => overlay.classList.add('show'));
+
+                    const cleanUp = () => closeModal(overlay);
+                    overlay.addEventListener('click', (e) => { if (e.target === overlay) cleanUp(); });
+                    overlay.querySelector('.modal-close').addEventListener('click', cleanUp);
+                    overlay.querySelector('[data-action="cancel"]').addEventListener('click', () => { cleanUp(); reject('cancel'); });
+                    overlay.querySelector('[data-action="ok"]').addEventListener('click', () => { cleanUp(); resolve(true); });
+                });
+            };
+
+            const showSelectModal = ({ title, options = [], submitText = 'OK', cancelText = 'キャンセル' }) => {
+                return new Promise((resolve, reject) => {
+                    const overlay = document.createElement('div');
+                    overlay.className = 'modal-overlay';
+                    overlay.innerHTML = `
+                        <div class="modal-container">
+                            <div class="modal-header">
+                                <h3 class="text-base font-semibold">${title}</h3>
+                                <button class="modal-close" aria-label="close">×</button>
+                            </div>
+                            <div class="modal-body space-y-4">
+                                <div>
+                                    <label class="modal-label" for="modal-select">選択</label>
+                                    <select id="modal-select" class="modal-input">
+                                        ${options.map(o => `<option value="${o.value}">${o.label}</option>`).join('')}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="modal-footer modal-actions">
+                                <button class="blog-btn bg-gray-200 text-gray-800 hover:bg-gray-300" data-action="cancel">${cancelText}</button>
+                                <button class="blog-btn bg-primary-600 text-white hover:bg-primary-700" data-action="ok">${submitText}</button>
+                            </div>
+                        </div>
+                    `;
+                    modalRoot.appendChild(overlay);
+                    requestAnimationFrame(() => overlay.classList.add('show'));
+
+                    const cleanUp = () => closeModal(overlay);
+                    overlay.addEventListener('click', (e) => { if (e.target === overlay) cleanUp(); });
+                    overlay.querySelector('.modal-close').addEventListener('click', cleanUp);
+                    overlay.querySelector('[data-action="cancel"]').addEventListener('click', () => { cleanUp(); reject('cancel'); });
+                    overlay.querySelector('[data-action="ok"]').addEventListener('click', () => {
+                        const select = overlay.querySelector('#modal-select');
+                        const value = select ? select.value : null;
+                        cleanUp();
+                        resolve(value);
+                    });
+                });
+            };
 
             // Debounce function for preview update
             const debounce = (func, delay) => {
@@ -827,25 +1002,25 @@ A: 回答2
                 localStorage.setItem('markdownCustomTemplates', JSON.stringify(customTemplates));
             };
 
-            // Template selection
-            const selectTemplate = () => {
+            // Template selection (modal)
+            const selectTemplate = async () => {
                 const customTemplates = loadCustomTemplates();
                 const allTemplates = { ...templates, ...customTemplates };
-                const templateNames = Object.keys(allTemplates);
+                const templateKeys = Object.keys(allTemplates);
+                const options = templateKeys.map((key, i) => ({ value: key, label: `${i + 1}. ${allTemplates[key].title}` }));
+                options.push({ value: '__new__', label: `${options.length + 1}. 新規テンプレート作成` });
 
-                const options = templateNames.map((name, i) => `${i + 1}. ${allTemplates[name].title}`).join('\n');
-                const newOption = `\n${templateNames.length + 1}. 新規テンプレート作成`;
-                const selected = prompt('テンプレートを選択してください:\n' + options + newOption, '1');
+                try {
+                    const value = await showSelectModal({ title: 'テンプレートを選択', options, submitText: '適用' });
+                    if (!value) return;
+                    if (value === '__new__') {
+                        await createNewTemplate();
+                        return;
+                    }
 
-                if (!selected) return;
+                    const template = allTemplates[value];
+                    if (!template) return;
 
-                const selectedNum = parseInt(selected);
-                if (selectedNum && selectedNum >= 1 && selectedNum <= templateNames.length) {
-                    // Apply existing template
-                    const templateKey = templateNames[selectedNum - 1];
-                    const template = allTemplates[templateKey];
-
-                    // Get current active elements (split view or tab view)
                     const currentFmTitle = document.getElementById('fm-title');
                     const currentMarkdownInput = document.getElementById('markdown-input');
                     const currentFmDate = document.getElementById('fm-date');
@@ -857,46 +1032,60 @@ A: 回答2
                     updatePreview();
                     saveContent();
                     showNotification('テンプレートを適用しました！', 'success');
-                } else if (selectedNum === templateNames.length + 1) {
-                    // Create new template
-                    createNewTemplate();
-                }
+                } catch (_) { /* canceled */ }
             };
 
-            // Create new template
-            const createNewTemplate = () => {
+            // Create new template (modal)
+            const createNewTemplate = async () => {
                 const currentFmTitle = document.getElementById('fm-title');
                 const currentMarkdownInput = document.getElementById('markdown-input');
+                try {
+                    const { name } = await showFormModal({
+                        title: '新規テンプレート',
+                        submitText: '保存',
+                        fields: [ { id: 'name', label: 'テンプレート名', placeholder: '例）ブログ初期', value: '' } ]
+                    });
+                    if (!name) return;
 
-                const templateName = prompt('新規テンプレートの名前を入力してください:');
-                if (!templateName) return;
+                    const customTemplates = loadCustomTemplates();
+                    if (customTemplates[name]) {
+                        try {
+                            await showConfirmModal({
+                                title: '上書き確認',
+                                message: `"${name}" は既に存在します。上書きしますか？`,
+                                okText: '上書き',
+                                cancelText: 'やめる',
+                                tone: 'warning'
+                            });
+                        } catch (_) { return; }
+                    }
 
-                const customTemplates = loadCustomTemplates();
-                if (customTemplates[templateName]) {
-                    if (!confirm(`"${templateName}"は既に存在します。上書きしますか？`)) return;
-                }
+                    customTemplates[name] = {
+                        title: currentFmTitle ? currentFmTitle.value : name,
+                        markdownBody: currentMarkdownInput ? currentMarkdownInput.value : ''
+                    };
 
-                customTemplates[templateName] = {
-                    title: currentFmTitle ? currentFmTitle.value : templateName,
-                    markdownBody: currentMarkdownInput ? currentMarkdownInput.value : ''
-                };
-
-                saveCustomTemplates(customTemplates);
-                showNotification(`テンプレート"${templateName}"を保存しました！`, 'success');
+                    saveCustomTemplates(customTemplates);
+                    showNotification(`テンプレート"${name}"を保存しました！`, 'success');
+                } catch (_) { /* canceled */ }
             };
 
-            // History selection
-            const selectHistory = () => {
+            // History selection (modal)
+            const selectHistory = async () => {
                 if (history.length === 0) {
                     showNotification('履歴がありません。', 'info');
                     return;
                 }
-                const historyList = history.map((item, i) =>
-                    `${i + 1}. ${item.title || '無題'} (${new Date(item.timestamp).toLocaleString()})`
-                ).join('\n');
-                const selected = prompt('復元するバージョンを選択してください:\n' + historyList, '1');
-                if (selected && !isNaN(selected) && selected >= 1 && selected <= history.length) {
-                    const version = history[selected - 1];
+                const options = history.map((item, i) => ({
+                    value: String(i),
+                    label: `${i + 1}. ${item.title || '無題'} (${new Date(item.timestamp).toLocaleString()})`
+                }));
+                try {
+                    const selected = await showSelectModal({ title: '履歴から復元', options, submitText: '復元' });
+                    if (selected == null) return;
+                    const idx = parseInt(selected, 10);
+                    if (isNaN(idx) || idx < 0 || idx >= history.length) return;
+                    const version = history[idx];
                     fmTitle.value = version.title || '';
                     fmDate.value = version.date || '';
                     fmImage.value = version.image || '';
@@ -908,7 +1097,7 @@ A: 回答2
                     updatePreview();
                     saveContent();
                     showNotification('過去のバージョンに復元しました！', 'success');
-                }
+                } catch (_) { /* canceled */ }
             };
 
             // Keyboard shortcuts
@@ -1058,9 +1247,98 @@ A: 回答2
             };
 
             const insertMarkdown = (syntax, placeholder) => wrapText(syntax, '', placeholder);
-            const insertLink = () => { const url = prompt('リンク先のURL:', 'https://'); if (url) wrapText('[', `](${url})`, 'リンクテキスト'); };
-            const insertImage = () => { const url = prompt('画像のURL:', 'https://'); if (url) insertMarkdown(`\n![画像の説明](${url})\n`, ''); };
+            const insertLink = async () => {
+                try {
+                    const values = await showFormModal({
+                        title: 'リンクを挿入',
+                        submitText: '挿入',
+                        fields: [
+                            { id: 'text', label: 'リンクテキスト', placeholder: '例）公式サイト', value: '' },
+                            { id: 'url', label: 'URL', placeholder: 'https://example.com', value: 'https://' }
+                        ]
+                    });
+                    if (values.url) {
+                        const text = values.text && values.text.trim().length > 0 ? values.text.trim() : 'リンクテキスト';
+                        wrapText('[', `](${values.url})`, text);
+                    }
+                } catch (_) { /* canceled */ }
+            };
+
+            const insertImage = async () => {
+                try {
+                    const values = await showFormModal({
+                        title: '画像を挿入',
+                        submitText: '挿入',
+                        fields: [
+                            { id: 'alt', label: '代替テキスト', placeholder: '画像の説明', value: '画像の説明' },
+                            { id: 'url', label: '画像URL', placeholder: 'https://example.com/image.jpg', value: 'https://' }
+                        ]
+                    });
+                    if (values.url) {
+                        insertMarkdown(`\n![${values.alt || '画像'}](${values.url})\n`, '');
+                    }
+                } catch (_) { /* canceled */ }
+            };
             const insertTable = () => insertMarkdown(`\n| H1 | H2 |\n|---|---|\n| D1 | D2 |\n`, '');
+
+            // Insert Map (Google Maps iframe or coordinates)
+            const insertMap = async () => {
+                try {
+                    const values = await showFormModal({
+                        title: '地図を挿入',
+                        submitText: '挿入',
+                        fields: [
+                            { id: 'mode', label: 'モード', type: 'select', options: [
+                                { value: 'iframe', label: '埋め込みHTML (iframe)' },
+                                { value: 'coords', label: '座標から生成 (緯度/経度)' }
+                            ] },
+                            { id: 'iframe', label: '埋め込みHTML (Googleマップの共有→地図を埋め込むで取得)', type: 'textarea', rows: 6, placeholder: '<iframe ...></iframe>' },
+                            { id: 'lat', label: '緯度 (例: 35.681236)', type: 'text', placeholder: '35.681236' },
+                            { id: 'lng', label: '経度 (例: 139.767125)', type: 'text', placeholder: '139.767125' },
+                            { id: 'zoom', label: 'ズーム (1-20)', type: 'number', placeholder: '15', value: '15' },
+                            { id: 'width', label: '幅 (px or %)', type: 'text', placeholder: '100%' , value: '100%'},
+                            { id: 'height', label: '高さ (px)', type: 'text', placeholder: '300' , value: '300'}
+                        ]
+                    });
+                    let md = '';
+                    const width = values.width || '100%';
+                    const height = values.height || '300';
+                    if (values.mode === 'iframe' && values.iframe) {
+                        // Sanitize minimal: only allow iframe tag
+                        const html = values.iframe.trim();
+                        md = `\n<div class="map-embed" style="width:${width}; max-width:100%;">${html.replace(/width\s*=\s*"[^"]*"/i, `width=\"${width}\"`).replace(/height\s*=\s*"[^"]*"/i, `height=\"${height}\"`)}</div>\n`;
+                    } else if (values.mode === 'coords' && values.lat && values.lng) {
+                        const lat = values.lat.trim();
+                        const lng = values.lng.trim();
+                        const zoom = parseInt(values.zoom || '15', 10);
+                        const src = `https://maps.google.com/maps?q=${encodeURIComponent(lat)},${encodeURIComponent(lng)}&t=&z=${zoom}&ie=UTF8&iwloc=&output=embed`;
+                        md = `\n<div class="map-embed" style="width:${width}; max-width:100%;"><iframe width="${width}" height="${height}" src="${src}" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>\n`;
+                    }
+                    if (md) insertMarkdown(md, '');
+                } catch (_) { /* canceled */ }
+            };
+
+            // Insert Ad HTML (raw)
+            const insertAdHtml = async () => {
+                try {
+                    const values = await showFormModal({
+                        title: '広告HTMLを挿入',
+                        submitText: '挿入',
+                        fields: [
+                            { id: 'html', label: 'HTMLコード', type: 'textarea', rows: 8, placeholder: '<a href=...>...</a>' },
+                            { id: 'wrap', label: 'ラッパーを付ける (optional class)', type: 'text', placeholder: 'ad-container (任意)' }
+                        ]
+                    });
+                    let html = (values.html || '').trim();
+                    if (!html) return;
+                    const wrapperClass = (values.wrap || '').trim();
+                    if (wrapperClass) {
+                        html = `<div class="${wrapperClass}">${html}</div>`;
+                    }
+                    const md = `\n<div class="ad-embed">${html}</div>\n`;
+                    insertMarkdown(md, '');
+                } catch (_) { /* canceled */ }
+            };
 
             const generateFullMarkdown = () => {
                 const escape = (str) => String(str || '').replace(/\\/g, '\\\\').replace(/"/g, '\"');
@@ -1088,14 +1366,21 @@ A: 回答2
                 });
             };
 
-            const resetEditor = () => {
-                if (confirm('本当にリセットしますか？保存された内容も消えます。')) {
+            const resetEditor = async () => {
+                try {
+                    await showConfirmModal({
+                        title: 'リセットの確認',
+                        message: '本当にリセットしますか？保存された内容も消えます。',
+                        okText: 'リセットする',
+                        cancelText: 'やめる',
+                        tone: 'danger'
+                    });
                     [fmTitle, fmImage, fmCategory, fmCategoryColor, fmDescription, fmTags, markdownInput].forEach(el => el.value = '');
                     fmDate.valueAsDate = new Date();
                     localStorage.removeItem(LOCAL_STORAGE_KEY);
                     updatePreview();
                     showNotification('エディタをリセットしました。', 'info');
-                }
+                } catch (_) { /* canceled */ }
             };
 
             const parseAndLoadMarkdown = (fullMarkdown) => {
@@ -1188,6 +1473,8 @@ A: 回答2
             btnCode.addEventListener('click', () => wrapText('\n```\n', '\n```', 'code'));
             btnQuote.addEventListener('click', () => insertMarkdown('> ', '引用'));
             btnTable.addEventListener('click', insertTable);
+            btnMap.addEventListener('click', insertMap);
+            btnAd.addEventListener('click', insertAdHtml);
             btnFileOpen.addEventListener('click', () => fileInput.click());
             fileInput.addEventListener('change', loadFile);
             btnReset.addEventListener('click', resetEditor);
@@ -1240,51 +1527,44 @@ A: 回答2
             };
 
             const switchToTabView = () => {
-                if (splitView.classList.contains('hidden')) {
-                    // Already in tab view, just show notification
-                    showNotification('すでにタブビューです。', 'info');
-                    return;
-                }
-                
+                // Always ensure Tab View is visible and Split View is hidden
                 splitView.classList.add('hidden');
                 tabView.classList.remove('hidden');
                 btnTabView.classList.add('active');
                 btnSplitView.classList.remove('active');
-                
-                // Move editor section to tab-editor-content
-                const editorSection = splitView.querySelector('section:first-child');
-                const previewSection = splitView.querySelector('section:last-child');
-                
-                if (editorSection) {
-                    tabEditorContent.appendChild(editorSection);
-                }
-                if (previewSection) {
-                    tabPreviewContent.appendChild(previewSection);
-                }
-                
-                // Create preview area in tab view if it doesn't exist
-                if (!tabPreviewContent.querySelector('#preview-area')) {
-                    const previewDiv = document.createElement('div');
-                    previewDiv.innerHTML = `
-                        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-                            <div class="bg-gradient-to-r from-green-500 to-teal-500 p-4">
-                                <h2 class="text-xl font-bold text-white flex items-center">
-                                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                                    </svg>
-                                    プレビュー
-                                </h2>
-                            </div>
-                            <div class="p-6">
-                                <div id="preview-area" class="markdown-preview prose lg:prose-xl max-w-none dark:prose-invert"></div>
-                            </div>
-                        </div>
-                    `;
-                    if (!previewSection) {
-                        tabPreviewContent.appendChild(previewDiv);
+
+                // Move sections into tab containers if not already present
+                if (!tabEditorContent.querySelector('section')) {
+                    const editorFromSplit = document.querySelector('#split-view section:first-child');
+                    if (editorFromSplit) {
+                        tabEditorContent.appendChild(editorFromSplit);
                     }
                 }
+                if (!tabPreviewContent.querySelector('section')) {
+                    const previewFromSplit = document.querySelector('#split-view section:last-child');
+                    if (previewFromSplit) {
+                        tabPreviewContent.appendChild(previewFromSplit);
+                    }
+                }
+
+                // Ensure preview area exists in tab preview content
+                if (!tabPreviewContent.querySelector('#preview-area')) {
+                    const fallbackPreview = document.createElement('div');
+                    fallbackPreview.id = 'preview-area';
+                    fallbackPreview.className = 'markdown-preview prose lg:prose-xl max-w-none dark:prose-invert';
+                    tabPreviewContent.appendChild(fallbackPreview);
+                }
+
+                // Default to showing the editor tab content
+                tabEditorContent.classList.remove('hidden');
+                tabPreviewContent.classList.add('hidden');
+                tabEditor.classList.add('bg-gray-100', 'dark:bg-gray-800', 'text-gray-900', 'dark:text-white');
+                tabEditor.classList.remove('bg-white', 'dark:bg-gray-900', 'text-gray-500', 'dark:text-gray-400');
+                tabPreview.classList.remove('bg-gray-100', 'dark:bg-gray-800', 'text-gray-900', 'dark:text-white');
+                tabPreview.classList.add('bg-white', 'dark:bg-gray-900', 'text-gray-500', 'dark:text-gray-400');
+
+                // Update preview once to sync state
+                updatePreview();
             };
 
             // Notification system
