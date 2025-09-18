@@ -17,6 +17,15 @@
     <meta property="og:url" content="https://PoiTaro.github.io/blog/articles_html/3DS.html">
     <meta name="twitter:card" content="summary_large_image">
     
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJJCP2Q6SC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WJJCP2Q6SC');
+        </script>
+
     <!-- Tailwind CSS with Typography Plugin -->
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     
@@ -127,6 +136,16 @@
 </head>
 <body class="bg-white dark:bg-gray-900 font-sans text-gray-700 dark:text-gray-300 antialiased">
 
+    <!-- ===== サイト共通アナウンス（期間限定） ===== -->
+    <div id="announcement-mount" class="fixed top-0 inset-x-0 z-[110] pointer-events-none">
+        <!-- announcement.html がここに挿入されます -->
+    </div>
+
+    <!-- ===== 読了プログレスバー ===== -->
+    <div id="read-progress" class="fixed top-0 left-0 right-0 z-[100] h-1 bg-transparent">
+        <div id="read-progress-bar" class="h-full w-0 bg-primary-600 dark:bg-primary-500 transition-[width] duration-150 ease-out"></div>
+    </div>
+
     <!-- ===== ヘッダー ===== -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -142,7 +161,7 @@
                 <a href="../index.html#blog" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">新着記事</a>
                 <a href="../index.html#features" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">ポイ活とは</a>
                 <a href="policy.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">プライバシーポリシー</a>
-                <a href="../index.html#contact" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
+                <a href="../contact.html" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
             </nav>
 
             <div class="flex items-center space-x-4">
@@ -167,7 +186,7 @@
                 <a href="../index.html#hero" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ホーム</a>
                 <a href="../index.html#blog" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">新着記事</a>
                 <a href="../index.html#features" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ポイ活とは</a>
-                <a href="../index.html#contact" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
+                <a href="../contact.html" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
                 <a href="policy.html" class="privacy-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">プライバシーポリシー</a>
             </nav>
         </div>
@@ -192,13 +211,56 @@
                             <span id="article-date" class="ml-2">2025-09-13</span>
                         </div>
 
+                        
+        <nav aria-label="目次" class="mb-8">
+            <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-800/50 backdrop-blur px-5 py-4">
+                <div class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+                    目次
+                </div>
+                <ul class="space-y-1">
+                    
+                        <li>
+                            <a href="#manic-emuとは-app-storeで公式配信される安全なエミュ" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                Manic EMUとは？ App Storeで公式配信される安全なエミュ！
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#manic-emuのメリットapp-store配信の絶大な恩恵" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                Manic EMUのメリット（App Store配信の絶大な恩恵）
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#超簡単manic-emuの使い方・インストール方法" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                【超簡単】Manic EMUの使い方・インストール方法
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#最重要アプリは合法でも油断は禁物利用時の法的注意点" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                【最重要】アプリは合法でも油断は禁物！利用時の法的注意点
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#まとめ" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                まとめ
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+
                         <article id="article-content" class="prose lg:prose-xl max-w-none dark:prose-invert">
                            <p>「昔やり込んだ、あの3DSの名作をもう一度iPhoneでプレイしたい…」</p>
 <p>そんなゲームファンの長年の夢が、ついに現実のものとなりました。</p>
 <p>これまでは「脱獄」など、専門知識と大きなリスクが必要だったiPhoneのエミュレーター。<strong>なんとApp Storeから直接ダウンロードできる無料の3DSエミュレーター「Manic EMU」が登場したんです！</strong></p>
 <p>この記事では、画期的なアプリ「Manic EMU」について、その魅力から超簡単になったインストール方法、そしてアプリが公式だからこそ知っておくべき<strong>法的な注意点</strong>まで、どこよりも詳しく、そして分かりやすく解説していきます。</p>
 <p>安全に、そして合法的に思い出のゲームを楽しむための知識をしっかりお伝えするので、ぜひ最後までじっくり読んでみてください。</p>
-<h2>Manic EMUとは？ App Storeで公式配信される安全なエミュ！</h2>
+<h2 id="manic-emuとは-app-storeで公式配信される安全なエミュ">Manic EMUとは？ App Storeで公式配信される安全なエミュ！</h2>
 <p>「Manic EMU」とは、簡単に言うと「<strong>iPhone上でニンテンドー3DSのゲームソフトを動作させるためのエミュレーターアプリ</strong>」のことです。</p>
 <p>このアプリの最大の特徴は、なんといっても<strong>Appleの公式App Storeで配信されている</strong>という点にあります。</p>
 <p>これは本当にすごいことで、これまでのエミュレーターにつきものだった、</p>
@@ -208,7 +270,7 @@
 <li>Appleの保証対象外になってしまう危険性</li>
 </ul>
 <p>といった心配事が、ほぼ解消されたことを意味します。App Storeの厳しい審査をクリアしているため、僕たちが安心して利用できるようになったんです。まさに、iPhoneエミュレーター界の革命と言えるでしょう。</p>
-<h2>Manic EMUのメリット（App Store配信の絶大な恩恵）</h2>
+<h2 id="manic-emuのメリットapp-store配信の絶大な恩恵">Manic EMUのメリット（App Store配信の絶大な恩恵）</h2>
 <p>App Storeで配信されるようになったことで、僕たちが得られるメリットは計り知れません。具体的に見ていきましょう。</p>
 <ul>
 <li><p><strong>とにかく安全・安心</strong>
@@ -224,7 +286,7 @@
   公式アプリなので、iPhoneを危険に晒す「脱獄」は一切必要ありません。Appleの保証やサポートが受けられなくなる心配もなく、安心して使えます。</p>
 </li>
 </ul>
-<h2>【超簡単】Manic EMUの使い方・インストール方法</h2>
+<h2 id="超簡単manic-emuの使い方・インストール方法">【超簡単】Manic EMUの使い方・インストール方法</h2>
 <p>ここからは、実際にManic EMUをインストールして使うまでの手順を解説します。驚くほど簡単ですよ。</p>
 <h3>準備するもの</h3>
 <ul>
@@ -247,7 +309,7 @@ iPhoneでManic EMUアプリを起動します。アプリ内にROMデータを�
 </li>
 </ol>
 <p>たったこれだけで、あなたのiPhoneに懐かしの3DSのゲーム画面が表示されるはずです。</p>
-<h2>【最重要】アプリは合法でも油断は禁物！利用時の法的注意点</h2>
+<h2 id="最重要アプリは合法でも油断は禁物利用時の法的注意点">【最重要】アプリは合法でも油断は禁物！利用時の法的注意点</h2>
 <p>Manic EMUがApp Storeにあることで、多くの人が「これで完全に合法的に遊べる！」と思ってしまうかもしれません。<strong>しかし、それは大きな間違いです。</strong></p>
 <p>アプリが合法であることと、ゲームで遊ぶ行為が合法であることは、全く別の問題です。ここを勘違いすると、知らず知らずのうちに法律を破ってしまう可能性があります。</p>
 <p><strong>【合法的に遊ぶための絶対条件】</strong>
@@ -263,7 +325,7 @@ iPhoneでManic EMUアプリを起動します。アプリ内にROMデータを�
   これも法律で厳しく罰せられます。</li>
 </ul>
 <p>App Storeにあるアプリだからといって、ゲームデータまで公式に許諾されたわけではありません。この**「ROMデータは自分で用意する」**という大原則は、何があっても絶対に守ってください。</p>
-<h2>まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 <p>今回は、App Storeで公式配信が開始された画期的な3DSエミュレーター「Manic EMU」について、その使い方と注意点を解説しました。</p>
 <ul>
 <li><strong>Manic EMUはApp Storeから無料でDLできる、安全な3DSエミュレーター。</strong></li>
@@ -275,6 +337,45 @@ iPhoneでManic EMUアプリを起動します。アプリ内にROMデータを�
 <p>しかし、手軽になったからこそ、利用する僕たち一人ひとりのリテラシーが問われます。法律と著作権を正しく理解し、クリエイターへの敬意を忘れずに、健全なゲームライフを楽しんでくださいね。</p>
 
                         </article>
+
+                        
+        <section class="mt-12">
+            <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">関連記事</h2>
+            <div class="grid gap-6 md:grid-cols-3">
+                
+                    <a href="../articles_html/phone.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/4A90E2/FFFFFF?text=Free+Phone+Number" alt="【2025年最新】LINEで使える無料電話番号アプリ5選！SMS認証は可能？危険性と注意点を徹底解説" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">アプリ</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年最新】LINEで使える無料電話番号アプリ5選！SMS認証は可能？危険性と注意点を徹底解説</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/swag.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/4285F4/FFFFFF?text=Swagbucks+Guide" alt="【Swagbucks完全攻略】海外ポイ活サイトの使い方・稼ぎ方！安全性や評判も徹底解説" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ポイ活</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【Swagbucks完全攻略】海外ポイ活サイトの使い方・稼ぎ方！安全性や評判も徹底解説</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/toho.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/4B0082/FFFFFF?text=CINEMILEAGE" alt="【2025年】シネマイレージは本当にお得？年会費の元は取れるか徹底解説！ポイ活目線でクレカも紹介" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ポイ活</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年】シネマイレージは本当にお得？年会費の元は取れるか徹底解説！ポイ活目線でクレカも紹介</h3>
+                        </div>
+                    </a>
+                
+            </div>
+        </section>
+        
                     </div>
                 </div>
             </div>
@@ -316,6 +417,80 @@ iPhoneでManic EMUアプリを起動します。アプリ内にROMデータを�
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // ===== アナウンス読み込み =====
+            (async () => {
+                const mount = document.getElementById('announcement-mount');
+                try {
+                    const cfgRes = await fetch('../announcement-config.json');
+                    const cfg = await cfgRes.json();
+                    const now = new Date();
+                    const expired = cfg.expiresAt ? now > new Date(cfg.expiresAt) : false;
+                    if (!cfg.enabled || expired) return;
+                    const dismissedKey = `announcement_dismissed_${cfg.id}`;
+                    if (localStorage.getItem(dismissedKey) === '1') return;
+
+                    const shellRes = await fetch('../announcement.html');
+                    const shellHtml = await shellRes.text();
+                    const contentRes = await fetch('../announcement-content.html');
+                    const contentHtml = await contentRes.text();
+
+                    mount.innerHTML = shellHtml;
+                    const host = document.getElementById('site-announcement');
+                    if (!host) return;
+                    host.classList.remove('hidden');
+                    host.style.pointerEvents = 'auto';
+                    const textWrap = host.querySelector('[data-announcement-content]');
+                    if (textWrap) textWrap.innerHTML = contentHtml;
+
+                    // ヘッダーとプログレスバーのオフセットを適用
+                    const headerEl = document.getElementById('header');
+                    const progressEl = document.getElementById('read-progress');
+                    const applyOffset = () => {
+                        const h = host.getBoundingClientRect().height || 0;
+                        if (headerEl) headerEl.style.top = h + 'px';
+                        if (progressEl) progressEl.style.top = h + 'px';
+                    };
+                    applyOffset();
+                    const onResize = () => applyOffset();
+                    window.addEventListener('resize', onResize);
+
+                    const closeBtn = document.getElementById('announcement-close');
+                    if (closeBtn) {
+                        closeBtn.addEventListener('click', () => {
+                            localStorage.setItem(dismissedKey, '1');
+                            host.classList.add('hidden');
+                            if (headerEl) headerEl.style.top = '0px';
+                            if (progressEl) progressEl.style.top = '0px';
+                            window.removeEventListener('resize', onResize);
+                        });
+                    }
+                } catch (e) {
+                    console.warn('announcement load failed', e);
+                }
+            })();
+            // ===== 読了プログレスバー =====
+            const progressBar = document.getElementById('read-progress-bar');
+            const updateProgress = () => {
+                const doc = document.documentElement;
+                const body = document.body;
+                const scrollTop = doc.scrollTop || body.scrollTop;
+                const scrollHeight = (doc.scrollHeight || body.scrollHeight) - doc.clientHeight;
+                const ratio = scrollHeight > 0 ? Math.min(1, Math.max(0, scrollTop / scrollHeight)) : 0;
+                progressBar.style.width = (ratio * 100).toFixed(2) + '%';
+            };
+            let ticking = false;
+            const onScroll = () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        updateProgress();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            updateProgress();
             // ===== ダークモード切り替えスクリプト =====
             const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
             const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');

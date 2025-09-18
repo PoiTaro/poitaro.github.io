@@ -17,6 +17,15 @@
     <meta property="og:url" content="https://PoiTaro.github.io/blog/articles_html/LYP.html">
     <meta name="twitter:card" content="summary_large_image">
     
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJJCP2Q6SC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WJJCP2Q6SC');
+        </script>
+
     <!-- Tailwind CSS with Typography Plugin -->
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     
@@ -127,6 +136,16 @@
 </head>
 <body class="bg-white dark:bg-gray-900 font-sans text-gray-700 dark:text-gray-300 antialiased">
 
+    <!-- ===== サイト共通アナウンス（期間限定） ===== -->
+    <div id="announcement-mount" class="fixed top-0 inset-x-0 z-[110] pointer-events-none">
+        <!-- announcement.html がここに挿入されます -->
+    </div>
+
+    <!-- ===== 読了プログレスバー ===== -->
+    <div id="read-progress" class="fixed top-0 left-0 right-0 z-[100] h-1 bg-transparent">
+        <div id="read-progress-bar" class="h-full w-0 bg-primary-600 dark:bg-primary-500 transition-[width] duration-150 ease-out"></div>
+    </div>
+
     <!-- ===== ヘッダー ===== -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -142,7 +161,7 @@
                 <a href="../index.html#blog" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">新着記事</a>
                 <a href="../index.html#features" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">ポイ活とは</a>
                 <a href="policy.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">プライバシーポリシー</a>
-                <a href="../index.html#contact" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
+                <a href="../contact.html" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
             </nav>
 
             <div class="flex items-center space-x-4">
@@ -167,7 +186,7 @@
                 <a href="../index.html#hero" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ホーム</a>
                 <a href="../index.html#blog" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">新着記事</a>
                 <a href="../index.html#features" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ポイ活とは</a>
-                <a href="../index.html#contact" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
+                <a href="../contact.html" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
                 <a href="policy.html" class="privacy-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">プライバシーポリシー</a>
             </nav>
         </div>
@@ -192,6 +211,49 @@
                             <span id="article-date" class="ml-2">2025-09-14</span>
                         </div>
 
+                        
+        <nav aria-label="目次" class="mb-8">
+            <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-800/50 backdrop-blur px-5 py-4">
+                <div class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+                    目次
+                </div>
+                <ul class="space-y-1">
+                    
+                        <li>
+                            <a href="#lypプレミアムとは料金と基本情報をサクッと解説" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                LYPプレミアムとは？料金と基本情報をサクッと解説
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#特典ありすぎlypプレミアムの主要メリットを徹底解剖" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                【特典ありすぎ】LYPプレミアムの主要メリットを徹底解剖！
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#デメリットと注意点契約前に知っておきたいこと" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                デメリットと注意点｜契約前に知っておきたいこと
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#本音で解説yahooショッピングを使わなくても元は取れる" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                【本音で解説】Yahoo!ショッピングを使わなくても元は取れる？
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#まとめ" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                まとめ
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+
                         <article id="article-content" class="prose lg:prose-xl max-w-none dark:prose-invert">
                            <p>「LYPプレミアムって最近よく聞くけど、実際どんなサービスなの？」
 「Yahoo!ショッピングはあまり使わないんだけど、それでも入るメリットってあるのかな？」</p>
@@ -199,7 +261,7 @@
 <p>LYPプレミアムは、LINE、Yahoo!、PayPayが連携したことで生まれた、とても魅力的な会員制サービスです。でも、特典が多岐にわたるので「自分にとって本当にお得なのか」が分かりにくいのも事実ですよね。</p>
 <p>この記事では、そんなあなたの疑問をスッキリ解決します！LYPプレミアムの豊富な特典から、ちょっと気になるデメリットや注意点、そして「Yahoo!ショッピングをあまり使わない人」でも元が取れるのかどうかまで、どこよりも分かりやすく解説していきます。</p>
 <p>ぜひ最後まで読んで、あなたのライフスタイルにLYPプレミアムが必要かどうか、じっくり見極めてくださいね！</p>
-<h2>LYPプレミアムとは？料金と基本情報をサクッと解説</h2>
+<h2 id="lypプレミアムとは料金と基本情報をサクッと解説">LYPプレミアムとは？料金と基本情報をサクッと解説</h2>
 <p>まずはじめに、LYPプレミアムがどんなサービスなのか簡単におさらいしましょう。</p>
 <p>LYPプレミアムは、LINE・ヤフー・PayPayの3社が提供するサービスをもっとお得に、もっと便利に使えるようになる月額制の会員サービスです。以前の「Yahoo!プレミアム」がパワーアップしたもの、とイメージすると分かりやすいかもしれません。</p>
 <table>
@@ -231,7 +293,7 @@
 </tr>
 </tbody></table>
 <p>※ソフトバンクやワイモバイルのユーザーは、特定のプランを利用している場合、追加料金なしでLYPプレミアムの特典を使えることがあります。</p>
-<h2>【特典ありすぎ】LYPプレミアムの主要メリットを徹底解剖！</h2>
+<h2 id="特典ありすぎlypプレミアムの主要メリットを徹底解剖">【特典ありすぎ】LYPプレミアムの主要メリットを徹底解剖！</h2>
 <p>LYPプレミアムの魅力は、なんといってもその豊富な特典にあります。ここでは、特に知っておきたいメリットを「Yahoo!ショッピング」「PayPay」「LINE」「その他」の4つのカテゴリに分けてご紹介します。</p>
 <h3>Yahoo!ショッピング・LOHACOでの買い物が超お得に！</h3>
 <p>Yahoo!ショッピングやLOHACOをよく利用する方なら、これだけで月額料金の元が取れてしまうかもしれません。</p>
@@ -264,7 +326,7 @@
 <li><strong>Yahoo!メールの容量が無制限に</strong></li>
 <li><strong>ヤフオク!の出品手数料が割引</strong></li>
 </ul>
-<h2>デメリットと注意点｜契約前に知っておきたいこと</h2>
+<h2 id="デメリットと注意点契約前に知っておきたいこと">デメリットと注意点｜契約前に知っておきたいこと</h2>
 <p>もちろん、良いことばかりではありません。契約してから「しまった！」とならないように、デメリットや注意点もしっかり確認しておきましょう。</p>
 <ul>
 <li><strong>月額料金がかかる</strong>: 当然ですが、毎月固定費が発生します。特典を全く使わない月でも料金はかかるので、自分にとって価値があるかしっかり見極める必要があります。</li>
@@ -272,7 +334,7 @@
 <li><strong>無料期間終了後は自動更新</strong>: 無料お試し期間が終了すると、自動的に有料会員に移行し、料金が発生します。不要な場合は、必ず期間内に解約手続きをしましょう。</li>
 <li><strong>解約しても日割り計算されない</strong>: 月の途中で解約しても、その月1ヶ月分の料金が請求されます。解約するなら月末がおすすめです。</li>
 </ul>
-<h2>【本音で解説】Yahoo!ショッピングを使わなくても元は取れる？</h2>
+<h2 id="本音で解説yahooショッピングを使わなくても元は取れる">【本音で解説】Yahoo!ショッピングを使わなくても元は取れる？</h2>
 <p>さて、ここが一番気になるポイントかもしれません。「Yahoo!ショッピングはほとんど使わないんだけど、それでもLYPプレミアムはお得なの？」という疑問にお答えします。</p>
 <p>結論から言うと、<strong>使い方によっては十分元が取れます！</strong></p>
 <p>例えば、以下の特典の月額料金相当額を考えてみましょう。</p>
@@ -285,7 +347,7 @@
 <strong>LINEスタンプをよく使い、雑誌を1〜2冊でも読む習慣がある方なら、それだけで月額料金508円の元はほぼ取れてしまいます。</strong></p>
 <p>さらに、スマホの写真や動画が多くてバックアップに困っている方なら、「Yahoo!かんたんバックアップ」の容量無制限特典だけでも、月額料金以上の価値を感じるはずです。</p>
 <p>つまり、Yahoo!ショッピングでの買い物特典は「使えばさらにお得になるボーナス」くらいに考えても、他の特典だけで十分に魅力的なサービスだと言えるんです。</p>
-<h2>まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 <p>今回は、LYPプレミアムのメリット・デメリットから、多くの人が気になる疑問まで詳しく解説しました。</p>
 <ul>
 <li><strong>LYPプレミアムは、LINE・Yahoo!・PayPayのサービスがてんこ盛りでお得になる月額会員サービス。</strong></li>
@@ -297,6 +359,45 @@
 <p>初回登録なら無料お試し期間もありますので、まずは気軽に特典を体験してみてはいかがでしょうか？</p>
 
                         </article>
+
+                        
+        <section class="mt-12">
+            <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">関連記事</h2>
+            <div class="grid gap-6 md:grid-cols-3">
+                
+                    <a href="../articles_html/paypay-points-5-tips.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/600x400/f59e0b/ffffff?text=PayPay" alt="【2025年版】PayPayポイントを効率的に貯める5つの方法" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">PayPay</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年版】PayPayポイントを効率的に貯める5つの方法</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/Raku.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/BF0000/FFFFFF?text=Rakuten+Point" alt="【脱PayPay】楽天経済圏への引越しガイド｜楽天ペイ・カード・モバイルの最強コンボでポイントざくざく！" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">キャッシュレス</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【脱PayPay】楽天経済圏への引越しガイド｜楽天ペイ・カード・モバイルの最強コンボでポイントざくざく！</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/Dpay.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/4682B4/FFFFFF?text=PayPay+vs+d-Pay" alt="【2025年】PayPayからd払い経済圏へ乗り換え完全ガイド！ドコモユーザーのメリット・デメリットを徹底比較" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ポイ活</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年】PayPayからd払い経済圏へ乗り換え完全ガイド！ドコモユーザーのメリット・デメリットを徹底比較</h3>
+                        </div>
+                    </a>
+                
+            </div>
+        </section>
+        
                     </div>
                 </div>
             </div>
@@ -338,6 +439,80 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // ===== アナウンス読み込み =====
+            (async () => {
+                const mount = document.getElementById('announcement-mount');
+                try {
+                    const cfgRes = await fetch('../announcement-config.json');
+                    const cfg = await cfgRes.json();
+                    const now = new Date();
+                    const expired = cfg.expiresAt ? now > new Date(cfg.expiresAt) : false;
+                    if (!cfg.enabled || expired) return;
+                    const dismissedKey = `announcement_dismissed_${cfg.id}`;
+                    if (localStorage.getItem(dismissedKey) === '1') return;
+
+                    const shellRes = await fetch('../announcement.html');
+                    const shellHtml = await shellRes.text();
+                    const contentRes = await fetch('../announcement-content.html');
+                    const contentHtml = await contentRes.text();
+
+                    mount.innerHTML = shellHtml;
+                    const host = document.getElementById('site-announcement');
+                    if (!host) return;
+                    host.classList.remove('hidden');
+                    host.style.pointerEvents = 'auto';
+                    const textWrap = host.querySelector('[data-announcement-content]');
+                    if (textWrap) textWrap.innerHTML = contentHtml;
+
+                    // ヘッダーとプログレスバーのオフセットを適用
+                    const headerEl = document.getElementById('header');
+                    const progressEl = document.getElementById('read-progress');
+                    const applyOffset = () => {
+                        const h = host.getBoundingClientRect().height || 0;
+                        if (headerEl) headerEl.style.top = h + 'px';
+                        if (progressEl) progressEl.style.top = h + 'px';
+                    };
+                    applyOffset();
+                    const onResize = () => applyOffset();
+                    window.addEventListener('resize', onResize);
+
+                    const closeBtn = document.getElementById('announcement-close');
+                    if (closeBtn) {
+                        closeBtn.addEventListener('click', () => {
+                            localStorage.setItem(dismissedKey, '1');
+                            host.classList.add('hidden');
+                            if (headerEl) headerEl.style.top = '0px';
+                            if (progressEl) progressEl.style.top = '0px';
+                            window.removeEventListener('resize', onResize);
+                        });
+                    }
+                } catch (e) {
+                    console.warn('announcement load failed', e);
+                }
+            })();
+            // ===== 読了プログレスバー =====
+            const progressBar = document.getElementById('read-progress-bar');
+            const updateProgress = () => {
+                const doc = document.documentElement;
+                const body = document.body;
+                const scrollTop = doc.scrollTop || body.scrollTop;
+                const scrollHeight = (doc.scrollHeight || body.scrollHeight) - doc.clientHeight;
+                const ratio = scrollHeight > 0 ? Math.min(1, Math.max(0, scrollTop / scrollHeight)) : 0;
+                progressBar.style.width = (ratio * 100).toFixed(2) + '%';
+            };
+            let ticking = false;
+            const onScroll = () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        updateProgress();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            updateProgress();
             // ===== ダークモード切り替えスクリプト =====
             const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
             const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');

@@ -17,6 +17,15 @@
     <meta property="og:url" content="https://PoiTaro.github.io/blog/articles_html/PayGCard.html">
     <meta name="twitter:card" content="summary_large_image">
     
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJJCP2Q6SC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WJJCP2Q6SC');
+        </script>
+
     <!-- Tailwind CSS with Typography Plugin -->
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     
@@ -127,6 +136,16 @@
 </head>
 <body class="bg-white dark:bg-gray-900 font-sans text-gray-700 dark:text-gray-300 antialiased">
 
+    <!-- ===== サイト共通アナウンス（期間限定） ===== -->
+    <div id="announcement-mount" class="fixed top-0 inset-x-0 z-[110] pointer-events-none">
+        <!-- announcement.html がここに挿入されます -->
+    </div>
+
+    <!-- ===== 読了プログレスバー ===== -->
+    <div id="read-progress" class="fixed top-0 left-0 right-0 z-[100] h-1 bg-transparent">
+        <div id="read-progress-bar" class="h-full w-0 bg-primary-600 dark:bg-primary-500 transition-[width] duration-150 ease-out"></div>
+    </div>
+
     <!-- ===== ヘッダー ===== -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -142,7 +161,7 @@
                 <a href="../index.html#blog" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">新着記事</a>
                 <a href="../index.html#features" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">ポイ活とは</a>
                 <a href="policy.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">プライバシーポリシー</a>
-                <a href="../index.html#contact" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
+                <a href="../contact.html" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
             </nav>
 
             <div class="flex items-center space-x-4">
@@ -167,7 +186,7 @@
                 <a href="../index.html#hero" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ホーム</a>
                 <a href="../index.html#blog" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">新着記事</a>
                 <a href="../index.html#features" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ポイ活とは</a>
-                <a href="../index.html#contact" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
+                <a href="../contact.html" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
                 <a href="policy.html" class="privacy-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">プライバシーポリシー</a>
             </nav>
         </div>
@@ -192,13 +211,56 @@
                             <span id="article-date" class="ml-2">2025-09-13</span>
                         </div>
 
+                        
+        <nav aria-label="目次" class="mb-8">
+            <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-800/50 backdrop-blur px-5 py-4">
+                <div class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+                    目次
+                </div>
+                <ul class="space-y-1">
+                    
+                        <li>
+                            <a href="#そもそもpaypayゴールドカードとは基本スペックをチェック" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                そもそもPayPayゴールドカードとは？基本スペックをチェック
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#超お得paypayゴールドカードのすごいメリット5選" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                【超お得】PayPayゴールドカードのすごいメリット5選
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#要注意paypayゴールドカードのデメリットと注意点" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                【要注意】PayPayゴールドカードのデメリットと注意点
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#あなたはどっちpaypayゴールドカードが向いている人・向いていない人" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                【あなたはどっち？】PayPayゴールドカードが向いている人・向いていない人
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#まとめ" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                まとめ
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+
                         <article id="article-content" class="prose lg:prose-xl max-w-none dark:prose-invert">
                            <p>「PayPayゴールドカードって、CMでよく見るけど実際どうなの？」
 「年会費11,000円って高いけど、本当に元は取れるの？」</p>
 <p>PayPayユーザーなら、一度は気になったことがあるのではないでしょうか。年会費がかかる分、通常のPayPayカードよりもお得な特典がたくさんありそうだけど、自分にとって本当に必要なのか、迷ってしまいますよね。</p>
 <p>ご安心ください！この記事では、そんなあなたの悩みをスッキリ解決します。</p>
 <p>プロのブロガーである私が、PayPayゴールドカードのメリット・デメリットから、どんな人が持つべきなのか（そして、持たなくてもいいのか）まで、どこよりも分かりやすく徹底解説！最後まで読めば、あなたがPayPayゴールドカードを作るべきかどうかが明確になりますよ。</p>
-<h2>そもそもPayPayゴールドカードとは？基本スペックをチェック</h2>
+<h2 id="そもそもpaypayゴールドカードとは基本スペックをチェック">そもそもPayPayゴールドカードとは？基本スペックをチェック</h2>
 <p>まずは、PayPayゴールドカードがどんなカードなのか、基本的な情報を見ていきましょう。通常のPayPayカードと比較すると、その違いがよくわかります。</p>
 <table>
 <thead>
@@ -250,7 +312,7 @@
 </tr>
 </tbody></table>
 <p>見ての通り、年会費がかかる分、基本還元率の高さや豪華な特典が特徴です。特に、旅行によく行く方や、Yahoo!のサービスをよく利用する方には嬉しい内容が詰まっていますね。</p>
-<h2>【超お得】PayPayゴールドカードのすごいメリット5選</h2>
+<h2 id="超お得paypayゴールドカードのすごいメリット5選">【超お得】PayPayゴールドカードのすごいメリット5選</h2>
 <p>では、具体的にどんなメリットがあるのか、特に注目すべきポイントを5つに絞ってご紹介します。これを知れば、年会費11,000円が安く感じるかもしれません！</p>
 <h3>1. ソフトバンク・ワイモバイルユーザーは驚異のポイント還元！</h3>
 <p>これがPayPayゴールドカード最大のメリットと言っても過言ではありません。ソフトバンクやワイモバイルのスマホを利用している方は必見です！</p>
@@ -283,7 +345,7 @@
 <li><strong>ショッピングガード保険：年間最大300万円</strong></li>
 </ul>
 <p>特に海外旅行保険は「自動付帯」なので、カードを持っているだけで保険が適用されます。旅行のたびに保険に加入する手間と費用が省けるのは大きなメリットです。また、カードで購入した商品が破損・盗難などの損害に遭った場合に補償されるショッピングガード保険も心強いですね。</p>
-<h2>【要注意】PayPayゴールドカードのデメリットと注意点</h2>
+<h2 id="要注意paypayゴールドカードのデメリットと注意点">【要注意】PayPayゴールドカードのデメリットと注意点</h2>
 <p>メリットだらけに見えるPayPayゴールドカードですが、もちろん注意すべき点もあります。申し込んでから「失敗した…」とならないように、デメリットもしっかり確認しておきましょう。</p>
 <ul>
 <li><p><strong>年会費11,000円（税込）は固定費</strong>
@@ -299,7 +361,7 @@
   通常のPayPayカードは家族カードを最大10枚まで発行できますが、ゴールドカードは3枚までとなっています。</p>
 </li>
 </ul>
-<h2>【あなたはどっち？】PayPayゴールドカードが向いている人・向いていない人</h2>
+<h2 id="あなたはどっちpaypayゴールドカードが向いている人・向いていない人">【あなたはどっち？】PayPayゴールドカードが向いている人・向いていない人</h2>
 <p>さて、メリットとデメリットを踏まえて、あなたがPayPayゴールドカードを作るべきなのかを診断してみましょう。</p>
 <h3>ズバリ！こんなあなたに「向いている」</h3>
 <p>一つでも当てはまれば、年会費以上の価値を得られる可能性大です！</p>
@@ -321,7 +383,7 @@
 <li>❌ <strong>年会費をとにかく払いたくない</strong></li>
 <li>❌ <strong>飛行機に乗る機会がほとんどない</strong></li>
 </ul>
-<h2>まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 <p>最後に、この記事のポイントをまとめます。</p>
 <ul>
 <li><strong>PayPayゴールドカードは年会費11,000円（税込）で基本還元率1.5%</strong></li>
@@ -334,6 +396,45 @@
 <p>この記事を参考に、あなたのスマホ決済・ポイ活ライフがさらに豊かになる選択をしてくださいね！</p>
 
                         </article>
+
+                        
+        <section class="mt-12">
+            <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">関連記事</h2>
+            <div class="grid gap-6 md:grid-cols-3">
+                
+                    <a href="../articles_html/JQ.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/228B22/FFFFFF?text=JQ+CARD" alt="【2025年】JQカードはポイ活最強！九州の民がお得になるメリット7選を徹底解説" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">クレジットカード</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年】JQカードはポイ活最強！九州の民がお得になるメリット7選を徹底解説</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/toho.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/4B0082/FFFFFF?text=CINEMILEAGE" alt="【2025年】シネマイレージは本当にお得？年会費の元は取れるか徹底解説！ポイ活目線でクレカも紹介" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ポイ活</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年】シネマイレージは本当にお得？年会費の元は取れるか徹底解説！ポイ活目線でクレカも紹介</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/paypay-points-5-tips.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/600x400/f59e0b/ffffff?text=PayPay" alt="【2025年版】PayPayポイントを効率的に貯める5つの方法" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">PayPay</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年版】PayPayポイントを効率的に貯める5つの方法</h3>
+                        </div>
+                    </a>
+                
+            </div>
+        </section>
+        
                     </div>
                 </div>
             </div>
@@ -375,6 +476,80 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // ===== アナウンス読み込み =====
+            (async () => {
+                const mount = document.getElementById('announcement-mount');
+                try {
+                    const cfgRes = await fetch('../announcement-config.json');
+                    const cfg = await cfgRes.json();
+                    const now = new Date();
+                    const expired = cfg.expiresAt ? now > new Date(cfg.expiresAt) : false;
+                    if (!cfg.enabled || expired) return;
+                    const dismissedKey = `announcement_dismissed_${cfg.id}`;
+                    if (localStorage.getItem(dismissedKey) === '1') return;
+
+                    const shellRes = await fetch('../announcement.html');
+                    const shellHtml = await shellRes.text();
+                    const contentRes = await fetch('../announcement-content.html');
+                    const contentHtml = await contentRes.text();
+
+                    mount.innerHTML = shellHtml;
+                    const host = document.getElementById('site-announcement');
+                    if (!host) return;
+                    host.classList.remove('hidden');
+                    host.style.pointerEvents = 'auto';
+                    const textWrap = host.querySelector('[data-announcement-content]');
+                    if (textWrap) textWrap.innerHTML = contentHtml;
+
+                    // ヘッダーとプログレスバーのオフセットを適用
+                    const headerEl = document.getElementById('header');
+                    const progressEl = document.getElementById('read-progress');
+                    const applyOffset = () => {
+                        const h = host.getBoundingClientRect().height || 0;
+                        if (headerEl) headerEl.style.top = h + 'px';
+                        if (progressEl) progressEl.style.top = h + 'px';
+                    };
+                    applyOffset();
+                    const onResize = () => applyOffset();
+                    window.addEventListener('resize', onResize);
+
+                    const closeBtn = document.getElementById('announcement-close');
+                    if (closeBtn) {
+                        closeBtn.addEventListener('click', () => {
+                            localStorage.setItem(dismissedKey, '1');
+                            host.classList.add('hidden');
+                            if (headerEl) headerEl.style.top = '0px';
+                            if (progressEl) progressEl.style.top = '0px';
+                            window.removeEventListener('resize', onResize);
+                        });
+                    }
+                } catch (e) {
+                    console.warn('announcement load failed', e);
+                }
+            })();
+            // ===== 読了プログレスバー =====
+            const progressBar = document.getElementById('read-progress-bar');
+            const updateProgress = () => {
+                const doc = document.documentElement;
+                const body = document.body;
+                const scrollTop = doc.scrollTop || body.scrollTop;
+                const scrollHeight = (doc.scrollHeight || body.scrollHeight) - doc.clientHeight;
+                const ratio = scrollHeight > 0 ? Math.min(1, Math.max(0, scrollTop / scrollHeight)) : 0;
+                progressBar.style.width = (ratio * 100).toFixed(2) + '%';
+            };
+            let ticking = false;
+            const onScroll = () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        updateProgress();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            updateProgress();
             // ===== ダークモード切り替えスクリプト =====
             const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
             const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');

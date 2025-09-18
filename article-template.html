@@ -17,6 +17,15 @@
     <meta property="og:url" content="{{url}}">
     <meta name="twitter:card" content="summary_large_image">
     
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJJCP2Q6SC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WJJCP2Q6SC');
+        </script>
+
     <!-- Tailwind CSS with Typography Plugin -->
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     
@@ -127,6 +136,16 @@
 </head>
 <body class="bg-white dark:bg-gray-900 font-sans text-gray-700 dark:text-gray-300 antialiased">
 
+    <!-- ===== サイト共通アナウンス（期間限定） ===== -->
+    <div id="announcement-mount" class="fixed top-0 inset-x-0 z-[110] pointer-events-none">
+        <!-- announcement.html がここに挿入されます -->
+    </div>
+
+    <!-- ===== 読了プログレスバー ===== -->
+    <div id="read-progress" class="fixed top-0 left-0 right-0 z-[100] h-1 bg-transparent">
+        <div id="read-progress-bar" class="h-full w-0 bg-primary-600 dark:bg-primary-500 transition-[width] duration-150 ease-out"></div>
+    </div>
+
     <!-- ===== ヘッダー ===== -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -142,7 +161,7 @@
                 <a href="../index.html#blog" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">新着記事</a>
                 <a href="../index.html#features" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">ポイ活とは</a>
                 <a href="policy.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">プライバシーポリシー</a>
-                <a href="../index.html#contact" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
+                <a href="../contact.html" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
             </nav>
 
             <div class="flex items-center space-x-4">
@@ -167,7 +186,7 @@
                 <a href="../index.html#hero" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ホーム</a>
                 <a href="../index.html#blog" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">新着記事</a>
                 <a href="../index.html#features" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ポイ活とは</a>
-                <a href="../index.html#contact" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
+                <a href="../contact.html" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
                 <a href="policy.html" class="privacy-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">プライバシーポリシー</a>
             </nav>
         </div>
@@ -192,9 +211,13 @@
                             <span id="article-date" class="ml-2">{{date}}</span>
                         </div>
 
+                        <!-- TOC will be displayed here -->
+
                         <article id="article-content" class="prose lg:prose-xl max-w-none dark:prose-invert">
                            {{content}}
                         </article>
+
+                        <!-- Related posts will be displayed here -->
                     </div>
                 </div>
             </div>
@@ -236,6 +259,80 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // ===== アナウンス読み込み =====
+            (async () => {
+                const mount = document.getElementById('announcement-mount');
+                try {
+                    const cfgRes = await fetch('../announcement-config.json');
+                    const cfg = await cfgRes.json();
+                    const now = new Date();
+                    const expired = cfg.expiresAt ? now > new Date(cfg.expiresAt) : false;
+                    if (!cfg.enabled || expired) return;
+                    const dismissedKey = `announcement_dismissed_${cfg.id}`;
+                    if (localStorage.getItem(dismissedKey) === '1') return;
+
+                    const shellRes = await fetch('../announcement.html');
+                    const shellHtml = await shellRes.text();
+                    const contentRes = await fetch('../announcement-content.html');
+                    const contentHtml = await contentRes.text();
+
+                    mount.innerHTML = shellHtml;
+                    const host = document.getElementById('site-announcement');
+                    if (!host) return;
+                    host.classList.remove('hidden');
+                    host.style.pointerEvents = 'auto';
+                    const textWrap = host.querySelector('[data-announcement-content]');
+                    if (textWrap) textWrap.innerHTML = contentHtml;
+
+                    // ヘッダーとプログレスバーのオフセットを適用
+                    const headerEl = document.getElementById('header');
+                    const progressEl = document.getElementById('read-progress');
+                    const applyOffset = () => {
+                        const h = host.getBoundingClientRect().height || 0;
+                        if (headerEl) headerEl.style.top = h + 'px';
+                        if (progressEl) progressEl.style.top = h + 'px';
+                    };
+                    applyOffset();
+                    const onResize = () => applyOffset();
+                    window.addEventListener('resize', onResize);
+
+                    const closeBtn = document.getElementById('announcement-close');
+                    if (closeBtn) {
+                        closeBtn.addEventListener('click', () => {
+                            localStorage.setItem(dismissedKey, '1');
+                            host.classList.add('hidden');
+                            if (headerEl) headerEl.style.top = '0px';
+                            if (progressEl) progressEl.style.top = '0px';
+                            window.removeEventListener('resize', onResize);
+                        });
+                    }
+                } catch (e) {
+                    console.warn('announcement load failed', e);
+                }
+            })();
+            // ===== 読了プログレスバー =====
+            const progressBar = document.getElementById('read-progress-bar');
+            const updateProgress = () => {
+                const doc = document.documentElement;
+                const body = document.body;
+                const scrollTop = doc.scrollTop || body.scrollTop;
+                const scrollHeight = (doc.scrollHeight || body.scrollHeight) - doc.clientHeight;
+                const ratio = scrollHeight > 0 ? Math.min(1, Math.max(0, scrollTop / scrollHeight)) : 0;
+                progressBar.style.width = (ratio * 100).toFixed(2) + '%';
+            };
+            let ticking = false;
+            const onScroll = () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        updateProgress();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            updateProgress();
             // ===== ダークモード切り替えスクリプト =====
             const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
             const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');

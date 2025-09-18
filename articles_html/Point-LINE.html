@@ -17,6 +17,15 @@
     <meta property="og:url" content="https://PoiTaro.github.io/blog/articles_html/Point-LINE.html">
     <meta name="twitter:card" content="summary_large_image">
     
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJJCP2Q6SC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WJJCP2Q6SC');
+        </script>
+
     <!-- Tailwind CSS with Typography Plugin -->
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     
@@ -127,6 +136,16 @@
 </head>
 <body class="bg-white dark:bg-gray-900 font-sans text-gray-700 dark:text-gray-300 antialiased">
 
+    <!-- ===== サイト共通アナウンス（期間限定） ===== -->
+    <div id="announcement-mount" class="fixed top-0 inset-x-0 z-[110] pointer-events-none">
+        <!-- announcement.html がここに挿入されます -->
+    </div>
+
+    <!-- ===== 読了プログレスバー ===== -->
+    <div id="read-progress" class="fixed top-0 left-0 right-0 z-[100] h-1 bg-transparent">
+        <div id="read-progress-bar" class="h-full w-0 bg-primary-600 dark:bg-primary-500 transition-[width] duration-150 ease-out"></div>
+    </div>
+
     <!-- ===== ヘッダー ===== -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -142,7 +161,7 @@
                 <a href="../index.html#blog" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">新着記事</a>
                 <a href="../index.html#features" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">ポイ活とは</a>
                 <a href="policy.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">プライバシーポリシー</a>
-                <a href="../index.html#contact" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
+                <a href="../contact.html" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
             </nav>
 
             <div class="flex items-center space-x-4">
@@ -167,7 +186,7 @@
                 <a href="../index.html#hero" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ホーム</a>
                 <a href="../index.html#blog" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">新着記事</a>
                 <a href="../index.html#features" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ポイ活とは</a>
-                <a href="../index.html#contact" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
+                <a href="../contact.html" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
                 <a href="policy.html" class="privacy-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">プライバシーポリシー</a>
             </nav>
         </div>
@@ -192,30 +211,79 @@
                             <span id="article-date" class="ml-2">2025-08-19</span>
                         </div>
 
+                        
+        <nav aria-label="目次" class="mb-8">
+            <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-800/50 backdrop-blur px-5 py-4">
+                <div class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+                    目次
+                </div>
+                <ul class="space-y-1">
+                    
+                        <li>
+                            <a href="#方法1lineアプリ内で貯める" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                方法1.LINEアプリ内で貯める
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#方法2ポイ活サイト活用で超簡単にポイントを貯める" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                方法2.ポイ活サイト活用で超簡単にポイントを貯める
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#おすすめポイ活サイト1" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                おすすめポイ活サイト1
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#おすすめポイ活サイト2" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                おすすめポイ活サイト2
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#おすすめポイ活サイト3" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                おすすめポイ活サイト3
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#まとめ" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                まとめ
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+
                         <article id="article-content" class="prose lg:prose-xl max-w-none dark:prose-invert">
                            <p>LINEポイントは、スタンプ購入をはじめとした、着せ替えやLINE漫画の購入、PayPayへの交換などができるお得なポイントです。このような多様なサービスに使えるポイントですが、実は貯めるのは超簡単なのです。今回の記事では、そんな方法をいくつか紹介しますので、ぜひ最後までご覧下さい。そしてこの記事を見た皆様、今回紹介する方法をすぐに実践してみてください！</p>
-<h2>方法1.LINEアプリ内で貯める</h2>
+<h2 id="方法1lineアプリ内で貯める">方法1.LINEアプリ内で貯める</h2>
 <p>アプリ内の公式の方法として、<strong>「LINEポイントクラブ」</strong> があります。ここでは、LINEポイントを簡単にGETできるミッションが用意されています。
 LINEアプリ内での超簡単なポイントの貯め方としては、ミッションの1つの 公式アカウントを友達追加 がおすすめです。このミッションでは、友達を追加するだけの単純作業なのに、1~10PT前後がGETできます。
 また、LINE公式サービスの <strong>「LINEスキマニ」、｢LINEマイカード｣等</strong>  への登録でも、超簡単にポイントを貯めることができます！</p>
-<h2>方法2.ポイ活サイト活用で超簡単にポイントを貯める</h2>
+<h2 id="方法2ポイ活サイト活用で超簡単にポイントを貯める">方法2.ポイ活サイト活用で超簡単にポイントを貯める</h2>
 <p>この方法は、筆者はとてもオススメしています。なぜならば、<strong>ポイ活アプリを経由すれば、自分に合った方法で長く続けられて、超簡単に電子マネーを貯められ、</strong> LINEポイントに交換できるからです。まずポイ活とは何なのか？分からない人が大半だと思うので、LINEポイント交換までの知識について、ここで簡単に解説します。</p>
 <p><strong>ポイ活の基本知識</strong></p>
 <p><img src="https://PoiTaro.github.io/blog/thumbnails/Poikatu.png" alt="画像の説明"></p>
 <p>ポイ活は、ポイントサイトでの広告利用や普段のキャッシュレス決済を利用してポイントを貯め、お得に交換する活動。また<strong>アンケート、レシート撮影、歩数計</strong>などでもポイントを貯められる。貯めたポイントは、直接LINEポイントへ交換できたり、電子マネー(PayPay等)へと交換して、電子マネーでLINEポイントを購入できたりします。</p>
-<h2>おすすめポイ活サイト1</h2>
+<h2 id="おすすめポイ活サイト1">おすすめポイ活サイト1</h2>
 <p> <strong>Moppy(モッピー)の特徴</strong> </p>
 <p><img src="https://PoiTaro.github.io/blog/thumbnails/moppy.jpg" alt="画像の説明"></p>
 <p>モッピーは、1000万人以上の会員を突破している超人気ポイントサイトです。
 さらにこのサイトの特徴として、<strong>LINEポイントへ直接貯めたポイントを交換できる</strong>ことがあげられます。実は直接交換できるサイトって少ないんですよね。
 モッピーでは、ネットショッピングやアンケート、ゲームなどで簡単にポイントを貯めることができます。利用者数が多いため、わからない事があっても検索したらスグに出てくるのが初心者にオススメできるポイントです💡</p>
-<h2>おすすめポイ活サイト2</h2>
+<h2 id="おすすめポイ活サイト2">おすすめポイ活サイト2</h2>
 <p><strong>ワラウの特徴</strong>
 <img src="https://PoiTaro.github.io/blog/thumbnails/warau.svg" alt="画像の説明"></p>
 <p><strong>ワラウ</strong> は最近人気上昇中のポイ活サイトで、現在、上のバナーからの会員登録で<strong>最大300円分のポイント</strong>がもらえるキャンペーンが行われています。
 また、このサイトの特徴としてユーザーインターフェースが見やすく設計されており初心者向けに設計されていることや、ポイントの即時交換が可能な点があげられます。
 このサイトで貯めたポイントは直接LINEポイントへ交換することができませんが、LINEポイントとの親和性が高い<strong>LINE Payへの交換</strong>ができます。</p>
-<h2>おすすめポイ活サイト3</h2>
+<h2 id="おすすめポイ活サイト3">おすすめポイ活サイト3</h2>
 <p><strong>クラシルリワードの特徴</strong></p>
 <p><img src="https://PoiTaro.github.io/blog/thumbnails/kurasiru.jpg" alt="画像の説明"></p>
 <p> 
@@ -225,10 +293,49 @@ LINEアプリ内での超簡単なポイントの貯め方としては、ミッ�
 <pre><code>RK-M2P3P
 </code></pre>
 <p>是非皆さん、5000コインをGETしてみて下さいね。</p>
-<h2>まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 <p>今回はLINEポイントの超簡単な貯め方として、LINEアプリ内で貯める方法とポイ活サイトを利用した方法をご紹介しました。今回紹介したポイ活サイトはたったの3つだけですが、他にもたくさんの、便利でお得なサイトがありますので、自分の用途に合うポイ活サイトを、是非見つけて頂けたらなと思います。もし皆様のおすすめのポイ活サイトがありましたら、コメント欄で教えてください！また、質問等も受け付けておりますので、お願いします。</p>
 
                         </article>
+
+                        
+        <section class="mt-12">
+            <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">関連記事</h2>
+            <div class="grid gap-6 md:grid-cols-3">
+                
+                    <a href="../articles_html/studentAI.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/ADD8E6/000000?text=Generative+AI" alt="【2025年最新】知らないと損！学生限定＆無料で使えるAIツール4選＋α｜課題・レポート・就活を効率化" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">生成AI</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年最新】知らないと損！学生限定＆無料で使えるAIツール4選＋α｜課題・レポート・就活を効率化</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/ForeignPoint.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/FF0000/FFFFFF?text=Earn+Money+Online" alt="【2025年最新】海外ポイ活アプリおすすめ5選！日本の数倍稼げるって本当？危険性や使い方を徹底解説" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">未分類</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年最新】海外ポイ活アプリおすすめ5選！日本の数倍稼げるって本当？危険性や使い方を徹底解説</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/PayPay2.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/4CAF50/FFFFFF?text=PayPay+Point+Hack" alt="【2025年最新】PayPayポイント二重取り完全ガイド！知らないと損する最強の組み合わせを徹底解説" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">PayPay</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年最新】PayPayポイント二重取り完全ガイド！知らないと損する最強の組み合わせを徹底解説</h3>
+                        </div>
+                    </a>
+                
+            </div>
+        </section>
+        
                     </div>
                 </div>
             </div>
@@ -270,6 +377,80 @@ LINEアプリ内での超簡単なポイントの貯め方としては、ミッ�
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // ===== アナウンス読み込み =====
+            (async () => {
+                const mount = document.getElementById('announcement-mount');
+                try {
+                    const cfgRes = await fetch('../announcement-config.json');
+                    const cfg = await cfgRes.json();
+                    const now = new Date();
+                    const expired = cfg.expiresAt ? now > new Date(cfg.expiresAt) : false;
+                    if (!cfg.enabled || expired) return;
+                    const dismissedKey = `announcement_dismissed_${cfg.id}`;
+                    if (localStorage.getItem(dismissedKey) === '1') return;
+
+                    const shellRes = await fetch('../announcement.html');
+                    const shellHtml = await shellRes.text();
+                    const contentRes = await fetch('../announcement-content.html');
+                    const contentHtml = await contentRes.text();
+
+                    mount.innerHTML = shellHtml;
+                    const host = document.getElementById('site-announcement');
+                    if (!host) return;
+                    host.classList.remove('hidden');
+                    host.style.pointerEvents = 'auto';
+                    const textWrap = host.querySelector('[data-announcement-content]');
+                    if (textWrap) textWrap.innerHTML = contentHtml;
+
+                    // ヘッダーとプログレスバーのオフセットを適用
+                    const headerEl = document.getElementById('header');
+                    const progressEl = document.getElementById('read-progress');
+                    const applyOffset = () => {
+                        const h = host.getBoundingClientRect().height || 0;
+                        if (headerEl) headerEl.style.top = h + 'px';
+                        if (progressEl) progressEl.style.top = h + 'px';
+                    };
+                    applyOffset();
+                    const onResize = () => applyOffset();
+                    window.addEventListener('resize', onResize);
+
+                    const closeBtn = document.getElementById('announcement-close');
+                    if (closeBtn) {
+                        closeBtn.addEventListener('click', () => {
+                            localStorage.setItem(dismissedKey, '1');
+                            host.classList.add('hidden');
+                            if (headerEl) headerEl.style.top = '0px';
+                            if (progressEl) progressEl.style.top = '0px';
+                            window.removeEventListener('resize', onResize);
+                        });
+                    }
+                } catch (e) {
+                    console.warn('announcement load failed', e);
+                }
+            })();
+            // ===== 読了プログレスバー =====
+            const progressBar = document.getElementById('read-progress-bar');
+            const updateProgress = () => {
+                const doc = document.documentElement;
+                const body = document.body;
+                const scrollTop = doc.scrollTop || body.scrollTop;
+                const scrollHeight = (doc.scrollHeight || body.scrollHeight) - doc.clientHeight;
+                const ratio = scrollHeight > 0 ? Math.min(1, Math.max(0, scrollTop / scrollHeight)) : 0;
+                progressBar.style.width = (ratio * 100).toFixed(2) + '%';
+            };
+            let ticking = false;
+            const onScroll = () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        updateProgress();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            updateProgress();
             // ===== ダークモード切り替えスクリプト =====
             const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
             const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');

@@ -17,6 +17,15 @@
     <meta property="og:url" content="https://PoiTaro.github.io/blog/articles_html/phone.html">
     <meta name="twitter:card" content="summary_large_image">
     
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJJCP2Q6SC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WJJCP2Q6SC');
+        </script>
+
     <!-- Tailwind CSS with Typography Plugin -->
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     
@@ -127,6 +136,16 @@
 </head>
 <body class="bg-white dark:bg-gray-900 font-sans text-gray-700 dark:text-gray-300 antialiased">
 
+    <!-- ===== サイト共通アナウンス（期間限定） ===== -->
+    <div id="announcement-mount" class="fixed top-0 inset-x-0 z-[110] pointer-events-none">
+        <!-- announcement.html がここに挿入されます -->
+    </div>
+
+    <!-- ===== 読了プログレスバー ===== -->
+    <div id="read-progress" class="fixed top-0 left-0 right-0 z-[100] h-1 bg-transparent">
+        <div id="read-progress-bar" class="h-full w-0 bg-primary-600 dark:bg-primary-500 transition-[width] duration-150 ease-out"></div>
+    </div>
+
     <!-- ===== ヘッダー ===== -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -142,7 +161,7 @@
                 <a href="../index.html#blog" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">新着記事</a>
                 <a href="../index.html#features" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">ポイ活とは</a>
                 <a href="policy.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">プライバシーポリシー</a>
-                <a href="../index.html#contact" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
+                <a href="../contact.html" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
             </nav>
 
             <div class="flex items-center space-x-4">
@@ -167,7 +186,7 @@
                 <a href="../index.html#hero" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ホーム</a>
                 <a href="../index.html#blog" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">新着記事</a>
                 <a href="../index.html#features" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ポイ活とは</a>
-                <a href="../index.html#contact" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
+                <a href="../contact.html" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
                 <a href="policy.html" class="privacy-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">プライバシーポリシー</a>
             </nav>
         </div>
@@ -192,6 +211,49 @@
                             <span id="article-date" class="ml-2">2025-09-16</span>
                         </div>
 
+                        
+        <nav aria-label="目次" class="mb-8">
+            <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-800/50 backdrop-blur px-5 py-4">
+                <div class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+                    目次
+                </div>
+                <ul class="space-y-1">
+                    
+                        <li>
+                            <a href="#そもそも無料電話番号って何メリットとデメリット" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                そもそも無料電話番号って何？メリットとデメリット
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#現実lineで使える無料電話番号はほぼ無い" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                【現実】LINEで使える無料電話番号はほぼ無い
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#それでも試したい無料電話番号アプリサービス5選" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                それでも試したい！無料電話番号アプリ＆サービス5選
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#最重要無料電話番号を安全に使うための鉄則" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                【最重要】無料電話番号を安全に使うための鉄則
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#まとめ" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                まとめ
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+
                         <article id="article-content" class="prose lg:prose-xl max-w-none dark:prose-invert">
                            <p>「LINEのサブアカウントを作りたいけど、電話番号がもう一つない…」
 「フリマアプリや懸賞サイトに、メインの電話番号を登録するのはちょっと不安…」</p>
@@ -199,7 +261,7 @@
 <p>でも、諦めるのはまだ早いですよ！ 実は、<strong>無料で新しい電話番号を取得できるアプリやサービス</strong>があるんです。</p>
 <p>この記事では、ネットの海を徹底的にリサーチした僕が、LINEの登録などに使える（かもしれない）無料電話番号の入手方法を、メリット・デメリットから注意点まで、包み隠さずご紹介します。</p>
 <p>この記事を読めば、あなたも今日から賢く、そして安全に、セカンド電話番号を使いこなせるようになりますよ！</p>
-<h2>そもそも無料電話番号って何？メリットとデメリット</h2>
+<h2 id="そもそも無料電話番号って何メリットとデメリット">そもそも無料電話番号って何？メリットとデメリット</h2>
 <p>まず、「無料電話番号」って一体どんなものなのか、簡単に説明しますね。これは、インターネット回線を利用して通話やSMSの送受信を行う「IP電話」の一種で、専用のアプリやWebサービスを通じて提供される番号のことです。</p>
 <p>これを使うことで、たくさんのメリットがあるんですよ。</p>
 <h3>無料電話番号のメリット</h3>
@@ -216,12 +278,12 @@
 <li><strong>セキュリティのリスク</strong>: 無料で提供される番号は、他の誰かと共有されている場合があります。そのため、自分宛てではないSMSが届いたり、最悪の場合、アカウントを乗っ取られたりする危険性もゼロではありません。</li>
 <li><strong>犯罪に巻き込まれる可能性</strong>: 使い捨ての電話番号は、残念ながら詐欺などの犯罪に悪用されることも。 自分が意図せず犯罪に加担したと疑われるリスクも考えられます。</li>
 </ul>
-<h2>【現実】LINEで使える無料電話番号はほぼ無い</h2>
+<h2 id="現実lineで使える無料電話番号はほぼ無い">【現実】LINEで使える無料電話番号はほぼ無い</h2>
 <p>ここまで読んで、「じゃあ、結局LINEで使える無料番号はないの？」と思ったかもしれません。</p>
 <p>正直にお伝えすると、<strong>2025年現在、海外の無料アプリやWebサービスを使って取得した電話番号で、LINEの新規登録や認証を行うのは極めて困難</strong>です。</p>
 <p>以前は「TextNow」や「2ndLine」といった海外アプリで取得した番号でLINEに登録できた時期もありましたが、LINE側の対策が強化され、現在ではほとんどの番号が弾かれてしまいます。</p>
 <p>「絶対に無理」とは言い切れませんが、何時間も試行錯誤して、やっと見つけた番号もすぐに使えなくなる…という可能性が非常に高いのが現実です。</p>
-<h2>それでも試したい！無料電話番号アプリ＆サービス5選</h2>
+<h2 id="それでも試したい無料電話番号アプリサービス5選">それでも試したい！無料電話番号アプリ＆サービス5選</h2>
 <p>「現実が厳しいのはわかった。でも、どうしても試してみたい！」というチャレンジャーなあなたのために、現在利用できる可能性のあるアプリやサービスをいくつかご紹介します。</p>
 <p>ただし、<strong>LINEでの利用は期待せず、あくまで「SMS認証が不要なサービスへの登録用」や「プライバシー保護用」として使う</strong>ことを強くおすすめします。</p>
 <table>
@@ -317,7 +379,7 @@
 <p>「やっぱり安全で、確実にSMS認証ができる番号がほしい…」という方には、結局のところ格安SIMを契約するのが一番確実で安全な方法です。</p>
 <p>中でもauが提供する「povo2.0」は、基本料金が0円。自分で必要な分だけデータ通信量や通話定額を「トッピング（購入）」する仕組みです。180日間に一度でも有料トッピングの購入（最安値は220円のsmash.使い放題パックなど）をすれば、電話番号を維持できます。</p>
 <p>つまり、<strong>半年あたり数百円というごくわずかなコストで、大手キャリア品質の、SMS認証も確実にできる自分だけの電話番号が持てる</strong>んです。無料アプリで時間と労力を消耗したり、危険な目に遭ったりするくらいなら、これが最も賢い選択肢だと僕は思います。</p>
-<h2>【最重要】無料電話番号を安全に使うための鉄則</h2>
+<h2 id="最重要無料電話番号を安全に使うための鉄則">【最重要】無料電話番号を安全に使うための鉄則</h2>
 <p>もし無料電話番号サービスを試すのであれば、以下の注意点を必ず守ってください。自分の身を守るために、本当に重要です。</p>
 <ul>
 <li><strong>メインアカウントの登録には絶対に使わない</strong>: 銀行やクレジットカード、普段使っている重要なSNSなど、失うと困るサービスには絶対に使用しないでください。</li>
@@ -325,7 +387,7 @@
 <li><strong>パスワードの使い回しは厳禁</strong>: 他のサービスと同じパスワードを使い回すと、情報が漏れた時に芋づる式にアカウントを乗っ取られてしまいます。</li>
 <li><strong>「うまい話」は疑う</strong>: 「簡単な登録で高額報酬」のような、無料電話番号を使った副業や案件には手を出さないようにしましょう。犯罪に加担させられる可能性があります。</li>
 </ul>
-<h2>まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 <p>今回は、LINEの登録などに使える無料電話番号について解説しましたが、いかがでしたか？</p>
 <p>最後に、この記事の要点をまとめておきます。</p>
 <ul>
@@ -338,6 +400,45 @@
 <p>賢い選択をして、あなたのデジタルライフをより豊かにしてくださいね！</p>
 
                         </article>
+
+                        
+        <section class="mt-12">
+            <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">関連記事</h2>
+            <div class="grid gap-6 md:grid-cols-3">
+                
+                    <a href="../articles_html/LYP.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/1E90FF/FFFFFF?text=LYP+Premium" alt="【2025年】LYPプレミアムのメリット・デメリット総まとめ！Yahoo!ショッピングを使わなくても本当にお得？" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">お得情報</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年】LYPプレミアムのメリット・デメリット総まとめ！Yahoo!ショッピングを使わなくても本当にお得？</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/3DS.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/0000FF/FFFFFF?text=Manic+EMU+on+App+Store" alt="【2025年最新】ついにApp Storeに登場！iPhone無料3DSエミュ「Manic EMU」の使い方と注意点【脱獄不要】" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">アプリ</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年最新】ついにApp Storeに登場！iPhone無料3DSエミュ「Manic EMU」の使い方と注意点【脱獄不要】</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/swag.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/4285F4/FFFFFF?text=Swagbucks+Guide" alt="【Swagbucks完全攻略】海外ポイ活サイトの使い方・稼ぎ方！安全性や評判も徹底解説" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ポイ活</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【Swagbucks完全攻略】海外ポイ活サイトの使い方・稼ぎ方！安全性や評判も徹底解説</h3>
+                        </div>
+                    </a>
+                
+            </div>
+        </section>
+        
                     </div>
                 </div>
             </div>
@@ -379,6 +480,80 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // ===== アナウンス読み込み =====
+            (async () => {
+                const mount = document.getElementById('announcement-mount');
+                try {
+                    const cfgRes = await fetch('../announcement-config.json');
+                    const cfg = await cfgRes.json();
+                    const now = new Date();
+                    const expired = cfg.expiresAt ? now > new Date(cfg.expiresAt) : false;
+                    if (!cfg.enabled || expired) return;
+                    const dismissedKey = `announcement_dismissed_${cfg.id}`;
+                    if (localStorage.getItem(dismissedKey) === '1') return;
+
+                    const shellRes = await fetch('../announcement.html');
+                    const shellHtml = await shellRes.text();
+                    const contentRes = await fetch('../announcement-content.html');
+                    const contentHtml = await contentRes.text();
+
+                    mount.innerHTML = shellHtml;
+                    const host = document.getElementById('site-announcement');
+                    if (!host) return;
+                    host.classList.remove('hidden');
+                    host.style.pointerEvents = 'auto';
+                    const textWrap = host.querySelector('[data-announcement-content]');
+                    if (textWrap) textWrap.innerHTML = contentHtml;
+
+                    // ヘッダーとプログレスバーのオフセットを適用
+                    const headerEl = document.getElementById('header');
+                    const progressEl = document.getElementById('read-progress');
+                    const applyOffset = () => {
+                        const h = host.getBoundingClientRect().height || 0;
+                        if (headerEl) headerEl.style.top = h + 'px';
+                        if (progressEl) progressEl.style.top = h + 'px';
+                    };
+                    applyOffset();
+                    const onResize = () => applyOffset();
+                    window.addEventListener('resize', onResize);
+
+                    const closeBtn = document.getElementById('announcement-close');
+                    if (closeBtn) {
+                        closeBtn.addEventListener('click', () => {
+                            localStorage.setItem(dismissedKey, '1');
+                            host.classList.add('hidden');
+                            if (headerEl) headerEl.style.top = '0px';
+                            if (progressEl) progressEl.style.top = '0px';
+                            window.removeEventListener('resize', onResize);
+                        });
+                    }
+                } catch (e) {
+                    console.warn('announcement load failed', e);
+                }
+            })();
+            // ===== 読了プログレスバー =====
+            const progressBar = document.getElementById('read-progress-bar');
+            const updateProgress = () => {
+                const doc = document.documentElement;
+                const body = document.body;
+                const scrollTop = doc.scrollTop || body.scrollTop;
+                const scrollHeight = (doc.scrollHeight || body.scrollHeight) - doc.clientHeight;
+                const ratio = scrollHeight > 0 ? Math.min(1, Math.max(0, scrollTop / scrollHeight)) : 0;
+                progressBar.style.width = (ratio * 100).toFixed(2) + '%';
+            };
+            let ticking = false;
+            const onScroll = () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        updateProgress();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            updateProgress();
             // ===== ダークモード切り替えスクリプト =====
             const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
             const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');

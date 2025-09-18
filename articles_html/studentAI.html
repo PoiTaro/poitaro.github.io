@@ -17,6 +17,15 @@
     <meta property="og:url" content="https://PoiTaro.github.io/blog/articles_html/studentAI.html">
     <meta name="twitter:card" content="summary_large_image">
     
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJJCP2Q6SC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WJJCP2Q6SC');
+        </script>
+
     <!-- Tailwind CSS with Typography Plugin -->
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     
@@ -127,6 +136,16 @@
 </head>
 <body class="bg-white dark:bg-gray-900 font-sans text-gray-700 dark:text-gray-300 antialiased">
 
+    <!-- ===== サイト共通アナウンス（期間限定） ===== -->
+    <div id="announcement-mount" class="fixed top-0 inset-x-0 z-[110] pointer-events-none">
+        <!-- announcement.html がここに挿入されます -->
+    </div>
+
+    <!-- ===== 読了プログレスバー ===== -->
+    <div id="read-progress" class="fixed top-0 left-0 right-0 z-[100] h-1 bg-transparent">
+        <div id="read-progress-bar" class="h-full w-0 bg-primary-600 dark:bg-primary-500 transition-[width] duration-150 ease-out"></div>
+    </div>
+
     <!-- ===== ヘッダー ===== -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -142,7 +161,7 @@
                 <a href="../index.html#blog" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">新着記事</a>
                 <a href="../index.html#features" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">ポイ活とは</a>
                 <a href="policy.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">プライバシーポリシー</a>
-                <a href="../index.html#contact" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
+                <a href="../contact.html" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
             </nav>
 
             <div class="flex items-center space-x-4">
@@ -167,7 +186,7 @@
                 <a href="../index.html#hero" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ホーム</a>
                 <a href="../index.html#blog" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">新着記事</a>
                 <a href="../index.html#features" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ポイ活とは</a>
-                <a href="../index.html#contact" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
+                <a href="../contact.html" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
                 <a href="policy.html" class="privacy-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">プライバシーポリシー</a>
             </nav>
         </div>
@@ -192,12 +211,73 @@
                             <span id="article-date" class="ml-2">2025-09-12</span>
                         </div>
 
+                        
+        <nav aria-label="目次" class="mb-8">
+            <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-800/50 backdrop-blur px-5 py-4">
+                <div class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+                    目次
+                </div>
+                <ul class="space-y-1">
+                    
+                        <li>
+                            <a href="#なぜ学生こそaiツールを使うべきなのか" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                なぜ学生こそAIツールを使うべきなのか？
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#プログラミングgithub-copilotもはや相棒コード作成の常識を変えるai" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                【プログラミング】GitHub Copilot：もはや相棒！コード作成の常識を変えるAI
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#レポート・論文microsoft-365-copilotwordやexcelがaiで超進化" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                【レポート・論文】Microsoft 365 Copilot：WordやExcelがAIで超進化！
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#情報管理・ノートnotion万能すぎる情報管理ツールai機能もお得に" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                【情報管理・ノート】Notion：万能すぎる情報管理ツール（AI機能もお得に）
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#デザイン・資料作成figma直感的な操作でプロ級のデザインを" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                【デザイン・資料作成】Figma：直感的な操作でプロ級のデザインを
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#番外編chatgpt学生限定ではないがもはや必須のaiチャット" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                【番外編】ChatGPT：学生限定ではないが、もはや必須のAIチャット
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#aiツールを賢く使うための注意点" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                AIツールを賢く使うための注意点
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#まとめ" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                まとめ
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+
                         <article id="article-content" class="prose lg:prose-xl max-w-none dark:prose-invert">
                            <p>「レポートや課題が多すぎて時間が足りない…」「もっと効率よく勉強したい！」</p>
 <p>そんな悩みを抱える学生の皆さん、こんにちは！プロブロガーの&quot;ブログライター&quot;です。</p>
 <p>実は、今の時代、学生というだけで通常は有料の強力なAIツールを無料で使えてしまう、まさに「学生特権」とも言えるサービスがたくさんあるんです。これを使わない手はありませんよね？</p>
 <p>この記事では、プログラミング、レポート作成、デザイン、情報管理など、あなたの学生生活を劇的に変える可能性を秘めた、学生向け無料AIツールを厳選してご紹介します。使い方やメリット・デメリットまで詳しく解説するので、ぜひ最後まで読んで、便利なツールを使いこなしちゃいましょう！</p>
-<h2>なぜ学生こそAIツールを使うべきなのか？</h2>
+<h2 id="なぜ学生こそaiツールを使うべきなのか">なぜ学生こそAIツールを使うべきなのか？</h2>
 <p>AIツールと聞くと、「なんだか難しそう…」「どうせ有料なんでしょ？」と思うかもしれません。でも、実は学生にとってこそ、AIは最強の味方になるんです。</p>
 <ul>
 <li><strong>時間の大幅な節約</strong>: レポートの構成案作成や、プログラミングのコード生成、情報収集などをAIに任せることで、これまで何時間もかかっていた作業を数分で終わらせることも可能です。</li>
@@ -206,7 +286,7 @@
 </ul>
 <p>そして何より、多くの企業が学生向けに特別な無料プランを提供しています。これは、将来を担う学生に自社のツールを使ってもらい、その良さを知ってほしいと考えているからです。この「未来への投資」を、私たちは賢く利用させてもらいましょう！</p>
 <hr>
-<h2>【プログラミング】GitHub Copilot：もはや相棒！コード作成の常識を変えるAI</h2>
+<h2 id="プログラミングgithub-copilotもはや相棒コード作成の常識を変えるai">【プログラミング】GitHub Copilot：もはや相棒！コード作成の常識を変えるAI</h2>
 <p>プログラミングを学ぶ学生さんにとって、もはや必須ツールとなりつつあるのが「GitHub Copilot」です。月額10ドル（約1,500円）のサービスですが、学生はなんと無料で利用できます！</p>
 <h3>GitHub Copilotってどんなツール？</h3>
 <p>GitHub Copilotは、あなたがコードを書いている途中で、次に書くべきコードを予測して提案してくれるAIプログラミング支援ツールです。まるで隣に凄腕のプログラマーが座ってサポートしてくれているような感覚で開発を進められます。</p>
@@ -232,7 +312,7 @@
 <h3>メリット・デメリット</h3>
 <p><strong>メリット</strong>は計り知れません。プログラミングの学習効率が飛躍的に向上し、エラーの解決や新しい技術の習得にかかる時間を大幅に短縮できます。ポートフォリオ作成や就職活動でも、質の高いコードを素早く書くための強力な武器になるでしょう。</p>
 <p>一方で<strong>デメリット</strong>というか注意点としては、AIの提案に頼りすぎると思考力が低下する可能性があることです。なぜこのコードが提案されたのかを理解し、あくまで「アシスタント」として活用する姿勢が大切です。</p>
-<h2>【レポート・論文】Microsoft 365 Copilot：WordやExcelがAIで超進化！</h2>
+<h2 id="レポート・論文microsoft-365-copilotwordやexcelがaiで超進化">【レポート・論文】Microsoft 365 Copilot：WordやExcelがAIで超進化！</h2>
 <p>レポートやプレゼン資料の作成に追われる学生さんにおすすめなのが「Microsoft 365 Copilot」です。多くの大学がMicrosoftと包括契約を結んでおり、学生は無料でOffice 365を使えるケースがほとんど。そして、その機能の一部としてCopilotも利用できるんです！</p>
 <h3>Microsoft 365 Copilotってどんなツール？</h3>
 <p>Word、Excel、PowerPointといったおなじみのアプリにAIが搭載され、面倒な作業を自動化してくれる機能です。</p>
@@ -252,7 +332,7 @@
 <h3>メリット・デメリット</h3>
 <p><strong>メリット</strong>は、なんといっても使い慣れたWordやExcelの延長線上で最先端のAI機能を使える手軽さです。レポート作成の効率が爆発的に上がり、空いた時間を他の勉強や研究に充てることができます。</p>
 <p><strong>注意点</strong>としては、Copilotが生成した文章をそのまま提出すると、剽窃（コピペ）を疑われるリスクがあることです。AIが作成した下書きを元に、必ず自分の言葉で表現し直し、内容のファクトチェックを怠らないようにしましょう。</p>
-<h2>【情報管理・ノート】Notion：万能すぎる情報管理ツール（AI機能もお得に）</h2>
+<h2 id="情報管理・ノートnotion万能すぎる情報管理ツールai機能もお得に">【情報管理・ノート】Notion：万能すぎる情報管理ツール（AI機能もお得に）</h2>
 <p>授業のノート、課題の進捗管理、就活の情報収集…学生生活は管理すべき情報で溢れていますよね。そんな情報を一元管理できるのが「Notion」です。そして、学生なら有料の「プラスプラン」を無料で利用できます！</p>
 <h3>Notionってどんなツール？</h3>
 <p>Notionは、ドキュメント作成、データベース、タスク管理など、あらゆる機能を一つにまとめた「オールインワン・ワークスペース」です。</p>
@@ -272,7 +352,7 @@
 <h3>メリット・デメリット</h3>
 <p><strong>メリット</strong>は、学生生活のあらゆる情報をNotion一つで管理できる点です。情報があちこちに散らばることがなくなり、頭の中がスッキリ整理されます。有料プランが無料になることで、ファイルのアップロード容量が無制限になるなど、ヘビーユーザーには嬉しい特典も満載です。</p>
 <p><strong>デメリット</strong>は、非常に多機能なため、最初はどこから手をつけていいか戸惑うかもしれない点です。まずはテンプレートを使ってみたり、他の人の使い方を真似したりしながら、少しずつ自分に合った使い方を見つけていくのがおすすめです。</p>
-<h2>【デザイン・資料作成】Figma：直感的な操作でプロ級のデザインを</h2>
+<h2 id="デザイン・資料作成figma直感的な操作でプロ級のデザインを">【デザイン・資料作成】Figma：直感的な操作でプロ級のデザインを</h2>
 <p>レポートの図解やプレゼンのスライド、サークルのポスター作成など、デザインスキルが求められる場面は意外と多いもの。「Figma」を使えば、誰でも簡単におしゃれなデザインが作れます。そして、学生と教員は有料のProプランが無料になります！</p>
 <h3>Figmaってどんなツール？</h3>
 <p>Figmaは、ブラウザ上で共同編集できるデザインツールです。直感的なインターフェースが特徴で、世界中のデザイナーに愛用されています。</p>
@@ -293,7 +373,7 @@
 <p><strong>メリット</strong>は、デザイン経験がなくても、直感的な操作でクオリティの高い制作物を作れることです。豊富なテンプレートを活用すれば、数分で見栄えの良い資料が完成します。就職活動でポートフォリオを提出する際にも、Figmaで作った作品は良いアピールになるでしょう。</p>
 <p><strong>注意点</strong>としては、デザインにこだわり始めると時間が溶けてしまう可能性があることです。まずは目的を明確にし、時間を区切って作業することをおすすめします。</p>
 <hr>
-<h2>【番外編】ChatGPT：学生限定ではないが、もはや必須のAIチャット</h2>
+<h2 id="番外編chatgpt学生限定ではないがもはや必須のaiチャット">【番外編】ChatGPT：学生限定ではないが、もはや必須のAIチャット</h2>
 <p>最後に、学生限定というわけではありませんが、絶対に外せないのが「ChatGPT」です。無料プランでも十分に強力で、あらゆる学生の学習をサポートしてくれます。</p>
 <ul>
 <li><strong>質問応答</strong>: わからない専門用語や概念を分かりやすく説明してもらう。</li>
@@ -303,14 +383,14 @@
 <li><strong>語学学習</strong>: 英会話の練習相手になってもらう。</li>
 </ul>
 <p>有料版（ChatGPT Plusなど）にアップグレードすると、より高性能なモデルが使えますが、まずは無料版を日常的に使ってみて、その実力を体感してみてください。「学習モード」など、教育に特化した新機能も登場しており、ますます学生にとって手放せないツールになっています。</p>
-<h2>AIツールを賢く使うための注意点</h2>
+<h2 id="aiツールを賢く使うための注意点">AIツールを賢く使うための注意点</h2>
 <p>非常に便利なAIツールですが、使い方を間違えるとトラブルの原因にもなります。以下の点には必ず注意しましょう。</p>
 <ul>
 <li><strong>情報の鵜呑みは厳禁！</strong>: AIは時々、もっともらしい嘘をつくことがあります（ハルシネーション）。生成された情報は必ず自分でファクトチェックし、信頼できる情報源で裏付けを取りましょう。</li>
 <li><strong>コピペは絶対にダメ！</strong>: AIが生成した文章をそのままレポートなどに使うと、剽窃行為とみなされます。あくまで下書きやアイデア出しのツールとして使い、最後は必ず自分の言葉で書き直しましょう。</li>
 <li><strong>個人情報の入力は避ける</strong>: 氏名や住所、パスワードなどの個人情報や、公開してはいけない機密情報は入力しないようにしてください。</li>
 </ul>
-<h2>まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 <p>今回は、学生なら無料で使える、超便利なAIツールを厳選してご紹介しました。</p>
 <table>
 <thead>
@@ -350,6 +430,45 @@
 <p>まずは気になったツールを一つでも試してみてください。きっと、その便利さに驚くはずです。賢くAIを使いこなして、最高の学生生活を送りましょう！</p>
 
                         </article>
+
+                        
+        <section class="mt-12">
+            <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">関連記事</h2>
+            <div class="grid gap-6 md:grid-cols-3">
+                
+                    <a href="../articles_html/Point-LINE.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://PoiTaro.github.io/blog/thumbnails/Poikatu.png" alt="【2025年最新裏ワザ】LINEポイントを裏技級に超簡単に貯める方法！学生へもオススメ！" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">LINE</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年最新裏ワザ】LINEポイントを裏技級に超簡単に貯める方法！学生へもオススメ！</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/ForeignPoint.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/FF0000/FFFFFF?text=Earn+Money+Online" alt="【2025年最新】海外ポイ活アプリおすすめ5選！日本の数倍稼げるって本当？危険性や使い方を徹底解説" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">未分類</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年最新】海外ポイ活アプリおすすめ5選！日本の数倍稼げるって本当？危険性や使い方を徹底解説</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/PayPay2.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/4CAF50/FFFFFF?text=PayPay+Point+Hack" alt="【2025年最新】PayPayポイント二重取り完全ガイド！知らないと損する最強の組み合わせを徹底解説" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">PayPay</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年最新】PayPayポイント二重取り完全ガイド！知らないと損する最強の組み合わせを徹底解説</h3>
+                        </div>
+                    </a>
+                
+            </div>
+        </section>
+        
                     </div>
                 </div>
             </div>
@@ -391,6 +510,80 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // ===== アナウンス読み込み =====
+            (async () => {
+                const mount = document.getElementById('announcement-mount');
+                try {
+                    const cfgRes = await fetch('../announcement-config.json');
+                    const cfg = await cfgRes.json();
+                    const now = new Date();
+                    const expired = cfg.expiresAt ? now > new Date(cfg.expiresAt) : false;
+                    if (!cfg.enabled || expired) return;
+                    const dismissedKey = `announcement_dismissed_${cfg.id}`;
+                    if (localStorage.getItem(dismissedKey) === '1') return;
+
+                    const shellRes = await fetch('../announcement.html');
+                    const shellHtml = await shellRes.text();
+                    const contentRes = await fetch('../announcement-content.html');
+                    const contentHtml = await contentRes.text();
+
+                    mount.innerHTML = shellHtml;
+                    const host = document.getElementById('site-announcement');
+                    if (!host) return;
+                    host.classList.remove('hidden');
+                    host.style.pointerEvents = 'auto';
+                    const textWrap = host.querySelector('[data-announcement-content]');
+                    if (textWrap) textWrap.innerHTML = contentHtml;
+
+                    // ヘッダーとプログレスバーのオフセットを適用
+                    const headerEl = document.getElementById('header');
+                    const progressEl = document.getElementById('read-progress');
+                    const applyOffset = () => {
+                        const h = host.getBoundingClientRect().height || 0;
+                        if (headerEl) headerEl.style.top = h + 'px';
+                        if (progressEl) progressEl.style.top = h + 'px';
+                    };
+                    applyOffset();
+                    const onResize = () => applyOffset();
+                    window.addEventListener('resize', onResize);
+
+                    const closeBtn = document.getElementById('announcement-close');
+                    if (closeBtn) {
+                        closeBtn.addEventListener('click', () => {
+                            localStorage.setItem(dismissedKey, '1');
+                            host.classList.add('hidden');
+                            if (headerEl) headerEl.style.top = '0px';
+                            if (progressEl) progressEl.style.top = '0px';
+                            window.removeEventListener('resize', onResize);
+                        });
+                    }
+                } catch (e) {
+                    console.warn('announcement load failed', e);
+                }
+            })();
+            // ===== 読了プログレスバー =====
+            const progressBar = document.getElementById('read-progress-bar');
+            const updateProgress = () => {
+                const doc = document.documentElement;
+                const body = document.body;
+                const scrollTop = doc.scrollTop || body.scrollTop;
+                const scrollHeight = (doc.scrollHeight || body.scrollHeight) - doc.clientHeight;
+                const ratio = scrollHeight > 0 ? Math.min(1, Math.max(0, scrollTop / scrollHeight)) : 0;
+                progressBar.style.width = (ratio * 100).toFixed(2) + '%';
+            };
+            let ticking = false;
+            const onScroll = () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        updateProgress();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            updateProgress();
             // ===== ダークモード切り替えスクリプト =====
             const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
             const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');

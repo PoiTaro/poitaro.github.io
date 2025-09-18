@@ -17,6 +17,15 @@
     <meta property="og:url" content="https://PoiTaro.github.io/blog/articles_html/paypay-points-5-tips.html">
     <meta name="twitter:card" content="summary_large_image">
     
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJJCP2Q6SC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WJJCP2Q6SC');
+        </script>
+
     <!-- Tailwind CSS with Typography Plugin -->
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     
@@ -127,6 +136,16 @@
 </head>
 <body class="bg-white dark:bg-gray-900 font-sans text-gray-700 dark:text-gray-300 antialiased">
 
+    <!-- ===== サイト共通アナウンス（期間限定） ===== -->
+    <div id="announcement-mount" class="fixed top-0 inset-x-0 z-[110] pointer-events-none">
+        <!-- announcement.html がここに挿入されます -->
+    </div>
+
+    <!-- ===== 読了プログレスバー ===== -->
+    <div id="read-progress" class="fixed top-0 left-0 right-0 z-[100] h-1 bg-transparent">
+        <div id="read-progress-bar" class="h-full w-0 bg-primary-600 dark:bg-primary-500 transition-[width] duration-150 ease-out"></div>
+    </div>
+
     <!-- ===== ヘッダー ===== -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -142,7 +161,7 @@
                 <a href="../index.html#blog" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">新着記事</a>
                 <a href="../index.html#features" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">ポイ活とは</a>
                 <a href="policy.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">プライバシーポリシー</a>
-                <a href="../index.html#contact" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
+                <a href="../contact.html" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
             </nav>
 
             <div class="flex items-center space-x-4">
@@ -167,7 +186,7 @@
                 <a href="../index.html#hero" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ホーム</a>
                 <a href="../index.html#blog" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">新着記事</a>
                 <a href="../index.html#features" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ポイ活とは</a>
-                <a href="../index.html#contact" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
+                <a href="../contact.html" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
                 <a href="policy.html" class="privacy-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">プライバシーポリシー</a>
             </nav>
         </div>
@@ -192,16 +211,59 @@
                             <span id="article-date" class="ml-2">2025-08-15</span>
                         </div>
 
+                        
+        <nav aria-label="目次" class="mb-8">
+            <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-800/50 backdrop-blur px-5 py-4">
+                <div class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+                    目次
+                </div>
+                <ul class="space-y-1">
+                    
+                        <li>
+                            <a href="#1-paypayステップを達成する" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                1. PayPayステップを達成する
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#2-お得なクーポンをフル活用する" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                2. お得なクーポンをフル活用する
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#3-他のサービスと連携する" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                3. 他のサービスと連携する
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#4-ポイントサイトを経由する" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                4. ポイントサイトを経由する
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#5-地方自治体のキャンペーンを利用する" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                5. 地方自治体のキャンペーンを利用する
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+
                         <article id="article-content" class="prose lg:prose-xl max-w-none dark:prose-invert">
                            <p>PayPayは、日本で最も普及しているQRコード決済サービスの一つです。日常の買い物で利用するだけでポイントが貯まる手軽さが魅力ですが、少しの工夫でさらに効率的にポイントを貯めることができます。この記事では、2025年最新の情報に基づき、PayPayポイントを最大限に活用するための5つの具体的な方法を解説します。</p>
-<h2>1. PayPayステップを達成する</h2>
+<h2 id="1-paypayステップを達成する">1. PayPayステップを達成する</h2>
 <p>PayPayステップは、月々の利用状況に応じて翌月のポイント付与率がアップするプログラムです。条件をクリアすることで、最大1.5%の還元率を目指せます。達成条件は以下の通りです。</p>
 <ul>
 <li>300円以上の決済を30回以上</li>
 <li>かつ、決済金額が10万円以上</li>
 </ul>
 <p>公共料金の支払いや、コンビニでの少額決済も回数にカウントされるため、意識してPayPayを利用することが重要です。</p>
-<h2>2. お得なクーポンをフル活用する</h2>
+<h2 id="2-お得なクーポンをフル活用する">2. お得なクーポンをフル活用する</h2>
 <p>PayPayアプリでは、飲食店やドラッグストアなどで使えるクーポンが多数配布されています。利用前にクーポンを獲得しておくだけで、会計時に自動的に割引やポイント還元が適用されます。</p>
 <p><img src="https://placehold.co/800x450/d97706/ffffff?text=Campaign" alt="キャンペーンのイメージ"></p>
 <blockquote>
@@ -213,18 +275,57 @@
 <li>気になるお店のクーポンを探して「フォロー」または「獲得する」</li>
 <li>支払い時に自動で適用されます</li>
 </ol>
-<h2>3. 他のサービスと連携する</h2>
+<h2 id="3-他のサービスと連携する">3. 他のサービスと連携する</h2>
 <p>Yahoo!ショッピングやLOHACOなど、Zホールディングスグループのサービスと連携することで、ポイントの多重取りが可能です。特に、<strong>毎週日曜日はソフトバンクユーザーでなくてもお得になる</strong>キャンペーンが開催されています。</p>
 <blockquote>
 <p>&quot;ポイ活は、日々の小さな努力が大きな節約につながる、最も手軽な資産運用の一つです。&quot;</p>
 </blockquote>
-<h2>4. ポイントサイトを経由する</h2>
+<h2 id="4-ポイントサイトを経由する">4. ポイントサイトを経由する</h2>
 <p>クレジットカードの新規発行や銀行口座の開設などをポイントサイト経由で行い、獲得したポイントをPayPayポイントに交換する方法もおすすめです。これにより、一度に数千〜数万ポイントを獲得することも可能です。</p>
-<h2>5. 地方自治体のキャンペーンを利用する</h2>
+<h2 id="5-地方自治体のキャンペーンを利用する">5. 地方自治体のキャンペーンを利用する</h2>
 <p>PayPayは地方自治体と連携し、特定の地域で利用すると最大20%〜30%のポイントが還元されるキャンペーンを頻繁に実施しています。お住まいの地域や、旅行先のキャンペーン情報をチェックしてみましょう。</p>
 <p>これらの方法を組み合わせることで、あなたのポイ活はさらに加速するはずです。今日からぜひ実践してみてください。</p>
 
                         </article>
+
+                        
+        <section class="mt-12">
+            <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">関連記事</h2>
+            <div class="grid gap-6 md:grid-cols-3">
+                
+                    <a href="../articles_html/Raku.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/BF0000/FFFFFF?text=Rakuten+Point" alt="【脱PayPay】楽天経済圏への引越しガイド｜楽天ペイ・カード・モバイルの最強コンボでポイントざくざく！" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">キャッシュレス</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【脱PayPay】楽天経済圏への引越しガイド｜楽天ペイ・カード・モバイルの最強コンボでポイントざくざく！</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/Dpay.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/4682B4/FFFFFF?text=PayPay+vs+d-Pay" alt="【2025年】PayPayからd払い経済圏へ乗り換え完全ガイド！ドコモユーザーのメリット・デメリットを徹底比較" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ポイ活</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年】PayPayからd払い経済圏へ乗り換え完全ガイド！ドコモユーザーのメリット・デメリットを徹底比較</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/LYP.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/1E90FF/FFFFFF?text=LYP+Premium" alt="【2025年】LYPプレミアムのメリット・デメリット総まとめ！Yahoo!ショッピングを使わなくても本当にお得？" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">お得情報</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年】LYPプレミアムのメリット・デメリット総まとめ！Yahoo!ショッピングを使わなくても本当にお得？</h3>
+                        </div>
+                    </a>
+                
+            </div>
+        </section>
+        
                     </div>
                 </div>
             </div>
@@ -266,6 +367,80 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // ===== アナウンス読み込み =====
+            (async () => {
+                const mount = document.getElementById('announcement-mount');
+                try {
+                    const cfgRes = await fetch('../announcement-config.json');
+                    const cfg = await cfgRes.json();
+                    const now = new Date();
+                    const expired = cfg.expiresAt ? now > new Date(cfg.expiresAt) : false;
+                    if (!cfg.enabled || expired) return;
+                    const dismissedKey = `announcement_dismissed_${cfg.id}`;
+                    if (localStorage.getItem(dismissedKey) === '1') return;
+
+                    const shellRes = await fetch('../announcement.html');
+                    const shellHtml = await shellRes.text();
+                    const contentRes = await fetch('../announcement-content.html');
+                    const contentHtml = await contentRes.text();
+
+                    mount.innerHTML = shellHtml;
+                    const host = document.getElementById('site-announcement');
+                    if (!host) return;
+                    host.classList.remove('hidden');
+                    host.style.pointerEvents = 'auto';
+                    const textWrap = host.querySelector('[data-announcement-content]');
+                    if (textWrap) textWrap.innerHTML = contentHtml;
+
+                    // ヘッダーとプログレスバーのオフセットを適用
+                    const headerEl = document.getElementById('header');
+                    const progressEl = document.getElementById('read-progress');
+                    const applyOffset = () => {
+                        const h = host.getBoundingClientRect().height || 0;
+                        if (headerEl) headerEl.style.top = h + 'px';
+                        if (progressEl) progressEl.style.top = h + 'px';
+                    };
+                    applyOffset();
+                    const onResize = () => applyOffset();
+                    window.addEventListener('resize', onResize);
+
+                    const closeBtn = document.getElementById('announcement-close');
+                    if (closeBtn) {
+                        closeBtn.addEventListener('click', () => {
+                            localStorage.setItem(dismissedKey, '1');
+                            host.classList.add('hidden');
+                            if (headerEl) headerEl.style.top = '0px';
+                            if (progressEl) progressEl.style.top = '0px';
+                            window.removeEventListener('resize', onResize);
+                        });
+                    }
+                } catch (e) {
+                    console.warn('announcement load failed', e);
+                }
+            })();
+            // ===== 読了プログレスバー =====
+            const progressBar = document.getElementById('read-progress-bar');
+            const updateProgress = () => {
+                const doc = document.documentElement;
+                const body = document.body;
+                const scrollTop = doc.scrollTop || body.scrollTop;
+                const scrollHeight = (doc.scrollHeight || body.scrollHeight) - doc.clientHeight;
+                const ratio = scrollHeight > 0 ? Math.min(1, Math.max(0, scrollTop / scrollHeight)) : 0;
+                progressBar.style.width = (ratio * 100).toFixed(2) + '%';
+            };
+            let ticking = false;
+            const onScroll = () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        updateProgress();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            updateProgress();
             // ===== ダークモード切り替えスクリプト =====
             const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
             const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');

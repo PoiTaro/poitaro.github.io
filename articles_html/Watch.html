@@ -17,6 +17,15 @@
     <meta property="og:url" content="https://PoiTaro.github.io/blog/articles_html/Watch.html">
     <meta name="twitter:card" content="summary_large_image">
     
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJJCP2Q6SC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WJJCP2Q6SC');
+        </script>
+
     <!-- Tailwind CSS with Typography Plugin -->
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     
@@ -127,6 +136,16 @@
 </head>
 <body class="bg-white dark:bg-gray-900 font-sans text-gray-700 dark:text-gray-300 antialiased">
 
+    <!-- ===== サイト共通アナウンス（期間限定） ===== -->
+    <div id="announcement-mount" class="fixed top-0 inset-x-0 z-[110] pointer-events-none">
+        <!-- announcement.html がここに挿入されます -->
+    </div>
+
+    <!-- ===== 読了プログレスバー ===== -->
+    <div id="read-progress" class="fixed top-0 left-0 right-0 z-[100] h-1 bg-transparent">
+        <div id="read-progress-bar" class="h-full w-0 bg-primary-600 dark:bg-primary-500 transition-[width] duration-150 ease-out"></div>
+    </div>
+
     <!-- ===== ヘッダー ===== -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -142,7 +161,7 @@
                 <a href="../index.html#blog" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">新着記事</a>
                 <a href="../index.html#features" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">ポイ活とは</a>
                 <a href="policy.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">プライバシーポリシー</a>
-                <a href="../index.html#contact" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
+                <a href="../contact.html" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
             </nav>
 
             <div class="flex items-center space-x-4">
@@ -167,7 +186,7 @@
                 <a href="../index.html#hero" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ホーム</a>
                 <a href="../index.html#blog" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">新着記事</a>
                 <a href="../index.html#features" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ポイ活とは</a>
-                <a href="../index.html#contact" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
+                <a href="../contact.html" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
                 <a href="policy.html" class="privacy-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">プライバシーポリシー</a>
             </nav>
         </div>
@@ -192,6 +211,43 @@
                             <span id="article-date" class="ml-2">2025-09-17</span>
                         </div>
 
+                        
+        <nav aria-label="目次" class="mb-8">
+            <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-800/50 backdrop-blur px-5 py-4">
+                <div class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+                    目次
+                </div>
+                <ul class="space-y-1">
+                    
+                        <li>
+                            <a href="#結論apple-watch-se3とse2のスペック比較表" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                【結論】Apple Watch SE3とSE2のスペック比較表
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#ココが変わったapple-watch-se3の4つの主要な進化点" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                ココが変わった！Apple Watch SE3の4つの主要な進化点
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#タイプ別診断結局se3とse2はどっちがおすすめ" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                【タイプ別診断】結局、SE3とSE2はどっちがおすすめ？
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#まとめ" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                まとめ
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+
                         <article id="article-content" class="prose lg:prose-xl max-w-none dark:prose-invert">
                            <p>「新しいApple Watch SE3が出たけど、SE2と何が違うの？」
 「常時表示って便利？ SE2から買い換える価値あるかな？」</p>
@@ -200,7 +256,7 @@
 <p>今回のアップデート、実は「かゆいところに手が届く」めちゃくちゃ魅力的な進化を遂げているんです。
 でも、その分「SE2でも十分じゃない？」「結局どっちを買えばいいの？」と悩んでしまう気持ち、よーくわかります。</p>
 <p>そこでこの記事では、Apple Watch SE3とSE2の違いを徹底的に比較し、あなたがどちらを選ぶべきか、タイプ別にわかりやすく解説していきます。ぜひ最後まで読んで、あなたにピッタリの一本を見つける参考にしてくださいね！</p>
-<h2>【結論】Apple Watch SE3とSE2のスペック比較表</h2>
+<h2 id="結論apple-watch-se3とse2のスペック比較表">【結論】Apple Watch SE3とSE2のスペック比較表</h2>
 <p>まずは、どこが変わったのか一目でわかるように、スペックを比較した表を見てみましょう。特に重要な進化したポイントは太字にしています！</p>
 <table>
 <thead>
@@ -267,7 +323,7 @@
 </tr>
 </tbody></table>
 <p>こうして見ると、バッテリー駆動時間や本体サイズは同じですが、中身が大きく進化しているのがわかりますね。特にディスプレイ、充電、操作性は日常の使い勝手に直結する部分なので、大きな違いと言えそうです。</p>
-<h2>ココが変わった！Apple Watch SE3の4つの主要な進化点</h2>
+<h2 id="ココが変わったapple-watch-se3の4つの主要な進化点">ココが変わった！Apple Watch SE3の4つの主要な進化点</h2>
 <p>比較表だけだとイメージしにくい部分もあると思うので、SE3の特に重要な進化点を4つピックアップして、具体的にどんなメリットがあるのかを解説します！</p>
 <h3>1. 遂に搭載！待望の「常時表示ディスプレイ」</h3>
 <p>個人的に、これがSE3最大の進化点だと思います。SE2までは、時間を確認するために手首を上げたり、画面をタップしたりする必要がありました。
@@ -294,7 +350,7 @@ SE3は、この悩みを解決する「高速充電」に対応しました。</
 <li>コーヒーを飲みながら通知をチェックしたい時</li>
 </ul>
 <p>こんな場面でiPhoneを取り出すことなく、スマートに操作が完結します。一度慣れると手放せなくなる、魔法のような便利さですよ。</p>
-<h2>【タイプ別診断】結局、SE3とSE2はどっちがおすすめ？</h2>
+<h2 id="タイプ別診断結局se3とse2はどっちがおすすめ">【タイプ別診断】結局、SE3とSE2はどっちがおすすめ？</h2>
 <p>進化したポイントはわかったけど、結局自分はどっちを買うべきなの？という疑問にお答えします。あなたの使い方や価値観に合わせて、おすすめのモデルを診断してみましょう！</p>
 <h3>Apple Watch SE3がおすすめな人</h3>
 <ul>
@@ -323,7 +379,7 @@ SE3は、この悩みを解決する「高速充電」に対応しました。</
   → 常時表示にこだわりがなければ、SE2でも十分に便利さを実感できます。</p>
 </li>
 </ul>
-<h2>まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 <p>今回は、発表されたばかりのApple Watch SE3と、前モデルのSE2を徹底比較しました。</p>
 <p>最後に、この記事のポイントをまとめます。</p>
 <ul>
@@ -336,6 +392,45 @@ SE3は、この悩みを解決する「高速充電」に対応しました。</
 <p>あなたのライフスタイルや予算と相談しながら、この記事を参考に「最高の相棒」を選んでみてくださいね！</p>
 
                         </article>
+
+                        
+        <section class="mt-12">
+            <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">関連記事</h2>
+            <div class="grid gap-6 md:grid-cols-3">
+                
+                    <a href="../articles_html/TV.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/0000FF/FFFFFF?text=PC+TV+Recording" alt="【2025年最新】PCでテレビ番組を録画する4つの方法！HDMIキャプチャーからTS抜きまで徹底解説" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ガジェット</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年最新】PCでテレビ番組を録画する4つの方法！HDMIキャプチャーからTS抜きまで徹底解説</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/swag.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/4285F4/FFFFFF?text=Swagbucks+Guide" alt="【Swagbucks完全攻略】海外ポイ活サイトの使い方・稼ぎ方！安全性や評判も徹底解説" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ポイ活</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【Swagbucks完全攻略】海外ポイ活サイトの使い方・稼ぎ方！安全性や評判も徹底解説</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/toho.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/4B0082/FFFFFF?text=CINEMILEAGE" alt="【2025年】シネマイレージは本当にお得？年会費の元は取れるか徹底解説！ポイ活目線でクレカも紹介" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ポイ活</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年】シネマイレージは本当にお得？年会費の元は取れるか徹底解説！ポイ活目線でクレカも紹介</h3>
+                        </div>
+                    </a>
+                
+            </div>
+        </section>
+        
                     </div>
                 </div>
             </div>
@@ -377,6 +472,80 @@ SE3は、この悩みを解決する「高速充電」に対応しました。</
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // ===== アナウンス読み込み =====
+            (async () => {
+                const mount = document.getElementById('announcement-mount');
+                try {
+                    const cfgRes = await fetch('../announcement-config.json');
+                    const cfg = await cfgRes.json();
+                    const now = new Date();
+                    const expired = cfg.expiresAt ? now > new Date(cfg.expiresAt) : false;
+                    if (!cfg.enabled || expired) return;
+                    const dismissedKey = `announcement_dismissed_${cfg.id}`;
+                    if (localStorage.getItem(dismissedKey) === '1') return;
+
+                    const shellRes = await fetch('../announcement.html');
+                    const shellHtml = await shellRes.text();
+                    const contentRes = await fetch('../announcement-content.html');
+                    const contentHtml = await contentRes.text();
+
+                    mount.innerHTML = shellHtml;
+                    const host = document.getElementById('site-announcement');
+                    if (!host) return;
+                    host.classList.remove('hidden');
+                    host.style.pointerEvents = 'auto';
+                    const textWrap = host.querySelector('[data-announcement-content]');
+                    if (textWrap) textWrap.innerHTML = contentHtml;
+
+                    // ヘッダーとプログレスバーのオフセットを適用
+                    const headerEl = document.getElementById('header');
+                    const progressEl = document.getElementById('read-progress');
+                    const applyOffset = () => {
+                        const h = host.getBoundingClientRect().height || 0;
+                        if (headerEl) headerEl.style.top = h + 'px';
+                        if (progressEl) progressEl.style.top = h + 'px';
+                    };
+                    applyOffset();
+                    const onResize = () => applyOffset();
+                    window.addEventListener('resize', onResize);
+
+                    const closeBtn = document.getElementById('announcement-close');
+                    if (closeBtn) {
+                        closeBtn.addEventListener('click', () => {
+                            localStorage.setItem(dismissedKey, '1');
+                            host.classList.add('hidden');
+                            if (headerEl) headerEl.style.top = '0px';
+                            if (progressEl) progressEl.style.top = '0px';
+                            window.removeEventListener('resize', onResize);
+                        });
+                    }
+                } catch (e) {
+                    console.warn('announcement load failed', e);
+                }
+            })();
+            // ===== 読了プログレスバー =====
+            const progressBar = document.getElementById('read-progress-bar');
+            const updateProgress = () => {
+                const doc = document.documentElement;
+                const body = document.body;
+                const scrollTop = doc.scrollTop || body.scrollTop;
+                const scrollHeight = (doc.scrollHeight || body.scrollHeight) - doc.clientHeight;
+                const ratio = scrollHeight > 0 ? Math.min(1, Math.max(0, scrollTop / scrollHeight)) : 0;
+                progressBar.style.width = (ratio * 100).toFixed(2) + '%';
+            };
+            let ticking = false;
+            const onScroll = () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        updateProgress();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            updateProgress();
             // ===== ダークモード切り替えスクリプト =====
             const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
             const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');

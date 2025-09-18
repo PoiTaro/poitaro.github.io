@@ -17,6 +17,15 @@
     <meta property="og:url" content="https://PoiTaro.github.io/blog/articles_html/swag.html">
     <meta name="twitter:card" content="summary_large_image">
     
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJJCP2Q6SC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WJJCP2Q6SC');
+        </script>
+
     <!-- Tailwind CSS with Typography Plugin -->
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     
@@ -127,6 +136,16 @@
 </head>
 <body class="bg-white dark:bg-gray-900 font-sans text-gray-700 dark:text-gray-300 antialiased">
 
+    <!-- ===== サイト共通アナウンス（期間限定） ===== -->
+    <div id="announcement-mount" class="fixed top-0 inset-x-0 z-[110] pointer-events-none">
+        <!-- announcement.html がここに挿入されます -->
+    </div>
+
+    <!-- ===== 読了プログレスバー ===== -->
+    <div id="read-progress" class="fixed top-0 left-0 right-0 z-[100] h-1 bg-transparent">
+        <div id="read-progress-bar" class="h-full w-0 bg-primary-600 dark:bg-primary-500 transition-[width] duration-150 ease-out"></div>
+    </div>
+
     <!-- ===== ヘッダー ===== -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -142,7 +161,7 @@
                 <a href="../index.html#blog" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">新着記事</a>
                 <a href="../index.html#features" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">ポイ活とは</a>
                 <a href="policy.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">プライバシーポリシー</a>
-                <a href="../index.html#contact" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
+                <a href="../contact.html" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
             </nav>
 
             <div class="flex items-center space-x-4">
@@ -167,7 +186,7 @@
                 <a href="../index.html#hero" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ホーム</a>
                 <a href="../index.html#blog" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">新着記事</a>
                 <a href="../index.html#features" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ポイ活とは</a>
-                <a href="../index.html#contact" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
+                <a href="../contact.html" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
                 <a href="policy.html" class="privacy-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">プライバシーポリシー</a>
             </nav>
         </div>
@@ -192,6 +211,55 @@
                             <span id="article-date" class="ml-2">2025-09-12</span>
                         </div>
 
+                        
+        <nav aria-label="目次" class="mb-8">
+            <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-800/50 backdrop-blur px-5 py-4">
+                <div class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+                    目次
+                </div>
+                <ul class="space-y-1">
+                    
+                        <li>
+                            <a href="#そもそもswagbucksスワッグバックスって何怪しいサイトじゃないの" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                そもそもSwagbucks（スワッグバックス）って何？怪しいサイトじゃないの？
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#使ってわかったswagbucksの5大メリット" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                使ってわかった！Swagbucksの5大メリット
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#始める前に知っておきたいデメリットと注意点" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                始める前に知っておきたいデメリットと注意点
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#5分で完了swagbucksの登録方法と使い方" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                【5分で完了】Swagbucksの登録方法と使い方
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#swagbucksで爆発的に稼ぐおすすめ攻略法3選" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                Swagbucksで爆発的に稼ぐ！おすすめ攻略法3選
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#まとめ" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                まとめ
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+
                         <article id="article-content" class="prose lg:prose-xl max-w-none dark:prose-invert">
                            <p>「日本のポイ活サイトだけじゃ、満足に稼げない…」
 「海外のポイ活サイト『Swagbucks』ってよく聞くけど、英語だしなんだか難しそう…」</p>
@@ -199,7 +267,7 @@
 <p>こんにちは！ポイ活で月5万円以上を安定して稼いでいる、プロブロガーの僕です。
 今回は、僕が愛用している海外ポイ活サイトの王様、「Swagbucks（スワッグバックス）」について、その魅力から具体的な使い方、そしてみんなが気になる安全性まで、どこよりも分かりやすく徹底解説していきます。</p>
 <p>この記事を読み終わる頃には、あなたはSwagbucksへの不安がなくなり、すぐにでもドルを稼ぎ始める準備が整っているはず。円安の今だからこそ、ドルで稼ぐチャンスを掴み取りましょう！</p>
-<h2>そもそもSwagbucks（スワッグバックス）って何？怪しいサイトじゃないの？</h2>
+<h2 id="そもそもswagbucksスワッグバックスって何怪しいサイトじゃないの">そもそもSwagbucks（スワッグバックス）って何？怪しいサイトじゃないの？</h2>
 <p>まずは、「Swagbucksって一体何者？」という疑問からお答えしますね。一言で言うと、<strong>世界最大級のポイ活サイト</strong>です。</p>
 <p>アンケートに答えたり、ゲームで遊んだり、ネットショッピングをしたりすることで「SB」というポイントが貯まり、そのポイントを現金やギフト券に交換できる仕組みになっています。</p>
 <p>「でも、海外のサイトってだけでちょっと不安…」と感じる気持ち、すごく分かります。しかし、安心してください。Swagbucksは2008年から運営されている老舗サイトで、運営会社はProdege, LLCというアメリカの大手企業。全世界で数千万人以上のユーザーが利用しており、その信頼性は折り紙付きです。怪しいサイトどころか、ポイ活界のリーディングカンパニーなんですよ。</p>
@@ -211,7 +279,7 @@
 <li><strong>Swagbucks（$1=150円の場合）</strong> → 500SB = $5.00 = 750円</li>
 </ul>
 <p>このように、同じような案件でも、ドル建てで円安の恩恵を受けられるため、日本のサイトより圧倒的に稼ぎやすいんです。</p>
-<h2>使ってわかった！Swagbucksの5大メリット</h2>
+<h2 id="使ってわかったswagbucksの5大メリット">使ってわかった！Swagbucksの5大メリット</h2>
 <p>僕がSwagbucksを使い続ける理由は、他のサイトにはない圧倒的なメリットがあるからです。ここでは、特に「これはスゴい！」と感じる5つのポイントをご紹介します。</p>
 <h3>1. 案件の数がケタ違い！やることが尽きない</h3>
 <p>Swagbucksの最大の魅力は、なんといってもその案件の豊富さ。</p>
@@ -233,7 +301,7 @@
 <p>貯めたポイント（SB）は、Amazonギフト券などに交換できるほか、<strong>PayPal（ペイパル）</strong> を通じて現金に換えることができます。PayPalアカウントさえ持っていれば、日本の銀行口座へ出金することも可能です。 最低交換額も低めに設定されているので、コツコツ貯めたポイントをすぐに換金できるのも嬉しいポイントです。</p>
 <h3>5. 運営実績が長く信頼性が高い</h3>
 <p>先ほども触れましたが、15年以上の運営実績は信頼の証です。個人情報の取り扱いなど、セキュリティ面もしっかりしているので、安心して利用することができます。</p>
-<h2>始める前に知っておきたいデメリットと注意点</h2>
+<h2 id="始める前に知っておきたいデメリットと注意点">始める前に知っておきたいデメリットと注意点</h2>
 <p>もちろん、良いことばかりではありません。海外サイトならではの注意点もしっかり理解しておきましょう。</p>
 <ul>
 <li><p><strong>サイトの基本表記は英語</strong>
@@ -246,7 +314,7 @@
   もし何かトラブルがあってサポートに問い合わせる際は、英語でのやり取りが必要になります。ここでも翻訳ツールが役立ちますが、少しハードルが高いと感じるかもしれません。</p>
 </li>
 </ul>
-<h2>【5分で完了】Swagbucksの登録方法と使い方</h2>
+<h2 id="5分で完了swagbucksの登録方法と使い方">【5分で完了】Swagbucksの登録方法と使い方</h2>
 <p>さあ、いよいよSwagbucksを始めてみましょう！登録はとっても簡単で、5分もあれば完了します。</p>
 <h3>登録手順</h3>
 <ol>
@@ -269,7 +337,7 @@
 <li><strong>Shop</strong>: ネットショッピングでのキャッシュバック</li>
 </ul>
 <p>まずは日本語アンケートが多い「Answer」や、高単価案件が見つかりやすい「Discover」から覗いてみるのがおすすめです。</p>
-<h2>Swagbucksで爆発的に稼ぐ！おすすめ攻略法3選</h2>
+<h2 id="swagbucksで爆発的に稼ぐおすすめ攻略法3選">Swagbucksで爆発的に稼ぐ！おすすめ攻略法3選</h2>
 <p>ただ闇雲に案件をこなすだけでは、効率的に稼ぐことはできません。ここでは、僕が実践している稼ぎ方のコツを3つだけ、こっそりお教えします。</p>
 <h3>1. 高単価な「Discover」のゲーム案件を狙う</h3>
 <p>やはり一番のおすすめは、ゲーム案件です。特に「RevU」や「AdGate Media」といったオファーウォール（案件一覧ページ）には、クリアすれば$50〜$100（数千円〜1万円以上）になるような大型案件が眠っています。得意なジャンルのゲームや、達成条件が簡単なものを選んで集中プレイするのが、一気に稼ぐための鍵です。</p>
@@ -277,7 +345,7 @@
 <p>Swagbucksには、毎日クリアすべき目標リスト「To-Do List」と、その日の獲得ポイント目標「Daily Goal」があります。これらを達成すると、ボーナスポイントがもらえるんです。毎日コツコツ続けるだけで、月末には大きなボーナスになります。塵も積もれば山となる、を実感できますよ。</p>
 <h3>3. Swag Code（スワッグコード）を逃さず入力</h3>
 <p>Swagbucksは、「Swag Code」と呼ばれるボーナスコードを不定期に配布しています。これは、公式サイトやSNS、専用のブラウザ拡張機能などで見つけることができます。見つけたら、サイト上部の入力欄に入れるだけで数SBがもらえるので、こまめにチェックする習慣をつけましょう。</p>
-<h2>まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 <p>今回は、海外ポイ活サイトの王様「Swagbucks」について、その魅力から具体的な稼ぎ方までを詳しく解説しました。</p>
 <ul>
 <li><strong>Swagbucksは信頼できる世界最大級のポイ活サイト</strong></li>
@@ -293,6 +361,45 @@
 ```</p>
 
                         </article>
+
+                        
+        <section class="mt-12">
+            <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">関連記事</h2>
+            <div class="grid gap-6 md:grid-cols-3">
+                
+                    <a href="../articles_html/recommended-point-sites.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/600x400/2563eb/ffffff?text=PointSite" alt="【初心者必見】おすすめポイントサイト5選！安全な選び方とは" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ポイントサイト</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【初心者必見】おすすめポイントサイト5選！安全な選び方とは</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/toho.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/4B0082/FFFFFF?text=CINEMILEAGE" alt="【2025年】シネマイレージは本当にお得？年会費の元は取れるか徹底解説！ポイ活目線でクレカも紹介" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ポイ活</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年】シネマイレージは本当にお得？年会費の元は取れるか徹底解説！ポイ活目線でクレカも紹介</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/Dpay.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/1280x720/4682B4/FFFFFF?text=PayPay+vs+d-Pay" alt="【2025年】PayPayからd払い経済圏へ乗り換え完全ガイド！ドコモユーザーのメリット・デメリットを徹底比較" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ポイ活</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年】PayPayからd払い経済圏へ乗り換え完全ガイド！ドコモユーザーのメリット・デメリットを徹底比較</h3>
+                        </div>
+                    </a>
+                
+            </div>
+        </section>
+        
                     </div>
                 </div>
             </div>
@@ -334,6 +441,80 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // ===== アナウンス読み込み =====
+            (async () => {
+                const mount = document.getElementById('announcement-mount');
+                try {
+                    const cfgRes = await fetch('../announcement-config.json');
+                    const cfg = await cfgRes.json();
+                    const now = new Date();
+                    const expired = cfg.expiresAt ? now > new Date(cfg.expiresAt) : false;
+                    if (!cfg.enabled || expired) return;
+                    const dismissedKey = `announcement_dismissed_${cfg.id}`;
+                    if (localStorage.getItem(dismissedKey) === '1') return;
+
+                    const shellRes = await fetch('../announcement.html');
+                    const shellHtml = await shellRes.text();
+                    const contentRes = await fetch('../announcement-content.html');
+                    const contentHtml = await contentRes.text();
+
+                    mount.innerHTML = shellHtml;
+                    const host = document.getElementById('site-announcement');
+                    if (!host) return;
+                    host.classList.remove('hidden');
+                    host.style.pointerEvents = 'auto';
+                    const textWrap = host.querySelector('[data-announcement-content]');
+                    if (textWrap) textWrap.innerHTML = contentHtml;
+
+                    // ヘッダーとプログレスバーのオフセットを適用
+                    const headerEl = document.getElementById('header');
+                    const progressEl = document.getElementById('read-progress');
+                    const applyOffset = () => {
+                        const h = host.getBoundingClientRect().height || 0;
+                        if (headerEl) headerEl.style.top = h + 'px';
+                        if (progressEl) progressEl.style.top = h + 'px';
+                    };
+                    applyOffset();
+                    const onResize = () => applyOffset();
+                    window.addEventListener('resize', onResize);
+
+                    const closeBtn = document.getElementById('announcement-close');
+                    if (closeBtn) {
+                        closeBtn.addEventListener('click', () => {
+                            localStorage.setItem(dismissedKey, '1');
+                            host.classList.add('hidden');
+                            if (headerEl) headerEl.style.top = '0px';
+                            if (progressEl) progressEl.style.top = '0px';
+                            window.removeEventListener('resize', onResize);
+                        });
+                    }
+                } catch (e) {
+                    console.warn('announcement load failed', e);
+                }
+            })();
+            // ===== 読了プログレスバー =====
+            const progressBar = document.getElementById('read-progress-bar');
+            const updateProgress = () => {
+                const doc = document.documentElement;
+                const body = document.body;
+                const scrollTop = doc.scrollTop || body.scrollTop;
+                const scrollHeight = (doc.scrollHeight || body.scrollHeight) - doc.clientHeight;
+                const ratio = scrollHeight > 0 ? Math.min(1, Math.max(0, scrollTop / scrollHeight)) : 0;
+                progressBar.style.width = (ratio * 100).toFixed(2) + '%';
+            };
+            let ticking = false;
+            const onScroll = () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        updateProgress();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            updateProgress();
             // ===== ダークモード切り替えスクリプト =====
             const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
             const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
