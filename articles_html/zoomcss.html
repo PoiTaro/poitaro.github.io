@@ -232,6 +232,18 @@
                             </a>
                         </li>
                     
+                        <li>
+                            <a href="#やってはいけない注意点metaタグでの制御は非推奨" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                やってはいけない注意点！metaタグでの制御は非推奨
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#まとめ" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                まとめ
+                            </a>
+                        </li>
+                    
                 </ul>
             </div>
         </nav>
@@ -273,16 +285,16 @@ select {
   font-size: 16px; /* ←16px以上に設定！これだけでOK */
 }
 </code></pre>
-<p>たったこれだけです。font-sizeを16px（もしくはそれ以上）に設定することで、iOSは「このフォームは十分な大きさだから、ズームしなくても大丈夫だな」と判断し、自動拡大をストップしてくれます。
-やってはいけない注意点！metaタグでの制御は非推奨
-「昔、metaタグにuser-scalable=noって書く方法があったような…？」と思った方、鋭いですね。
+<p>たったこれだけです。font-sizeを16px（もしくはそれ以上）に設定することで、iOSは「このフォームは十分な大きさだから、ズームしなくても大丈夫だな」と判断し、自動拡大をストップしてくれます。</p>
+<h2 id="やってはいけない注意点metaタグでの制御は非推奨">やってはいけない注意点！metaタグでの制御は非推奨</h2>
+<p>「昔、metaタグにuser-scalable=noって書く方法があったような…？」と思った方、鋭いですね。
 確かに以前は、<head>内に以下のようなmetaタグを記述して、ユーザーによる拡大・縮小操作そのものを禁止する方法がありました。</p>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
 <p>この方法でも自動ズームは防げますが、現在ではアクセシビリティの観点から強く非推奨とされています。なぜなら、user-scalable=noを指定すると、ピンチイン・ピンチアウト（指で画面を拡大・縮小する操作）が一切できなくなってしまうからです。
-視力が弱い方など、意図的に画面を拡大して閲覧したいユーザーの操作を妨げてしまうため、この方法は使わないようにしましょう。CSSでfont-sizeを調整するのが、現在のベストな解決策です。
-まとめ
-今回は、スマートフォンでフォームをタップした際に自動でズームされる現象の解決策について解説しました。ポイントをもう一度おさらいしましょう。</p>
+視力が弱い方など、意図的に画面を拡大して閲覧したいユーザーの操作を妨げてしまうため、この方法は使わないようにしましょう。CSSでfont-sizeを調整するのが、現在のベストな解決策です。</p>
+<h2 id="まとめ">まとめ</h2>
+<p>今回は、スマートフォンでフォームをタップした際に自動でズームされる現象の解決策について解説しました。ポイントをもう一度おさらいしましょう。</p>
 <ul>
 <li>原因: フォーム要素のfont-sizeが16px未満であることが、iOSの自動ズーム機能を発動させている。</li>
 <li>解決策: CSSで対象フォーム要素のfont-sizeを16px以上に指定するだけ。</li>
@@ -298,33 +310,33 @@ select {
             <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">関連記事</h2>
             <div class="grid gap-6 md:grid-cols-3">
                 
-                    <a href="../articles_html/items.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                    <a href="../articles_html/studentAI.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
                         <div class="w-full aspect-video overflow-hidden">
-                            <img src="https://placehold.co/1280x720/00DDFF/FFFFFF?text=Free+Samples" alt="【2025年最新】完全無料でコスメや食品をゲット！おすすめモニターサイト5選を徹底解説！当選確率を上げるコツも紹介" class="w-full h-full object-cover">
+                            <img src="https://placehold.co/1280x720/ADD8E6/000000?text=Generative+AI" alt="【2025年最新】知らないと損！学生限定＆無料で使えるAIツール4選＋α｜課題・レポート・就活を効率化" class="w-full h-full object-cover">
                         </div>
                         <div class="p-4">
-                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ポイ活・節約</p>
-                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年最新】完全無料でコスメや食品をゲット！おすすめモニターサイト5選を徹底解説！当選確率を上げるコツも紹介</h3>
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">生成AI</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年最新】知らないと損！学生限定＆無料で使えるAIツール4選＋α｜課題・レポート・就活を効率化</h3>
                         </div>
                     </a>
                 
-                    <a href="../articles_html/monst.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                    <a href="../articles_html/swag.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
                         <div class="w-full aspect-video overflow-hidden">
-                            <img src="https://placehold.co/1280x720/E6002D/FFFFFF?text=Monst+Orb" alt="【モンスト】オーブを完全無料でGET！学生でもできるポイ活でガチャを回しまくる裏ワザ" class="w-full h-full object-cover">
+                            <img src="https://placehold.co/1280x720/4285F4/FFFFFF?text=Swagbucks+Guide" alt="【Swagbucks完全攻略】海外ポイ活サイトの使い方・稼ぎ方！安全性や評判も徹底解説" class="w-full h-full object-cover">
                         </div>
                         <div class="p-4">
-                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ゲーム</p>
-                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【モンスト】オーブを完全無料でGET！学生でもできるポイ活でガチャを回しまくる裏ワザ</h3>
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ポイ活</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【Swagbucks完全攻略】海外ポイ活サイトの使い方・稼ぎ方！安全性や評判も徹底解説</h3>
                         </div>
                     </a>
                 
-                    <a href="../articles_html/paypay-points-5-tips.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                    <a href="../articles_html/toho.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
                         <div class="w-full aspect-video overflow-hidden">
-                            <img src="https://placehold.co/600x400/f59e0b/ffffff?text=PayPay" alt="【2025年版】PayPayポイントを効率的に貯める5つの方法" class="w-full h-full object-cover">
+                            <img src="https://placehold.co/1280x720/4B0082/FFFFFF?text=CINEMILEAGE" alt="【2025年】シネマイレージは本当にお得？年会費の元は取れるか徹底解説！ポイ活目線でクレカも紹介" class="w-full h-full object-cover">
                         </div>
                         <div class="p-4">
-                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">PayPay</p>
-                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年版】PayPayポイントを効率的に貯める5つの方法</h3>
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ポイ活</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年】シネマイレージは本当にお得？年会費の元は取れるか徹底解説！ポイ活目線でクレカも紹介</h3>
                         </div>
                     </a>
                 
