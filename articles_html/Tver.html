@@ -13,7 +13,7 @@
     <meta name="description" content="Tverの見逃し配信をオフラインで楽しみたい！この記事では、スマホやPCを使ってTverの動画をMP4形式で保存する方法を、注意点や安全性も踏まえて徹底的に解説します。広告なしで快適に、通信量を気にせず好きな番組を楽しみましょう。">
     <meta property="og:title" content="【2025年最新】Tverの動画をMP4で保存する方法！スマホ/PC別に徹底解説">
     <meta property="og:description" content="Tverの見逃し配信をオフラインで楽しみたい！この記事では、スマホやPCを使ってTverの動画をMP4形式で保存する方法を、注意点や安全性も踏まえて徹底的に解説します。広告なしで快適に、通信量を気にせず好きな番組を楽しみましょう。">
-    <meta property="og:image" content="https://placehold.co/1280x720/1DA1F2/FFFFFF?text=Tver+Save+MP4">
+    <meta property="og:image" content="{{imageAbsolute}}">
     <meta property="og:url" content="https://PoiTaro.github.io/blog/articles_html/Tver.html">
     <meta name="twitter:card" content="summary_large_image">
     
@@ -141,9 +141,14 @@
         <!-- announcement.html がここに挿入されます -->
     </div>
 
-    <!-- ===== 読了プログレスバー ===== -->
-    <div id="read-progress" class="fixed top-0 left-0 right-0 z-[100] h-1 bg-transparent">
-        <div id="read-progress-bar" class="h-full w-0 bg-primary-600 dark:bg-primary-500 transition-[width] duration-150 ease-out"></div>
+    <!-- ===== 左縦型スクロールプログレス（目次のチェックポイント対応） ===== -->
+    <div id="left-progress-mount" class="fixed left-4 z-[100] pointer-events-none hidden md:block" style="top:0; bottom:24px;">
+        <!-- 線とフィル（fill の高さで進捗を表現） -->
+        <div id="left-progress-line" class="absolute left-1/2 -translate-x-1/2 w-1 rounded-full bg-gray-200 dark:bg-gray-800 h-full overflow-visible">
+            <div id="left-progress-fill" class="absolute left-0 top-0 w-1 bg-primary-600 dark:bg-primary-500 rounded-full" style="height:0%"></div>
+        </div>
+        <!-- チェックポイント（dot）を置くコンテナ。dot は absolute で top % を設定 -->
+        <div id="left-progress-checks" class="absolute left-1/2 -translate-x-1/2 w-6 h-full"></div>
     </div>
 
     <!-- ===== ヘッダー ===== -->
@@ -200,9 +205,25 @@
                     <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
                     記事一覧へ戻る
                 </a>
+                <!-- Breadcrumbs: left (Home/Category) stays on first line; title rendered on second line -->
+                <nav aria-label="Breadcrumb" class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+                    <div class="flex flex-col gap-1">
+                        <div class="w-full flex items-center gap-2 overflow-hidden">
+                            <div class="flex items-center gap-2 min-w-0">
+                                <a href="../index.html" class="flex-shrink-0 hover:underline">ホーム</a>
+                                <span class="text-gray-300 flex-shrink-0">/</span>
+                                <a id="breadcrumb-category" href="../index.html" class="truncate hover:underline min-w-0">ガジェット・アプリ</a>
+                                <span class="text-gray-300 flex-shrink-0">/</span>
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div id="breadcrumb-title" class="text-gray-500 truncate max-w-full leading-tight">【2025年最新】Tverの動画をMP4で保存する方法！スマホ/PC別に徹底解説</div>
+                        </div>
+                    </div>
+                </nav>
                 
                 <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden">
-                    <img id="article-image" src="https://placehold.co/1280x720/1DA1F2/FFFFFF?text=Tver+Save+MP4" alt="【2025年最新】Tverの動画をMP4で保存する方法！スマホ/PC別に徹底解説" class="w-full h-auto md:h-80 object-cover">
+                    <img id="article-image" src="{{imageLocal}}" alt="【2025年最新】Tverの動画をMP4で保存する方法！スマホ/PC別に徹底解説" class="w-full h-auto md:h-80 object-cover">
                     <div class="p-6 md:p-10">
                         <p id="article-category" class="text-base font-bold text-primary-600 dark:text-primary-400 mb-2">ガジェット・アプリ</p>
                         <h1 id="article-title" class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">【2025年最新】Tverの動画をMP4で保存する方法！スマホ/PC別に徹底解説</h1>
@@ -353,33 +374,33 @@ Chromeウェブストアから「Live Stream Downloader」を検索し、Chrome�
             <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">関連記事</h2>
             <div class="grid gap-6 md:grid-cols-3">
                 
-                    <a href="../articles_html/rakuten-spu-guide.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                    <a href="../articles_html/items.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
                         <div class="w-full aspect-video overflow-hidden">
-                            <img src="https://placehold.co/600x400/ef4444/ffffff?text=Rakuten" alt="楽天経済圏は本当にお得？SPUを攻略してポイントを最大化！" class="w-full h-full object-cover">
+                            <img src="https://placehold.co/1280x720/00DDFF/FFFFFF?text=Free+Samples" alt="【2025年最新】完全無料でコスメや食品をゲット！おすすめモニターサイト5選を徹底解説！当選確率を上げるコツも紹介" class="w-full h-full object-cover">
                         </div>
                         <div class="p-4">
-                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">楽天ポイント</p>
-                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">楽天経済圏は本当にお得？SPUを攻略してポイントを最大化！</h3>
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ポイ活・節約</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年最新】完全無料でコスメや食品をゲット！おすすめモニターサイト5選を徹底解説！当選確率を上げるコツも紹介</h3>
                         </div>
                     </a>
                 
-                    <a href="../articles_html/recommended-point-sites.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                    <a href="../articles_html/monst.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
                         <div class="w-full aspect-video overflow-hidden">
-                            <img src="https://placehold.co/600x400/2563eb/ffffff?text=PointSite" alt="【初心者必見】おすすめポイントサイト5選！安全な選び方とは" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-4">
-                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ポイントサイト</p>
-                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【初心者必見】おすすめポイントサイト5選！安全な選び方とは</h3>
-                        </div>
-                    </a>
-                
-                    <a href="../articles_html/rom.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
-                        <div class="w-full aspect-video overflow-hidden">
-                            <img src="https://placehold.co/1280x720/0000FF/FFFFFF?text=3DS+ROM+Extraction" alt="【2025年版】3DSのROM抽出/吸い出し完全ガイド！GodMode9の導入から使い方まで初心者向けに徹底解説" class="w-full h-full object-cover">
+                            <img src="https://placehold.co/1280x720/E6002D/FFFFFF?text=Monst+Orb" alt="【モンスト】オーブを完全無料でGET！学生でもできるポイ活でガチャを回しまくる裏ワザ" class="w-full h-full object-cover">
                         </div>
                         <div class="p-4">
                             <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ゲーム</p>
-                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年版】3DSのROM抽出/吸い出し完全ガイド！GodMode9の導入から使い方まで初心者向けに徹底解説</h3>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【モンスト】オーブを完全無料でGET！学生でもできるポイ活でガチャを回しまくる裏ワザ</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/paypay-points-5-tips.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="https://placehold.co/600x400/f59e0b/ffffff?text=PayPay" alt="【2025年版】PayPayポイントを効率的に貯める5つの方法" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">PayPay</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年版】PayPayポイントを効率的に貯める5つの方法</h3>
                         </div>
                     </a>
                 
@@ -478,6 +499,135 @@ Chromeウェブストアから「Live Stream Downloader」を検索し、Chrome�
                     console.warn('announcement load failed', e);
                 }
             })();
+
+            // ===== 左縦型スクロールプログレスのロジック =====
+            (function leftProgressInit() {
+                const mount = document.getElementById('left-progress-mount');
+                const checksContainer = document.getElementById('left-progress-checks');
+                const fillEl = document.getElementById('left-progress-fill');
+                if (!mount || !checksContainer || !fillEl) return;
+
+                // Collect TOC H2 links injected by generator
+                const tocNav = document.querySelector('nav[aria-label="目次"]');
+                let tocItems = [];
+                if (tocNav) {
+                    tocItems = Array.from(tocNav.querySelectorAll('a[href^="#"]'))
+                        .map(a => ({ id: a.getAttribute('href').slice(1), text: a.textContent.trim() }));
+                }
+
+                // If no TOC, hide the mount
+                if (!tocItems.length) {
+                    mount.classList.add('hidden');
+                    return;
+                }
+
+                // Build checkpoint dots
+                checksContainer.innerHTML = '';
+                const articleEl = document.getElementById('article-content');
+                const computePositions = () => {
+                    const positions = tocItems.map(item => {
+                        const el = document.getElementById(item.id);
+                        if (!el) return null;
+                        const rect = el.getBoundingClientRect();
+                        const docEl = document.documentElement;
+                        const scrollTop = window.scrollY || window.pageYOffset || document.body.scrollTop;
+                        const top = el.getBoundingClientRect().top + scrollTop; // page Y of element
+                        return { id: item.id, top };
+                    }).filter(Boolean);
+                    return positions;
+                };
+
+                const positions = computePositions();
+
+                // create dot elements positioned relative to the mount height
+                const createDots = () => {
+                    checksContainer.innerHTML = '';
+                    const mountRect = mount.getBoundingClientRect();
+                    const mountHeight = mountRect.height || (window.innerHeight - 24);
+                    const minTop = positions[0] ? positions[0].top : 0;
+                    const maxTop = positions[positions.length - 1] ? positions[positions.length - 1].top : (minTop + 1);
+
+                    positions.forEach((p, idx) => {
+                        const tRatio = maxTop > minTop ? (p.top - minTop) / (maxTop - minTop) : 0;
+                        const topPercent = Math.min(100, Math.max(0, tRatio * 100));
+                        const dot = document.createElement('div');
+                        dot.className = 'left-progress-dot absolute w-3 h-3 rounded-full bg-white dark:bg-gray-900 border-2 border-gray-300 dark:border-gray-700 shadow-sm';
+                        dot.style.left = '50%';
+                        dot.style.transform = 'translateX(-50%)';
+                        dot.style.top = `calc(${topPercent}% - 6px)`; // center the 12px-ish dot
+                        dot.setAttribute('data-id', p.id);
+                        dot.setAttribute('title', tocItems[idx] ? tocItems[idx].text : '');
+                        checksContainer.appendChild(dot);
+                    });
+                };
+
+                createDots();
+
+                const onScrollProgress = () => {
+                    const docEl = document.documentElement;
+                    const body = document.body;
+                    const scrollTop = window.scrollY || window.pageYOffset || body.scrollTop;
+                    const docHeight = Math.max(body.scrollHeight, docEl.scrollHeight);
+                    const winHeight = docEl.clientHeight;
+                    const maxScroll = docHeight - winHeight;
+                    const ratio = maxScroll > 0 ? Math.min(1, Math.max(0, scrollTop / maxScroll)) : 0;
+                    // fill height relative to mount
+                    fillEl.style.height = (ratio * 100) + '%';
+
+                    // update active dot (closest section at top of viewport)
+                    let activeId = null;
+                    for (let i = positions.length - 1; i >= 0; i--) {
+                        if (scrollTop + 80 >= positions[i].top) { // 80px offset to consider header
+                            activeId = positions[i].id;
+                            break;
+                        }
+                    }
+                    // highlight dots
+                    const dots = checksContainer.querySelectorAll('.left-progress-dot');
+                    dots.forEach(d => {
+                        if (d.getAttribute('data-id') === activeId) {
+                            d.classList.add('bg-primary-600', 'dark:bg-primary-500', 'scale-110');
+                            d.style.borderColor = '';
+                        } else {
+                            d.classList.remove('bg-primary-600', 'dark:bg-primary-500', 'scale-110');
+                            d.style.borderColor = '';
+                        }
+                    });
+                };
+
+                // Recompute positions on resize (and after images load)
+                let resizeTimer = null;
+                const onResize = () => {
+                    clearTimeout(resizeTimer);
+                    resizeTimer = setTimeout(() => {
+                        const newPos = computePositions();
+                        if (newPos.length) {
+                            // replace positions and recreate dots
+                            while (positions.length) positions.pop();
+                            newPos.forEach(p => positions.push(p));
+                            createDots();
+                            onScrollProgress();
+                        }
+                    }, 150);
+                };
+
+                window.addEventListener('scroll', onScrollProgress, { passive: true });
+                window.addEventListener('resize', onResize);
+                // initial update after small delay to allow layout
+                setTimeout(onScrollProgress, 120);
+                // also recompute after all images load
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        const newPos = computePositions();
+                        if (newPos.length) {
+                            while (positions.length) positions.pop();
+                            newPos.forEach(p => positions.push(p));
+                            createDots();
+                            onScrollProgress();
+                        }
+                    }, 100);
+                });
+            })();
             // ===== 読了プログレスバー =====
             const progressBar = document.getElementById('read-progress-bar');
             const updateProgress = () => {
@@ -543,6 +693,21 @@ Chromeウェブストアから「Live Stream Downloader」を検索し、Chrome�
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
+
+            // ===== Breadcrumb population =====
+            (function populateBreadcrumbs() {
+                const catEl = document.getElementById('article-category');
+                const titleEl = document.getElementById('article-title');
+                const bcCat = document.getElementById('breadcrumb-category');
+                const bcTitle = document.getElementById('breadcrumb-title');
+                if (!catEl || !titleEl || !bcCat || !bcTitle) return;
+                const category = catEl.textContent.trim();
+                const title = titleEl.textContent.trim();
+                bcCat.textContent = category;
+                // If you have a category slug mapping, you can replace href with ../category/<slug>.html
+                bcCat.href = '../index.html#blog';
+                bcTitle.textContent = title;
+            })();
         });
     </script>
 </body>
