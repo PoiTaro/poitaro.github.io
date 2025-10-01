@@ -9,7 +9,7 @@ const sitemapPath = path.join(__dirname, 'sitemap.xml');
 const articleTemplatePath = path.join(__dirname, 'article-template.html'); // テンプレートファイルのパス
 
 // GitHub PagesのURLに合わせて変更してください
-const baseUrl = 'https://PoiTaro.github.io/blog/';
+const baseUrl = 'https://PoiTaro.github.io/';
 
 // articles_html ディレクトリが存在しない場合は作成
 if (!fs.existsSync(articlesHtmlDir)) {
