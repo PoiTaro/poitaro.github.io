@@ -1,320 +1,327 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://PoiTaro.github.io/</loc>
-    <lastmod>2025-10-10T12:50:36.521Z</lastmod>
+    <lastmod>2025-10-15T04:49:25.322Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://PoiTaro.github.io/index.html</loc>
-    <lastmod>2025-10-10T12:50:36.521Z</lastmod>
+    <lastmod>2025-10-15T04:49:25.322Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
     <url>
         <loc>https://PoiTaro.github.io/contact.html</loc>
-        <lastmod>2025-10-10T12:50:36.521Z</lastmod>
+        <lastmod>2025-10-15T04:49:25.322Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.4</priority>
     </url>
 
   <url>
-    <loc>https://PoiTaro.github.io/articles_html/subwork.html</loc>
-    <lastmod>2025-10-10T12:50:33.840Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://PoiTaro.github.io/articles_html/swag.html</loc>
-    <lastmod>2025-10-10T12:50:33.840Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://PoiTaro.github.io/articles_html/toho.html</loc>
-    <lastmod>2025-10-10T12:50:33.840Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
     <loc>https://PoiTaro.github.io/articles_html/tumutumu.html</loc>
-    <lastmod>2025-10-10T12:50:33.840Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.793Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/vpn.html</loc>
-    <lastmod>2025-10-10T12:50:33.840Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.793Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/zoomcss.html</loc>
-    <lastmod>2025-10-10T12:50:33.840Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://PoiTaro.github.io/articles_html/invest.html</loc>
-    <lastmod>2025-10-10T12:50:33.839Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://PoiTaro.github.io/articles_html/items.html</loc>
-    <lastmod>2025-10-10T12:50:33.839Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://PoiTaro.github.io/articles_html/monst.html</loc>
-    <lastmod>2025-10-10T12:50:33.839Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.793Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/nintendo.html</loc>
-    <lastmod>2025-10-10T12:50:33.839Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.792Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/pasmo.html</loc>
-    <lastmod>2025-10-10T12:50:33.839Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.792Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/paycard.html</loc>
-    <lastmod>2025-10-10T12:50:33.839Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.792Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/paypay-points-5-tips.html</loc>
-    <lastmod>2025-10-10T12:50:33.839Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.792Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/phone.html</loc>
-    <lastmod>2025-10-10T12:50:33.839Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.792Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/pokepoke.html</loc>
-    <lastmod>2025-10-10T12:50:33.839Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.792Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/policy.html</loc>
-    <lastmod>2025-10-10T12:50:33.839Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.792Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/rakuten-spu-guide.html</loc>
-    <lastmod>2025-10-10T12:50:33.839Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.792Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/recommended-point-sites.html</loc>
-    <lastmod>2025-10-10T12:50:33.839Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.792Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/ring.html</loc>
-    <lastmod>2025-10-10T12:50:33.839Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.792Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/rom.html</loc>
-    <lastmod>2025-10-10T12:50:33.839Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.792Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/studentAI.html</loc>
-    <lastmod>2025-10-10T12:50:33.839Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.792Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://PoiTaro.github.io/articles_html/Minecraft.html</loc>
-    <lastmod>2025-10-10T12:50:33.838Z</lastmod>
+    <loc>https://PoiTaro.github.io/articles_html/subwork.html</loc>
+    <lastmod>2025-10-15T04:49:22.792Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://PoiTaro.github.io/articles_html/PayGCard.html</loc>
-    <lastmod>2025-10-10T12:50:33.838Z</lastmod>
+    <loc>https://PoiTaro.github.io/articles_html/swag.html</loc>
+    <lastmod>2025-10-15T04:49:22.792Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://PoiTaro.github.io/articles_html/PayPay2.html</loc>
-    <lastmod>2025-10-10T12:50:33.838Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://PoiTaro.github.io/articles_html/Point-LINE.html</loc>
-    <lastmod>2025-10-10T12:50:33.838Z</lastmod>
+    <loc>https://PoiTaro.github.io/articles_html/toho.html</loc>
+    <lastmod>2025-10-15T04:49:22.792Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/Raku.html</loc>
-    <lastmod>2025-10-10T12:50:33.838Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.791Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/TV.html</loc>
-    <lastmod>2025-10-10T12:50:33.838Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.791Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/Tver.html</loc>
-    <lastmod>2025-10-10T12:50:33.838Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.791Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/VHS.html</loc>
-    <lastmod>2025-10-10T12:50:33.838Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.791Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/Watch.html</loc>
-    <lastmod>2025-10-10T12:50:33.838Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.791Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/a8.html</loc>
-    <lastmod>2025-10-10T12:50:33.838Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.791Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/amazon.html</loc>
-    <lastmod>2025-10-10T12:50:33.838Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.791Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/baito.html</loc>
-    <lastmod>2025-10-10T12:50:33.838Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.791Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/fgo.html</loc>
-    <lastmod>2025-10-10T12:50:33.838Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.791Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/fridayTV.html</loc>
-    <lastmod>2025-10-10T12:50:33.838Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.791Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://PoiTaro.github.io/articles_html/invest.html</loc>
+    <lastmod>2025-10-15T04:49:22.791Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://PoiTaro.github.io/articles_html/items.html</loc>
+    <lastmod>2025-10-15T04:49:22.791Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://PoiTaro.github.io/articles_html/monst.html</loc>
+    <lastmod>2025-10-15T04:49:22.791Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/3DS.html</loc>
-    <lastmod>2025-10-10T12:50:33.837Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.790Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/AIImg.html</loc>
-    <lastmod>2025-10-10T12:50:33.837Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.790Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://PoiTaro.github.io/articles_html/DB.html</loc>
+    <lastmod>2025-10-15T04:49:22.790Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/Dcard.html</loc>
-    <lastmod>2025-10-10T12:50:33.837Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.790Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/Direx.html</loc>
-    <lastmod>2025-10-10T12:50:33.837Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.790Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/Dpay.html</loc>
-    <lastmod>2025-10-10T12:50:33.837Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.790Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/ForeignPoint.html</loc>
-    <lastmod>2025-10-10T12:50:33.837Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.790Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/JQ.html</loc>
-    <lastmod>2025-10-10T12:50:33.837Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.790Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://PoiTaro.github.io/articles_html/LYP.html</loc>
-    <lastmod>2025-10-10T12:50:33.837Z</lastmod>
+    <lastmod>2025-10-15T04:49:22.790Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://PoiTaro.github.io/articles_html/Minecraft.html</loc>
+    <lastmod>2025-10-15T04:49:22.790Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://PoiTaro.github.io/articles_html/PayGCard.html</loc>
+    <lastmod>2025-10-15T04:49:22.790Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://PoiTaro.github.io/articles_html/PayPay2.html</loc>
+    <lastmod>2025-10-15T04:49:22.790Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://PoiTaro.github.io/articles_html/Point-LINE.html</loc>
+    <lastmod>2025-10-15T04:49:22.790Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
