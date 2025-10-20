@@ -3,15 +3,17 @@
   "version": "1.0.0",
   "main": "generate-posts.js",
   "scripts": {
-    "build": "node generate-posts.js",
+    "build": "node scripts/generate-thumbnails.js && node generate-posts.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generate": "node generate-posts.js"
+    "generate": "node generate-posts.js",
+    "thumbnails": "node scripts/generate-thumbnails.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "marked": "^16.2.0"
+    "marked": "^16.2.0",
+    "puppeteer": "^22.15.0"
   }
 }
