@@ -1,0 +1,41 @@
+name: Build and Generate Articles
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'articles/**'
+      - 'generate-posts.js'
+      - 'scripts/generate-thumbnails.js'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'article-template.html'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (generate thumbnails and articles)
+        run: npm run build
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'false'
+
+      # このWorkflowは検証専用（自動コミットなし）。実デプロイは deploy-gh-pages.yml で実施します。

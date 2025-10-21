@@ -97,15 +97,32 @@ const rawPosts = articleFiles.map(file => {
         tagsHtml = '<!-- No tags, hide section -->';
     }
 
-        // Determine image fields: prefer frontmatter keys (thumbnail, image, image_url) as-provided.
-        const fmImage = attributes.thumbnail || attributes.image || attributes.image_url || attributes.imageUrl || attributes.img || null;
-        // image: used in templates directly (must be a usable URL or path as provided in frontmatter)
-        const imageValue = fmImage || 'https://placehold.co/600x400/gray/FFFFFF?text=No+Image';
-        // imageLocal: preserve relative/local path if frontmatter included a relative path starting with ../ or ./ or /thumbnails
-        const isRelative = fmImage && (/^(\.|\.\.|\/|thumbnails|\.\/|\.\.\/)/.test(fmImage));
-        const imageLocalValue = isRelative ? fmImage : imageValue;
-        // imageAbsolute: if the provided value looks absolute (starts with http), keep it; otherwise, prefix with baseUrl
-        const imageAbsoluteValue = fmImage && /^https?:\/\//.test(fmImage) ? fmImage : (isRelative ? `${baseUrl}${fmImage.replace(/^\.\/?/, '')}` : imageValue);
+    // Determine image fields
+    const fmImage = attributes.thumbnail || attributes.image || attributes.image_url || attributes.imageUrl || attributes.img || null;
+    const generatedThumbRel = `thumbnails/${slug}.png`;
+    const generatedThumbExists = (() => { try { return fs.existsSync(path.join(__dirname, generatedThumbRel)); } catch { return false; } })();
+    const generatedThumbAbs = generatedThumbExists ? `${baseUrl}${generatedThumbRel}` : null;
+
+    // Prefer generated thumbnail for hero image; fallback to frontmatter image; finally placeholder
+    let imageValue;
+    let imageLocalValue;
+    let imageAbsoluteValue;
+    if (generatedThumbExists) {
+        imageValue = `../${generatedThumbRel}`; // relative from articles_html/* to thumbnails/*
+        imageLocalValue = imageValue;
+        imageAbsoluteValue = generatedThumbAbs;
+    } else if (fmImage) {
+        const isRelative = /^([.]{1,2}\/|\/|thumbnails|\.\/|\.\.\/)/.test(fmImage);
+        imageValue = fmImage;
+        imageLocalValue = fmImage;
+        imageAbsoluteValue = /^https?:\/\//.test(fmImage)
+            ? fmImage
+            : `${baseUrl}${fmImage.replace(/^\.\/?/, '')}`;
+    } else {
+        imageValue = 'https://placehold.co/1200x630/111827/FFFFFF?text=PoiTaro';
+        imageLocalValue = imageValue;
+        imageAbsoluteValue = imageValue;
+    }
 
         return {
         slug: slug, // スラッグを追加
@@ -118,6 +135,7 @@ const rawPosts = articleFiles.map(file => {
     image: imageValue,
     imageLocal: imageLocalValue,
     imageAbsolute: imageAbsoluteValue,
+    ogImage: generatedThumbAbs || imageAbsoluteValue,
         description: attributes.description || '記事の説明がありません。',
         tags: attributes.tags || [],
             content: htmlContent, // Add the full HTML content
@@ -205,12 +223,13 @@ rawPosts.forEach(current => {
         const relatedHtml = buildRelatedHtml(related);
     const tocHtml = buildTocHtml(current.toc);
 
-        let finalHtml = articleTemplate
+    let finalHtml = articleTemplate
                 .replace(/{{title}}/g, current.title)
                 .replace(/{{date}}/g, current.date)
                 .replace(/{{category}}/g, current.category)
                 .replace(/{{description}}/g, current.description)
                 .replace(/{{image}}/g, current.image)
+        .replace(/{{ogImage}}/g, current.ogImage || current.imageAbsolute)
                 .replace(/{{url}}/g, current.articleAbsoluteUrl)
                 .replace(/{{alt_title}}/g, current.title)
                 .replace(/{{categoryColor}}/g, current.categoryColor)
