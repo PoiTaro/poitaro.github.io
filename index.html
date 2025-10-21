@@ -510,7 +510,8 @@
 
             async function loadPosts() {
                 try {
-                    const response = await fetch('posts.json');
+                    // Avoid stale cache on GitHub Pages
+                    const response = await fetch('posts.json?v=' + Date.now(), { cache: 'no-store' });
                     allPosts = await response.json();
                     // 作成日（frontmatter の date）降順でソート
                     allPosts.sort((a, b) => {
@@ -529,10 +530,13 @@
                         postElement.dataset.title = (post.title || '').toLowerCase();
                         postElement.dataset.description = (post.description || '').toLowerCase();
                         postElement.dataset.tags = (post.tags || []).join(' ').toLowerCase();
+                        const imgSrcBase = post.ogImage || (post.slug ? `thumbnails/${post.slug}.png` : '') || post.image;
+                        const cacheBuster = post.updatedAt ? `?v=${encodeURIComponent(post.updatedAt)}` : '';
+                        const imgSrc = imgSrcBase ? (imgSrcBase.includes('?') ? imgSrcBase : (imgSrcBase + cacheBuster)) : '';
                         postElement.innerHTML = `
                             <a href="${post.url}" class="cursor-pointer">
                                 <div class="w-full aspect-video overflow-hidden">
-                                    <img src="${post.ogImage || post.image}" alt="ブログ記事の画像" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                    <img src="${imgSrc}" alt="ブログ記事の画像" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                                 </div>
                                 <div class="p-6">
                                     <p class="text-sm text-primary-600 dark:text-primary-400 mb-2">${post.category}</p>
@@ -606,10 +610,13 @@
                             postElement.dataset.title = (post.title || '').toLowerCase();
                             postElement.dataset.description = (post.description || '').toLowerCase();
                             postElement.dataset.tags = (post.tags || []).join(' ').toLowerCase();
+                            const imgSrcBase = post.ogImage || (post.slug ? `thumbnails/${post.slug}.png` : '') || post.image;
+                            const cacheBuster = post.updatedAt ? `?v=${encodeURIComponent(post.updatedAt)}` : '';
+                            const imgSrc = imgSrcBase ? (imgSrcBase.includes('?') ? imgSrcBase : (imgSrcBase + cacheBuster)) : '';
                             postElement.innerHTML = `
                                 <a href="${post.url}" class="cursor-pointer">
                                     <div class="w-full aspect-video overflow-hidden">
-                                        <img src="${post.ogImage || post.image}" alt="ブログ記事の画像" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <img src="${imgSrc}" alt="ブログ記事の画像" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                                     </div>
                                     <div class="p-6">
                                         <p class="text-sm text-primary-600 dark:text-primary-400 mb-2">${post.category}</p>
