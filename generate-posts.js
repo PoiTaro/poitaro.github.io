@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const { marked } = require('marked'); // markedをインポート
+// marked is an ESM-only package; import it dynamically inside an async wrapper below
+let marked;
 
 const articlesDir = path.join(__dirname, 'articles');
 const articlesHtmlDir = path.join(__dirname, 'articles_html'); // 新しい出力ディレクトリ
@@ -11,6 +12,11 @@ const sitemapPath = path.join(__dirname, 'sitemap.xml');
 // on GitHub Pages / when external services (like Search Console) expect the other case.
 const sitemapPathUpper = path.join(__dirname, 'Sitemap.xml');
 const articleTemplatePath = path.join(__dirname, 'article-template.html'); // テンプレートファイルのパス
+
+// Wrap the main script in an async IIFE so we can dynamically import ESM modules
+(async () => {
+    ({ marked } = await import('marked'));
+
 
 // GitHub PagesのURLに合わせて変更してください
 const baseUrl = 'https://PoiTaro.github.io/';
@@ -299,3 +305,8 @@ try {
 }
 
 console.log('Successfully generated sitemap.xml');
+
+})().catch(err => {
+    console.error('Fatal error in generate-posts.js:', err);
+    process.exit(1);
+});
