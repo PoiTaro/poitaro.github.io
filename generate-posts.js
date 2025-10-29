@@ -6,6 +6,10 @@ const articlesDir = path.join(__dirname, 'articles');
 const articlesHtmlDir = path.join(__dirname, 'articles_html'); // 新しい出力ディレクトリ
 const postsJsonPath = path.join(__dirname, 'posts.json');
 const sitemapPath = path.join(__dirname, 'sitemap.xml');
+// Some tools or previous registrations may use a capitalized filename ("Sitemap.xml").
+// Create an uppercase-variant path so we can write both and avoid case-sensitivity issues
+// on GitHub Pages / when external services (like Search Console) expect the other case.
+const sitemapPathUpper = path.join(__dirname, 'Sitemap.xml');
 const articleTemplatePath = path.join(__dirname, 'article-template.html'); // テンプレートファイルのパス
 
 // GitHub PagesのURLに合わせて変更してください
@@ -285,5 +289,13 @@ ${rawPosts.map(post => `
 `.trim();
 
 fs.writeFileSync(sitemapPath, sitemapContent);
+// Also write an uppercase variant to cover tooling or registration that used a different case
+try {
+    fs.writeFileSync(sitemapPathUpper, sitemapContent);
+    console.log('Also wrote Sitemap.xml (uppercase) for compatibility.');
+} catch (e) {
+    // Non-fatal: log and continue
+    console.warn('Failed to write uppercase Sitemap.xml (this is non-fatal):', e && e.message);
+}
 
 console.log('Successfully generated sitemap.xml');
