@@ -1,0 +1,12 @@
+title: PoiTaro
+url: "https://PoiTaro.github.io"
+plugins:
+  - jekyll-sitemap
+
+# Exclude common non-site files from the Jekyll build
+exclude:
+  - node_modules
+  - .github
+  - scripts
+  - thumbnails
+  - articles
