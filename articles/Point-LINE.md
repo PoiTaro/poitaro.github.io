@@ -1,7 +1,7 @@
 ---
 title: "【2025年最新裏ワザ】LINEポイントを裏技級に超簡単に貯める方法！学生へもオススメ！"
 date: "2025-08-19"
-image: "https://PoiTaro.github.io/blog/thumbnails/Poikatu.png"
+image: "https://poitaro.com/blog/thumbnails/Poikatu.png"
 category: "LINE"
 categoryColor: "#79e141"
 description: "LINEポイントをポイ活を利用してお金をかけずに貯める方法をご紹介します。"
@@ -22,7 +22,7 @@ LINEアプリ内での超簡単なポイントの貯め方としては、ミッ�
 
 **ポイ活の基本知識**
 
-![画像の説明](https://PoiTaro.github.io/blog/thumbnails/Poikatu.png)
+![画像の説明](https://poitaro.com/blog/thumbnails/Poikatu.png)
 
 
 ポイ活は、ポイントサイトでの広告利用や普段のキャッシュレス決済を利用してポイントを貯め、お得に交換する活動。また**アンケート、レシート撮影、歩数計**などでもポイントを貯められる。貯めたポイントは、直接LINEポイントへ交換できたり、電子マネー(PayPay等)へと交換して、電子マネーでLINEポイントを購入できたりします。
@@ -32,7 +32,7 @@ LINEアプリ内での超簡単なポイントの貯め方としては、ミッ�
 ## おすすめポイ活サイト1
  **Moppy(モッピー)の特徴** 
 
-![画像の説明](https://PoiTaro.github.io/blog/thumbnails/moppy.jpg)
+![画像の説明](https://poitaro.com/blog/thumbnails/moppy.jpg)
 
 
 モッピーは、1000万人以上の会員を突破している超人気ポイントサイトです。
@@ -43,7 +43,7 @@ LINEアプリ内での超簡単なポイントの貯め方としては、ミッ�
  
 
 **ワラウの特徴**
-![画像の説明](https://PoiTaro.github.io/blog/thumbnails/warau.svg)
+![画像の説明](https://poitaro.com/blog/thumbnails/warau.svg)
 
 
 
@@ -53,7 +53,7 @@ LINEアプリ内での超簡単なポイントの貯め方としては、ミッ�
 ## おすすめポイ活サイト3
 **クラシルリワードの特徴**
 
-![画像の説明](https://PoiTaro.github.io/blog/thumbnails/kurasiru.jpg)
+![画像の説明](https://poitaro.com/blog/thumbnails/kurasiru.jpg)
 
  
 **クラシルリワード**は、普段の生活でポイントをGETできるサイトです。アプリ内に歩数計が内蔵されており、**歩けば歩くほど、歩数をポイントへ交換できます！**そして、アンケートに回答することや、普段のお買い物のレシート撮影、チラシを見る、アプリインストールなどで超簡単にポイントを貯められます。

@@ -1,7 +1,7 @@
 ---
 title: "【必見】ポイントを貯めてオトクなお買い物！ダイレックスEdyカードのメリットと使い方まとめ！"
 date: "2025-09-05"
-image: "https://poitaro.github.io/blog/thumbnails/EdyCard.png"
+image: "https://poitaro.com/blog/thumbnails/EdyCard.png"
 category: "ダイレックス,ポイ活,楽天Edy"
 categoryColor: ""
 description: "ダイレックスEdyカードを使ってオトクなお買い物をはじめましょう。"

@@ -1,7 +1,7 @@
 ---
 title: "プライバシーポリシー"
 date: "2025-07-25"
-image: "https://PoiTaro.github.io/blog/thumbnails/001.png"
+image: "https://poitaro.com/blog/thumbnails/001.png"
 category: "プライバシーポリシー"
 description: "プライバシーポリシーです。"
 ---

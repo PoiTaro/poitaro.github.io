@@ -1,7 +1,7 @@
 ---
 title: "「大分県で金曜ロードショーが見られない理由と解決策｜視聴方法まとめ」"
 date: "2025-08-30"
-image: "https://poitaro.github.io/blog/thumbnails/047C3527-B1EC-4C3A-A627-B50F09115B7C.png"
+image: "https://poitaro.com/blog/thumbnails/047C3527-B1EC-4C3A-A627-B50F09115B7C.png"
 category: "TV"
 categoryColor: ""
 description: "大分県ではどうして金曜ロードショーが映らないのか？詳しく解説します。"
