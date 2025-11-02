@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta name="google-adsense-account" content="ca-pub-2213699949048480">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【マイクラ】マルチサーバーの立て方ならコレ！初心者でも5分で設定できる「ロリポップ！ for Gamers」を徹底解説 | ポイ活Pay太郎</title>
+    <link rel="icon" href="https://poitaro.com/blog/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://poitaro.com/blog/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://poitaro.com/blog/favicon.ico">
+    <link rel="icon" sizes="192x192" href="https://poitaro.com/blog/favicon.ico">
+    <meta name="msapplication-TileImage" content="https://poitaro.com/blog/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="description" content="マイクラで友達とマルチプレイしたいけど、サーバーの立て方が分からない…そんな悩みを解決！専門知識不要で誰でも簡単にマルチサーバーを構築できる「ロリポップ！ for Gamers」のメリットや使い方、料金プランを徹底的に解説します。">
+    <meta property="og:title" content="【マイクラ】マルチサーバーの立て方ならコレ！初心者でも5分で設定できる「ロリポップ！ for Gamers」を徹底解説">
+    <meta property="og:description" content="マイクラで友達とマルチプレイしたいけど、サーバーの立て方が分からない…そんな悩みを解決！専門知識不要で誰でも簡単にマルチサーバーを構築できる「ロリポップ！ for Gamers」のメリットや使い方、料金プランを徹底的に解説します。">
+    <meta property="og:image" content="https://poitaro.com/thumbnails/Minecraft.png">
+    <meta property="og:url" content="https://poitaro.com/articles_html/Minecraft.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://poitaro.com/thumbnails/Minecraft.png">
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
+     crossorigin="anonymous"></script>
+    
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJJCP2Q6SC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WJJCP2Q6SC');
+        </script>
+
+    <!-- Tailwind CSS with Typography Plugin -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        // ダークモード設定
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': {
+                            '50': '#fffbeb',
+                            '100': '#fef3c7',
+                            '200': '#fde68a',
+                            '300': '#fcd34d',
+                            '400': '#fbbf24',
+                            '500': '#f59e0b',
+                            '600': '#d97706',
+                            '700': '#b45309',
+                            '800': '#92400e',
+                            '900': '#78350f',
+                            '950': '#451a03',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* スムーズなスクロールのためのCSS */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* ダークモードでの背景グラデーション */
+        .dark .dark-gradient {
+            background: radial-gradient(circle, rgba(180,83,9,0.15) 0%, rgba(17,24,39,0) 60%);
+        }
+        /* Typographyプラグインのスタイルを調整 */
+        .prose {
+            --tw-prose-body: #374151;
+            --tw-prose-headings: #111827;
+            --tw-prose-lead: #4b5563;
+            --tw-prose-links: #d97706;
+            --tw-prose-bold: #111827;
+            --tw-prose-counters: #6b7280;
+            --tw-prose-bullets: #d97706;
+            --tw-prose-hr: #e5e7eb;
+            --tw-prose-quotes: #111827;
+            --tw-prose-quote-borders: #f59e0b;
+            --tw-prose-captions: #6b7280;
+            --tw-prose-code: #111827;
+            --tw-prose-pre-code: #e5e7eb;
+            --tw-prose-pre-bg: #1f2937;
+            --tw-prose-th-borders: #d1d5db;
+            --tw-prose-td-borders: #e5e7eb;
+            --tw-prose-invert-body: #d1d5db;
+            --tw-prose-invert-headings: #fff;
+            --tw-prose-invert-lead: #9ca3af;
+            --tw-prose-invert-links: #fbbf24;
+            --tw-prose-invert-bold: #fff;
+            --tw-prose-invert-counters: #9ca3af;
+            --tw-prose-invert-bullets: #f59e0b;
+            --tw-prose-invert-hr: #374151;
+            --tw-prose-invert-quotes: #f3f4f6;
+            --tw-prose-invert-quote-borders: #d97706;
+            --tw-prose-invert-captions: #9ca3af;
+            --tw-prose-invert-code: #fff;
+            --tw-prose-invert-pre-code: #d1d5db;
+            --tw-prose-invert-pre-bg: #111827;
+            --tw-prose-invert-th-borders: #4b5563;
+            --tw-prose-invert-td-borders: #374151;
+        }
+        .prose h2 {
+            border-bottom: 2px solid #fde68a;
+            padding-bottom: 0.5rem;
+        }
+        .dark .prose h2 {
+            border-bottom-color: #78350f;
+        }
+        .prose blockquote {
+            font-style: normal;
+            border-left-width: 4px;
+        }
+        /* カテゴリフィルターのアクティブスタイル */
+        .category-btn.active {
+            background-color: #f59e0b;
+            color: white;
+        }
+        .dark .category-btn.active {
+            background-color: #fbbf24;
+            color: #451a03;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 font-sans text-gray-700 dark:text-gray-300 antialiased">
+
+    <!-- ===== サイト共通アナウンス（期間限定） ===== -->
+    <div id="announcement-mount" class="fixed top-0 inset-x-0 z-[110] pointer-events-none">
+        <!-- announcement.html がここに挿入されます -->
+    </div>
+
+    <!-- ===== 読了プログレスバー ===== -->
+    <div id="read-progress" class="fixed top-0 left-0 right-0 z-[100] h-1 bg-transparent">
+        <div id="read-progress-bar" class="h-full w-0 bg-primary-600 dark:bg-primary-500 transition-[width] duration-150 ease-out"></div>
+    </div>
+
+    <!-- ===== ヘッダー ===== -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- ロゴ -->
+            <a href="../index.html" class="flex items-center space-x-2 main-logo">
+                 <svg class="w-8 h-8 text-primary-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+                <span class="text-2xl font-bold text-gray-900 dark:text-white">ポイ活Pay太郎</span>
+            </a>
+
+            <!-- ナビゲーション (デスクトップ) -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="../index.html#hero" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">ホーム</a>
+                <a href="../index.html#blog" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">新着記事</a>
+                <a href="../index.html#features" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">ポイ活とは</a>
+                <a href="policy.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">プライバシーポリシー</a>
+                <a href="../contact.html" class="contact-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">お問い合わせ</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <!-- ダークモード切り替え -->
+                <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 6.464l.707.707a1 1 0 001.414-1.414l-.707-.707zM3 11a1 1 0 100-2H2a1 1 0 100 2h1zM6.464 16.364l-.707.707a1 1 0 001.414 1.414l.707-.707a1 1 0 00-1.414-1.414z"></path></svg>
+                </button>
+
+                <!-- モバイルメニューボタン -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- モバイルメニュー -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <nav class="px-6 pt-2 pb-4 border-t border-gray-200 dark:border-gray-800">
+                <a href="../index.html#hero" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ホーム</a>
+                <a href="../index.html#blog" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">新着記事</a>
+                <a href="../index.html#features" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ポイ活とは</a>
+                <a href="../contact.html" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
+                <a href="policy.html" class="privacy-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">プライバシーポリシー</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== 記事ページ ===== -->
+    <div id="article-page" class="page-container bg-gray-50 dark:bg-gray-950">
+        <div class="container mx-auto px-6 pt-24 pb-16">
+            <div class="max-w-3xl mx-auto">
+                <a href="../index.html" class="back-to-main mb-8 inline-flex items-center text-primary-600 dark:text-primary-400 hover:underline font-semibold">
+                    <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                    記事一覧へ戻る
+                </a>
+                <!-- Breadcrumbs: left (Home/Category) stays on first line; title rendered on second line -->
+                <nav aria-label="Breadcrumb" class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+                    <div class="flex flex-col gap-1">
+                        <div class="w-full flex items-center gap-2 overflow-hidden">
+                            <div class="flex items-center gap-2 min-w-0">
+                                <a href="../index.html" class="flex-shrink-0 hover:underline">ホーム</a>
+                                <span class="text-gray-300 flex-shrink-0">/</span>
+                                <a id="breadcrumb-category" href="../index.html" class="truncate hover:underline min-w-0">ゲーム</a>
+                                <span class="text-gray-300 flex-shrink-0">/</span>
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div id="breadcrumb-title" class="text-gray-500 truncate max-w-full leading-tight">【マイクラ】マルチサーバーの立て方ならコレ！初心者でも5分で設定できる「ロリポップ！ for Gamers」を徹底解説</div>
+                        </div>
+                    </div>
+                </nav>
+                
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden">
+                    <img id="article-image" src="../thumbnails/Minecraft.png" alt="【マイクラ】マルチサーバーの立て方ならコレ！初心者でも5分で設定できる「ロリポップ！ for Gamers」を徹底解説" class="w-full h-auto md:h-80 object-cover">
+                    <div class="p-6 md:p-10">
+                        <p id="article-category" class="text-base font-bold text-primary-600 dark:text-primary-400 mb-2">ゲーム</p>
+                        <h1 id="article-title" class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">【マイクラ】マルチサーバーの立て方ならコレ！初心者でも5分で設定できる「ロリポップ！ for Gamers」を徹底解説</h1>
+                        <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                            <span id="article-date" class="ml-2">2025-10-06</span>
+                        </div>
+
+                        
+        <nav aria-label="目次" class="mb-8">
+            <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-800/50 backdrop-blur px-5 py-4">
+                <div class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+                    目次
+                </div>
+                <ul class="space-y-1">
+                    
+                        <li>
+                            <a href="#そもそもロリポップ-for-gamersって何" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                そもそも「ロリポップ！ for Gamers」って何？
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#ここがすごいロリポップ-for-gamers4つのメリット" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                ここがすごい！「ロリポップ！ for Gamers」4つのメリット
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#対応している人気ゲーム一覧" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                対応している人気ゲーム一覧
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#デメリットは知っておきたい注意点" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                デメリットは？知っておきたい注意点
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#いますぐ始めようロリポップ-for-gamersかんたんセットアップ" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                いますぐ始めよう！「ロリポップ！ for Gamers」かんたんセットアップ
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#まとめ" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                まとめ
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+
+                        <article id="article-content" class="prose lg:prose-xl max-w-none dark:prose-invert">
+                           <p>「マイクラで友達と一緒に遊びたいけど、サーバーの立て方が難しそう…」
+「24時間いつでも遊べるワールドが欲しいけど、設定とかよくわからない…」</p>
+<p>そんなふうに思っていませんか？友達と集まって、同じワールドで冒険したり建築したりするのって、マイクラの最高の楽しみ方の一つですよね。でも、いざ自分でサーバーを立てようとすると、専門的な知識が必要だったりして、挫折してしまう人も少なくありません。</p>
+<p>でも、安心してください！実は、パソコンやネットワークの知識が全くなくても、<strong>誰でも超カンタンに自分だけのマルチサーバーを始められる方法</strong>があるんです。</p>
+<p>それが、今回僕が徹底的に紹介する「<strong>ロリポップ！ for Gamers</strong>」というサービスです。これを使えば、面倒な設定は一切なし。あっという間に、あなたと友達だけの最高の遊び場が手に入ります。</p>
+<p>この記事では、「ロリポップ！ for Gamers」のすごいところや具体的な始め方、知っておきたい注意点まで、どこよりも分かりやすく解説していきます。この記事を読み終わる頃には、きっとあなたもマルチプレイの世界に飛び込みたくなっているはずですよ！</p>
+<h2 id="そもそもロリポップ-for-gamersって何">そもそも「ロリポップ！ for Gamers」って何？</h2>
+<p>「ロリポップ！ for Gamers」は、レンタルサーバーで有名な「ロリポップ！」が提供する、ゲーム専用のマルチサーバーレンタルサービスです。難しくて面倒なサーバー構築や設定作業をすべてすっ飛ばして、誰でもすぐにマルチプレイ環境を手に入れられるのが最大の魅力です。</p>
+<p>これまでサーバーを立てるには、専門知識を学んだり、複雑なコマンドを打ち込んだりする必要がありました。でも、「ロリポップ！ for Gamers」なら、ウェブサイト上の分かりやすい画面（マネージャー画面）からポチポチっと操作するだけ。まるでスマホアプリを操作するような感覚で、サーバーの起動や設定変更ができてしまうんです。</p>
+<p>マイクラはもちろん、最近大人気の「パルワールド」や「ARK」「Rust」といった他の人気ゲームにも対応しているので、遊びたいゲームに合わせて使えるのも嬉しいポイントですね。</p>
+<h2 id="ここがすごいロリポップ-for-gamers4つのメリット">ここがすごい！「ロリポップ！ for Gamers」4つのメリット</h2>
+<p>数あるサーバーサービスの中でも、なぜ僕が「ロリポップ！ for Gamers」を特におすすめするのか。その理由は、初心者にとって嬉しいメリットがたくさんあるからです。</p>
+<h3>1. 専門知識は一切不要！ブラウザから簡単操作</h3>
+<p>最大のメリットは、なんといってもその「簡単さ」です。サーバーのバージョンアップや設定ファイルの変更、さらにはMODのインストールといった、本来なら専門知識が必要な作業も、すべてブラウザ上の管理画面から直感的に行えます。「サーバーの知識が無くても大丈夫」という言葉通り、パソコンが苦手な人でも安心して始められますよ。</p>
+<h3>2. 圧倒的なコストパフォーマンス</h3>
+<p>「でも、こういうサービスってお高いんでしょ？」と思うかもしれません。いえいえ、そんなことはありません。「ロリポップ！ for Gamers」は、高性能なサーバーを維持しながらも、非常にリーズナブルな価格で提供されています。契約も1ヶ月単位でできるので、「とりあえず夏休みだけ友達と遊びたい」といった短期間の利用もOK。無駄な出費を抑えて、気軽に始められるのは大きな魅力です。</p>
+<h3>3. 24時間365日、いつでもワールドは動き続ける</h3>
+<p>自分でパソコンをサーバーにすると、自分がパソコンをシャットダウンしている間は、友達はワールドに入って遊ぶことができません。でも、「ロリポップ！ for Gamers」なら、サーバーは24時間稼働し続けます。つまり、あなたが寝ている間や学校に行っている間でも、友達はいつでもワールドに入って遊ぶことができるんです。これぞマルチサーバーの醍醐味ですよね！</p>
+<h3>4. 公式Discordでゲーム仲間が見つかる！</h3>
+<p>「ロリポップ！ for Gamers」は、ユーザーが集まる公式のDiscordサーバーを運営しています。ここでは、サーバーの情報を交換したり、分からないことを質問したりできるだけでなく、一緒に遊ぶゲーム仲間を見つけることもできます。「一緒にマイクラやる友達がいない…」という人でも、ここに参加すれば新しい仲間と出会えるチャンスが広がりますよ。</p>
+<h2 id="対応している人気ゲーム一覧">対応している人気ゲーム一覧</h2>
+<p>「ロリポップ！ for Gamers」は、マイクラ以外にも様々な人気ゲームに対応しています。友達と次に遊ぶゲームを探すのも楽しいかもしれませんね！</p>
+<table>
+<thead>
+<tr>
+<th align="left">ゲームタイトル</th>
+<th align="left">対応状況</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Minecraft（統合版）</strong></td>
+<td align="left">✅ 対応</td>
+</tr>
+<tr>
+<td align="left"><strong>Minecraft（Java版）</strong></td>
+<td align="left">✅ 対応</td>
+</tr>
+<tr>
+<td align="left"><strong>パルワールド</strong></td>
+<td align="left">✅ 対応</td>
+</tr>
+<tr>
+<td align="left"><strong>ARK：Survival Evolved</strong></td>
+<td align="left">✅ 対応</td>
+</tr>
+<tr>
+<td align="left"><strong>Rust</strong></td>
+<td align="left">✅ 対応</td>
+</tr>
+</tbody></table>
+<h2 id="デメリットは知っておきたい注意点">デメリットは？知っておきたい注意点</h2>
+<p>もちろん、良いところばかりではありません。契約する前に知っておいてほしい注意点も正直にお伝えします。</p>
+<ul>
+<li><p><strong>当然ながら費用がかかる</strong>
+  無料でサーバーを立てる方法も存在しますが、それには高度な知識と手間、そして安定したネット環境やPCスペックが必要です。手軽さと安定性を得るための月額料金、と割り切れるかどうかがポイントになります。ただ、その価値は十分にあると僕は思います。</p>
+</li>
+<li><p><strong>プランによって性能が異なる</strong>
+  大人数で遊んだり、重たいMODをたくさん入れたりする場合は、それなりのスペックのプランを選ぶ必要があります。最初は一番安いプランから始めて、もし動作が重いと感じたら、上のプランに変更するのがおすすめです。</p>
+</li>
+</ul>
+<h2 id="いますぐ始めようロリポップ-for-gamersかんたんセットアップ">いますぐ始めよう！「ロリポップ！ for Gamers」かんたんセットアップ</h2>
+<p>どうでしょう？だんだん自分だけのサーバーが欲しくなってきませんか？
+「ロリポップ！ for Gamers」なら、思い立ったその日にマルチプレイを始められます。</p>
+<p>設定は本当に簡単。下のリンクから公式サイトにアクセスして、画面の指示に従って申し込むだけ。面倒な手続きや難しい設定は一切ありません。</p>
+<p>「難しそう…」という不安はもう捨てて、最高のマルチプレイ環境を手に入れましょう！友達を驚かせるような巨大建築を作るのも、一緒に強敵に挑む冒険に出るのも、すべてはあなたのサーバーから始まります。下のリンクをクリックして、新しい冒険の扉を開けてみてください！</p>
+<a href="https://px.a8.net/svt/ejp?a8mat=45FY5U+GI6MIA+348+4ATCFL" rel="nofollow">
+<img border="0" width="300" height="250" alt="" src="https://www26.a8.net/svt/bgt?aid=251006898998&wid=001&eno=01&mid=s00000000404026003000&mc=1"></a>
+<img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=45FY5U+GI6MIA+348+4ATCFL" alt="">
+
+<h2 id="まとめ">まとめ</h2>
+<p>今回は、初心者でも超簡単にマイクラのマルチサーバーを立てられる「ロリポップ！ for Gamers」についてご紹介しました。</p>
+<ul>
+<li><strong>専門知識ゼロでもブラウザから簡単にサーバーを立てられる</strong></li>
+<li><strong>1ヶ月単位で契約できて、料金もリーズナブル</strong></li>
+<li><strong>自分が遊んでいない時でも、友達は24時間いつでもワールドに入れる</strong></li>
+<li><strong>マイクラだけでなく、パルワールドなどの人気ゲームにも対応</strong></li>
+</ul>
+<p>友達とワイワイ遊ぶマイクラの楽しさは、一度味わったらやめられません。「サーバーの立て方がわからない」という理由だけでその最高の体験を諦めてしまうのは、本当にもったいないです。</p>
+<p>「ロリポップ！ for Gamers」は、そんなあなたの悩みを一発で解決してくれる、まさに救世主のようなサービスです。ぜひこの機会に、あなただけの最高のワールドを手に入れて、友達との忘れられない思い出を作ってくださいね！</p>
+<a href="https://px.a8.net/svt/ejp?a8mat=45FY5U+GI6MIA+348+4ATK5D" rel="nofollow">
+<img border="0" width="100" height="60" alt="" src="https://www23.a8.net/svt/bgt?aid=251006898998&wid=001&eno=01&mid=s00000000404026004000&mc=1"></a>
+<img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=45FY5U+GI6MIA+348+4ATK5D" alt="">
+                        </article>
+
+                        
+        <section class="mt-12">
+            <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">関連記事</h2>
+            <div class="grid gap-6 md:grid-cols-3">
+                
+                    <a href="../articles_html/tumutumu.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="../thumbnails/tumutumu.png" alt="【ツムツム課金】完全無料でルビーをGET！学生でもできるポイ活でPayPayを稼ぐ裏ワザ" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ゲーム</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【ツムツム課金】完全無料でルビーをGET！学生でもできるポイ活でPayPayを稼ぐ裏ワザ</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/rom.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="../thumbnails/rom.png" alt="【2025年版】3DSのROM抽出/吸い出し完全ガイド！GodMode9の導入から使い方まで初心者向けに徹底解説" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ゲーム</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年版】3DSのROM抽出/吸い出し完全ガイド！GodMode9の導入から使い方まで初心者向けに徹底解説</h3>
+                        </div>
+                    </a>
+                
+                    <a href="../articles_html/pokepoke.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                        <div class="w-full aspect-video overflow-hidden">
+                            <img src="../thumbnails/pokepoke.png" alt="【ポケポケ】パックを無料で毎日開封！学生でもできるポイ活でポケモンカードを集める裏ワザ" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ゲーム</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【ポケポケ】パックを無料で毎日開封！学生でもできるポイ活でポケモンカードを集める裏ワザ</h3>
+                        </div>
+                    </a>
+                
+            </div>
+        </section>
+        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== フッター ===== -->
+    <footer class="bg-gray-100 dark:bg-gray-950">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div class="col-span-1 md:col-span-2">
+                    <a href="../index.html" class="flex items-center space-x-2 mb-4 main-logo">
+                        <svg class="w-8 h-8 text-primary-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+                        <span class="text-2xl font-bold text-gray-900 dark:text-white">ポイ活Pay太郎</span>
+                    </a>
+                    <p class="text-gray-600 dark:text-gray-400 max-w-sm">毎日の生活をちょっとお得にするポイ活情報を発信。初心者から上級者まで、すべての人が賢く節約できるテクニックを紹介します。</p>
+                </div>
+                <!-- Links -->
+                <div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white mb-4">サイトマップ</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html#hero" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">ホーム</a></li>
+                        <li><a href="../index.html#blog" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">新着記事</a></li>
+                        <li><a href="../index.html#features" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">ポイ活とは</a></li>
+                        <li><a href="policy.html" class="privacy-link hover:text-primary-600 dark:hover:text-primary-400 transition-colors">プライバシーポリシー</a></li>
+                    </ul>
+                </div>
+                <!-- Social -->
+                <div>
+                   
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-200 dark:border-gray-800 pt-8 text-center text-gray-500 dark:text-gray-400">
+                <p>&copy; 2025 ポイ活Pay太郎. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ===== アナウンス読み込み =====
+            (async () => {
+                const mount = document.getElementById('announcement-mount');
+                try {
+                    const cfgRes = await fetch('../announcement-config.json');
+                    const cfg = await cfgRes.json();
+                    const now = new Date();
+                    const expired = cfg.expiresAt ? now > new Date(cfg.expiresAt) : false;
+                    if (!cfg.enabled || expired) return;
+                    const dismissedKey = `announcement_dismissed_${cfg.id}`;
+                    if (localStorage.getItem(dismissedKey) === '1') return;
+
+                    const shellRes = await fetch('../announcement.html');
+                    const shellHtml = await shellRes.text();
+                    const contentRes = await fetch('../announcement-content.html');
+                    const contentHtml = await contentRes.text();
+
+                    mount.innerHTML = shellHtml;
+                    const host = document.getElementById('site-announcement');
+                    if (!host) return;
+                    host.classList.remove('hidden');
+                    host.style.pointerEvents = 'auto';
+                    const textWrap = host.querySelector('[data-announcement-content]');
+                    if (textWrap) textWrap.innerHTML = contentHtml;
+
+                    // ヘッダーとプログレスバーのオフセットを適用
+                    const headerEl = document.getElementById('header');
+                    const progressEl = document.getElementById('read-progress');
+                    const applyOffset = () => {
+                        const h = host.getBoundingClientRect().height || 0;
+                        if (headerEl) headerEl.style.top = h + 'px';
+                        if (progressEl) progressEl.style.top = h + 'px';
+                    };
+                    applyOffset();
+                    const onResize = () => applyOffset();
+                    window.addEventListener('resize', onResize);
+
+                    const closeBtn = document.getElementById('announcement-close');
+                    if (closeBtn) {
+                        closeBtn.addEventListener('click', () => {
+                            localStorage.setItem(dismissedKey, '1');
+                            host.classList.add('hidden');
+                            if (headerEl) headerEl.style.top = '0px';
+                            if (progressEl) progressEl.style.top = '0px';
+                            window.removeEventListener('resize', onResize);
+                        });
+                    }
+                } catch (e) {
+                    console.warn('announcement load failed', e);
+                }
+            })();
+            // ===== 読了プログレスバー =====
+            const progressBar = document.getElementById('read-progress-bar');
+            const updateProgress = () => {
+                const doc = document.documentElement;
+                const body = document.body;
+                const scrollTop = doc.scrollTop || body.scrollTop;
+                const scrollHeight = (doc.scrollHeight || body.scrollHeight) - doc.clientHeight;
+                const ratio = scrollHeight > 0 ? Math.min(1, Math.max(0, scrollTop / scrollHeight)) : 0;
+                progressBar.style.width = (ratio * 100).toFixed(2) + '%';
+            };
+            let ticking = false;
+            const onScroll = () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        updateProgress();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            updateProgress();
+            // ===== ダークモード切り替えスクリプト =====
+            const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+            const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                themeToggleLightIcon.classList.remove('hidden');
+            } else {
+                themeToggleDarkIcon.classList.remove('hidden');
+            }
+
+            const themeToggleBtn = document.getElementById('theme-toggle');
+
+            themeToggleBtn.addEventListener('click', function() {
+                themeToggleDarkIcon.classList.toggle('hidden');
+                themeToggleLightIcon.classList.toggle('hidden');
+
+                if (localStorage.getItem('color-theme')) {
+                    if (localStorage.getItem('color-theme') === 'light') {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('color-theme', 'dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('color-theme', 'light');
+                    }
+                } else {
+                    if (document.documentElement.classList.contains('dark')) {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('color-theme', 'light');
+                    } else {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('color-theme', 'dark');
+                    }
+                }
+            });
+
+            // ===== モバイルメニュー切り替えスクリプト =====
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // ===== Breadcrumb population =====
+            (function populateBreadcrumbs() {
+                const catEl = document.getElementById('article-category');
+                const titleEl = document.getElementById('article-title');
+                const bcCat = document.getElementById('breadcrumb-category');
+                const bcTitle = document.getElementById('breadcrumb-title');
+                if (!catEl || !titleEl || !bcCat || !bcTitle) return;
+                const category = catEl.textContent.trim();
+                const title = titleEl.textContent.trim();
+                bcCat.textContent = category;
+                // If you have a category slug mapping, you can replace href with ../category/<slug>.html
+                bcCat.href = '../index.html#blog';
+                bcTitle.textContent = title;
+            })();
+        });
+    </script>
+</body>
+</html>

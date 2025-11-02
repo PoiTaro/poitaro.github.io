@@ -1,0 +1,63 @@
+name: Build and Deploy to gh-pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install system dependencies for Puppeteer
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 \
+            libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 \
+            libxfixes3 libxrandr2 libgbm1 libasound2t64
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site (generate thumbnails & articles)
+        run: npm run build
+
+      - name: Prepare publish directory
+        run: |
+          mkdir -p dist
+          cp -r articles_html dist/articles_html
+          cp -r thumbnails dist/thumbnails
+          cp index.html dist/index.html
+          cp contact.html dist/contact.html
+          cp announcement.html dist/announcement.html || true
+          cp announcement-content.html dist/announcement-content.html || true
+          cp announcement-config.json dist/announcement-config.json || true
+          cp posts.json dist/posts.json
+          cp sitemap.xml dist/sitemap.xml
+          cp ads.txt dist/ads.txt || true
+          cp -r articles dist/articles || true
+          cp -r thumbnails dist/thumbnails || true
+          cp -r *.ico dist/ 2>/dev/null || true
+
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          commit_message: 'deploy: site with generated thumbnails and articles'
