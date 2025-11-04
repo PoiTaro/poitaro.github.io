@@ -1,0 +1,78 @@
+name: Generate sitemap via Jekyll (CI-only)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install npm dependencies
+        run: |
+          if [ -f package.json ]; then
+            npm ci
+          else
+            echo "no package.json, skipping npm install"
+          fi
+
+      - name: Run Node generator (generate HTML and assets)
+        run: |
+          node ./generate-posts.js
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+
+      - name: Install Jekyll and jekyll-sitemap
+        run: |
+          gem install jekyll -v '~> 4.2' --no-document
+          gem install jekyll-sitemap --no-document
+
+      - name: Build site with Jekyll (generate sitemap)
+        run: |
+          jekyll build --destination _site
+
+      - name: Show generated sitemap (for logs)
+        run: |
+          if [ -f _site/sitemap.xml ]; then
+            echo '--- sitemap start ---'
+            sed -n '1,120p' _site/sitemap.xml || true
+            echo '--- sitemap end ---'
+          else
+            echo 'No sitemap generated at _site/sitemap.xml'
+            ls -la _site || true
+          fi
+
+      - name: Commit sitemap.xml back to main
+        env:
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          if [ -f _site/sitemap.xml ]; then
+            cp _site/sitemap.xml sitemap.xml
+            git config user.name "$GIT_AUTHOR_NAME"
+            git config user.email "$GIT_AUTHOR_EMAIL"
+            git add sitemap.xml || true
+            # commit only if there are changes staged
+            if ! git diff --cached --quiet; then
+              git commit -m "chore: update sitemap [skip ci]"
+              git push origin HEAD:main
+            else
+              echo "No changes to sitemap, skipping commit"
+            fi
+          else
+            echo "_site/sitemap.xml not found, skipping commit"
+          fi
