@@ -50,6 +50,7 @@ jobs:
           cp posts.json dist/posts.json
           cp sitemap.xml dist/sitemap.xml
           cp ads.txt dist/ads.txt || true
+          cp CNAME dist/CNAME
           cp -r articles dist/articles || true
           cp -r thumbnails dist/thumbnails || true
           cp -r *.ico dist/ 2>/dev/null || true
