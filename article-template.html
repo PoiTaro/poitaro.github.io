@@ -4,20 +4,20 @@
     <meta name="google-adsense-account" content="ca-pub-2213699949048480">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【CSS解決】スマホでフォーム入力時に勝手にズーム（拡大）するのを防ぐ方法 | ポイ活Pay太郎</title>
+    <title>{{title}} | ポイ活Pay太郎</title>
     <link rel="icon" href="https://poitaro.com/blog/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="https://poitaro.com/blog/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="https://poitaro.com/blog/favicon.ico">
     <link rel="icon" sizes="192x192" href="https://poitaro.com/blog/favicon.ico">
     <meta name="msapplication-TileImage" content="https://poitaro.com/blog/favicon.ico">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="description" content="スマートフォンでフォームをタップした際に自動でズームされる現象を、CSSの簡単な一手間で解決する方法を解説します。原因から具体的なコード、注意点までを網羅。">
-    <meta property="og:title" content="【CSS解決】スマホでフォーム入力時に勝手にズーム（拡大）するのを防ぐ方法">
-    <meta property="og:description" content="スマートフォンでフォームをタップした際に自動でズームされる現象を、CSSの簡単な一手間で解決する方法を解説します。原因から具体的なコード、注意点までを網羅。">
-    <meta property="og:image" content="https://poitaro.com/thumbnails/zoomcss.png">
-    <meta property="og:url" content="https://poitaro.com/articles_html/zoomcss.html">
+    <meta name="description" content="{{description}}">
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:image" content="{{ogImage}}">
+    <meta property="og:url" content="{{url}}">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://poitaro.com/thumbnails/zoomcss.png">
+    <meta name="twitter:image" content="{{ogImage}}">
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
@@ -212,157 +212,33 @@
                             <div class="flex items-center gap-2 min-w-0">
                                 <a href="../index.html" class="flex-shrink-0 hover:underline">ホーム</a>
                                 <span class="text-gray-300 flex-shrink-0">/</span>
-                                <a id="breadcrumb-category" href="../index.html" class="truncate hover:underline min-w-0">Web制作</a>
+                                <a id="breadcrumb-category" href="../index.html" class="truncate hover:underline min-w-0">{{category}}</a>
                                 <span class="text-gray-300 flex-shrink-0">/</span>
                             </div>
                         </div>
                         <div class="w-full">
-                            <div id="breadcrumb-title" class="text-gray-500 truncate max-w-full leading-tight">【CSS解決】スマホでフォーム入力時に勝手にズーム（拡大）するのを防ぐ方法</div>
+                            <div id="breadcrumb-title" class="text-gray-500 truncate max-w-full leading-tight">{{title}}</div>
                         </div>
                     </div>
                 </nav>
                 
                 <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden">
-                    <img id="article-image" src="../thumbnails/zoomcss.png" alt="【CSS解決】スマホでフォーム入力時に勝手にズーム（拡大）するのを防ぐ方法" class="w-full h-auto md:h-80 object-cover">
+                    <img id="article-image" src="{{image}}" alt="{{alt_title}}" class="w-full h-auto md:h-80 object-cover">
                     <div class="p-6 md:p-10">
-                        <p id="article-category" class="text-base font-bold text-primary-600 dark:text-primary-400 mb-2">Web制作</p>
-                        <h1 id="article-title" class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">【CSS解決】スマホでフォーム入力時に勝手にズーム（拡大）するのを防ぐ方法</h1>
+                        <p id="article-category" class="text-base font-bold text-primary-600 dark:text-primary-400 mb-2">{{category}}</p>
+                        <h1 id="article-title" class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">{{title}}</h1>
                         <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-8">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                            <span id="article-date" class="ml-2">2025-09-19</span>
+                            <span id="article-date" class="ml-2">{{date}}</span>
                         </div>
 
-                        
-        <nav aria-label="目次" class="mb-8">
-            <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-800/50 backdrop-blur px-5 py-4">
-                <div class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
-                    目次
-                </div>
-                <ul class="space-y-1">
-                    
-                        <li>
-                            <a href="#なぜ勝手にズーム拡大するのその原因とは" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                                なぜ勝手にズーム（拡大）するの？その原因とは
-                            </a>
-                        </li>
-                    
-                        <li>
-                            <a href="#たった1行cssで自動ズームを解決する方法" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                                たった1行！CSSで自動ズームを解決する方法
-                            </a>
-                        </li>
-                    
-                        <li>
-                            <a href="#やってはいけない注意点metaタグでの制御は非推奨" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                                やってはいけない注意点！metaタグでの制御は非推奨
-                            </a>
-                        </li>
-                    
-                        <li>
-                            <a href="#まとめ" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                                まとめ
-                            </a>
-                        </li>
-                    
-                </ul>
-            </div>
-        </nav>
+                        <!-- TOC will be displayed here -->
 
                         <article id="article-content" class="prose lg:prose-xl max-w-none dark:prose-invert">
-                           <p>WebサイトやLPを制作していて、スマホでの表示をチェックしている時…。「よし、いい感じ！」と思ってフォームをタップした瞬間、画面が「ブワッ！」と勝手に拡大されて、レイアウトが崩れた経験はありませんか？</p>
-<p>あれ、地味にストレスですよね…。ユーザーにとっては入力しづらいし、制作者としては意図しない挙動で頭を抱えてしまいます。</p>
-<p>こんにちは！Web制作について日々研究している僕です。今回は、多くの人が一度は経験するであろう「スマホのフォーム自動ズーム問題」の原因と、驚くほど簡単な解決策をシェアしたいと思います。この記事を読めば、もうフォームの拡大で悩むことはありませんよ！</p>
-<h2 id="なぜ勝手にズーム拡大するのその原因とは">なぜ勝手にズーム（拡大）するの？その原因とは</h2>
-<p>まず、この現象がなぜ起こるのかを知っておきましょう。これはバグやエラーではなく、実は<strong>iPhone (iOS) の親切心</strong>からくる仕様なんです。</p>
-<p>iPhoneのSafariでは、<code>input</code>タグや<code>select</code>タグなどのフォーム要素をタップしたとき、その要素の<strong>文字サイズ (font-size) が16px未満</strong>だと、「文字が小さくて入力しづらいだろうから、拡大してあげるね！」と自動的にズームしてくれる機能が働きます。</p>
-<p>親切な機能ではあるんですが、デザインによってはこの自動ズームが逆にユーザーを混乱させたり、全体のレイアウトが崩れて見えたりと、意図しない表示になってしまうことが多いんですよね。</p>
-<h2 id="たった1行cssで自動ズームを解決する方法">たった1行！CSSで自動ズームを解決する方法</h2>
-<p>「じゃあ、どうすればいいの？」と思いますよね。解決方法は、原因がわかれば至ってシンプル。CSSでフォーム要素の文字サイズを<strong>16px以上</strong>に指定してあげるだけです。</p>
-<p>これだけで、あの忌まわしい自動ズームをピタッと止めることができます。</p>
-<h3>【NG例】問題が起こるコード</h3>
-<p>まずは、ズームが発生してしまうコードの例を見てみましょう。デザインを優先して、フォームの文字サイズを少し小さめに設定しているケースです。</p>
-<pre><code class="language-css">/* 問題が起こるコード例 */
-input[type=&quot;text&quot;],
-textarea,
-select {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 14px; /* ←これが原因！16px未満なのでズームする */
-}
-</code></pre>
-<p>このfont-size: 14px;が、自動ズームの引き金になっています。
-【OK例】解決コード
-次に、この問題を解決するコードです。font-sizeの値を変更するだけ。</p>
-<pre><code class="language-css">/* 解決コード例 */
-input[type=&quot;text&quot;],
-textarea,
-select {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 16px; /* ←16px以上に設定！これだけでOK */
-}
-</code></pre>
-<p>たったこれだけです。font-sizeを16px（もしくはそれ以上）に設定することで、iOSは「このフォームは十分な大きさだから、ズームしなくても大丈夫だな」と判断し、自動拡大をストップしてくれます。</p>
-<h2 id="やってはいけない注意点metaタグでの制御は非推奨">やってはいけない注意点！metaタグでの制御は非推奨</h2>
-<p>「昔、metaタグにuser-scalable=noって書く方法があったような…？」と思った方、鋭いですね。
-確かに以前は、<head>内に以下のようなmetaタグを記述して、ユーザーによる拡大・縮小操作そのものを禁止する方法がありました。</p>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-
-<p>この方法でも自動ズームは防げますが、現在ではアクセシビリティの観点から強く非推奨とされています。なぜなら、user-scalable=noを指定すると、ピンチイン・ピンチアウト（指で画面を拡大・縮小する操作）が一切できなくなってしまうからです。
-視力が弱い方など、意図的に画面を拡大して閲覧したいユーザーの操作を妨げてしまうため、この方法は使わないようにしましょう。CSSでfont-sizeを調整するのが、現在のベストな解決策です。</p>
-<h2 id="まとめ">まとめ</h2>
-<p>今回は、スマートフォンでフォームをタップした際に自動でズームされる現象の解決策について解説しました。ポイントをもう一度おさらいしましょう。</p>
-<ul>
-<li>原因: フォーム要素のfont-sizeが16px未満であることが、iOSの自動ズーム機能を発動させている。</li>
-<li>解決策: CSSで対象フォーム要素のfont-sizeを16px以上に指定するだけ。</li>
-<li>注意点: <meta>タグでuser-scalable=noを指定する方法は、アクセシビリティを損なうため非推奨。
-たったこれだけの知識で、ユーザーにとってストレスのない、快適なフォームを提供することができます。Webサイト制作において、こういった細かい配慮がユーザー体験（UX）の向上に繋がります。
-もし今、あなたが作っているサイトのフォームが勝手にズームしてしまうなら、ぜひこの方法を試してみてくださいね！</li>
-</ul>
-
+                           {{content}}
                         </article>
 
-                        
-        <section class="mt-12">
-            <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">関連記事</h2>
-            <div class="grid gap-6 md:grid-cols-3">
-                
-                    <a href="../articles_html/domain.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
-                        <div class="w-full aspect-video overflow-hidden">
-                            <img src="https://placehold.co/1280x720/3455DB/FFFFFF?text=GitHub+Pages+%2B+%E7%8B%AC%E8%87%AA%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3" alt="【2025年最新】GitHub Pagesに独自ドメインを設定する方法（お名前.com編）｜初心者向け超詳しく解説！" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-4">
-                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">Web制作</p>
-                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年最新】GitHub Pagesに独自ドメインを設定する方法（お名前.com編）｜初心者向け超詳しく解説！</h3>
-                        </div>
-                    </a>
-                
-                    <a href="../articles_html/swag.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
-                        <div class="w-full aspect-video overflow-hidden">
-                            <img src="../thumbnails/swag.png" alt="【Swagbucks完全攻略】海外ポイ活サイトの使い方・稼ぎ方！安全性や評判も徹底解説" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-4">
-                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ポイ活</p>
-                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【Swagbucks完全攻略】海外ポイ活サイトの使い方・稼ぎ方！安全性や評判も徹底解説</h3>
-                        </div>
-                    </a>
-                
-                    <a href="../articles_html/toho.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
-                        <div class="w-full aspect-video overflow-hidden">
-                            <img src="../thumbnails/toho.png" alt="【2025年】シネマイレージは本当にお得？年会費の元は取れるか徹底解説！ポイ活目線でクレカも紹介" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-4">
-                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ポイ活</p>
-                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年】シネマイレージは本当にお得？年会費の元は取れるか徹底解説！ポイ活目線でクレカも紹介</h3>
-                        </div>
-                    </a>
-                
-            </div>
-        </section>
-        
+                        <!-- Related posts will be displayed here -->
                     </div>
                 </div>
             </div>
