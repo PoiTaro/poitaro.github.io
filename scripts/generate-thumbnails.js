@@ -145,13 +145,16 @@ async function main() {
     for (const md of files) {
       const slug = getSlug(md);
       const outPath = path.join(OUT_DIR, `${slug}.png`);
-      // 既存があってもレイアウト更新を反映するため上書き出力
+      
+      // 既存のサムネイルがあればスキップ
+      if (fs.existsSync(outPath)) {
+        console.log(`Skipped (already exists): ${path.relative(ROOT, outPath)}`);
+        continue;
+      }
 
       const mdPath = path.join(ARTICLES_DIR, md);
       const raw = fs.readFileSync(mdPath, 'utf8');
       const fm = parseFrontmatter(raw);
-
-  // たとえfrontmatterに画像があっても、OG用の共通デザインを出すため常に生成（既存pngがあればスキップ）
 
       const accentColor = getAccentColor(fm.category || '');
       const html = buildHtml({
