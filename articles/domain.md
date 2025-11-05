@@ -1,14 +1,14 @@
 ---
-title: "【2025年最新】GitHub Pagesに独自ドメインを設定する方法（お名前.com編）｜初心者でも7000文字で超詳しく解説！"
+title: "【2025年最新】GitHub Pagesに独自ドメインを設定する方法（お名前.com編）｜初心者向け超詳しく解説！"
 date: "2025-11-05"
 image: "https://placehold.co/1280x720/3455DB/FFFFFF?text=GitHub+Pages+%2B+%E7%8B%AC%E8%87%AA%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3"
 category: "Web制作"
 categoryColor: "blue"
-description: "GitHub Pagesで作ったサイトのURL、長いですよね。この記事では、初心者の方でも絶対につまずかないよう、お名前.comで取得した独自ドメインをGitHub Pagesに設定する全手順を、画像（イメージ）たっぷりで7000文字以上かけて徹底的に解説します。メリットや注意点、HTTPS化まで完全網羅！"
+description: "GitHub Pagesで作ったサイトのURL、長いですよね。この記事では、初心者の方でも絶対につまずかないよう、お名前.comで取得した独自ドメインをGitHub Pagesに設定する全手順を、画像（イメージ）たっぷりで徹底的に解説します。メリットや注意点、HTTPS化まで完全網羅！"
 tags: ["GitHub Pages", "独自ドメイン", "お名前.com", "初心者", "DNS設定", "HTTPS"]
 ---
 
-# 【2025年最新】GitHub Pagesに独自ドメインを設定する方法（お名前.com編）｜初心者でも7000文字で超詳しく解説！
+# 【2025年最新】GitHub Pagesに独自ドメインを設定する方法（お名前.com編）｜初心者向け超詳しく解説！
 
 
 こんにちは！GitHub Pagesでブログやポートフォリオサイトを公開している皆さん。
