@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>あなたにピッタリのポイ活は？！ | ポイ活スタイル診断</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .fade-in { animation: fadeIn 0.6s ease-in-out forwards; }
+        .fade-out { animation: fadeOut 0.6s ease-in-out forwards; }
+        .slide-in-up { animation: slideInUp 0.5s ease-out forwards; }
+        .btn-glow { box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); }
+        .btn-glow:hover { box-shadow: 0 0 25px rgba(59, 130, 246, 0.6); }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; visibility: hidden; } }
+        @keyframes slideInUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        .result-card-item {
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .result-card-item:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+    <div class="fixed top-0 left-0 w-full h-full bg-gradient-to-br from-blue-100 via-purple-100 to-indigo-200 -z-10"></div>
+
+    <div class="container mx-auto max-w-2xl p-4 min-h-screen flex flex-col justify-center items-center">
+
+        <!-- Start Screen -->
+        <div id="start-screen" class="w-full text-center space-y-8 fade-in">
+            <div class="bg-white/70 backdrop-blur-xl rounded-2xl shadow-xl p-8 md:p-12">
+                <svg class="mx-auto h-16 w-16 text-blue-500 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" /></svg>
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-4 tracking-tight">ポイ活診断</h1>
+                <p class="text-slate-600 mb-8 max-w-md mx-auto">あなたの回答傾向を分析し、質問を最適化。15の質問で、あなたのための最高のポイ活を見つけます。</p>
+                <button id="start-btn" class="w-full sm:w-auto bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-12 rounded-full transition-all transform hover:scale-105 duration-300 btn-glow">
+                    診断スタート
+                </button>
+            </div>
+            <p class="text-xs text-slate-500/80">※診断結果ページにはプロモーションが含まれます。</p>
+        </div>
+
+        <!-- Question Screen -->
+        <div id="question-screen" class="w-full hidden">
+            <div class="w-full mb-6">
+                 <p id="progress-text" class="text-sm font-bold text-slate-600 text-center mb-2"></p>
+                <div class="w-full bg-white/50 rounded-full h-3 shadow-inner">
+                    <div id="progress-bar" class="bg-gradient-to-r from-blue-400 to-purple-500 h-3 rounded-full transition-all duration-500 ease-out"></div>
+                </div>
+            </div>
+            <div id="question-card" class="bg-white/70 backdrop-blur-xl rounded-2xl shadow-xl p-6 md:p-8 w-full">
+                <h2 id="question-text" class="text-lg md:text-xl font-bold mb-6 text-center text-slate-800 h-14 flex items-center justify-center"></h2>
+                <div id="answers-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+            </div>
+        </div>
+        
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="w-full hidden text-center p-8">
+            <div class="bg-white/70 backdrop-blur-xl rounded-2xl shadow-xl p-12 inline-flex flex-col items-center justify-center">
+                <div class="loader mb-6"></div>
+                <p class="font-bold text-slate-700">あなたにぴったりの<br>ポイ活を分析中...</p>
+            </div>
+        </div>
+
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="w-full hidden text-center">
+            <div class="bg-white/70 backdrop-blur-xl rounded-2xl shadow-xl p-6 md:p-8">
+                <p class="text-sm font-bold text-blue-500">あなたの診断結果は...</p>
+                <h2 id="result-title" class="text-2xl md:text-3xl font-extrabold text-slate-800 my-3"></h2>
+                <div id="result-icon" class="w-20 h-20 mx-auto my-6 bg-gradient-to-br from-blue-400 to-purple-500 text-white rounded-full flex items-center justify-center shadow-lg"></div>
+                <p id="result-description" class="text-slate-600 mb-8 text-left bg-blue-50/50 p-4 rounded-lg border border-blue-200"></p>
+                
+                <h3 class="font-bold text-slate-800 text-xl mb-4">👑 あなたへのおすすめポイ活 👑</h3>
+                <div id="recommendations" class="space-y-6"></div>
+                
+                <button id="restart-btn" class="mt-8 w-full sm:w-auto bg-slate-500 hover:bg-slate-600 text-white font-bold py-3 px-12 rounded-full transition-all transform hover:scale-105 duration-300">
+                    もう一度診断する
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // DOM Elements
+        const startScreen = document.getElementById('start-screen');
+        const questionScreen = document.getElementById('question-screen');
+        const loadingScreen = document.getElementById('loading-screen');
+        const resultScreen = document.getElementById('result-screen');
+        const startBtn = document.getElementById('start-btn');
+        const restartBtn = document.getElementById('restart-btn');
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+        const questionText = document.getElementById('question-text');
+        const answersContainer = document.getElementById('answers-container');
+        const questionCard = document.getElementById('question-card');
+        const resultTitle = document.getElementById('result-title');
+        const resultIcon = document.getElementById('result-icon');
+        const resultDescription = document.getElementById('result-description');
+        const recommendations = document.getElementById('recommendations');
+
+        // State
+        let questionsAskedCount = 0;
+        const TOTAL_QUESTIONS_TO_ASK = 15;
+        let askedQuestionIds = new Set();
+        let scores = { コツコツ: 0, ショッピング: 0, アクティブ: 0, ガッツリ: 0 };
+
+        // --- Full Question Pool (30 Questions) ---
+        const allQuestions = [
+            // Initial Questions (Guaranteed to be asked early)
+            { id: 'q1', text: "ポイ活の主な目的は？", tags: ['initial'], answers: [ { text: "毎日のちょっとした楽しみに", points: { コツコツ: 2, アクティブ: 1 } }, { text: "お小遣いの足しにしたい", points: { ガッツリ: 2, ショッピング: 1 } }, { text: "特定の大きな買い物のために貯めたい", points: { ガッツリ: 2, ショッピング: 2 } }, { text: "特に目的はないけど、お得が好き", points: { ショッピング: 1, コツコツ: 1 } } ] },
+            { id: 'q2', text: "1日にスマホを触る時間は？", tags: ['initial'], answers: [ { text: "ほとんど触らない", points: { アクティブ: 2 } }, { text: "1〜2時間程度", points: { コツコツ: 1, ショッピング: 1 } }, { text: "3〜5時間くらい", points: { コツコツ: 2, ガッツリ: 1 } }, { text: "常に手元にある", points: { ガッツリ: 2, コツコツ: 2 } } ] },
+            { id: 'q3', text: "ポイ活で重視するのはどっち？", tags: ['initial'], answers: [ { text: "ゲーム感覚で楽しみたい", points: { コツコツ: 2, アクティブ: 2 } }, { text: "効率よく、高単価を狙いたい", points: { ガッツリ: 3 } }, { text: "普段の生活が自動でお得になるのが理想", points: { ショッピング: 3, アクティブ: 1 } }, { text: "健康にも繋がると嬉しい", points: { アクティブ: 3 } } ] },
+            // Differentiating Questions
+            { id: 'q4', text: "金融サービス（クレカ発行、口座開設）の申し込みに抵抗は？", tags: ['ガッツリ'], answers: [ { text: "全く抵抗ない。お得ならやりたい", points: { ガッツリ: 4 } }, { text: "少しなら検討する", points: { ガッツリ: 2, ショッピング: 1 } }, { text: "あまりやりたくない", points: { コツコツ: 1, アクティブ: 1 } }, { text: "絶対にやりたくない", points: { コツコツ: 2 } } ] },
+            { id: 'q5', text: "普段の買い物でよく利用するのは？", tags: ['ショッピング', 'コツコツ'], answers: [ { text: "ネット通販（Amazon, 楽天など）", points: { ショッピング: 3 } }, { text: "スーパーやコンビニ", points: { コツコツ: 2, アクティブ: 1 } }, { text: "デパートや専門店", points: { ショッピング: 2 } }, { text: "あまり買い物をしない", points: {} } ] },
+            { id: 'q6', text: "移動手段で最もよく使うものは？", tags: ['アクティブ'], answers: [ { text: "徒歩や自転車", points: { アクティブ: 3, コツコツ: 1 } }, { text: "電車やバス", points: { アクティブ: 2 } }, { text: "自動車", points: { アクティブ: 1 } }, { text: "ほとんどインドア派", points: { ショッピング: 1, ガッツリ: 1 } } ] },
+            { id: 'q7', text: "アンケートに答えるのは苦にならない？", tags: ['コツコツ', 'ガッツリ'], answers: [ { text: "全く苦にならない。むしろ好き", points: { コツコツ: 3 } }, { text: "簡単なものならOK", points: { コツコツ: 1, ガッツリ: 1 } }, { text: "個人情報を入力するのは抵抗がある", points: { アクティブ: 1, ショッピング: 1 } }, { text: "面倒なのでやりたくない", points: { アクティブ: 2 } } ] },
+            { id: 'q8', text: "新しいアプリやサービスを試すのは好き？", tags: ['ガッツリ', 'ショッピング'], answers: [ { text: "大好き！すぐ試したい", points: { ガッツリ: 2, ショッピング: 1 } }, { text: "まあまあ好き", points: { コツコツ: 1, ガッツリ: 1 } }, { text: "あまり興味ない", points: { アクティブ: 1 } }, { text: "信頼できるものだけ使いたい", points: { ショッピング: 1 } } ] },
+            { id: 'q9', text: "レシートを管理するのは得意？", tags: ['コツコツ', 'アクティブ'], answers: [ { text: "得意。家計簿もつけている", points: { コツコツ: 2, アクティブ: 1 } }, { text: "まあまあ。すぐ捨てることはない", points: { コツコツ: 1 } }, { text: "苦手。すぐなくしてしまう", points: { ショッピング: 1, ガッツリ: 1 } }, { text: "基本キャッシュレスなのでレシートがない", points: { ショッピング: 2 } } ] },
+            { id: 'q10', text: "スマホでゲームをする？", tags: ['コツコツ', 'ガッツリ'], answers: [ { text: "毎日プレイする", points: { コツコツ: 2, ガッツリ: 1 } }, { text: "たまに暇つぶしで", points: { コツコツ: 1 } }, { text: "全くしない", points: { ショッピング: 1, アクティブ: 1 } }, { text: "ゲームより情報収集が好き", points: { ショッピング: 2 } } ] },
+            { id: 'q11', text: "旅行の予約はどうすることが多い？", tags: ['ショッピング', 'ガッツリ'], answers: [ { text: "予約サイトでクーポンやポイントを駆使", points: { ショッピング: 3, ガッツリ: 1 } }, { text: "旅行代理店の窓口で相談", points: {} }, { text: "行き当たりばったりで予約しない", points: { アクティブ: 1 } }, { text: "あまり旅行に行かない", points: { コツコツ: 1 } } ] },
+            { id: 'q12', text: "日々の歩数を気にしている？", tags: ['アクティブ'], answers: [ { text: "常に意識している", points: { アクティブ: 3 } }, { text: "たまに確認する程度", points: { アクティブ: 1, コツコツ: 1 } }, { text: "全く気にしていない", points: { ショッピング: 1, ガッツリ: 1 } }, { text: "車移動がメインなので歩かない", points: { ガッツリ: 1 } } ] },
+            { id: 'q13', text: "チラシをチェックする習慣はある？", tags: ['コツコツ', 'アクティブ', 'ショッピング'], answers: [ { text: "新聞やアプリで毎日見る", points: { コツコツ: 2, ショッピング: 1 } }, { text: "スーパーの入り口で見る程度", points: { アクティブ: 1 } }, { text: "ネットで買うので見ない", points: { ショッピング: 1 } }, { text: "全く見ない", points: { ガッツリ: 1 } } ] },
+            { id: 'q14', text: "お得情報を友達とシェアするのは好き？", tags: ['ガッツリ', 'ショッピング'], answers: [ { text: "大好き！いい情報はすぐ教える", points: { ガッツリ: 2, ショッピング: 1 } }, { text: "聞かれたら教える程度", points: { コツコツ: 1 } }, { text: "自分のペースでやりたい", points: { アクティブ: 1 } }, { text: "あまり得意ではない", points: {} } ] },
+            { id: 'q15', text: "外食の頻度はどれくらい？", tags: ['ショッピング', 'ガッツリ'], answers: [ { text: "週に数回は外食する", points: { ショッピング: 2, ガッツリ: 1 } }, { text: "月に数回程度", points: { ショッピング: 1 } }, { text: "ほとんど自炊", points: { コツコツ: 1, アクティブ: 1 } }, { text: "テイクアウトやデリバリーが多い", points: { ショッピング: 2 } } ] },
+            { id: 'q16', text: "動画視聴サービス（サブスク）を利用している？", tags: ['ガッツリ', 'ショッピング'], answers: [ { text: "複数利用している", points: { ショッピング: 1, ガッツリ: 2 } }, { text: "1つだけ利用している", points: { ショッピング: 1 } }, { text: "無料のものだけ見ている", points: { コツコツ: 1 } }, { text: "あまり見ない", points: { アクティブ: 1 } } ] },
+            { id: 'q17', text: "空き時間の主な過ごし方は？", tags: ['コツコツ', 'アクティブ'], answers: [ { text: "SNSやネットサーフィン", points: { コツコツ: 2, ショッピング: 1 } }, { text: "散歩や運動", points: { アクティブ: 3 } }, { text: "読書や勉強", points: { ガッツリ: 1 } }, { text: "特に何もせずぼーっとする", points: {} } ] },
+            { id: 'q18', text: "新しいことへの挑戦は？", tags: ['ガッツリ', 'アクティブ'], answers: [ { text: "常に新しいことに挑戦したい", points: { ガッツリ: 2, アクティブ: 1 } }, { text: "興味があれば挑戦する", points: { ショッピング: 1, ガッツリ: 1 } }, { text: "安定や現状維持を好む", points: { コツコツ: 2 } }, { text: "どちらかというと苦手", points: { コツコツ: 1 } } ] },
+            { id: 'q19', text: "服やファッションアイテムを買う頻度は？", tags: ['ショッピング'], answers: [ { text: "シーズンごとにたくさん買う", points: { ショッピング: 3 } }, { text: "気に入ったものがあれば時々", points: { ショッピング: 1 } }, { text: "セール時期にまとめ買い", points: { ショッピング: 2, ガッツリ: 1 } }, { text: "あまり買わない", points: { コツコツ: 1, アクティブ: 1 } } ] },
+            { id: 'q20', text: "運動は好き？", tags: ['アクティブ'], answers: [ { text: "大好きで習慣になっている", points: { アクティブ: 3 } }, { text: "好きだけど、たまにしかしない", points: { アクティブ: 1 } }, { text: "苦手だけど健康のためにやる", points: { アクティブ: 2, コツコツ: 1 } }, { text: "全くしない", points: { ショッピング: 1, ガッツリ: 1 } } ] },
+            { id: 'q21', text: "細かい作業は好き？", tags: ['コツコツ'], answers: [ { text: "大好き！集中できる", points: { コツコツ: 3 } }, { text: "まあまあ好き", points: { コツコツ: 1 } }, { text: "どちらかというと苦手", points: { アクティブ: 1, ショッピング: 1 } }, { text: "大雑把な性格だ", points: { ガッツリ: 1 } } ] },
+            { id: 'q22', text: "ポイ活の情報収集はどうしてる？", tags: ['ガッツリ', 'ショッピング'], answers: [ { text: "SNSやブログで常にチェック", points: { ガッツリ: 2, ショッピング: 1 } }, { text: "アプリの通知やメルマガ", points: { コツコツ: 1 } }, { text: "特に情報収集はしない", points: { アクティブ: 1 } }, { text: "ポイントサイト内をくまなく見る", points: { ショッピング: 2, ガッツリ: 1 } } ] },
+            { id: 'q23', text: "目標達成のために計画を立てる？", tags: ['ガッツリ', 'コツコツ'], answers: [ { text: "しっかり計画を立てて実行する", points: { ガッツリ: 2, コツコツ: 1 } }, { text: "大まかな計画だけ立てる", points: { ショッピング: 1 } }, { text: "計画は立てず、その場の勢いで行動", points: { アクティブ: 1 } }, { text: "計画を立てるのが苦手", points: {} } ] },
+            { id: 'q24', text: "普段、現金とキャッシュレスどっちをよく使う？", tags: ['ショッピング'], answers: [ { text: "ほぼキャッシュレス", points: { ショッピング: 3 } }, { text: "キャッシュレスが多い", points: { ショッピング: 2 } }, { text: "現金が多い", points: { アクティブ: 1 } }, { text: "ほぼ現金", points: { コツコツ: 1 } } ] },
+            { id: 'q25', text: "モニター案件（商品お試し）に興味ある？", tags: ['ショッピング', 'ガッツリ'], answers: [ { text: "とても興味がある", points: { ショッピング: 2, ガッツリ: 2 } }, { text: "商品によってはやってみたい", points: { ショッピング: 1 } }, { text: "レビューを書くのが面倒", points: { コツコツ: 1 } }, { text: "興味ない", points: { アクティブ: 1 } } ] },
+            { id: 'q26', text: "知らない場所へ行くのは好き？", tags: ['アクティブ'], answers: [ { text: "大好き！ワクワクする", points: { アクティブ: 3 } }, { text: "地図アプリがあれば平気", points: { アクティブ: 1, ショッピング: 1 } }, { text: "道に迷うのが嫌であまり好きではない", points: { コツコツ: 1 } }, { text: "インドア派なのでほとんど行かない", points: { ガッツリ: 1 } } ] },
+            { id: 'q27', text: "ミニゲームでポイントが貯まるなら？", tags: ['コツコツ'], answers: [ { text: "毎日コツコツやる", points: { コツコツ: 3 } }, { text: "気が向いたときにやる", points: { コツコツ: 1 } }, { text: "時間の無駄だと感じる", points: { ガッツリ: 2 } }, { text: "ゲーム自体が苦手", points: { ショッピング: 1, アクティブ: 1 } } ] },
+            { id: 'q28', text: "リスクを取ってでもリターンを狙いたい？", tags: ['ガッツリ'], answers: [ { text: "ハイリスク・ハイリターンを狙いたい", points: { ガッツリ: 4 } }, { text: "ミドルリスク・ミドルリターンくらいが丁度いい", points: { ガッツリ: 2, ショッピング: 1 } }, { text: "ローリスク・ローリターンで確実がいい", points: { コツコツ: 2 } }, { text: "リスクは全く取りたくない", points: { コツコツ: 3, アクティブ: 1 } } ] },
+            { id: 'q29', text: "美容やコスメに興味がある？", tags: ['ショッピング'], answers: [ { text: "とても興味があり、よく買う", points: { ショッピング: 3 } }, { text: "人並みに興味がある", points: { ショッピング: 1 } }, { text: "あまり興味はない", points: { アクティブ: 1 } }, { text: "全く興味はない", points: { コツコツ: 1, ガッツリ: 1 } } ] },
+            { id: 'q30', text: "食事の記録をつけるのは苦にならない？", tags: ['コツコツ', 'アクティブ'], answers: [ { text: "全く苦にならない", points: { コツコツ: 2, アクティブ: 2 } }, { text: "たまにならできる", points: { コツコツ: 1 } }, { text: "面倒だと感じる", points: { ショッピング: 1 } }, { text: "絶対にやりたくない", points: { ガッツリ: 1 } } ] },
+        ];
+        
+        // --- Result Data ---
+        const resultData = {
+            コツコツ: { title: "【ゲーム感覚のデイリー型】", icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>`, description: "あなたは毎日の小さな努力をゲーム感覚で積み重ねるのが得意な「デイリー型」。アンケート回答やレシート撮影、ミニゲームなどで着実にポイントを貯めるスタイルがピッタリ！日々の生活の中で、無理なく楽しくポイ活を続けられます。", sites: [{name: "クラシルリワード", html: `<div class="p-4 rounded-lg result-card-item"><h3 class="font-bold text-lg text-slate-800">クラシルリワード</h3><p class="text-sm text-slate-500 my-2">移動・チラシ・レシートでポイントが貯まる！普段の生活のついでにポイントがどんどん貯まる、今話題のアプリです。</p><div class="flex justify-center mt-3"><a href="https://px.a8.net/svt/ejp?a8mat=44Z3ZC+FT6F3M+5INE+5YZ75" rel="nofollow"><img border="0" width="300" height="250" alt="クラシルリワード" src="https://www25.a8.net/svt/bgt?aid=250221288956&wid=001&eno=01&mid=s00000025745001003000&mc=1"></a><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=44Z3ZC+FT6F3M+5INE+5YZ75" alt=""></div></div>`}, {name: "PUI（ぷい）", html: `<div class="p-4 rounded-lg result-card-item"><h3 class="font-bold text-lg text-slate-800">PUI（ぷい）</h3><p class="text-sm text-slate-500 my-2">歩くだけでポイントがもらえる新感覚アプリ。招待コード入力でお得に始めよう！</p><div class="bg-slate-100 p-4 rounded-lg text-center mt-3"><p class="mb-2">招待コード入力で<strong class="text-blue-600">500ポイント</strong>GET！</p><p class="text-lg font-bold select-all bg-white py-2 px-4 rounded-md inline-block tracking-widest">9HMCEU44</p><a href="https://pui.onelink.me/kFYQ/invite?code=9HMCEU44&openExternalBrowser=1" class="block mt-4 text-blue-600 font-bold hover:underline" target="_blank" rel="noopener noreferrer">アプリをダウンロード</a></div></div>`}] },
+            ショッピング: { title: "【お買い物賢者型】", icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c.51 0 .962-.328 1.093-.829l2.87-6.641a.75.75 0 0 0-.685-1.06H6.088L5.452 4.5H2.25Z" /></svg>`, description: "あなたは普段のネットショッピングをもっとお得にしたい「お買い物賢者型」。ポイントサイトを経由するひと手間を惜しまないことで、購入金額の一部をポイントとして賢く還元させることができます。いつものお買い物が、もっと楽しくなりますよ！", sites: [{name: "ポイントインカム", html: `<div class="p-4 rounded-lg result-card-item"><h3 class="font-bold text-lg text-slate-800">ポイントインカム</h3><p class="text-sm text-slate-500 my-2">高いポイント還元率と豊富なキャンペーンが魅力。一度上がったら下がらない会員ステータスで、使えば使うほどお得になります。</p><div class="flex justify-center mt-3"><a href="https://px.a.net/svt/ejp?a8mat=3ZM435+CAD38Y+5JWO+5YZ75" rel="nofollow"><img border="0" width="300" height="250" alt="ポイントインカム" src="https://www24.a8.net/svt/bgt?aid=241216817743&wid=001&eno=01&mid=s00000025908001003000&mc=1"></a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=3ZM435+CAD38Y+5JWO+5YZ75" alt=""></div></div>`}, {name: "ハピタス", html: `<div class="p-4 rounded-lg result-card-item"><h3 class="font-bold text-lg text-slate-800">ハピタス</h3><p class="text-sm text-slate-500 my-2">3,000以上のショップやサービスと提携。シンプルで分かりやすいサイト設計で、初心者でも安心して利用できます。</p><div class="flex justify-center mt-3"><a href="https://m.hapitas.jp/register?i=20658935&route=text" target="_blank" rel="noopener noreferrer" class="bg-orange-400 text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-orange-500 transition-transform transform hover:scale-105">ハピタスに登録してお得に始める</a></div></div>`}] },
+            アクティブ: { title: "【健康アクティブ型】", icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M5.697 4.34 8.98 16.532h1.327L15.304 4.34M8.98 16.532l-5.3-2.915m5.3 2.915 5.3-2.915m0 0-5.3-2.915m5.3 2.915 5.3-2.915M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>`, description: "あなたは通勤・通学やお散歩など、日々の移動を価値に変えたい「健康アクティブ型」。歩いたり、電車に乗ったりするだけでポイントが貯まるアプリがおすすめです。毎日の移動が楽しくなるだけでなく、健康促進にも繋がります！", sites: [{name: "クラシルリワード", html: `<div class="p-4 rounded-lg result-card-item"><h3 class="font-bold text-lg text-slate-800">クラシルリワード</h3><p class="text-sm text-slate-500 my-2">移動距離に応じてゲージが貯まり、ポイントがもらえる！チラシやレシートでも貯まるので、お出かけついでに最適です。</p><div class="flex justify-center mt-3"><a href="https://px.a8.net/svt/ejp?a8mat=44Z3ZC+FT6F3M+5INE+5YZ75" rel="nofollow"><img border="0" width="300" height="250" alt="クラシルリワード" src="https://www25.a8.net/svt/bgt?aid=250221288956&wid=001&eno=01&mid=s00000025745001003000&mc=1"></a><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=44Z3ZC+FT6F3M+5INE+5YZ75" alt=""></div></div>`}, {name: "トリマ", html: `<div class="p-4 rounded-lg result-card-item"><h3 class="font-bold text-lg text-slate-800">トリマ</h3><p class="text-sm text-slate-500 my-2">移動するだけでポイントが貯まる、移動系ポイ活の定番アプリ。歩数でも貯まるので、健康管理にも役立ちます。</p><div class="flex justify-center mt-3"><a href="https://mapfan.to/trip-mile" target="_blank" rel="noopener noreferrer" class="bg-green-500 text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-green-600 transition-transform transform hover:scale-105">トリマ公式サイトへ</a></div></div>`}] },
+            ガッツリ: { title: "【高みを目指すハンター型】", icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" /></svg>`, description: "あなたは目標を定めて、一気に大きなポイントを獲得したい「高みを目指すハンター型」。クレジットカード発行や口座開設、サービスの無料お試しなど、高単価な案件が豊富なサイトがおすすめです。少しの手間で、まとまった副収入をゲットしましょう！", sites: [{name: "ワラウ", html: `<div class="p-4 rounded-lg result-card-item"><h3 class="font-bold text-lg text-slate-800">ワラウ</h3><p class="text-sm text-slate-500 my-2">高単価案件が豊富で、ゲームでも楽しく貯められる人気のポイントサイト。登録時のスピードくじで最大500円分のポイントが当たる！</p><div class="flex justify-center mt-3"><a href="https://px.a8.net/svt/ejp?a8mat=3ZM435+CBJYGI+3ZZC+HY069" rel="nofollow"><img border="0" width="300" height="250" alt="ワラウ" src="https://www27.a8.net/svt/bgt?aid=241216817745&wid=001&eno=01&mid=s00000018660003014000&mc=1"></a><img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=3ZM435+CBJYGI+3ZZC+HY069" alt=""></div></div>`}, {name: "モッピー", html: `<div class="p-4 rounded-lg result-card-item"><h3 class="font-bold text-lg text-slate-800">モッピー</h3><p class="text-sm text-slate-500 my-2">累計1,000万人以上が利用する国内最大級のポイントサイト。案件数が非常に多く、あなたに合った稼ぎ方がきっと見つかります。</p><div class="flex justify-center mt-3"><a href="https://pc.moppy.jp/entry/" target="_blank" rel="noopener noreferrer" class="bg-pink-500 text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-pink-600 transition-transform transform hover:scale-105">モッピーに無料で登録する</a></div></div>`}] }
+        };
+
+        // --- Core Logic ---
+
+        function startGame() {
+            startScreen.classList.add('fade-out');
+            setTimeout(() => {
+                startScreen.classList.add('hidden');
+                questionScreen.classList.remove('hidden');
+                questionScreen.classList.add('fade-in');
+                selectAndShowQuestion();
+            }, 600);
+        }
+
+        function selectAndShowQuestion() {
+            const unaskedQuestions = allQuestions.filter(q => !askedQuestionIds.has(q.id));
+            let nextQuestion;
+
+            // First 3 questions are from the 'initial' pool to get a baseline
+            if (questionsAskedCount < 3) {
+                const initialQuestions = unaskedQuestions.filter(q => q.tags.includes('initial'));
+                nextQuestion = initialQuestions[Math.floor(Math.random() * initialQuestions.length)];
+            } else {
+                // Adaptive logic: find a question that helps differentiate the top 2 categories
+                const sortedScores = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+                const topCategory = sortedScores[0][0];
+                const secondCategory = sortedScores[1][0];
+
+                // Prioritize questions tagged with both top categories
+                let potentialQuestions = unaskedQuestions.filter(q => q.tags.includes(topCategory) && q.tags.includes(secondCategory));
+                
+                // Fallback: questions tagged with the top category
+                if (potentialQuestions.length === 0) {
+                    potentialQuestions = unaskedQuestions.filter(q => q.tags.includes(topCategory));
+                }
+                
+                // Fallback: any unasked question
+                if (potentialQuestions.length === 0) {
+                    potentialQuestions = unaskedQuestions;
+                }
+
+                nextQuestion = potentialQuestions[Math.floor(Math.random() * potentialQuestions.length)];
+            }
+
+            askedQuestionIds.add(nextQuestion.id);
+            displayQuestion(nextQuestion);
+        }
+
+        function displayQuestion(question) {
+            questionCard.classList.remove('slide-in-up');
+            setTimeout(() => {
+                questionText.textContent = question.text;
+                answersContainer.innerHTML = '';
+                question.answers.forEach(answer => {
+                    const button = document.createElement('button');
+                    button.innerHTML = `<span>${answer.text}</span>`;
+                    button.className = 'w-full text-center p-4 font-semibold bg-white border-2 border-transparent rounded-lg hover:border-blue-500 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-1';
+                    button.onclick = () => handleAnswer(answer.points);
+                    answersContainer.appendChild(button);
+                });
+                updateProgress();
+                questionCard.classList.add('slide-in-up');
+            }, 100); // Short delay for smoother transition
+        }
+
+        function handleAnswer(points) {
+            // Update scores
+            for (const type in points) {
+                if (scores.hasOwnProperty(type)) {
+                    scores[type] += points[type];
+                }
+            }
+            questionsAskedCount++;
+
+            if (questionsAskedCount < TOTAL_QUESTIONS_TO_ASK) {
+                 selectAndShowQuestion();
+            } else {
+                transitionToLoading();
+            }
+        }
+        
+        function updateProgress() {
+            const progress = (questionsAskedCount / TOTAL_QUESTIONS_TO_ASK) * 100;
+            progressBar.style.width = `${progress}%`;
+            progressText.innerText = `質問 ${questionsAskedCount + 1} / ${TOTAL_QUESTIONS_TO_ASK}`;
+        }
+        
+        function transitionToLoading() {
+             questionScreen.classList.add('fade-out');
+            setTimeout(() => {
+                questionScreen.classList.add('hidden');
+                loadingScreen.classList.remove('hidden');
+                loadingScreen.classList.add('fade-in');
+                setTimeout(showResult, 2000); // Simulate analysis
+            }, 600);
+        }
+        
+        function showResult() {
+            loadingScreen.classList.add('fade-out');
+             setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+                
+                // Determine result with tie-breaking
+                const typeOrder = ['ガッツリ', 'ショッピング', 'アクティブ', 'コツコツ'];
+                let maxScore = -1;
+                let resultType = 'コツコツ';
+                for (const type of typeOrder) {
+                    if (scores[type] >= maxScore) {
+                        maxScore = scores[type];
+                        resultType = type;
+                    }
+                }
+
+                const result = resultData[resultType];
+                resultTitle.textContent = result.title;
+                resultIcon.innerHTML = result.icon;
+                resultDescription.textContent = result.description;
+
+                recommendations.innerHTML = '';
+                result.sites.forEach(site => {
+                    const div = document.createElement('div');
+                    div.innerHTML = site.html;
+                    recommendations.appendChild(div);
+                });
+                
+                resultScreen.classList.remove('hidden');
+                resultScreen.classList.add('fade-in');
+                window.scrollTo(0, 0);
+            }, 600);
+        }
+
+        function restartGame() {
+            resultScreen.classList.add('fade-out');
+            setTimeout(() => {
+                resultScreen.classList.add('hidden');
+                startScreen.classList.remove('hidden', 'fade-out');
+                startScreen.classList.add('fade-in');
+                
+                // Reset state
+                questionsAskedCount = 0;
+                askedQuestionIds.clear();
+                scores = { コツコツ: 0, ショッピング: 0, アクティブ: 0, ガッツリ: 0 };
+                updateProgress(); // Visually reset progress bar
+            }, 600);
+        }
+
+        // Event Listeners
+        startBtn.addEventListener('click', startGame);
+        restartBtn.addEventListener('click', restartGame);
+    </script>
+</body>
+</html>
