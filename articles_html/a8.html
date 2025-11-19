@@ -1017,7 +1017,7 @@ Amazon・楽天アフィリエイトを始めるなら、もしもアフィリ�
                 
                     <a href="../articles_html/SocialCommerce.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
                         <div class="w-full aspect-video overflow-hidden">
-                            <img src="../thumbnails/SocialCommerce.png" alt="【2025年最新】ソーシャルコマースとは？SNS×ポイ活で月1万円稼ぐ「スマホ副業」完全ガイド" class="w-full h-full object-cover">
+                            <img src="https://placehold.co/1280x720/0000FF/FFFFFF?text=Social+Commerce" alt="【2025年最新】ソーシャルコマースとは？SNS×ポイ活で月1万円稼ぐ「スマホ副業」完全ガイド" class="w-full h-full object-cover">
                         </div>
                         <div class="p-4">
                             <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ポイ活</p>
@@ -1025,13 +1025,13 @@ Amazon・楽天アフィリエイトを始めるなら、もしもアフィリ�
                         </div>
                     </a>
                 
-                    <a href="../articles_html/zoomcss.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                    <a href="../articles_html/tumutumu.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
                         <div class="w-full aspect-video overflow-hidden">
-                            <img src="../thumbnails/zoomcss.png" alt="【CSS解決】スマホでフォーム入力時に勝手にズーム（拡大）するのを防ぐ方法" class="w-full h-full object-cover">
+                            <img src="../thumbnails/tumutumu.png" alt="【ツムツム課金】完全無料でルビーをGET！学生でもできるポイ活でPayPayを稼ぐ裏ワザ" class="w-full h-full object-cover">
                         </div>
                         <div class="p-4">
-                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">Web制作</p>
-                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【CSS解決】スマホでフォーム入力時に勝手にズーム（拡大）するのを防ぐ方法</h3>
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">ゲーム</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【ツムツム課金】完全無料でルビーをGET！学生でもできるポイ活でPayPayを稼ぐ裏ワザ</h3>
                         </div>
                     </a>
                 
@@ -1297,5 +1297,27 @@ Amazon・楽天アフィリエイトを始めるなら、もしもアフィリ�
             })();
         });
     </script>
+
+    <!-- GAS Analytics Tracking Code -->
+<script>
+(function() {
+  var endpoint = "https://script.google.com/macros/s/AKfycbwBa8j3aiePQqK-GN33vwWD51_PypOjcPIOrVcpcFm083uhfw8w7zRKj7aDo_PH8TKLsQ/exec";
+  var data = {
+    type: "pv",
+    slug: location.pathname.split("/").pop().replace(".html", "") || "home",
+    title: document.title,
+    referrer: document.referrer,
+    userAgent: navigator.userAgent,
+    timestamp: new Date().toISOString()
+  };
+  if(navigator.sendBeacon) {
+    navigator.sendBeacon(endpoint, JSON.stringify(data));
+  } else {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", endpoint);
+    xhr.send(JSON.stringify(data));
+  }
+})();
+</script>
 </body>
 </html>

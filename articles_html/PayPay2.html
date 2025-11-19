@@ -1017,13 +1017,13 @@
                         </div>
                     </a>
                 
-                    <a href="../articles_html/ForeignPoint.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
+                    <a href="../articles_html/AIImg.html" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
                         <div class="w-full aspect-video overflow-hidden">
-                            <img src="../thumbnails/ForeignPoint.png" alt="【2025年最新】海外ポイ活アプリおすすめ5選！日本の数倍稼げるって本当？危険性や使い方を徹底解説" class="w-full h-full object-cover">
+                            <img src="../thumbnails/AIImg.png" alt="【2025年最新】画像生成AIでの稼ぎ方はもう古い？時代遅れじゃない5つのマネタイズ術を徹底解説！" class="w-full h-full object-cover">
                         </div>
                         <div class="p-4">
-                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">未分類</p>
-                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年最新】海外ポイ活アプリおすすめ5選！日本の数倍稼げるって本当？危険性や使い方を徹底解説</h3>
+                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">画像生成</p>
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">【2025年最新】画像生成AIでの稼ぎ方はもう古い？時代遅れじゃない5つのマネタイズ術を徹底解説！</h3>
                         </div>
                     </a>
                 
@@ -1289,5 +1289,27 @@
             })();
         });
     </script>
+
+    <!-- GAS Analytics Tracking Code -->
+<script>
+(function() {
+  var endpoint = "https://script.google.com/macros/s/AKfycbwBa8j3aiePQqK-GN33vwWD51_PypOjcPIOrVcpcFm083uhfw8w7zRKj7aDo_PH8TKLsQ/exec";
+  var data = {
+    type: "pv",
+    slug: location.pathname.split("/").pop().replace(".html", "") || "home",
+    title: document.title,
+    referrer: document.referrer,
+    userAgent: navigator.userAgent,
+    timestamp: new Date().toISOString()
+  };
+  if(navigator.sendBeacon) {
+    navigator.sendBeacon(endpoint, JSON.stringify(data));
+  } else {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", endpoint);
+    xhr.send(JSON.stringify(data));
+  }
+})();
+</script>
 </body>
 </html>
