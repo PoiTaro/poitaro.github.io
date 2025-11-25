@@ -2,7 +2,7 @@
  * サムネイル自動生成スクリプト
  * - 入力: articles/*.md (frontmatter: title, description, category, thumbnail等)
  * - 出力: thumbnails/<slug>.png （1200x630, OpenGraph向け）
- * - 特徴: モダンなデザイン、JPフォント対応（Noto Sans JP / fallback）
+ * - 特徴: モダンでおしゃれなファッションサイト風デザイン、JPフォント対応
  */
 
 const fs = require('fs');
@@ -45,79 +45,43 @@ function getSlug(mdFile) {
   return mdFile.replace(/\.md$/, '');
 }
 
-// ブランド設定（必要に応じて調整）
+// ブランド設定 - 新しいテーマカラー
 const BRAND = {
   siteName: 'ポイ活Pay太郎',
-  url: 'https://poitaro.com/',
-  color: '#f59e0b', // default accent (primary-500)
-  bg: '#111827', // gray-900
+  tagline: 'Smart Savings',
+  url: 'poitaro.com',
+  primaryColor: '#c9825a',   // brand-500
+  secondaryColor: '#b86a45', // brand-600
+  accentColor: '#22c55e',    // accent-500
+  bgDark: '#171717',         // neutral-900
+  bgLight: '#fafafa',        // neutral-50
   fg: '#ffffff',
 };
 
-// カテゴリごとのイメージカラー
+// カテゴリごとのアクセントカラー（新テーマ対応）
 const CATEGORY_COLORS = {
-  'ポイ活': '#f59e0b',        // amber-500
-  'ポイントサイト': '#ef4444', // red-500
-  'キャッシュレス': '#f97316', // orange-500
-  '楽天ポイント': '#bf0000',   // Rakuten red
-  'ガジェット': '#3b82f6',    // blue-500
-  'ガジェット・アプリ': '#2563eb',
-  'Web制作': '#10b981',       // emerald-500
-  'ゲーム': '#a855f7',        // purple-500
-  '生成AI': '#06b6d4',        // cyan-500
-  'VPN': '#0ea5e9',           // sky-500
-  'LINE': '#06c755',          // LINE green
-  'アプリ': '#14b8a6',        // teal-500
-  'アフィリエイト': '#8b5cf6',
-  'プライバシーポリシー': '#94a3b8', // slate-400
+  'ポイ活': { primary: '#c9825a', secondary: '#9a5539' },
+  'ポイントサイト': { primary: '#ef4444', secondary: '#dc2626' },
+  'キャッシュレス': { primary: '#f97316', secondary: '#ea580c' },
+  '楽天ポイント': { primary: '#dc2626', secondary: '#b91c1c' },
+  'PayPay': { primary: '#ef4444', secondary: '#dc2626' },
+  'ガジェット': { primary: '#3b82f6', secondary: '#2563eb' },
+  'ガジェット・アプリ': { primary: '#2563eb', secondary: '#1d4ed8' },
+  'Web制作': { primary: '#10b981', secondary: '#059669' },
+  'ゲーム': { primary: '#a855f7', secondary: '#9333ea' },
+  '生成AI': { primary: '#06b6d4', secondary: '#0891b2' },
+  'VPN': { primary: '#0ea5e9', secondary: '#0284c7' },
+  'LINE': { primary: '#22c55e', secondary: '#16a34a' },
+  'アプリ': { primary: '#14b8a6', secondary: '#0d9488' },
+  'アフィリエイト': { primary: '#8b5cf6', secondary: '#7c3aed' },
+  'プライバシーポリシー': { primary: '#64748b', secondary: '#475569' },
+  '節約': { primary: '#c9825a', secondary: '#9a5539' },
+  'お得情報': { primary: '#f59e0b', secondary: '#d97706' },
 };
 
-function getAccentColor(category) {
-  if (!category) return BRAND.color;
-  return CATEGORY_COLORS[category] || BRAND.color;
-}
-
-function buildHtml({ title, category, siteName, accentColor }) {
-  const safeTitle = (title || '無題の記事').slice(0, 80);
-  const safeCategory = category || '';
-  const grad = `radial-gradient(800px 800px at 50% -20%, ${hexToRgba(accentColor, 0.28)}, rgba(0,0,0,0))`;
-
-  return `<!DOCTYPE html>
-  <html lang="ja">
-    <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width,initial-scale=1" />
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Noto+Sans+JP:wght@700;900&display=swap" rel="stylesheet">
-      <style>
-        html,body{margin:0;padding:0}
-        .card{
-          width:1200px;height:630px;display:grid;place-items:center;
-          background:${BRAND.bg};color:${BRAND.fg};
-          font-family:Inter,'Noto Sans JP',system-ui,-apple-system,'Segoe UI','Helvetica Neue',sans-serif;
-          position:relative;overflow:hidden
-        }
-        .card:before{content:"";position:absolute;inset:-20%;background:${grad};filter:blur(60px);}        
-        .center{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;padding:0 64px}
-        .badge{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;background:${hexToRgba(accentColor,0.15)};color:${accentColor};font-weight:800;font-size:22px}
-        .dot{width:10px;height:10px;border-radius:999px;background:${accentColor}}
-        .title h1{font-size:64px;line-height:1.1;margin:0;word-break:break-word}
-        .site{font-size:24px;color:#d1d5db;font-weight:700}
-        .footer{position:absolute;right:48px;bottom:32px;font-size:20px;color:#d1d5db}
-      </style>
-    </head>
-    <body>
-      <div class="card">
-        <div class="center">
-          ${safeCategory ? `<div class="badge"><span class="dot"></span><span>${safeCategory}</span></div>` : ''}
-          <div class="title"><h1>${safeTitle}</h1></div>
-          <div class="site">${siteName}</div>
-        </div>
-        <div class="footer">${BRAND.url.replace(/\/$/, '')}</div>
-      </div>
-    </body>
-  </html>`;
+function getCategoryColors(category) {
+  if (!category) return { primary: BRAND.primaryColor, secondary: BRAND.secondaryColor };
+  return CATEGORY_COLORS[category] || { primary: BRAND.primaryColor, secondary: BRAND.secondaryColor };
 }
 
 // ヘックスをrgba文字列に変換
@@ -128,6 +92,206 @@ function hexToRgba(hex, a) {
   const g = (bigint >> 8) & 255;
   const b = bigint & 255;
   return `rgba(${r}, ${g}, ${b}, ${a})`;
+}
+
+function buildHtml({ title, category, siteName, tagline, colors }) {
+  const safeTitle = (title || '無題の記事').slice(0, 60);
+  const safeCategory = category || '';
+  const { primary, secondary } = colors;
+
+  return `<!DOCTYPE html>
+  <html lang="ja">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+      <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        
+        .card{
+          width:1200px;
+          height:630px;
+          background: linear-gradient(135deg, ${BRAND.bgDark} 0%, #262626 100%);
+          color:${BRAND.fg};
+          font-family:'Inter','Noto Sans JP',system-ui,-apple-system,sans-serif;
+          position:relative;
+          overflow:hidden;
+          display:flex;
+          flex-direction:column;
+        }
+        
+        /* Decorative gradient orbs */
+        .orb1{
+          position:absolute;
+          width:600px;
+          height:600px;
+          border-radius:50%;
+          background: radial-gradient(circle, ${hexToRgba(primary, 0.25)} 0%, transparent 70%);
+          top:-200px;
+          right:-100px;
+          filter:blur(60px);
+        }
+        .orb2{
+          position:absolute;
+          width:400px;
+          height:400px;
+          border-radius:50%;
+          background: radial-gradient(circle, ${hexToRgba(secondary, 0.2)} 0%, transparent 70%);
+          bottom:-100px;
+          left:-50px;
+          filter:blur(50px);
+        }
+        
+        /* Grid pattern overlay */
+        .grid-overlay{
+          position:absolute;
+          inset:0;
+          background-image: 
+            linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+          background-size: 40px 40px;
+        }
+        
+        /* Main content area */
+        .content{
+          position:relative;
+          z-index:10;
+          flex:1;
+          display:flex;
+          flex-direction:column;
+          justify-content:center;
+          padding:60px 80px;
+        }
+        
+        /* Category badge */
+        .category{
+          display:inline-flex;
+          align-items:center;
+          gap:10px;
+          padding:10px 20px;
+          background: linear-gradient(135deg, ${primary}, ${secondary});
+          border-radius:50px;
+          font-size:18px;
+          font-weight:600;
+          letter-spacing:0.5px;
+          margin-bottom:28px;
+          width:fit-content;
+          box-shadow: 0 4px 20px ${hexToRgba(primary, 0.4)};
+        }
+        .category-dot{
+          width:8px;
+          height:8px;
+          background:#fff;
+          border-radius:50%;
+          animation:pulse 2s infinite;
+        }
+        @keyframes pulse{
+          0%,100%{opacity:1}
+          50%{opacity:0.5}
+        }
+        
+        /* Title */
+        .title{
+          font-family:'Playfair Display','Noto Sans JP',serif;
+          font-size:58px;
+          font-weight:700;
+          line-height:1.2;
+          letter-spacing:-0.02em;
+          margin-bottom:24px;
+          max-width:900px;
+          word-break:break-word;
+        }
+        
+        /* Decorative line under title */
+        .title-line{
+          width:100px;
+          height:4px;
+          background: linear-gradient(90deg, ${primary}, ${secondary});
+          border-radius:2px;
+        }
+        
+        /* Footer bar */
+        .footer{
+          position:relative;
+          z-index:10;
+          display:flex;
+          align-items:center;
+          justify-content:space-between;
+          padding:24px 80px;
+          background: rgba(0,0,0,0.3);
+          border-top:1px solid rgba(255,255,255,0.1);
+        }
+        
+        .brand{
+          display:flex;
+          align-items:center;
+          gap:16px;
+        }
+        .brand-icon{
+          width:48px;
+          height:48px;
+          border-radius:50%;
+          overflow:hidden;
+          box-shadow: 0 4px 12px ${hexToRgba(BRAND.primaryColor, 0.3)};
+        }
+        .brand-icon img{
+          width:100%;
+          height:100%;
+          object-fit:cover;
+        }
+        .brand-text{
+          display:flex;
+          flex-direction:column;
+        }
+        .brand-name{
+          font-family:'Playfair Display',serif;
+          font-size:22px;
+          font-weight:600;
+          letter-spacing:-0.01em;
+        }
+        .brand-tagline{
+          font-size:11px;
+          color:rgba(255,255,255,0.6);
+          letter-spacing:2px;
+          text-transform:uppercase;
+        }
+        
+        .url{
+          font-size:16px;
+          color:rgba(255,255,255,0.5);
+          font-weight:500;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="card">
+        <div class="orb1"></div>
+        <div class="orb2"></div>
+        <div class="grid-overlay"></div>
+        
+        <div class="content">
+          ${safeCategory ? `<div class="category"><span class="category-dot"></span><span>${safeCategory}</span></div>` : ''}
+          <h1 class="title">${safeTitle}</h1>
+          <div class="title-line"></div>
+        </div>
+        
+        <div class="footer">
+          <div class="brand">
+            <div class="brand-icon">
+              <img src="https://poitaro.com/blog/favicon.ico" alt="Logo">
+            </div>
+            <div class="brand-text">
+              <span class="brand-name">${siteName}</span>
+              <span class="brand-tagline">${tagline}</span>
+            </div>
+          </div>
+          <span class="url">${BRAND.url}</span>
+        </div>
+      </div>
+    </body>
+  </html>`;
 }
 
 async function main() {
@@ -156,12 +320,13 @@ async function main() {
       const raw = fs.readFileSync(mdPath, 'utf8');
       const fm = parseFrontmatter(raw);
 
-      const accentColor = getAccentColor(fm.category || '');
+      const colors = getCategoryColors(fm.category || '');
       const html = buildHtml({
         title: fm.title || slug,
         category: fm.category || '',
         siteName: BRAND.siteName,
-        accentColor,
+        tagline: BRAND.tagline,
+        colors,
       });
 
       await page.setContent(html, { waitUntil: 'networkidle0' });

@@ -232,11 +232,15 @@ rawPosts.forEach(current => {
         const related = getRelatedPosts(current, rawPosts);
         const relatedHtml = buildRelatedHtml(related);
     const tocHtml = buildTocHtml(current.toc);
+    
+    // カテゴリをURLパラメータ用にエンコード（小文字で）
+    const categorySlug = (current.category || '').toLowerCase();
 
     let finalHtml = articleTemplate
                 .replace(/{{title}}/g, current.title)
                 .replace(/{{date}}/g, current.date)
                 .replace(/{{category}}/g, current.category)
+                .replace(/{{category_slug}}/g, encodeURIComponent(categorySlug))
                 .replace(/{{description}}/g, current.description)
                 .replace(/{{image}}/g, current.image)
         .replace(/{{ogImage}}/g, current.ogImage || current.imageAbsolute)
