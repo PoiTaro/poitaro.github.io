@@ -1227,26 +1227,27 @@
         });
     </script>
 
-    <!-- GAS Analytics Tracking Code -->
-    <script>
-    (function() {
-      var endpoint = "https://script.google.com/macros/s/AKfycbz3RkdSq3AEGJy_VyxG8XespXWGoRI4Gd488JTg1a3CFn2pbO3wN-Gl5O96bjQJqAgPkg/exec";
-      var data = {
-        type: "pv",
-        slug: location.pathname.split("/").pop().replace(".html", "") || "home",
-        title: document.title,
-        referrer: document.referrer,
-        userAgent: navigator.userAgent,
-        timestamp: new Date().toISOString()
-      };
-      if(navigator.sendBeacon) {
-        navigator.sendBeacon(endpoint, JSON.stringify(data));
-      } else {
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", endpoint);
-        xhr.send(JSON.stringify(data));
-      }
-    })();
-    </script>
+   <!-- GAS Analytics Tracking Code -->
+<script>
+(function() {
+  var endpoint = "https://script.google.com/macros/s/AKfycbz3RkdSq3AEGJy_VyxG8XespXWGoRI4Gd488JTg1a3CFn2pbO3wN-Gl5O96bjQJqAgPkg/exec";
+  var data = {
+    type: "pv",
+    slug: location.pathname.split("/").pop().replace(".html", "") || "home",
+    title: document.title,
+    referrer: document.referrer,
+    userAgent: navigator.userAgent,
+    timestamp: new Date().toISOString()
+  };
+  if(navigator.sendBeacon) {
+    navigator.sendBeacon(endpoint, JSON.stringify(data));
+  } else {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", endpoint);
+    xhr.send(JSON.stringify(data));
+  }
+})();
+</script>
 </body>
 </html>
+
