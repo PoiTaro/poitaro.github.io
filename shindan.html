@@ -197,12 +197,6 @@
     </style>
 </head>
 <body class="bg-neutral-50 dark:bg-neutral-950 font-sans text-neutral-700 dark:text-neutral-300 antialiased">
-
-    <!-- ===== サイト共通アナウンス（期間限定） ===== -->
-    <div id="announcement-mount" class="fixed top-0 inset-x-0 z-[110] pointer-events-none">
-        <!-- announcement.html がここに挿入されます -->
-    </div>
-
     <!-- ===== ヘッダー ===== -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 glass-header border-b border-neutral-200/50 dark:border-neutral-800/50 transition-all duration-500">
         <div class="container mx-auto px-6 lg:px-12 py-5 flex justify-between items-center">
@@ -566,27 +560,5 @@
             mobileMenu.classList.toggle('hidden');
         });
     </script>
-<!-- GAS Analytics Tracking Code -->
-<script>
-(function() {
-  var endpoint = "https://script.google.com/macros/s/AKfycbz3RkdSq3AEGJy_VyxG8XespXWGoRI4Gd488JTg1a3CFn2pbO3wN-Gl5O96bjQJqAgPkg/exec";
-  var data = {
-    type: "pv",
-    slug: location.pathname.split("/").pop().replace(".html", "") || "home",
-    title: document.title,
-    referrer: document.referrer,
-    userAgent: navigator.userAgent,
-    timestamp: new Date().toISOString()
-  };
-  if(navigator.sendBeacon) {
-    navigator.sendBeacon(endpoint, JSON.stringify(data));
-  } else {
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", endpoint);
-    xhr.send(JSON.stringify(data));
-  }
-})();
-</script>
-    
 </body>
 </html>
