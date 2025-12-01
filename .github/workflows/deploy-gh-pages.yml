@@ -40,20 +40,21 @@ jobs:
       - name: Prepare publish directory
         run: |
           mkdir -p dist
-          cp -r articles_html dist/articles_html
-          cp -r thumbnails dist/thumbnails
-          cp index.html dist/index.html
-          cp contact.html dist/contact.html
-          cp announcement.html dist/announcement.html || true
-          cp announcement-content.html dist/announcement-content.html || true
-          cp announcement-config.json dist/announcement-config.json || true
-          cp posts.json dist/posts.json
+          # Copy all HTML files from root
+          cp *.html dist/ 2>/dev/null || true
+          # Copy all JSON files from root
+          cp *.json dist/ 2>/dev/null || true
+          # Copy essential files
           cp sitemap.xml dist/sitemap.xml
+          cp robots.txt dist/robots.txt || true
           cp ads.txt dist/ads.txt || true
           cp CNAME dist/CNAME
-          cp -r articles dist/articles || true
-          cp -r thumbnails dist/thumbnails || true
           cp -r *.ico dist/ 2>/dev/null || true
+          # Copy directories
+          cp -r articles_html dist/articles_html
+          cp -r thumbnails dist/thumbnails
+          cp -r images dist/images 2>/dev/null || true
+          cp -r articles dist/articles || true
 
       - name: Publish to gh-pages
         uses: peaceiris/actions-gh-pages@v4
