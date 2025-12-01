@@ -3,13 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>お問い合わせ | ポイ活Pay太郎</title>
+  <title>お問い合わせ | ポイ活Pay太郎 - ご意見・ご要望・お仕事のご相談</title>
+  <meta name="description" content="ポイ活Pay太郎へのお問い合わせページです。ご意見・ご要望・記事のリクエスト・お仕事のご相談など、お気軽にお問い合わせください。通常2〜3営業日以内にご返信いたします。">
+  <meta name="keywords" content="お問い合わせ,ポイ活Pay太郎,問い合わせフォーム,連絡先">
+  <meta name="author" content="ポイ活Pay太郎">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://poitaro.com/contact.html">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="お問い合わせ | ポイ活Pay太郎">
+  <meta property="og:description" content="ポイ活Pay太郎へのお問い合わせページです。お気軽にお問い合わせください。">
+  <meta property="og:url" content="https://poitaro.com/contact.html">
+  <meta property="og:site_name" content="ポイ活Pay太郎">
+  <meta property="og:locale" content="ja_JP">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="お問い合わせ | ポイ活Pay太郎">
+  <meta name="twitter:description" content="ポイ活Pay太郎へのお問い合わせページです。お気軽にお問い合わせください。">
+  
+  <!-- JSON-LD Structured Data - ContactPage Schema -->
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "お問い合わせ",
+      "description": "ポイ活Pay太郎へのお問い合わせページです。",
+      "url": "https://poitaro.com/contact.html",
+      "mainEntity": {
+          "@type": "Organization",
+          "name": "ポイ活Pay太郎",
+          "url": "https://poitaro.com/",
+          "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "availableLanguage": "Japanese"
+          }
+      }
+  }
+  </script>
+  
+  <!-- JSON-LD Structured Data - BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+          {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "ホーム",
+              "item": "https://poitaro.com/"
+          },
+          {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "お問い合わせ"
+          }
+      ]
+  }
+  </script>
+  
   <link rel="icon" href="https://poitaro.com/blog/favicon.ico" type="image/x-icon" />
   <link rel="shortcut icon" href="https://poitaro.com/blog/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="https://poitaro.com/blog/favicon.ico" />
   <link rel="icon" sizes="192x192" href="https://poitaro.com/blog/favicon.ico" />
   <meta name="msapplication-TileImage" content="https://poitaro.com/blog/favicon.ico" />
   <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" content="#c9825a">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJJCP2Q6SC"></script>
@@ -20,10 +82,13 @@
     gtag('config', 'G-WJJCP2Q6SC');
   </script>
 
-  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <!-- Google Fonts - Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <script>
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
@@ -54,7 +119,7 @@
       <nav class="hidden md:flex items-center space-x-8">
         <a href="index.html#hero" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">ホーム</a>
         <a href="index.html#blog" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">新着記事</a>
-        <a href="index.html#features" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">ポイ活とは</a>
+        <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">当サイトについて</a>
         <a href="articles_html/policy.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">プライバシーポリシー</a>
         <a href="contact.html" class="contact-link text-primary-700 dark:text-primary-400 font-semibold">お問い合わせ</a>
       </nav>
@@ -72,7 +137,7 @@
       <nav class="px-6 pt-2 pb-4 border-t border-gray-200 dark:border-gray-800">
         <a href="index.html#hero" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ホーム</a>
         <a href="index.html#blog" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">新着記事</a>
-        <a href="index.html#features" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">ポイ活とは</a>
+        <a href="about.html" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">当サイトについて</a>
         <a href="articles_html/policy.html" class="privacy-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">プライバシーポリシー</a>
         <a href="contact.html" class="contact-link block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">お問い合わせ</a>
       </nav>
@@ -84,7 +149,8 @@
       <div class="container mx-auto px-6">
         <div class="max-w-3xl mx-auto">
           <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">お問い合わせ</h1>
-          <p class="text-gray-600 dark:text-gray-400 mb-8">ご意見・ご要望・お仕事のご相談などは、以下のフォームよりお気軽にお送りください。</p>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">ご意見・ご要望・お仕事のご相談などは、以下のフォームよりお気軽にお送りください。</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-8">※通常、2〜3営業日以内にご返信いたします。お急ぎの場合はその旨をお書き添えください。</p>
 
           <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden p-6 md:p-8">
             <form id="contact-form" class="space-y-5" method="POST" target="hidden_iframe">
@@ -135,7 +201,7 @@
           <ul class="space-y-2">
             <li><a href="index.html#hero" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">ホーム</a></li>
             <li><a href="index.html#blog" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">新着記事</a></li>
-            <li><a href="index.html#features" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">ポイ活とは</a></li>
+            <li><a href="about.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">当サイトについて</a></li>
             <li><a href="articles_html/policy.html" class="privacy-link hover:text-primary-600 dark:hover:text-primary-400 transition-colors">プライバシーポリシー</a></li>
           </ul>
         </div>
