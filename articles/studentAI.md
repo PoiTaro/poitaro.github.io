@@ -3,9 +3,9 @@ title: "【2025年最新】知らないと損！学生限定＆無料で使え�
 date: "2025-09-12"
 image: "https://placehold.co/1280x720/ADD8E6/000000?text=Generative+AI"
 category: "生成AI"
-categoryColor: ""
-description: ""
-tags: []
+categoryColor: "blue"
+description: "学生なら無料で使えるAIツールを徹底解説！GitHub Copilot、Microsoft 365、Notionなど、課題やレポート作成を効率化する学生限定AIツールを紹介します。"
+tags: ["学生", "AI", "無料", "レポート", "効率化"]
 ---
 
 「レポートや課題が多すぎて時間が足りない…」「もっと効率よく勉強したい！」
