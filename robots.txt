@@ -1,0 +1,65 @@
+# robots.txt for poitaro.com
+# ポイ活Pay太郎 - Crawlers Guide
+
+# Allow all web crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://poitaro.com/sitemap.xml
+
+# Crawl delay for polite crawling (optional, some bots ignore this)
+Crawl-delay: 1
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Disallow: /scripts/
+Disallow: /.github/
+
+# Google Images
+User-agent: Googlebot-Image
+Allow: /thumbnails/
+Allow: /images/
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Disallow: /scripts/
+Disallow: /.github/
+
+# Block AI training bots (optional - you may want to allow or disallow)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Disallow: /
+
+# Block common bad bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+# Directories to always block
+User-agent: *
+Disallow: /scripts/
+Disallow: /.github/
+Disallow: /*.json$
+Disallow: /node_modules/
+Disallow: /generate-posts.js
+Disallow: /generate-sitemap.yml
+Disallow: /package*.json
+Disallow: /_config.yml
+
+# Allow essential files
+Allow: /posts.json
+Allow: /sitemap.xml
+Allow: /ads.txt
