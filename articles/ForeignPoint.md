@@ -2,10 +2,10 @@
 title: "【2025年最新】海外ポイ活アプリおすすめ5選！日本の数倍稼げるって本当？危険性や使い方を徹底解説"
 date: "2025-09-12"
 image: "https://placehold.co/1280x720/FF0000/FFFFFF?text=Earn+Money+Online"
-category: ""
-categoryColor: ""
-description: ""
-tags: []
+category: "ポイ活"
+categoryColor: "blue"
+description: "海外のポイ活アプリで日本の数倍稼ぐ方法を徹底解説！Swagbucks、ySenseなどおすすめ5選の特徴、安全性、使い方、危険性まで初心者向けに解説します。"
+tags: ["海外ポイ活", "Swagbucks", "副業", "お小遣い稼ぎ"]
 ---
 
 「日本のポイ活、なんだか物足りないな…」「もっとガッツリ稼げる方法はないの？」

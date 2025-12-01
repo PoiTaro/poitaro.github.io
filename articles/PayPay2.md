@@ -4,8 +4,8 @@ date: "2025-09-13"
 image: "https://placehold.co/1280x720/4CAF50/FFFFFF?text=PayPay+Point+Hack"
 category: "PayPay"
 categoryColor: ""
-description: ""
-tags: []
+description: "PayPayポイントの二重取り・三重取りを実現する最強の方法を徹底解説！PayPayカードやPayPayステップを活用したお得なポイントの貯め方を紹介します。"
+tags: ["PayPay", "ポイ活", "二重取り", "キャッシュレス"]
 ---
 
 「PayPay、毎日使ってるけど、もっとお得にならないかな…」「ポイントの二重取りってよく聞くけど、具体的にどうすればいいの？」
