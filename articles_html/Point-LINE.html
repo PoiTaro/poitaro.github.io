@@ -704,6 +704,129 @@
                 height: 2.5rem;
             }
         }
+
+        /* ============================================================ */
+        /* AdSense Advertising Container Styles */
+        /* ============================================================ */
+        .ad-container {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #fdf8f5 0%, #f9ede6 100%);
+            border: 1px solid #e8c4ac;
+            border-left: 4px solid #c9825a;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 280px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .ad-container:hover {
+            box-shadow: 0 4px 12px rgba(201, 130, 90, 0.1);
+            border-left-color: #b86a45;
+        }
+
+        .dark .ad-container {
+            background: linear-gradient(135deg, #361e14 0%, #451a03 100%);
+            border-color: #663c2a;
+            border-left-color: #b86a45;
+        }
+
+        /* ヘッダー広告 */
+        .ad-container.ad-header {
+            margin-top: 0;
+            margin-bottom: 2.5rem;
+            background: linear-gradient(135deg, rgba(201, 130, 90, 0.05) 0%, rgba(220, 164, 127, 0.05) 100%);
+            border-top: 2px solid #c9825a;
+            border-left: none;
+            border-radius: 0 0 16px 16px;
+            min-height: 250px;
+        }
+
+        .dark .ad-container.ad-header {
+            border-top-color: #b86a45;
+            background: linear-gradient(135deg, rgba(184, 106, 69, 0.1) 0%, rgba(220, 164, 127, 0.05) 100%);
+        }
+
+        /* インライン広告 */
+        .ad-container.ad-inline {
+            margin: 1.5rem 0;
+            min-height: 320px;
+        }
+
+        /* フッター広告 */
+        .ad-container.ad-footer {
+            margin-top: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #fdf8f5 0%, #f9ede6 100%);
+            border-bottom: 2px solid #c9825a;
+            border-left: none;
+            border-radius: 16px 16px 0 0;
+            min-height: 200px;
+        }
+
+        .dark .ad-container.ad-footer {
+            border-bottom-color: #b86a45;
+            background: linear-gradient(135deg, #361e14 0%, #451a03 100%);
+        }
+
+        /* AdSense広告ユニット */
+        .ad-container ins.adsbygoogle {
+            display: block !important;
+        }
+
+        /* 広告が読み込まれるまでのプレースホルダー */
+        .ad-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .ad-container {
+                margin: 1.5rem 0;
+                padding: 1rem;
+                min-height: 250px;
+                border-radius: 8px;
+            }
+
+            .ad-container.ad-header {
+                min-height: 200px;
+                margin-bottom: 1.5rem;
+                border-radius: 0 0 8px 8px;
+            }
+
+            .ad-container.ad-footer {
+                min-height: 150px;
+                border-radius: 8px 8px 0 0;
+            }
+
+            .ad-container.ad-inline {
+                min-height: 280px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ad-container {
+                min-height: 200px;
+            }
+
+            .ad-container.ad-header,
+            .ad-container.ad-footer {
+                min-height: 120px;
+            }
+        }
     </style>
 </head>
 <body class="bg-neutral-50 dark:bg-neutral-950 font-sans text-neutral-700 dark:text-neutral-300 antialiased">
@@ -814,6 +937,12 @@
                             <div id="reading-time" class="text-sm text-neutral-500 dark:text-neutral-400"></div>
                         </div>
 
+                        <!-- Header Advertisement (top of article) -->
+                        <div id="ad-header" class="ad-container ad-header">
+                            <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        </div>
+
                         <!-- Article content -->
                         <article id="article-content" class="prose lg:prose-xl max-w-none dark:prose-invert">
                            <p>LINEポイントは、スタンプ購入をはじめとした、着せ替えやLINE漫画の購入、PayPayへの交換などができるお得なポイントです。このような多様なサービスに使えるポイントですが、実は貯めるのは超簡単なのです。今回の記事では、そんな方法をいくつか紹介しますので、ぜひ最後までご覧下さい。そしてこの記事を見た皆様、今回紹介する方法をすぐに実践してみてください！</p>
@@ -852,6 +981,12 @@ LINEアプリ内での超簡単なポイントの貯め方としては、ミッ�
 <p>今回はLINEポイントの超簡単な貯め方として、LINEアプリ内で貯める方法とポイ活サイトを利用した方法をご紹介しました。今回紹介したポイ活サイトはたったの3つだけですが、他にもたくさんの、便利でお得なサイトがありますので、自分の用途に合うポイ活サイトを、是非見つけて頂けたらなと思います。もし皆様のおすすめのポイ活サイトがありましたら、コメント欄で教えてください！また、質問等も受け付けておりますので、お願いします。</p>
 
                         </article>
+
+                        <!-- Footer Advertisement (bottom of article) -->
+                        <div id="ad-footer" class="ad-container ad-footer">
+                            <ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        </div>
 
                         <!-- Share buttons -->
                         <div class="flex flex-wrap gap-3 mt-12 pt-8 border-t border-neutral-100 dark:border-neutral-700">
