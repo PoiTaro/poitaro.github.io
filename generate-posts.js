@@ -157,7 +157,12 @@ const rawPosts = articleFiles.map(file => {
                 articleAbsoluteUrl,
                 tagsHtml
     };
-}).sort((a, b) => b.mtime - a.mtime); // 降順（新しいものが先頭）にソート
+}).sort((a, b) => {
+    // date frontmatterで降順ソート（新しい記事が先頭）
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB - dateA;
+}); // 降順（新しいものが先頭）にソート
 
 // 関連記事を計算する関数（タグ一致を優先、次にカテゴリ一致。自分自身は除外。最大3件）
 function getRelatedPosts(current, all) {
