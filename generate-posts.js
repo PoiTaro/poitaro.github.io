@@ -69,6 +69,9 @@ const rawPosts = articleFiles.map(file => {
     const markdownContent = extractMarkdownContent(content);
     let htmlContent = marked(markdownContent); // MarkdownをHTMLに変換
 
+    // Remove the first H1 tag if it exists (to prevent duplicate titles)
+    htmlContent = htmlContent.replace(/^\s*<h1[^>]*>.*?<\/h1>\s*/is, '');
+
     // H2見出しを抽出して目次を作成し、本文内のH2にidアンカーを付与
     const h2Regex = /<h2>(.*?)<\/h2>/g;
     const h2Matches = [...htmlContent.matchAll(h2Regex)].map(m => m[1]);
@@ -113,26 +116,27 @@ const rawPosts = articleFiles.map(file => {
     const generatedThumbExists = (() => { try { return fs.existsSync(path.join(__dirname, generatedThumbRel)); } catch { return false; } })();
     const generatedThumbAbs = generatedThumbExists ? `${baseUrl}${generatedThumbRel}` : null;
 
-    // Prefer generated thumbnail for hero image; fallback to frontmatter image; finally placeholder
-    let imageValue;
-    let imageLocalValue;
-    let imageAbsoluteValue;
+    // Logic Update:
+    // 1. Site Display (Hero/Grid): Prefer Clean Image (Frontmatter) -> Fallback to Generated -> Fallback to Placeholder
+    // 2. OGP (Social): Prefer Generated (Text) -> Fallback to Clean -> Fallback to Placeholder
+
+    let displayImageValue;
+    let displayImageAbs;
+    
+    // Resolve Display Image (Prioritize Generated Thumbnail for "Text on Image" look)
     if (generatedThumbExists) {
-        imageValue = `../${generatedThumbRel}`; // relative from articles_html/* to thumbnails/*
-        imageLocalValue = imageValue;
-        imageAbsoluteValue = generatedThumbAbs;
+        displayImageValue = `../${generatedThumbRel}`;
+        displayImageAbs = generatedThumbAbs;
     } else if (fmImage) {
-        const isRelative = /^([.]{1,2}\/|\/|thumbnails|\.\/|\.\.\/)/.test(fmImage);
-        imageValue = fmImage;
-        imageLocalValue = fmImage;
-        imageAbsoluteValue = /^https?:\/\//.test(fmImage)
-            ? fmImage
-            : `${baseUrl}${fmImage.replace(/^\.\/?/, '')}`;
+        displayImageValue = fmImage;
+        displayImageAbs = /^https?:\/\//.test(fmImage) ? fmImage : `${baseUrl}${fmImage.replace(/^\.\/?/, '')}`;
     } else {
-        imageValue = 'https://placehold.co/1200x630/111827/FFFFFF?text=PoiTaro';
-        imageLocalValue = imageValue;
-        imageAbsoluteValue = imageValue;
+        displayImageValue = 'https://placehold.co/1200x630/111827/FFFFFF?text=PoiTaro';
+        displayImageAbs = displayImageValue;
     }
+
+    // Resolve OGP Image (Text-heavy)
+    const ogImageValue = generatedThumbAbs || displayImageAbs;
 
         return {
         slug: slug, // スラッグを追加
@@ -142,10 +146,9 @@ const rawPosts = articleFiles.map(file => {
         date: attributes.date || new Date(stats.mtime).toISOString().split('T')[0],
         category: attributes.category || '未分類',
         categoryColor: attributes.categoryColor || 'gray',
-    image: imageValue,
-    imageLocal: imageLocalValue,
-    imageAbsolute: imageAbsoluteValue,
-    ogImage: generatedThumbAbs || imageAbsoluteValue,
+    image: displayImageValue, // Used for site display (clean)
+    imageAbsolute: displayImageAbs,
+    ogImage: ogImageValue, // Used for meta tags (text)
         description: attributes.description || '記事の説明がありません。',
         tags: attributes.tags || [],
             content: htmlContent, // Add the full HTML content
@@ -185,19 +188,21 @@ function getRelatedPosts(current, all) {
 function buildRelatedHtml(related) {
         if (!related || related.length === 0) return '';
         return `
-        <section class="mt-12">
-            <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">関連記事</h2>
-            <div class="grid gap-6 md:grid-cols-3">
+        <section class="mt-16 pt-10 border-t-2 border-black">
+            <h2 class="font-anton text-3xl mb-6 flex items-center"><span class="text-brand-accent mr-2 text-4xl">>></span>RELATED ISSUES</h2>
+            <div class="grid gap-4 grid-cols-1 md:grid-cols-3">
                 ${related.map(r => `
-                    <a href="../${r.url}" class="group block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition">
-                        <div class="w-full aspect-video overflow-hidden">
-                            <img src="${r.image}" alt="${r.title}" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-4">
-                            <p class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1">${r.category || ''}</p>
-                            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 line-clamp-2">${r.title}</h3>
-                        </div>
-                    </a>
+                    <div class="group">
+                        <a href="../${r.url}" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
+                            <div class="w-full aspect-video overflow-hidden relative">
+                                <img src="${r.image}" alt="${r.title}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
+                                <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                        </a>
+                        <a href="../${r.url}" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
+                            記事を見る >>
+                        </a>
+                    </div>
                 `).join('')}
             </div>
         </section>
@@ -208,22 +213,18 @@ function buildRelatedHtml(related) {
 function buildTocHtml(toc) {
         if (!toc || toc.length === 0) return '';
         return `
-        <nav aria-label="目次" class="mb-8">
-            <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-800/50 backdrop-blur px-5 py-4">
-                <div class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
-                    目次
-                </div>
-                <ul class="space-y-1">
-                    ${toc.map(item => `
-                        <li>
-                            <a href="#${item.id}" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                                ${item.text}
-                            </a>
-                        </li>
-                    `).join('')}
-                </ul>
-            </div>
+        <nav aria-label="目次" class="mb-12 p-6 border border-gray-300 bg-brand-white relative">
+            <div class="absolute -top-3 left-4 bg-brand-white px-2 font-anton text-xl tracking-wider">INDEX</div>
+            <ul class="space-y-3 mt-2">
+                ${toc.map((item, index) => `
+                    <li class="flex items-baseline group">
+                        <span class="font-anton text-brand-accent mr-3 text-lg">0${index + 1}.</span>
+                        <a href="#${item.id}" class="font-sans font-bold text-sm border-b border-transparent hover:border-black transition-colors group-hover:text-brand-purple">
+                            ${item.text}
+                        </a>
+                    </li>
+                `).join('')}
+            </ul>
         </nav>`;
 }
 
@@ -233,14 +234,23 @@ rawPosts.forEach(current => {
         const relatedHtml = buildRelatedHtml(related);
     const tocHtml = buildTocHtml(current.toc);
     
-    // カテゴリをURLパラメータ用にエンコード（小文字で）
-    const categorySlug = (current.category || '').toLowerCase();
+    // カテゴリをURLパラメータ用にエンコード（実際のカテゴリ名をそのまま使用）
+    const categoryForUrl = encodeURIComponent(current.category || '');
+
+    // テーブルを横スクロール可能にラップ（補助テキスト付き）
+    let contentWithScrollableTables = current.content.replace(
+        /<table>/g,
+        '<div class="table-wrapper"><table>'
+    ).replace(
+        /<\/table>/g,
+        '</table><div class="table-scroll-hint">スクロールして全体を表示</div></div>'
+    );
 
     let finalHtml = articleTemplate
                 .replace(/{{title}}/g, current.title)
                 .replace(/{{date}}/g, current.date)
                 .replace(/{{category}}/g, current.category)
-                .replace(/{{category_slug}}/g, encodeURIComponent(categorySlug))
+                .replace(/{{category_slug}}/g, categoryForUrl)
                 .replace(/{{description}}/g, current.description)
                 .replace(/{{image}}/g, current.image)
         .replace(/{{ogImage}}/g, current.ogImage || current.imageAbsolute)
@@ -249,7 +259,7 @@ rawPosts.forEach(current => {
                 .replace(/{{categoryColor}}/g, current.categoryColor)
                 .replace(/<!-- Tags will be displayed here -->/g, current.tagsHtml)
             .replace(/<!-- TOC will be displayed here -->/g, tocHtml)
-            .replace(/{{content}}/g, current.content)
+            .replace(/{{content}}/g, contentWithScrollableTables)
                 .replace(/<!-- Related posts will be displayed here -->/g, relatedHtml);
 
         fs.writeFileSync(current.articleHtmlFilePath, finalHtml);
