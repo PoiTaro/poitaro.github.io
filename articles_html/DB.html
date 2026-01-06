@@ -43,29 +43,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
-     crossorigin="anonymous"></script>
-    <!-- GAS Analytics Tracking Code -->
-<script>
-(function() {
-  var endpoint = "https://script.google.com/macros/s/AKfycbz3RkdSq3AEGJy_VyxG8XespXWGoRI4Gd488JTg1a3CFn2pbO3wN-Gl5O96bjQJqAgPkg/exec";
-  var data = {
-    type: "pv",
-    slug: location.pathname.split("/").pop().replace(".html", "") || "home",
-    title: document.title,
-    referrer: document.referrer,
-    userAgent: navigator.userAgent,
-    timestamp: new Date().toISOString()
-  };
-  if(navigator.sendBeacon) {
-    navigator.sendBeacon(endpoint, JSON.stringify(data));
-  } else {
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", endpoint);
-    xhr.send(JSON.stringify(data));
-  }
-})();
-</script>
+    
     <script>
         tailwind.config = {
             theme: {
@@ -779,13 +757,13 @@
                     </div>
                 
                     <div class="group">
-                        <a href="../articles_html/sora2.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
+                        <a href="../articles_html/studentAI.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
                             <div class="w-full aspect-video overflow-hidden relative">
-                                <img src="../thumbnails/sora2.png" alt="【2025年最新】Sora 2のウォーターマークを消す方法4選！公式・無料で安全に除去するやり方とは？" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
+                                <img src="../thumbnails/studentAI.png" alt="【2025年最新】知らないと損！学生限定＆無料で使えるAIツール4選＋α｜課題・レポート・就活を効率化" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
                                 <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </div>
                         </a>
-                        <a href="../articles_html/sora2.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
+                        <a href="../articles_html/studentAI.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
                             記事を見る >>
                         </a>
                     </div>
@@ -975,5 +953,4 @@
         });
     </script>
 </body>
-
 </html>
