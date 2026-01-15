@@ -72,6 +72,23 @@ const rawPosts = articleFiles.map(file => {
     // Remove the first H1 tag if it exists (to prevent duplicate titles)
     htmlContent = htmlContent.replace(/^\s*<h1[^>]*>.*?<\/h1>\s*/is, '');
 
+    // Google AdSense広告のHTMLテンプレート
+    const adTemplate = `
+<div class="article-ad my-8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2213699949048480"
+     data-ad-slot="4891282874"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+`;
+
     // H2見出しを抽出して目次を作成し、本文内のH2にidアンカーを付与
     const h2Regex = /<h2>(.*?)<\/h2>/g;
     const h2Matches = [...htmlContent.matchAll(h2Regex)].map(m => m[1]);
@@ -93,6 +110,41 @@ const rawPosts = articleFiles.map(file => {
             const h2TagWithId = `<h2 id="${id}">${text}</h2>`;
             htmlContent = htmlContent.replace(h2Tag, h2TagWithId);
         });
+    }
+
+    // H2タグの後（次のH2タグまたは次のH3タグまたは本文の終わり）に広告を挿入
+    // H2セクションが完結するポイントを見つけて広告を挿入
+    if (h2Anchors.length > 0) {
+        // H2タグのすぐ後に広告を挿入するのではなく、H2セクションの終わり（次のH2の前）に挿入
+        // まず、全てのH2タグの位置を特定
+        const h2Positions = [];
+        let match;
+        const h2RegexGlobal = /<h2[^>]*>.*?<\/h2>/g;
+        while ((match = h2RegexGlobal.exec(htmlContent)) !== null) {
+            h2Positions.push({
+                index: match.index,
+                length: match[0].length,
+                fullMatch: match[0]
+            });
+        }
+
+        // 後ろから処理して、インデックスのずれを防ぐ
+        for (let i = h2Positions.length - 1; i >= 0; i--) {
+            const currentH2 = h2Positions[i];
+            const nextH2 = h2Positions[i + 1];
+            
+            // 現在のH2の終わりから、次のH2の始まりまでのセクションを取得
+            const sectionStart = currentH2.index + currentH2.length;
+            const sectionEnd = nextH2 ? nextH2.index : htmlContent.length;
+            const section = htmlContent.substring(sectionStart, sectionEnd);
+            
+            // セクション内に十分なコンテンツがある場合のみ広告を挿入（最低100文字）
+            const textContent = section.replace(/<[^>]+>/g, '').trim();
+            if (textContent.length > 100) {
+                // セクションの終わり（次のH2の直前、またはコンテンツの最後）に広告を挿入
+                htmlContent = htmlContent.substring(0, sectionEnd) + adTemplate + htmlContent.substring(sectionEnd);
+            }
+        }
     }
 
     const slug = file.replace(/\.md$/, ''); // ファイル名からスラッグを生成
