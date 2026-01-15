@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta name="google-adsense-account" content="ca-pub-2213699949048480">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【2025年最新】GitHub Pagesに独自ドメインを設定する方法（お名前.com編）｜初心者向け超詳しく解説！ | ポイ活Pay太郎</title>
+    <meta name="description" content="GitHub Pagesで作ったサイトのURL、長いですよね。この記事では、初心者の方でも絶対につまずかないよう、お名前.comで取得した独自ドメインをGitHub Pagesに設定する全手順を、画像（イメージ）たっぷりで徹底的に解説します。メリットや注意点、HTTPS化まで完全網羅！">
+    <meta name="keywords" content="Web制作,ポイ活,節約,お得情報">
+    <meta name="author" content="ポイ活Pay太郎">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://poitaro.com/articles_html/domain.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="【2025年最新】GitHub Pagesに独自ドメインを設定する方法（お名前.com編）｜初心者向け超詳しく解説！">
+    <meta property="og:description" content="GitHub Pagesで作ったサイトのURL、長いですよね。この記事では、初心者の方でも絶対につまずかないよう、お名前.comで取得した独自ドメインをGitHub Pagesに設定する全手順を、画像（イメージ）たっぷりで徹底的に解説します。メリットや注意点、HTTPS化まで完全網羅！">
+    <meta property="og:image" content="https://poitaro.com/thumbnails/domain.png">
+    <meta property="og:url" content="https://poitaro.com/articles_html/domain.html">
+    <meta property="og:site_name" content="ポイ活Pay太郎">
+    <meta property="og:locale" content="ja_JP">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="【2025年最新】GitHub Pagesに独自ドメインを設定する方法（お名前.com編）｜初心者向け超詳しく解説！">
+    <meta name="twitter:description" content="GitHub Pagesで作ったサイトのURL、長いですよね。この記事では、初心者の方でも絶対につまずかないよう、お名前.comで取得した独自ドメインをGitHub Pagesに設定する全手順を、画像（イメージ）たっぷりで徹底的に解説します。メリットや注意点、HTTPS化まで完全網羅！">
+    <meta name="twitter:image" content="https://poitaro.com/thumbnails/domain.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://poitaro.com/blog/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://poitaro.com/blog/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://poitaro.com/blog/favicon.ico">
+    <link rel="icon" sizes="192x192" href="https://poitaro.com/blog/favicon.ico">
+    <meta name="msapplication-TileImage" content="https://poitaro.com/blog/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
+     crossorigin="anonymous"></script>
+    <!-- GAS Analytics Tracking Code -->
+<script>
+(function() {
+  var endpoint = "https://script.google.com/macros/s/AKfycbz3RkdSq3AEGJy_VyxG8XespXWGoRI4Gd488JTg1a3CFn2pbO3wN-Gl5O96bjQJqAgPkg/exec";
+  var data = {
+    type: "pv",
+    slug: location.pathname.split("/").pop().replace(".html", "") || "home",
+    title: document.title,
+    referrer: document.referrer,
+    userAgent: navigator.userAgent,
+    timestamp: new Date().toISOString()
+  };
+  if(navigator.sendBeacon) {
+    navigator.sendBeacon(endpoint, JSON.stringify(data));
+  } else {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", endpoint);
+    xhr.send(JSON.stringify(data));
+  }
+})();
+</script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-black': '#0a0a0a',
+                        'brand-white': '#f8f8f8',
+                        'brand-accent': '#ccff00', // Neon Lime
+                        'brand-purple': '#b4a0ff', // Secondary Accent
+                        'brand-gray': '#e5e5e5',
+                    },
+                    fontFamily: {
+                        'anton': ['Anton', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Noto Sans JP', 'sans-serif'],
+                    },
+                    spacing: {
+                        '128': '32rem',
+                    },
+                    animation: {
+                        'slide-down': 'slideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'slide-up': 'slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    },
+                    keyframes: {
+                        slideDown: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(0)' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(0)' },
+                            '100%': { transform: 'translateY(-100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Typography Utilities */
+        .text-stroke {
+            -webkit-text-stroke: 1px black;
+            color: transparent;
+        }
+        .text-stroke-white {
+            -webkit-text-stroke: 1px white;
+            color: transparent;
+        }
+        
+        /* Smooth Fade Transition */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Image Filters */
+        .img-grayscale {
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
+        }
+        .article-card:hover .img-grayscale {
+            filter: grayscale(0%);
+        }
+        .article-card:hover .hover-zoom {
+            transform: scale(1.05);
+        }
+
+        /* Drop Cap & Formatting */
+        .drop-cap::first-letter {
+            float: left;
+            font-family: 'Anton', sans-serif;
+            font-size: 4.5rem;
+            line-height: 4rem;
+            padding-right: 1rem;
+            padding-top: 0.2rem;
+            color: #0a0a0a;
+        }
+        
+        /* Custom Spec Table */
+        .spec-container {
+            border: 2px solid #0a0a0a;
+            margin-bottom: 1.5rem;
+        }
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 0.75rem 1rem;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.875rem;
+            background-color: #fff;
+        }
+        .spec-row:last-child {
+            border-bottom: none;
+        }
+        .spec-label {
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #666;
+        }
+        .spec-value {
+            font-weight: 500;
+            text-align: right;
+        }
+        /* Table Wrapper for Horizontal Scroll */
+        #article-body .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            -webkit-overflow-scrolling: touch;
+            position: relative;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+        }
+        #article-body .table-scroll-hint {
+            font-size: 0.75rem;
+            color: #666;
+            text-align: right;
+            padding: 0.5rem 1rem;
+            background: #f8f8f8;
+            border-top: 1px solid #e5e5e5;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        #article-body .table-scroll-hint::before {
+            content: "→ ";
+        }
+        
+        /* Standard Table Styling (Markdown Support) */
+        #article-body table {
+            min-width: 100%;
+            width: 100%;
+            border: 2px solid #0a0a0a;
+            border-collapse: collapse;
+            margin-bottom: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.875rem;
+            background-color: #fff;
+        }
+        #article-body th {
+            background-color: #0a0a0a;
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.75rem 1rem;
+            border-bottom: 2px solid #0a0a0a;
+            text-align: left;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 0.05em;
+            min-width: 100px;
+        }
+        #article-body td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e5e5e5;
+            color: #0a0a0a;
+            min-width: 100px;
+        }
+        #article-body tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Custom Cursor for Menu Items */
+        .menu-link:hover::before {
+            content: ">>";
+            color: #ccff00;
+            position: absolute;
+            left: -40px;
+        }
+
+        /* Markdown Content Styling */
+        #article-body h2 {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 900;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-top: 1rem;
+            border-top: 2px solid black;
+            display: flex;
+            align-items: center;
+        }
+        #article-body h2::before {
+            content: ">>";
+            color: #ccff00;
+            margin-right: 0.5rem;
+            font-size: 2.5rem;
+            font-family: 'Anton', sans-serif;
+        }
+        #article-body h3 {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 900;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #b4a0ff;
+        }
+        #article-body p {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1rem;
+            line-height: 2;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        #article-body ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 2rem;
+            border-left: 3px solid #ccff00;
+            padding-left: 1.5rem;
+            background: linear-gradient(to right, #ccff0008, transparent);
+        }
+        #article-body ol {
+            list-style-type: none;
+            counter-reset: item;
+            padding-left: 0;
+            margin-bottom: 2rem;
+            border-left: 3px solid #b4a0ff;
+            padding-left: 1.5rem;
+            background: linear-gradient(to right, #b4a0ff08, transparent);
+        }
+        #article-body li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2rem;
+            line-height: 1.8;
+        }
+        #article-body ul > li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #ccff00;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        #article-body ol > li {
+            counter-increment: item;
+        }
+        #article-body ol > li::before {
+            content: counter(item, decimal-leading-zero);
+            position: absolute;
+            left: 0;
+            color: #b4a0ff;
+            font-weight: bold;
+            font-family: 'Anton', sans-serif;
+            font-size: 0.9em;
+        }
+        #article-body a {
+            color: #b4a0ff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s ease;
+        }
+        #article-body a:hover {
+            color: #0a0a0a;
+        }
+        #article-body blockquote {
+            border-left: 6px solid #0a0a0a;
+            background-color: #f8f8f8;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        #article-body blockquote::before {
+            content: """;
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            font-size: 4rem;
+            color: #ccff00;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+        #article-body code {
+            background-color: #0a0a0a;
+            color: #ccff00;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        #article-body pre {
+            background-color: #0a0a0a;
+            color: #f8f8f8;
+            padding: 1.5rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin-bottom: 2rem;
+            border: 2px solid #ccff00;
+        }
+        #article-body pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        #article-body strong {
+            font-weight: 900;
+            color: #0a0a0a;
+            background: linear-gradient(to top, #ccff0040 40%, transparent 40%);
+            padding: 0 4px;
+        }
+        #article-body em {
+            font-style: italic;
+            color: #b4a0ff;
+            font-family: 'Playfair Display', serif;
+        }
+        #article-body img {
+            width: 100%;
+            height: auto;
+            margin: 2rem 0;
+            border: 1px solid #e5e5e5;
+        }
+        #article-body hr {
+            border: none;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #ccff00, transparent);
+            margin: 3rem 0;
+        }
+
+        /* Sidebar Styles */
+        #sidebar-toc-content a {
+            display: block;
+            font-size: 0.875rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e5e5e5;
+            transition: all 0.2s;
+            color: #0a0a0a;
+        }
+        #sidebar-toc-content a:hover {
+            color: #b4a0ff;
+            padding-left: 0.5rem;
+        }
+        #sidebar-related-content a {
+            display: block;
+            font-size: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e5e5e5;
+            transition: color 0.2s;
+            font-weight: 600;
+        }
+        #sidebar-related-content a:hover {
+            color: #b4a0ff;
+        }
+    </style>
+</head>
+<body class="bg-brand-white text-brand-black font-sans antialiased overflow-x-hidden selection:bg-brand-accent selection:text-black">
+
+    <!-- Sticky Nav -->
+    <nav class="fixed top-0 w-full z-[80] flex justify-between items-center px-4 py-3 bg-brand-white/95 backdrop-blur-md border-b border-black transition-colors duration-300" id="main-nav">
+        <a href="../index.html" class="font-sans text-xl font-black tracking-tight cursor-pointer hover:text-brand-purple transition-colors z-[90]">ポイ活Pay太郎</a>
+        <div class="flex items-center gap-4 z-[90]">
+            <span class="hidden md:inline font-bold text-xs tracking-widest text-brand-black" id="nav-issue">ISSUE 024</span>
+            <button onclick="toggleMenu()" class="p-2 border border-black hover:bg-black hover:text-white transition-colors rounded-full relative group bg-brand-white text-black">
+                <i data-lucide="menu" class="w-5 h-5 transition-all duration-300 group-hover:rotate-90" id="menu-icon"></i>
+                <i data-lucide="x" class="w-5 h-5 absolute top-2 left-2 opacity-0 transition-all duration-300 rotate-90 scale-0" id="close-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- FULL SCREEN MENU OVERLAY -->
+    <div id="menu-overlay" class="fixed inset-0 bg-brand-black z-[70] transform -translate-y-full transition-transform duration-500 ease-in-out flex flex-col justify-center items-center text-white hidden-menu">
+        
+        <!-- Menu Background Text -->
+        <div class="absolute inset-0 overflow-hidden opacity-10 pointer-events-none flex flex-col justify-center select-none">
+            <span class="font-anton text-[20vw] leading-none text-stroke-white whitespace-nowrap -ml-20">ポイ活</span>
+            <span class="font-anton text-[20vw] leading-none text-stroke-white whitespace-nowrap ml-20">PAY太郎</span>
+        </div>
+
+        <!-- Menu Search Bar -->
+        <div class="absolute top-20 left-1/2 -translate-x-1/2 w-full max-w-md px-4 relative z-10">
+            <div class="relative">
+                <input 
+                    type="text" 
+                    id="menu-search-input" 
+                    placeholder="キーワードで検索..."
+                    class="w-full px-4 py-3 pl-12 border-2 border-brand-accent bg-brand-black text-white font-sans text-sm focus:outline-none focus:border-white transition-colors placeholder:text-gray-500"
+                    onkeypress="if(event.key === 'Enter') { window.location.href = '../index.html?search=' + encodeURIComponent(this.value); }"
+                />
+                <i data-lucide="search" class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-brand-accent"></i>
+                <button 
+                    id="menu-clear-search" 
+                    class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors hidden"
+                    onclick="document.getElementById('menu-search-input').value = ''; this.classList.add('hidden');"
+                >
+                    <i data-lucide="x-circle" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+
+        <ul class="text-center space-y-4 relative z-10">
+            <li class="relative">
+                <a href="../index.html" class="menu-link font-anton text-5xl md:text-7xl hover:text-brand-accent transition-colors block">INDEX</a>
+                <span class="text-xs font-serif italic text-gray-500">Top Page</span>
+            </li>
+             <li class="relative">
+                <a href="#" onclick="toggleMenu(); showAbout();" class="menu-link font-anton text-5xl md:text-7xl hover:text-brand-accent transition-colors block">ABOUT</a>
+                <span class="text-xs font-serif italic text-gray-500">Concept</span>
+            </li>
+            <li class="relative">
+                <a href="../contact.html" class="menu-link font-anton text-5xl md:text-7xl hover:text-brand-accent transition-colors block">CONTACT</a>
+                <span class="text-xs font-serif italic text-gray-500">Get in Touch</span>
+            </li>
+            <li class="relative">
+                <a href="policy.html" class="menu-link font-anton text-5xl md:text-7xl hover:text-brand-accent transition-colors block">POLICY</a>
+                <span class="text-xs font-serif italic text-gray-500">Privacy Policy</span>
+            </li>
+        </ul>
+
+        <div class="absolute bottom-10 w-full px-8 border-t border-gray-800 pt-4 max-w-4xl">
+            <div class="flex justify-between items-end">
+                <div class="text-left">
+                    <p class="font-sans font-black text-brand-accent text-base tracking-tight">ポイ活 Pay太郎</p>
+                    <p class="text-gray-500 text-xs mt-1">Tokyo, Japan</p>
+                </div>
+                <div class="text-right">
+                    <p class="font-anton text-xs text-gray-600 tracking-widest">EST. 2024</p>
+                    <p class="font-serif italic text-gray-500 text-[10px] mt-1">Smart Living</p>
+                </div>
+            </div>
+            <div class="mt-4 pt-4 border-t border-gray-800/50">
+                <div class="flex justify-center gap-2">
+                    <div class="w-2 h-2 bg-brand-accent"></div>
+                    <div class="w-2 h-2 bg-brand-purple"></div>
+                    <div class="w-2 h-2 bg-brand-accent"></div>
+                    <div class="w-2 h-2 bg-brand-purple"></div>
+                    <div class="w-2 h-2 bg-brand-accent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <main id="app" class="pt-16 pb-20 min-h-screen">
+        
+        <!-- === DYNAMIC ARTICLE PAGE === -->
+        <div id="article-page" class="fade-in bg-brand-white min-h-screen relative">
+            <!-- Progress Bar (Mobile Only) -->
+            <div class="md:hidden fixed top-[53px] left-0 h-1.5 bg-brand-accent z-40 w-0" id="read-progress"></div>
+            
+            <!-- Breadcrumbs -->
+            <nav class="max-w-7xl mx-auto px-4 pt-6 pb-2" aria-label="パンくずリスト">
+                <ol class="flex items-center gap-2 text-sm font-sans flex-wrap">
+                    <li>
+                        <a href="../index.html" class="hover:text-brand-purple transition-colors flex items-center gap-1">
+                            <i data-lucide="home" class="w-4 h-4"></i>
+                            <span>ホーム</span>
+                        </a>
+                    </li>
+                    <li class="text-gray-400">/</li>
+                    <li>
+                        <a href="../index.html?category=Web制作" class="hover:text-brand-purple transition-colors" style="color: blue;">Web制作</a>
+                    </li>
+                    <li class="text-gray-400">/</li>
+                    <li class="text-gray-600 truncate max-w-[200px] md:max-w-md" title="【2025年最新】GitHub Pagesに独自ドメインを設定する方法（お名前.com編）｜初心者向け超詳しく解説！">【2025年最新】GitHub Pagesに独自ドメインを設定する方法（お名前.com編）｜初心者向け超詳しく解説！</li>
+                </ol>
+            </nav>
+            
+            <!-- Header Image (Thumbnail Only) -->
+            <div class="w-full max-w-7xl mx-auto mt-4 mb-12 px-4">
+                <img src="../thumbnails/domain.png" class="w-full aspect-video object-cover shadow-lg">
+            </div>
+
+            <!-- Article Content with Sidebar Layout -->
+            <div class="max-w-7xl mx-auto px-4 md:flex md:gap-8 relative">
+                
+                <!-- Main Article Content -->
+                <article id="article-body" class="md:w-2/3 pt-10 pb-16">
+                    
+        <nav aria-label="目次" class="mb-12 p-6 border border-gray-300 bg-brand-white relative">
+            <div class="absolute -top-3 left-4 bg-brand-white px-2 font-anton text-xl tracking-wider">INDEX</div>
+            <ul class="space-y-3 mt-2">
+                
+                    <li class="flex items-baseline group">
+                        <span class="font-anton text-brand-accent mr-3 text-lg">01.</span>
+                        <a href="#なぜ独自ドメイン-github-pagesで使うメリットとデメリット" class="font-sans font-bold text-sm border-b border-transparent hover:border-black transition-colors group-hover:text-brand-purple">
+                            なぜ独自ドメイン？ GitHub Pagesで使うメリットとデメリット
+                        </a>
+                    </li>
+                
+                    <li class="flex items-baseline group">
+                        <span class="font-anton text-brand-accent mr-3 text-lg">02.</span>
+                        <a href="#準備編これだけは揃えよう必要な4つのもの" class="font-sans font-bold text-sm border-b border-transparent hover:border-black transition-colors group-hover:text-brand-purple">
+                            準備編：これだけは揃えよう！必要な4つのもの
+                        </a>
+                    </li>
+                
+                    <li class="flex items-baseline group">
+                        <span class="font-anton text-brand-accent mr-3 text-lg">03.</span>
+                        <a href="#全体像を把握独自ドメイン設定の3ステップ" class="font-sans font-bold text-sm border-b border-transparent hover:border-black transition-colors group-hover:text-brand-purple">
+                            全体像を把握！独自ドメイン設定の3ステップ
+                        </a>
+                    </li>
+                
+                    <li class="flex items-baseline group">
+                        <span class="font-anton text-brand-accent mr-3 text-lg">04.</span>
+                        <a href="#最重要step-1-お名前comでのdns設定超図解" class="font-sans font-bold text-sm border-b border-transparent hover:border-black transition-colors group-hover:text-brand-purple">
+                            【最重要】Step 1: お名前.comでのDNS設定（超図解）
+                        </a>
+                    </li>
+                
+                    <li class="flex items-baseline group">
+                        <span class="font-anton text-brand-accent mr-3 text-lg">05.</span>
+                        <a href="#あと半分step-2-github側での設定画像付き" class="font-sans font-bold text-sm border-b border-transparent hover:border-black transition-colors group-hover:text-brand-purple">
+                            あと半分！Step 2: GitHub側での設定（画像付き）
+                        </a>
+                    </li>
+                
+                    <li class="flex items-baseline group">
+                        <span class="font-anton text-brand-accent mr-3 text-lg">06.</span>
+                        <a href="#最後の仕上げstep-3-https化ssl化でセキュリティ対策" class="font-sans font-bold text-sm border-b border-transparent hover:border-black transition-colors group-hover:text-brand-purple">
+                            最後の仕上げ！Step 3: HTTPS化（SSL化）でセキュリティ対策
+                        </a>
+                    </li>
+                
+                    <li class="flex items-baseline group">
+                        <span class="font-anton text-brand-accent mr-3 text-lg">07.</span>
+                        <a href="#よくある質問qaとトラブルシューティング" class="font-sans font-bold text-sm border-b border-transparent hover:border-black transition-colors group-hover:text-brand-purple">
+                            よくある質問（Q&amp;A）とトラブルシューティング
+                        </a>
+                    </li>
+                
+                    <li class="flex items-baseline group">
+                        <span class="font-anton text-brand-accent mr-3 text-lg">08.</span>
+                        <a href="#まとめ独自ドメインであなたのサイトをレベルアップさせよう" class="font-sans font-bold text-sm border-b border-transparent hover:border-black transition-colors group-hover:text-brand-purple">
+                            まとめ：独自ドメインで、あなたのサイトをレベルアップさせよう！
+                        </a>
+                    </li>
+                
+            </ul>
+        </nav>
+                    <p>こんにちは！GitHub Pagesでブログやポートフォリオサイトを公開している皆さん。
+こんな悩み、ありませんか？</p>
+<p>「<code>username.github.io/repository-name</code> っていうURL、長すぎて覚えにくい…」
+「もっとプロっぽい、自分だけのURL（独自ドメイン）にしたい！」
+「お名前.comでドメインは取ったけど、設定方法が難しそうで手が出せない…」</p>
+<p>わかります。すごくわかります。
+GitHub Pagesは無料で高機能な静的サイトのホスティングサービスですが、デフォルトのURLがネックなんですよね。</p>
+<p>でも、安心してください！
+この記事にたどり着いたあなたはラッキーです。
+この記事では、<strong>日本最大級のドメイン登録サービス「お名前.com」で取得した独自ドメインを、GitHub Pagesに設定する全手順</strong>を、これでもかというくらい詳しく、初心者の方でも絶対迷わないレベルで解説していきます。</p>
+<p>DNS設定とか、Aレコードとか、CNAMEとか…
+横文字が多くて難しそうに感じますが、一つひとつの手順を丁寧になぞっていけば、誰でも必ず設定できます。</p>
+<p>この記事を最後まで読めば、あなたも「<code>https://example.com</code>」のような、短くてカッコいい自分だけのドメインで、GitHub Pagesサイトを公開できるようになりますよ！</p>
+<h2 id="なぜ独自ドメイン-github-pagesで使うメリットとデメリット">なぜ独自ドメイン？ GitHub Pagesで使うメリットとデメリット</h2>
+<p>まず、「そもそも、なんでわざわざお金を払って独自ドメインにする必要があるの？」という疑問にお答えします。デフォルトのままでもサイトは見られるわけですからね。</p>
+<p>でも、独自ドメインを設定することには、それを上回る大きな<strong>メリット</strong>がたくさんあるんです。</p>
+<h3>独自ドメインの5大メリット</h3>
+<ol>
+<li><p><strong>圧倒的なブランディング効果</strong>
+これが最大の理由かもしれません。
+<code>https://my-cool-portfolio.com</code> のようなURLは、<code>https://username.github.io/my-cool-portfolio</code> よりも、遥かに「あなた自身のもの」という印象を与えます。ポートフォリオなら自分の名前、ブログならそのタイトルをドメインにすることで、訪問者に強く覚えてもらえます。</p>
+</li>
+<li><p><strong>信頼性の向上</strong>
+独自ドメインは、訪問者やクライアントに対して「このサイトは本気で運営されている」というプロフェッショナルな印象を与えます。無料のサブドメインのままよりも、確実に信頼性がアップします。</p>
+</li>
+<li><p><strong>URLが短く、覚えやすい</strong>
+友人やクライアントに口頭で伝えるときも、SNSでシェアするときも、短くてシンプルなURLは正義です。アクセスのしやすさが格段に向上します。</p>
+</li>
+<li><p><strong>SEO（検索エンジン最適化）に強い</strong>
+Googleなどの検索エンジンは、長く運営されている独自ドメインを評価する傾向があります。最初は<code>github.io</code>のドメインパワーに助けられる側面もありますが、長期的に見れば、自分自身のドメインを「育てる」ことがSEO対策につながります。</p>
+</li>
+<li><p><strong>将来の「お引越し」が楽</strong>
+これが技術的にかなり重要です。もし将来、「GitHub Pagesじゃなくて、別のレンタルサーバーやVPSにサイトを移したい」となった場合、独自ドメインならDNS設定を変更するだけで、訪問者は同じURLのまま新しいサーバーにアクセスできます。URLが変わらないので、SEO評価も引き継げます。</p>
+</li>
+</ol>
+<h3>唯一のデメリット：コストがかかる</h3>
+<p>もちろん、良いことばかりではありません。
+唯一にして最大の<strong>デメリット</strong>は、「<strong>費用がかかること</strong>」です。</p>
+<p>GitHub Pagesのホスティングは無料ですが、独自ドメインは取得時と毎年の更新時にお金がかかります。（ドメインの種類によりますが、年間数百円〜数千円程度）</p>
+<p>とはいえ、このコストは「自分のサイトへの投資」です。
+上で挙げたメリットと天秤にかければ、特にビジネスやポートフォリオで使うなら、十分すぎるリターンがある投資だと僕は思います。</p>
+<hr>
+
+<div class="article-ad my-8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2213699949048480"
+     data-ad-slot="4891282874"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<h2 id="準備編これだけは揃えよう必要な4つのもの">準備編：これだけは揃えよう！必要な4つのもの</h2>
+<p>「よし、やるぞ！」と決意したところで、まずは設定に必要な「道具」を揃えましょう。
+以下の4つが揃っているか確認してください。</p>
+<ol>
+<li><strong>GitHubアカウント</strong>
+(これは大丈夫ですよね！)</li>
+<li><strong>公開済みのGitHub Pagesリポジトリ</strong>
+(まだの人は、先にサイトを公開しておきましょう)</li>
+<li><strong>お名前.comのアカウント</strong>
+(ドメインを取得したときに作成済みのはずです)</li>
+<li><strong>お名前.comで取得した独自ドメイン</strong>
+(設定したいドメインのことです)</li>
+</ol>
+<p>「あ！まだ独自ドメイン持ってなかった！」という方。
+チャンスです！</p>
+<p>独自ドメインを取得するなら、国内シェアNo.1の「<strong>お名前.com</strong>」が絶対におすすめです。</p>
+<a href="https://px.a8.net/svt/ejp?a8mat=3ZM079+4784FM+50+2HQGAP" rel="nofollow">
+<img border="0" width="468" height="60" alt="" src="https://www23.a8.net/svt/bgt?aid=241211781254&wid=001&eno=01&mid=s00000000018015072000&mc=1"></a>
+<img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=3ZM079+4784FM+50+2HQGAP" alt="">
+
+<p>お名前.comのすごいところは、</p>
+<ul>
+<li><strong>取り扱いドメイン数が豊富</strong> (<code>.com</code> <code>.net</code> はもちろん、<code>.jp</code> や <code>.blog</code> <code>.dev</code> など何でも揃ってる！)</li>
+<li><strong>管理画面が（慣れれば）使いやすい</strong> （この記事でDNS設定もバッチリ解説します）</li>
+<li><strong>キャンペーンが豊富で、ドメインを安く取得できることが多い！</strong></li>
+</ul>
+<p>特に最後の「安さ」は重要ですよね。
+サイト運営は長く続くものですから、ランニングコストは安いに越したことはありません。</p>
+<p><strong>「これからポートフォリオやブログを本気で頑張りたい！」という方は、この機会にぜひ、お名前.comで自分だけのドメインを手に入れてみてください！</strong></p>
+<a href="https://px.a8.net/svt/ejp?a8mat=3ZM079+4784FM+50+2HMLEP" rel="nofollow">
+<img border="0" width="200" height="200" alt="" src="https://www28.a8.net/svt/bgt?aid=241211781254&wid=001&eno=01&mid=s00000000018015054000&mc=1"></a>
+<img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=3ZM079+4784FM+50+2HMLEP" alt="">
+
+<p>さて、必要なものは揃いましたか？
+それでは、いよいよ設定作業に入っていきましょう！</p>
+<hr>
+
+<div class="article-ad my-8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2213699949048480"
+     data-ad-slot="4891282874"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<h2 id="全体像を把握独自ドメイン設定の3ステップ">全体像を把握！独自ドメイン設定の3ステップ</h2>
+<p>これから行う作業は、大きく分けて3つのステップで完了します。</p>
+<ol>
+<li><strong>Step 1: 【お名前.com側】DNS設定</strong>
+「<code>example.com</code> にアクセスが来たら、GitHub Pagesのサーバーにつないでね」という「住所録」を設定する作業です。ここが一番の山場です。</li>
+<li><strong>Step 2: 【GitHub側】カスタムドメイン設定</strong>
+「このリポジトリは <code>example.com</code> という名前で公開しますよ」とGitHubに宣言する作業です。</li>
+<li><strong>Step 3: 【GitHub側】HTTPS化（SSL化）の確認</strong>
+「<code>http://</code>」ではなく「<code>https://</code>」で、安全に通信できるようにする設定です。</li>
+</ol>
+<p>この3ステップを順番に、丁寧に進めていきます。
+特にStep 1のDNS設定は、間違えるとサイトが表示されなくなる大事な部分なので、じっくりいきましょう。</p>
+<hr>
+
+<div class="article-ad my-8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2213699949048480"
+     data-ad-slot="4891282874"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<h2 id="最重要step-1-お名前comでのdns設定超図解">【最重要】Step 1: お名前.comでのDNS設定（超図解）</h2>
+<p>ここが最重要ポイントです。
+「DNS」と聞いただけでアレルギーが出そうな方も、深呼吸してください。
+クリックする場所と入力する内容を、一つひとつ解説します。</p>
+<h3>1. お名前.com Naviにログイン</h3>
+<p>まずは、お名前.comの管理画面「<strong>お名前.com Navi</strong>」にログインします。
+ドメイン取得時に設定したIDとパスワードでログインしてください。</p>
+<h3>2. DNS設定画面への道のり</h3>
+<p>ログインしたら、上部にあるメニュー（タブ）から「<strong>DNS</strong>」を探してクリックします。</p>
+<p>次に、出てきたメニューの中から「<strong>ドメインのDNS関連機能設定</strong>」をクリックします。（少し分かりにくい場所にありますが、「DNS」という言葉を頼りに探してください）</p>
+<p>すると、あなたが持っているドメインの一覧が表示されます。
+今回設定したい<strong>独自ドメイン名の左側にあるラジオボタン（丸いチェックボックス）を選択</strong>し、ページ下部にある「<strong>次へ進む</strong>」ボタンをクリックします。</p>
+<p>次の画面で、またいくつか選択肢が出てきますが、ここで「<strong>DNSレコード設定を利用する</strong>」という項目の右側にある「<strong>設定する</strong>」ボタンをクリックします。
+（※「ネームサーバーの変更」など、他のボタンと間違えないように注意！）</p>
+<p>これで、ようやくDNSレコードを設定する画面にたどり着きました！</p>
+<h3>3. Apexドメインとサブドメイン、どっちを設定する？</h3>
+<p>DNS設定を始める前に、少しだけ用語の整理をします。</p>
+<ul>
+<li><strong>Apexドメイン (ルートドメイン):</strong>
+  <code>example.com</code> のように、<code>www</code> などが<strong>付かない</strong>ドメインのこと。</li>
+<li><strong>サブドメイン:</strong>
+  <code>www.example.com</code> や <code>blog.example.com</code> のように、Apexドメインの前（左側）に何か付いているドメインのこと。</li>
+</ul>
+<p>GitHub Pagesでは、この<strong>両方を設定することが可能</strong>で、<strong>両方設定することを強く推奨</strong>します。</p>
+<p>なぜなら、</p>
+<ul>
+<li><code>example.com</code> でアクセスした人</li>
+<li><code>www.example.com</code> でアクセスした人</li>
+</ul>
+<p>この<strong>どちらも、ちゃんとあなたのサイトにたどり着けるようにしたい</strong>からです。
+（通常は、どちらかに統一（リダイレクト）されます）</p>
+<p>そのために、2種類のDNSレコードを設定します。</p>
+<ul>
+<li><strong>Aレコード</strong> (Apexドメイン用)</li>
+<li><strong>CNAMEレコード</strong> (サブドメイン用)</li>
+</ul>
+<h3>4. Aレコードの設定 (Apexドメイン <code>example.com</code> 用)</h3>
+<p>まずはApexドメイン（<code>example.com</code>）の設定です。
+これは「<code>example.com</code> にアクセスが来たら、GitHub Pagesのサーバー（IPアドレス）に接続してね」という設定です。</p>
+<p>「DNSレコード設定」画面の中ほどにある「<strong>A/AAAA/CNAME/MX/NS/TXT/SRV/DSレコード</strong>」という入力欄（「入力」と書かれたセクション）を使います。</p>
+<p>以下の<strong>4つのレコード</strong>を、1つずつ追加していきます。
+（そう、4回同じ作業を繰り返します！）</p>
+<p><strong>【1つ目のレコード】</strong></p>
+<ul>
+<li><strong>ホスト名:</strong> (<strong>何も入力しない</strong> or <code>@</code> を入力)<ul>
+<li>※お名前.comでは**空欄（何も入力しない）**が「Apexドメイン」を意味します。</li>
+</ul>
+</li>
+<li><strong>TYPE:</strong> 「<strong>A</strong>」を選択します。（デフォルトかもしれません）</li>
+<li><strong>TTL:</strong> (そのままでOK。通常 <code>3600</code> です)</li>
+<li><strong>VALUE:</strong> <code>185.199.108.153</code><ul>
+<li><strong>↑このIPアドレスをコピー＆ペーストしてください。</strong></li>
+</ul>
+</li>
+<li>入力したら、右側にある「<strong>追加</strong>」ボタンをクリックします。</li>
+</ul>
+<p><strong>【2つ目のレコード】</strong></p>
+<ul>
+<li><strong>ホスト名:</strong> (何も入力しない)</li>
+<li><strong>TYPE:</strong> 「<strong>A</strong>」</li>
+<li><strong>TTL:</strong> (そのまま)</li>
+<li><strong>VALUE:</strong> <code>185.199.109.153</code></li>
+<li>入力したら、「<strong>追加</strong>」ボタンをクリック。</li>
+</ul>
+<p><strong>【3つ目のレコード】</strong></p>
+<ul>
+<li><strong>ホスト名:</strong> (何も入力しない)</li>
+<li><strong>TYPE:</strong> 「<strong>A</strong>」</li>
+<li><strong>TTL:</strong> (そのまま)</li>
+<li><strong>VALUE:</strong> <code>185.199.110.153</code></li>
+<li>入力したら、「<strong>追加</strong>」ボタンをクリック。</li>
+</ul>
+<p><strong>【4つ目のレコード】</strong></p>
+<ul>
+<li><strong>ホスト名:</strong> (何も入力しない)</li>
+<li><strong>TYPE:</strong> 「<strong>A</strong>」</li>
+<li><strong>TTL:</strong> (そのまま)</li>
+<li><strong>VALUE:</strong> <code>185.199.111.153</code></li>
+<li>入力したら、「<strong>追加</strong>」ボタンをクリック。</li>
+</ul>
+<blockquote>
+<p><strong>なぜ4つも？</strong>
+これは、GitHub Pagesが世界中からのアクセスをうまく分散させる（負荷分散）ために、4つのIPアドレスを用意しているからです。どれか1つに障害が起きても、他のサーバーが応答できるようにするためですね。必ず4つすべて登録しましょう。</p>
+</blockquote>
+<h3>5. CNAMEレコードの設定 (サブドメイン <code>www.example.com</code> 用)</h3>
+<p>次に、サブドメイン（<code>www.example.com</code>）の設定です。
+こちらは「<code>www.example.com</code> にアクセスが来たら、あなたのGitHub Pages（<code>username.github.io</code>）につないでね」という設定です。</p>
+<p>Aレコードの時と同じ入力欄を使います。</p>
+<p><strong>【CNAMEレコード】</strong></p>
+<ul>
+<li><strong>ホスト名:</strong> <code>www</code><ul>
+<li>（※ここに <code>www.example.com</code> と全部入力しないよう注意！ <code>www</code> だけでOKです）</li>
+</ul>
+</li>
+<li><strong>TYPE:</strong> 「<strong>CNAME</strong>」を選択します。</li>
+<li><strong>TTL:</strong> (そのまま)</li>
+<li><strong>VALUE:</strong> <code>あなたのGitHubユーザー名.github.io</code><ul>
+<li>例: ユーザー名が <code>taro-yamada</code> なら <code>taro-yamada.github.io</code></li>
+<li><strong>（最後にドット <code>.</code> が付くことがありますが、お名前.comでは付けないでOKです）</strong></li>
+</ul>
+</li>
+<li>入力したら、「<strong>追加</strong>」ボタンをクリック。</li>
+</ul>
+<h3>6. 設定の確認と保存</h3>
+<p>これで、Aレコード4つとCNAMEレコード1つ、合計5つのレコードが「追加」された状態になっているはずです。
+画面下部に追加したレコードの一覧が表示されているので、</p>
+<ul>
+<li><code>@</code> (または空欄) のAレコードが4つ、IPアドレスが正しいか</li>
+<li><code>www</code> のCNAMEレコードが1つ、<code>username.github.io</code> が正しいか
+を、よーく確認してください。</li>
+</ul>
+<p>確認できたら、ページの一番下にある「<strong>確認画面へ進む</strong>」ボタンをクリックします。</p>
+<p>最終確認の画面が表示されます。
+「設定内容」をもう一度チェックし、問題がなければ「<strong>設定する</strong>」ボタンをクリックします。</p>
+<p>「<strong>DNSレコード設定が完了しました。</strong>」という画面が出れば、お名前.com側での作業は一旦完了です！お疲れ様でした！</p>
+<blockquote>
+<p><strong>【重要】DNS設定の「反映待ち」について</strong>
+DNS設定は、変更してすぐに全世界に反映されるわけではありません。
+この「住所録」の情報が、世界中のインターネットにじわじわと伝わっていくのに、<strong>数分〜最大で72時間</strong>ほどかかると言われています。（実際には数分〜1時間程度で反映されることが多いですが）</p>
+<p>次のStep 2（GitHub側の設定）がうまくいかない場合、この「反映待ち」が原因であることがほとんどです。焦らず、少し時間を置いてから試してみましょう。</p>
+</blockquote>
+<p>ドメインの管理やDNS設定は、サイト運営の「土台」となる非常に重要な作業です。
+こうした設定がWebから簡単にできる「お名前.com」は、やはりドメイン管理のスタンダードとして、持っておくと安心感が違いますね。</p>
+<a href="https://px.a8.net/svt/ejp?a8mat=3ZM079+4784FM+50+2I0IY9" rel="nofollow">
+<img border="0" width="468" height="60" alt="" src="https://www29.a8.net/svt/bgt?aid=241211781254&wid=001&eno=01&mid=s00000000018015119000&mc=1"></a>
+<img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=3ZM079+4784FM+50+2I0IY9" alt="">
+
+<hr>
+
+<div class="article-ad my-8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2213699949048480"
+     data-ad-slot="4891282874"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<h2 id="あと半分step-2-github側での設定画像付き">あと半分！Step 2: GitHub側での設定（画像付き）</h2>
+<p>DNSという最大の山場を越えました。
+ここからは、GitHub上での簡単な設定だけです！</p>
+<h3>1. リポジトリの「Settings」へ</h3>
+<p>まず、独自ドメインを設定したいGitHub Pagesの<strong>リポジトリ</strong>を開きます。
+リポジトリのページで、上部にある「<strong>Settings</strong>」（設定）タブをクリックします。</p>
+<h3>2. 「Pages」セクションへ</h3>
+<p>左側のサイドバーメニューから、「<strong>Pages</strong>」をクリックします。
+（GitHub Pagesのデプロイ設定などを行った、おなじみの画面ですね）</p>
+<h3>3. 「Custom domain」の設定</h3>
+<p>画面をスクロールすると、「<strong>Custom domain</strong>」というセクションがあります。</p>
+<p>ここの入力フィールドに、あなたが設定したい<strong>独自ドメイン名</strong>を入力します。</p>
+<p>ここで一つ、ポイントがあります。
+<code>example.com</code>（Apexドメイン）と <code>www.example.com</code>（サブドメイン）のどちらを入力するか？</p>
+<p><strong>結論： <code>www</code> 付きのサブドメイン (例: <code>www.example.com</code>) を入力することを推奨します。</strong></p>
+<ul>
+<li><strong>理由:</strong>
+  <code>www</code> 付きを入力しておくと、GitHub側が賢く処理してくれて、<ul>
+<li><code>https://www.example.com</code> へのアクセス</li>
+<li><code>https://example.com</code> へのアクセス（<code>www</code> 無し）
+  の両方を、<code>https://www.example.com</code> に統一（リダイレクト）してくれるようになります。
+  （※Apexドメイン (<code>example.com</code>) を入力した場合、<code>www</code> 付きからのリダイレクトがうまく機能しないケースがあるためです）</li>
+</ul>
+</li>
+</ul>
+<p>ドメイン名（例: <code>www.example.com</code>）を正しく入力したら、「<strong>Save</strong>」ボタンをクリックします。</p>
+<h3>4. <code>CNAME</code>ファイルについて</h3>
+<p>「Save」ボタンを押すと、GitHubが裏側で2つのことを行います。</p>
+<ol>
+<li>入力されたドメインが、Step 1で設定したDNS設定と合っているかチェックを始める。</li>
+<li>リポジトリのルート（デプロイブランチ）に、<code>CNAME</code> という名前のファイルを<strong>自動で作成</strong>（または更新）する。</li>
+</ol>
+<p>昔の解説記事だと「<code>CNAME</code>ファイルを手動でリポジトリにコミットしてください」と書かれていることが多いですが、<strong>現在は「Settings」画面から入力するだけで、このファイルが自動生成される</strong>ので非常に楽になりました。</p>
+<p>「Save」を押した後、リポジトリのコードを確認しに行くと、<code>CNAME</code>というファイルが追加されていて、中身に <code>www.example.com</code> とだけ書かれているのが確認できるはずです。</p>
+<h3>5. DNSチェックの完了を待つ</h3>
+<p>「Save」ボタンを押した後、「Custom domain」セクションをもう一度見てみてください。
+ドメイン名の横で、何かがクルクルと回っているか、黄色い警告が出ているかもしれません。</p>
+<p>これは、GitHubが「DNS設定が本当に正しいか、世界中に反映されているか」をチェックしている最中です。</p>
+<p>Step 1で設定したDNS情報がきちんと反映されていれば、数分後（時には数十分後）に、この部分に<strong>緑色のチェックマーク</strong>が付き、「<strong>Your site is live at <a href="https://www.example.com">https://www.example.com</a></strong>」といったメッセージが表示されます。</p>
+<p>もし、ここで赤いエラーメッセージが出たり、何時間経っても緑のチェックマークに変わらない場合は、</p>
+<ul>
+<li>お名前.comで設定したDNSの<strong>VALUE</strong>（IPアドレスや<code>username.github.io</code>）が間違っていないか</li>
+<li>お名前.comで設定した<strong>ホスト名</strong>（<code>@</code> や <code>www</code>）が間違っていないか</li>
+<li>単純に、<strong>DNSの反映待ち</strong>か（一番可能性が高いです）</li>
+</ul>
+<p>を、もう一度確認してみてください。焦らず、コーヒーでも飲んで待ちましょう。</p>
+<hr>
+
+<div class="article-ad my-8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2213699949048480"
+     data-ad-slot="4891282874"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<h2 id="最後の仕上げstep-3-https化ssl化でセキュリティ対策">最後の仕上げ！Step 3: HTTPS化（SSL化）でセキュリティ対策</h2>
+<p>緑のチェックマークが出たら、あと一息です！
+最後に、サイトのセキュリティを確保する「<strong>HTTPS化</strong>」を行います。</p>
+<h3>1. 「Enforce HTTPS」をチェック！</h3>
+<p>「Custom domain」セクションのすぐ下に、「<strong>Enforce HTTPS</strong>」というチェックボックスがあります。</p>
+<p>独自ドメインを設定した直後は、このチェックボックスがグレーアウトしていて押せないかもしれません。
+これもDNSのチェックやSSL証明書（Let&#39;s Encrypt）の発行準備が整うまで、少し時間がかかるためです。</p>
+<p>緑のチェックマークが出てから、さらに数分〜数十分待つと、この「Enforce HTTPS」チェックボックスが<strong>クリックできるようになります</strong>。</p>
+<p>クリックできるようになったら、<strong>迷わずチェックを入れてください！</strong></p>
+<h3>2. HTTPS化のメリット</h3>
+<p>これをONにすると、以下の素晴らしいことが起こります。</p>
+<ul>
+<li><strong>通信が暗号化される:</strong>
+  訪問者があなたのサイトで何かを入力しても（例えばお問い合わせフォームなど）、その内容が暗号化され、安全に通信できるようになります。</li>
+<li><strong>ブラウザのアドレスバーに「鍵マーク」が付く:</strong>
+  訪問者に「このサイトは安全です」という安心感を与えられます。（逆に、今どき<code>http://</code>のままだと「保護されていない通信」と警告が出ちゃいます）</li>
+<li><strong><code>http://</code> へのアクセスを <code>https://</code> へ自動でリダイレクト:</strong>
+  古いリンク（<code>http://</code>）からアクセスした人も、自動的に安全な<code>https://</code>のサイトに誘導してくれます。</li>
+</ul>
+<p>これで、<code>https://www.example.com</code> という、安全で、プロフェッショナルで、カッコいいURLですべての訪問者を迎え入れる準備が整いました！</p>
+<hr>
+
+<div class="article-ad my-8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2213699949048480"
+     data-ad-slot="4891282874"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<h2 id="よくある質問qaとトラブルシューティング">よくある質問（Q&amp;A）とトラブルシューティング</h2>
+<p>ここでは、僕が設定した時や、友人から相談された時によくあった「つまずきポイント」をまとめておきます。</p>
+<p><strong>Q1: DNS設定が全然反映されません！丸一日経ちました！</strong>
+<strong>A1:</strong> お名前.comのDNS設定画面をもう一度確認してください。</p>
+<ul>
+<li><strong>IPアドレスの「ピリオド」が「カンマ」になっていませんか？</strong> (コピペミス)</li>
+<li><strong>CNAMEの<code>username.github.io</code>のスペル、合ってますか？</strong></li>
+<li><strong>お名前.comの「DNSレコード設定用ネームサーバー変更」を確認:</strong>
+  お名前.com Naviの「DNS」設定で、「DNSレコード設定を利用する」ではなく、「ネームサーバーの変更」などで他社のネームサーバー（例: Cloudflareなど）を指定している場合、お名前.com側でのDNSレコード設定は<strong>無効</strong>になります。設定しているネームサーバー側でDNSレコードを編集する必要があります。</li>
+</ul>
+<p><strong>Q2: GitHubの「Enforce HTTPS」がいつまでも押せません…</strong>
+<strong>A2:</strong> ドメインに「CAAレコード」という特殊なDNS設定が残っていませんか？
+過去に別のサーバーでSSL化していたドメインを移管した場合、古いCAAレコードが邪魔をして、GitHub（Let&#39;s Encrypt）が新しい証明書を発行できないことがあります。お名前.comのDNS設定で、TYPEが「CAA」のレコードがあれば、それを削除（またはGitHub用に変更）する必要があるかもしれません。（これは上級者向けトラブルシューティングです）
+…とはいえ、ほとんどの場合は「<strong>ただの待ち時間不足</strong>」です。最大24時間、気長に待ってみましょう。</p>
+<p><strong>Q3: <code>example.com</code> と <code>www.example.com</code>、結局どっちがメインになるの？</strong>
+<strong>A3:</strong> GitHubの「Custom domain」に<strong>入力した方</strong>がメイン（カノニカル）になります。
+この記事の手順通り <code>www.example.com</code> を入力した場合、<code>example.com</code>（<code>www</code>無し）でアクセスした人は、自動的に <code>www.example.com</code> にリダイレクト（転送）されるようになります。これはSEO的にも望ましい挙動です。</p>
+<p><strong>Q4: お名前.com以外のドメインサービス（Xserverドメインなど）ではダメですか？</strong>
+<strong>A4:</strong> まったく問題ありません！
+この記事では「お名前.com」の画面で解説しましたが、やるべきこと（Aレコード4つとCNAMEレコード1つを設定する）は、<strong>どのドメイン登録サービスでも全く同じ</strong>です。
+各サービスの管理画面の「DNSレコード設定」のようなメニューを探して、同じ値を設定してあげればOKです。</p>
+<hr>
+
+<div class="article-ad my-8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2213699949048480"
+     data-ad-slot="4891282874"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<h2 id="まとめ独自ドメインであなたのサイトをレベルアップさせよう">まとめ：独自ドメインで、あなたのサイトをレベルアップさせよう！</h2>
+<p>本当にお疲れ様でした！7000文字を超える長い旅でしたが、これであなたのGitHub Pagesサイトは、世界に一つだけの素敵なドメインを手に入れました。</p>
+<p>最後に、今回の内容をおさらいしましょう。</p>
+<ul>
+<li><strong>独自ドメインのメリットは絶大！</strong>
+  ブランディング、信頼性、SEO、将来性。すべてが向上します。</li>
+<li><strong>設定は3ステップ！</strong><ol>
+<li><strong>お名前.comのDNS設定（最重要）</strong><ul>
+<li>Apexドメイン（<code>@</code>）に <strong>Aレコード</strong> を <strong>4つ</strong> (GitHub指定のIP)</li>
+<li>サブドメイン（<code>www</code>）に <strong>CNAMEレコード</strong> を <strong>1つ</strong> (<code>username.github.io</code>)</li>
+</ul>
+</li>
+<li><strong>GitHubの設定</strong><ul>
+<li><code>Settings</code> &gt; <code>Pages</code> &gt; <code>Custom domain</code> に <code>www.example.com</code> を入力</li>
+</ul>
+</li>
+<li><strong>HTTPS化</strong><ul>
+<li><code>Enforce HTTPS</code> にチェックを入れる（最重要）</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>トラブルの最大の原因は「DNSの反映待ち」</strong>
+  設定がうまくいかなくても、焦らず時間を置いてみましょう。</li>
+</ul>
+<p><code>username.github.io</code> というURLも愛着が湧きますが、やはり <code>https://www.my-site.com</code> のように、自分だけのドメインでサイトが表示された瞬間の感動は格別です。</p>
+<p>あなたのポートフォリオサイトが、クライアントの目に留まるきっかけになるかもしれません。
+あなたの技術ブログが、同じ悩みを持つ誰かを救うかもしれません。
+独自ドメインは、そのための「信頼の証」であり、「未来への投資」です。</p>
+<p>まだドメインを持っていないという方も、この機会にぜひ、お名前.comであなたの「看板」となるドメインを取得してみてはいかがでしょうか？
+キャンペーン中なら、驚くほど安く手に入ることもありますよ！</p>
+<a href="https://px.a8.net/svt/ejp?a8mat=3ZM079+4784FM+50+2HWO29" rel="nofollow">
+<img border="0" width="300" height="250" alt="" src="https://www21.a8.net/svt/bgt?aid=241211781254&wid=001&eno=01&mid=s00000000018015101000&mc=1"></a>
+<img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=3ZM079+4784FM+50+2HWO29" alt="">
+
+<p>この記事が、あなたのGitHub Pagesライフをさらに充実させるお手伝いになれば、僕もとても嬉しいです。
+最後まで読んでいただき、ありがとうございました！</p>
+
+<div class="article-ad my-8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2213699949048480"
+     data-ad-slot="4891282874"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+                    
+        <section class="mt-16 pt-10 border-t-2 border-black">
+            <h2 class="font-anton text-3xl mb-6 flex items-center"><span class="text-brand-accent mr-2 text-4xl">>></span>RELATED ISSUES</h2>
+            <div class="grid gap-4 grid-cols-1 md:grid-cols-3">
+                
+                    <div class="group">
+                        <a href="../articles_html/invest.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
+                            <div class="w-full aspect-video overflow-hidden relative">
+                                <img src="../thumbnails/invest.png" alt="【2025年最新】ポイント運用で損しない！LINE・PayPay・楽天を徹底比較｜初心者向けに始め方とコツを解説" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
+                                <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                        </a>
+                        <a href="../articles_html/invest.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
+                            記事を見る >>
+                        </a>
+                    </div>
+                
+                    <div class="group">
+                        <a href="../articles_html/zoomcss.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
+                            <div class="w-full aspect-video overflow-hidden relative">
+                                <img src="../thumbnails/zoomcss.png" alt="【CSS解決】スマホでフォーム入力時に勝手にズーム（拡大）するのを防ぐ方法" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
+                                <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                        </a>
+                        <a href="../articles_html/zoomcss.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
+                            記事を見る >>
+                        </a>
+                    </div>
+                
+                    <div class="group">
+                        <a href="../articles_html/watts.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
+                            <div class="w-full aspect-video overflow-hidden relative">
+                                <img src="../thumbnails/watts.png" alt="【2025年最新】ワッツオンラインストアの送料は？店舗受取のやり方と支払い方法を徹底解説！" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
+                                <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                        </a>
+                        <a href="../articles_html/watts.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
+                            記事を見る >>
+                        </a>
+                    </div>
+                
+            </div>
+        </section>
+        
+                </article>
+
+                <!-- Sidebar (Desktop Only) -->
+                <aside class="hidden md:block md:w-1/3 pt-10">
+                    <div class="sticky top-20">
+                        <!-- TOC Sidebar -->
+                        <div id="sidebar-toc" class="mb-8 p-6 border-2 border-black bg-brand-white">
+                            <h3 class="font-anton text-xl mb-4 tracking-wider">INDEX</h3>
+                            <div id="sidebar-toc-content"></div>
+                        </div>
+                        
+                        <!-- Quick Actions -->
+                        <div class="mb-8 p-6 border-2 border-black bg-brand-white">
+                            <h3 class="font-anton text-xl mb-4 tracking-wider">ACTIONS</h3>
+                            <div class="space-y-3">
+                                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="block text-sm font-bold hover:text-brand-purple transition-colors border-b border-gray-300 pb-2">
+                                    <i data-lucide="arrow-up" class="w-4 h-4 inline mr-2"></i>TOPに戻る
+                                </a>
+                                <a href="../index.html" class="block text-sm font-bold hover:text-brand-purple transition-colors border-b border-gray-300 pb-2">
+                                    <i data-lucide="home" class="w-4 h-4 inline mr-2"></i>トップページ
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Related Articles Sidebar -->
+                        <div id="sidebar-related" class="p-6 border-2 border-black bg-brand-white">
+                            <h3 class="font-anton text-xl mb-4 tracking-wider">RELATED</h3>
+                            <div id="sidebar-related-content"></div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Back Link Footer -->
+            <div class="pb-24 pt-12 text-center bg-brand-white">
+                <a href="../index.html" class="text-sm font-bold uppercase tracking-widest border-b border-gray-400 pb-1 hover:border-black transition-colors hover:text-brand-purple">
+                    Back to Index
+                </a>
+            </div>
+        </div>
+        
+        <!-- === ABOUT MODAL (Simple Overlay) === -->
+        <div id="about-modal" class="fixed inset-0 bg-brand-white/95 backdrop-blur z-[85] hidden p-8 flex flex-col justify-center items-center text-center">
+             <button onclick="hideAbout()" class="absolute top-20 right-8 font-anton text-xl border border-black rounded-full w-10 h-10 hover:bg-black hover:text-white transition-colors">X</button>
+             <h2 class="font-anton text-6xl mb-4">CONCEPT</h2>
+             <p class="max-w-md font-medium leading-loose text-sm">
+                「ポイ活Pay太郎」は、現代社会における「還元」をテーマにしたライフスタイルマガジンです。
+                <br><br>
+                消費は浪費ではない。それは未来への投資であり、システムへのハッキングである。
+                ポイ活、ミニマリズム、投資。これらを単なる節約術から、洗練された生活美学へと昇華させます。
+             </p>
+        </div>
+
+    </main>
+    
+    <script>
+        lucide.createIcons();
+
+        // --- MENU SYSTEM ---
+        const menuOverlay = document.getElementById('menu-overlay');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const navIssue = document.getElementById('nav-issue');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            
+            if (isMenuOpen) {
+                // Open Menu
+                menuOverlay.classList.remove('hidden-menu'); // ensure display block if needed
+                menuOverlay.classList.remove('-translate-y-full');
+                
+                // Icon Animation
+                menuIcon.classList.add('opacity-0', 'rotate-90', 'scale-0');
+                closeIcon.classList.remove('opacity-0', 'scale-0');
+                closeIcon.classList.add('rotate-0'); // reset rotation
+                
+                // Text color update for contrast
+                navIssue.classList.add('text-white');
+                navIssue.classList.remove('text-brand-black');
+
+            } else {
+                // Close Menu
+                menuOverlay.classList.add('-translate-y-full');
+                
+                // Icon Animation
+                menuIcon.classList.remove('opacity-0', 'rotate-90', 'scale-0');
+                closeIcon.classList.add('opacity-0', 'scale-0');
+                closeIcon.classList.remove('rotate-0');
+                
+                 // Text color update
+                navIssue.classList.remove('text-white');
+                navIssue.classList.add('text-brand-black');
+            }
+        }
+        
+        // --- ABOUT MODAL ---
+        function showAbout() {
+            document.getElementById('about-modal').classList.remove('hidden');
+        }
+        function hideAbout() {
+            document.getElementById('about-modal').classList.add('hidden');
+        }
+
+        // Reading Progress
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("read-progress").style.width = scrolled + "%";
+        });
+
+        // Populate Sidebar TOC and Related Articles
+        document.addEventListener('DOMContentLoaded', () => {
+            // Populate Sidebar TOC
+            const mainToc = document.querySelector('nav[aria-label="目次"]');
+            const sidebarTocContent = document.getElementById('sidebar-toc-content');
+            if (mainToc && sidebarTocContent) {
+                const tocLinks = mainToc.querySelectorAll('a');
+                if (tocLinks.length > 0) {
+                    const sidebarLinks = Array.from(tocLinks).map(link => {
+                        return `<a href="${link.getAttribute('href')}">${link.textContent}</a>`;
+                    }).join('');
+                    sidebarTocContent.innerHTML = sidebarLinks;
+                } else {
+                    document.getElementById('sidebar-toc').style.display = 'none';
+                }
+            } else {
+                const sidebarToc = document.getElementById('sidebar-toc');
+                if (sidebarToc) sidebarToc.style.display = 'none';
+            }
+
+            // Populate Sidebar Related Articles
+            const mainRelated = document.querySelector('section.mt-16');
+            const sidebarRelatedContent = document.getElementById('sidebar-related-content');
+            if (mainRelated && sidebarRelatedContent) {
+                const relatedLinks = mainRelated.querySelectorAll('a[href*="articles_html"]');
+                const uniqueLinks = new Set();
+                const sidebarLinks = [];
+                
+                relatedLinks.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (!uniqueLinks.has(href)) {
+                        uniqueLinks.add(href);
+                        const img = link.querySelector('img');
+                        const title = img ? img.getAttribute('alt') : link.textContent;
+                        if (title && title !== '記事を見る >>') {
+                            sidebarLinks.push(`<a href="${href}">${title}</a>`);
+                        }
+                    }
+                });
+                
+                if (sidebarLinks.length > 0) {
+                    sidebarRelatedContent.innerHTML = sidebarLinks.slice(0, 3).join('');
+                } else {
+                    document.getElementById('sidebar-related').style.display = 'none';
+                }
+            } else {
+                const sidebarRelated = document.getElementById('sidebar-related');
+                if (sidebarRelated) sidebarRelated.style.display = 'none';
+            }
+
+            lucide.createIcons();
+
+            // Menu search input handler
+            const menuSearchInput = document.getElementById('menu-search-input');
+            const menuClearButton = document.getElementById('menu-clear-search');
+            
+            if (menuSearchInput) {
+                menuSearchInput.addEventListener('input', (e) => {
+                    const value = e.target.value.trim();
+                    if (value) {
+                        menuClearButton.classList.remove('hidden');
+                    } else {
+                        menuClearButton.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
