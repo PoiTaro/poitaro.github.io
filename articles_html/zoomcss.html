@@ -581,20 +581,6 @@
 <p>まず、この現象がなぜ起こるのかを知っておきましょう。これはバグやエラーではなく、実は<strong>iPhone (iOS) の親切心</strong>からくる仕様なんです。</p>
 <p>iPhoneのSafariでは、<code>input</code>タグや<code>select</code>タグなどのフォーム要素をタップしたとき、その要素の<strong>文字サイズ (font-size) が16px未満</strong>だと、「文字が小さくて入力しづらいだろうから、拡大してあげるね！」と自動的にズームしてくれる機能が働きます。</p>
 <p>親切な機能ではあるんですが、デザインによってはこの自動ズームが逆にユーザーを混乱させたり、全体のレイアウトが崩れて見えたりと、意図しない表示になってしまうことが多いんですよね。</p>
-
-<div class="article-ad my-8">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-2213699949048480"
-     data-ad-slot="4891282874"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
 <h2 id="たった1行cssで自動ズームを解決する方法">たった1行！CSSで自動ズームを解決する方法</h2>
 <p>「じゃあ、どうすればいいの？」と思いますよね。解決方法は、原因がわかれば至ってシンプル。CSSでフォーム要素の文字サイズを<strong>16px以上</strong>に指定してあげるだけです。</p>
 <p>これだけで、あの忌まわしい自動ズームをピタッと止めることができます。</p>
@@ -624,20 +610,6 @@ select {
 }
 </code></pre>
 <p>たったこれだけです。font-sizeを16px（もしくはそれ以上）に設定することで、iOSは「このフォームは十分な大きさだから、ズームしなくても大丈夫だな」と判断し、自動拡大をストップしてくれます。</p>
-
-<div class="article-ad my-8">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-2213699949048480"
-     data-ad-slot="4891282874"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
 <h2 id="やってはいけない注意点metaタグでの制御は非推奨">やってはいけない注意点！metaタグでの制御は非推奨</h2>
 <p>「昔、metaタグにuser-scalable=noって書く方法があったような…？」と思った方、鋭いですね。
 確かに以前は、<head>内に以下のようなmetaタグを記述して、ユーザーによる拡大・縮小操作そのものを禁止する方法がありました。</p>
@@ -645,20 +617,6 @@ select {
 
 <p>この方法でも自動ズームは防げますが、現在ではアクセシビリティの観点から強く非推奨とされています。なぜなら、user-scalable=noを指定すると、ピンチイン・ピンチアウト（指で画面を拡大・縮小する操作）が一切できなくなってしまうからです。
 視力が弱い方など、意図的に画面を拡大して閲覧したいユーザーの操作を妨げてしまうため、この方法は使わないようにしましょう。CSSでfont-sizeを調整するのが、現在のベストな解決策です。</p>
-
-<div class="article-ad my-8">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-2213699949048480"
-     data-ad-slot="4891282874"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
 <h2 id="まとめ">まとめ</h2>
 <p>今回は、スマートフォンでフォームをタップした際に自動でズームされる現象の解決策について解説しました。ポイントをもう一度おさらいしましょう。</p>
 <ul>
@@ -668,20 +626,6 @@ select {
 たったこれだけの知識で、ユーザーにとってストレスのない、快適なフォームを提供することができます。Webサイト制作において、こういった細かい配慮がユーザー体験（UX）の向上に繋がります。
 もし今、あなたが作っているサイトのフォームが勝手にズームしてしまうなら、ぜひこの方法を試してみてくださいね！</li>
 </ul>
-
-<div class="article-ad my-8">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-2213699949048480"
-     data-ad-slot="4891282874"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
 
                     
         <section class="mt-16 pt-10 border-t-2 border-black">
@@ -701,25 +645,25 @@ select {
                     </div>
                 
                     <div class="group">
-                        <a href="../articles_html/watts.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
+                        <a href="../articles_html/sora2.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
                             <div class="w-full aspect-video overflow-hidden relative">
-                                <img src="../thumbnails/watts.png" alt="【2025年最新】ワッツオンラインストアの送料は？店舗受取のやり方と支払い方法を徹底解説！" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
+                                <img src="../thumbnails/sora2.png" alt="【2025年最新】Sora 2のウォーターマークを消す方法4選！公式・無料で安全に除去するやり方とは？" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
                                 <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </div>
                         </a>
-                        <a href="../articles_html/watts.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
+                        <a href="../articles_html/sora2.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
                             記事を見る >>
                         </a>
                     </div>
                 
                     <div class="group">
-                        <a href="../articles_html/policy.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
+                        <a href="../articles_html/study.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
                             <div class="w-full aspect-video overflow-hidden relative">
-                                <img src="../thumbnails/policy.png" alt="プライバシーポリシー" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
+                                <img src="../thumbnails/study.png" alt="【2025年最新】学生必見！無料で使えるAIサービス5選＋割引特典まとめ｜レポート・勉強が爆速化！" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
                                 <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </div>
                         </a>
-                        <a href="../articles_html/policy.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
+                        <a href="../articles_html/study.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
                             記事を見る >>
                         </a>
                     </div>
