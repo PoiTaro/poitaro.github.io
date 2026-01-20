@@ -803,7 +803,7 @@
                     <div class="group">
                         <a href="../articles_html/amehuri.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
                             <div class="w-full aspect-video overflow-hidden relative">
-                                <img src="../thumbnails/amehuri.png" alt="【2025年最新】アメフリ(旧i2i)の評判は最悪？Yahoo!ショッピング最強説の真実と危険性を徹底解説" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
+                                <img src="https://placehold.co/1280x720/00C300/FFFFFF?text=Amefuri+Review+2025" alt="【2025年最新】アメフリ(旧i2i)の評判は最悪？Yahoo!ショッピング最強説の真実と危険性を徹底解説" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
                                 <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </div>
                         </a>
@@ -996,6 +996,30 @@
             }
         });
     </script>
+
+    <!-- GAS Analytics Tracking Code -->
+<script>
+(function() {
+  var endpoint = "https://script.google.com/macros/s/AKfycbwI_pOecZhPI6hrwBuBZStPTypLeuT19rAecu0pA_ju0PmWwJtYYmW-W1h500ile6-0xQ/exec";
+  var data = {
+    type: "pv",
+    slug: location.pathname.split("/").pop().replace(".html", "") || "home",
+    title: document.title,
+    referrer: document.referrer,
+    userAgent: navigator.userAgent,
+    timestamp: new Date().toISOString()
+  };
+  if(navigator.sendBeacon) {
+    navigator.sendBeacon(endpoint, JSON.stringify(data));
+  } else {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", endpoint);
+    xhr.send(JSON.stringify(data));
+  }
+})();
+</script>
+    
 </body>
 
 </html>
+
