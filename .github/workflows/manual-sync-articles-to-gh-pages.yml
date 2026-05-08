@@ -35,7 +35,8 @@ jobs:
       - name: Switch working tree to gh-pages branch
         run: |
           git fetch origin gh-pages:gh-pages
-          git checkout gh-pages
+          git checkout -f gh-pages
+          git clean -fd
 
       - name: Restore generated outputs into gh-pages
         run: |
