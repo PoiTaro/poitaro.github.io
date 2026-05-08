@@ -90,7 +90,7 @@ const rawPosts = articleFiles.map(file => {
 `;
 
     // H2見出しを抽出して目次を作成し、本文内のH2にidアンカーを付与
-    const h2Regex = /<h2>(.*?)<\/h2>/g;
+    const h2Regex = /<h2[^>]*>(.*?)<\/h2>/g;
     const h2Matches = [...htmlContent.matchAll(h2Regex)].map(m => m[1]);
     const slugify = (s) => s
         .toString()
@@ -138,12 +138,8 @@ const rawPosts = articleFiles.map(file => {
             const sectionEnd = nextH2 ? nextH2.index : htmlContent.length;
             const section = htmlContent.substring(sectionStart, sectionEnd);
             
-            // セクション内に十分なコンテンツがある場合のみ広告を挿入（最低100文字）
-            const textContent = section.replace(/<[^>]+>/g, '').trim();
-            if (textContent.length > 100) {
-                // セクションの終わり（次のH2の直前、またはコンテンツの最後）に広告を挿入
-                htmlContent = htmlContent.substring(0, sectionEnd) + adTemplate + htmlContent.substring(sectionEnd);
-            }
+            // セクション末尾（次のH2直前、または末尾）に広告を挿入
+            htmlContent = htmlContent.substring(0, sectionEnd) + adTemplate + htmlContent.substring(sectionEnd);
         }
     }
 

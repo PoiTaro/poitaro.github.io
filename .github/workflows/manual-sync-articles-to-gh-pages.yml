@@ -1,0 +1,57 @@
+name: Manual Sync articles_html to gh-pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-articles-html:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate all article HTML from main/articles
+        run: npm run generate
+
+      - name: Archive generated outputs
+        run: |
+          tar -czf /tmp/generated-articles-html.tgz articles_html posts.json sitemap.xml Sitemap.xml
+
+      - name: Switch working tree to gh-pages branch
+        run: |
+          git fetch origin gh-pages:gh-pages
+          git checkout gh-pages
+
+      - name: Restore generated outputs into gh-pages
+        run: |
+          tar -xzf /tmp/generated-articles-html.tgz -C .
+
+      - name: Commit and push when changed
+        env:
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          git config user.name "$GIT_AUTHOR_NAME"
+          git config user.email "$GIT_AUTHOR_EMAIL"
+          git add articles_html posts.json sitemap.xml Sitemap.xml
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: sync generated articles_html from main [skip ci]"
+          git push origin gh-pages
