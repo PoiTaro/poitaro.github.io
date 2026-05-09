@@ -54,6 +54,21 @@ function extractMarkdownContent(markdown) {
     return markdown.replace(frontmatterRegex, '').trim();
 }
 
+function stripOuterArticleBodyWrapper(html) {
+    const openTagMatch = html.match(/^\s*<div\b(?=[^>]*\bid=["']article-body["'])[^>]*>\s*/i);
+    if (!openTagMatch || !html.trimEnd().endsWith('</div>')) {
+        return html;
+    }
+
+    const withoutOpenTag = html.slice(openTagMatch[0].length);
+    const lastCloseIndex = withoutOpenTag.trimEnd().lastIndexOf('</div>');
+    if (lastCloseIndex === -1) {
+        return html;
+    }
+
+    return withoutOpenTag.slice(0, lastCloseIndex).trim();
+}
+
 // 1. articlesディレクトリからマークダウンファイルの一覧を取得
 const articleFiles = fs.readdirSync(articlesDir).filter(file => file.endsWith('.md'));
 
@@ -71,6 +86,7 @@ const rawPosts = articleFiles.map(file => {
 
     // Remove the first H1 tag if it exists (to prevent duplicate titles)
     htmlContent = htmlContent.replace(/^\s*<h1[^>]*>.*?<\/h1>\s*/is, '');
+    htmlContent = stripOuterArticleBodyWrapper(htmlContent);
 
     // Google AdSense広告のHTMLテンプレート
     const adTemplate = `
@@ -296,8 +312,8 @@ rawPosts.forEach(current => {
 
     // テーブルを横スクロール可能にラップ（補助テキスト付き）
     let contentWithScrollableTables = current.content.replace(
-        /<table>/g,
-        '<div class="table-wrapper"><table>'
+        /<table\b[^>]*>/g,
+        match => `<div class="table-wrapper">${match}`
     ).replace(
         /<\/table>/g,
         '</table><div class="table-scroll-hint">スクロールして全体を表示</div></div>'
