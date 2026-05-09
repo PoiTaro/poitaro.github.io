@@ -114,19 +114,19 @@ const rawPosts = articleFiles.map(file => {
 
     // H2タグの後（次のH2タグまたは次のH3タグまたは本文の終わり）に広告を挿入
     // H2セクションが完結するポイントを見つけて広告を挿入
-    if (h2Anchors.length > 0) {
+    const h2Positions = [];
+    let match;
+    const h2RegexGlobal = /<h2[^>]*>[\s\S]*?<\/h2>/g;
+    while ((match = h2RegexGlobal.exec(htmlContent)) !== null) {
+        h2Positions.push({
+            index: match.index,
+            length: match[0].length,
+            fullMatch: match[0]
+        });
+    }
+
+    if (h2Positions.length > 0) {
         // H2タグのすぐ後に広告を挿入するのではなく、H2セクションの終わり（次のH2の前）に挿入
-        // まず、全てのH2タグの位置を特定
-        const h2Positions = [];
-        let match;
-        const h2RegexGlobal = /<h2[^>]*>.*?<\/h2>/g;
-        while ((match = h2RegexGlobal.exec(htmlContent)) !== null) {
-            h2Positions.push({
-                index: match.index,
-                length: match[0].length,
-                fullMatch: match[0]
-            });
-        }
 
         // 後ろから処理して、インデックスのずれを防ぐ
         for (let i = h2Positions.length - 1; i >= 0; i--) {
