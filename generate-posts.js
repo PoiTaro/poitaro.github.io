@@ -90,10 +90,7 @@ const rawPosts = articleFiles.map(file => {
 
     // Google AdSense広告のHTMLテンプレート
     const adTemplate = `
-<div class="article-ad my-8" aria-label="Advertisement">
-  <div class="article-ad-frame">
-    <div class="article-ad-label">ADVERTISEMENT</div>
-    <div class="article-ad-inner">
+<div class="article-ad my-8">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -105,8 +102,6 @@ const rawPosts = articleFiles.map(file => {
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-    </div>
-  </div>
 </div>
 `;
 
