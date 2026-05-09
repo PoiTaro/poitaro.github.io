@@ -7,6 +7,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 const puppeteer = require('puppeteer');
 
 const ROOT = __dirname + '/..';
@@ -43,6 +44,56 @@ function parseFrontmatter(markdown) {
 
 function getSlug(mdFile) {
   return mdFile.replace(/\.md$/, '');
+}
+
+function normalizeArticleFile(file) {
+  const normalized = file.replace(/\\/g, '/');
+  if (!normalized.startsWith('articles/') || !normalized.endsWith('.md')) return null;
+  const basename = path.basename(normalized);
+  const fullPath = path.join(ARTICLES_DIR, basename);
+  return fs.existsSync(fullPath) ? basename : null;
+}
+
+function getChangedArticleFiles() {
+  const before = process.env.GITHUB_EVENT_BEFORE || process.env.GITHUB_BEFORE;
+  const sha = process.env.GITHUB_SHA || 'HEAD';
+  if (!before || /^0+$/.test(before)) return [];
+
+  try {
+    const output = execSync(`git diff --name-only --diff-filter=AMR ${before} ${sha} -- articles`, {
+      cwd: ROOT,
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    });
+
+    return output
+      .split(/\r?\n/)
+      .map(normalizeArticleFile)
+      .filter(Boolean);
+  } catch (err) {
+    console.warn('Could not detect changed articles; falling back to missing thumbnails only.');
+    return [];
+  }
+}
+
+function getTargetFiles(allFiles) {
+  const args = process.argv.slice(2);
+  const force = args.includes('--force') || args.includes('-f');
+  const explicitTargets = args
+    .filter(arg => !arg.startsWith('-'))
+    .map(arg => normalizeArticleFile(arg.includes('/') || arg.includes('\\') ? arg : `articles/${arg}`))
+    .filter(Boolean);
+
+  if (force) return allFiles;
+  if (explicitTargets.length > 0) return [...new Set(explicitTargets)];
+
+  const changedFiles = getChangedArticleFiles();
+  const missingThumbnailFiles = allFiles.filter(md => {
+    const slug = getSlug(md);
+    return !fs.existsSync(path.join(OUT_DIR, `${slug}.png`));
+  });
+
+  return [...new Set([...changedFiles, ...missingThumbnailFiles])];
 }
 
 // ブランド設定
@@ -233,6 +284,16 @@ function buildHtml({ title, category, date }) {
 }
 
 async function main() {
+  const files = fs.readdirSync(ARTICLES_DIR).filter(f => f.endsWith('.md'));
+  const targetFiles = getTargetFiles(files);
+
+  if (targetFiles.length === 0) {
+    console.log('No thumbnails need regeneration.');
+    return;
+  }
+
+  console.log(`Generating ${targetFiles.length} thumbnail(s): ${targetFiles.join(', ')}`);
+
   const browser = await puppeteer.launch({
     headless: 'new',
     args: ['--no-sandbox','--disable-setuid-sandbox'],
@@ -242,8 +303,7 @@ async function main() {
   try {
     const page = await browser.newPage();
 
-    const files = fs.readdirSync(ARTICLES_DIR).filter(f => f.endsWith('.md'));
-    for (const md of files) {
+    for (const md of targetFiles) {
       const slug = getSlug(md);
       const outPath = path.join(OUT_DIR, `${slug}.png`);
       
