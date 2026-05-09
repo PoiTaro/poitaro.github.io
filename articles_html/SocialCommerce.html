@@ -229,6 +229,56 @@
             border-bottom: none;
         }
 
+        /* AdSense Block */
+        #article-body .article-ad {
+            margin: 3rem 0;
+            clear: both;
+        }
+        #article-body .article-ad-frame {
+            position: relative;
+            border: 2px solid #0a0a0a;
+            background: #fff;
+            padding: 1.5rem;
+            box-shadow: 6px 6px 0 #0a0a0a;
+        }
+        #article-body .article-ad-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ccff00;
+        }
+        #article-body .article-ad-label {
+            position: absolute;
+            top: -0.85rem;
+            left: 1rem;
+            background: #0a0a0a;
+            color: #ccff00;
+            padding: 0.2rem 0.65rem;
+            font-family: 'Anton', sans-serif;
+            font-size: 0.75rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+        #article-body .article-ad-inner {
+            min-height: 120px;
+        }
+        #article-body .article-ad .adsbygoogle {
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (max-width: 640px) {
+            #article-body .article-ad {
+                margin: 2.5rem 0;
+            }
+            #article-body .article-ad-frame {
+                padding: 1rem;
+                box-shadow: 4px 4px 0 #0a0a0a;
+            }
+        }
+
         /* Custom Cursor for Menu Items */
         .menu-link:hover::before {
             content: ">>";
@@ -633,7 +683,10 @@
 <p>しかし、ソーシャルコマースでは、<strong>InstagramやTikTokなどのSNSアプリ内で、商品の発見から閲覧、比較、そして決済までがすべて完結</strong>します。</p>
 <p>僕たちが普段使っているSNSが、そのまま「お店」になったイメージです。インフルエンサーのおすすめ投稿を見て「あ、これ欲しい！」と思ったら、そのまま数タップで買えてしまう…。そんなシームレスな買い物体験が、今、当たり前になろうとしているんです。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -645,6 +698,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="なぜ今ソーシャルコマースがこんなにアツいのか">なぜ今、ソーシャルコマースがこんなにアツいのか？</h2>
 <p>「でも、なんで今そんなに注目されてるの？」と思いますよね。それには、僕たちの消費行動の変化が大きく関係しています。</p>
@@ -666,7 +721,10 @@
 </blockquote>
 <p>企業側も、広告費をかけるよりUGCを増やした方がモノが売れる、と気づき始めています。だからこそ、SNS上で口コミが生まれやすいソーシャルコマースに力を入れているんですね。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -678,6 +736,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="ソーシャルコマースの種類と主なプラットフォーム">ソーシャルコマースの種類と主なプラットフォーム</h2>
 <p>ソーシャルコマースには、実はいくつかの種類があります。ここでは、特に僕たちの生活に関わりの深い4つのタイプと、代表的なプラットフォームを紹介しますね。</p>
@@ -731,7 +791,10 @@
 </tr>
 </tbody></table><div class="table-scroll-hint">スクロールして全体を表示</div></div>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -743,6 +806,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="深掘り注目度no1ライブコマースとは">【深掘り】注目度No.1！「ライブコマース」とは？</h2>
 <p>ソーシャルコマースの中でも、特に急速に伸びているのが「ライブコマース」です。これは、単なる動画とは全く違う、新しい買い物体験なんです。</p>
@@ -759,7 +824,10 @@
 <li><strong>導線設計が必須:</strong> 「欲しい！」と思っても、購入ページへのリンクが分かりにくいと、視聴者はすぐに離脱してしまいます。</li>
 </ul>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -771,6 +839,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="ソーシャルコマースのメリットとデメリット総まとめ">ソーシャルコマースのメリットとデメリット（総まとめ）</h2>
 <p>ここで、ソーシャルコマース全体のメリットと注意点（デメリット）を、「買う側」と「始める側（売る・紹介する）」の両方の視点から整理しておきましょう。</p>
@@ -793,7 +863,10 @@
 <li><strong>（始める側）運用リソースが必須:</strong> 投稿を作成したり、コメントやDMに対応したり、ライブ配信を企画したりと、アカウントの運用には一定の時間と労力がかかります。</li>
 </ul>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -805,6 +878,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="実践編スマホ一台で完結ソーシャルコマース活用術">【実践編】スマホ一台で完結！ソーシャルコマース活用術</h2>
 <p>では、実際にどうやってスマホでソーシャルコマースを活用するのか、具体的な使い方を見ていきましょう。</p>
@@ -878,7 +953,10 @@
 </ul>
 <p>大切なのは、「稼ぎたい！」という気持ちを前面に出すのではなく、「本当に良いものだから、みんなにも知ってほしい」という純粋な気持ちで、あなたの「体験」をシェアすることです。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -890,6 +968,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="応用編ポイ活snsで得する最新手法3選">【応用編】ポイ活×SNSで得する最新手法3選</h2>
 <p>さて、ここからが本題です。
@@ -943,7 +1023,10 @@
 </blockquote>
 <p>このように「お得な情報」を発信することで、あなたのポイ活ノウハウへの信頼性が高まり、結果として紹介リンクやアフィリエイトリンクからの成果も上がりやすくなります。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -955,6 +1038,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="最重要安全に活用するための注意点">【最重要】安全に活用するための注意点</h2>
 <p>最後に、ソーシャルコマースやSNSでのポイ活を安全に楽しむために、絶対に守ってほしいルールをお伝えします。</p>
@@ -972,7 +1057,10 @@
 </li>
 </ul>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -984,6 +1072,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="まとめ">まとめ</h2>
 <p>今回は、SNSの新しいカタチ「ソーシャルコマース」について、その基本からポイ活との連携術まで、かなり詳しく解説してきました。</p>
@@ -1000,7 +1090,10 @@
 それだけでも、立派なソーシャルコマースの第一歩です。</p>
 <p>あなたもこの記事を参考に、ぜひ今日から「稼ぐSNS」を始めてみませんか？</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -1012,6 +1105,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 
                     

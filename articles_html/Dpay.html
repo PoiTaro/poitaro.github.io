@@ -229,6 +229,56 @@
             border-bottom: none;
         }
 
+        /* AdSense Block */
+        #article-body .article-ad {
+            margin: 3rem 0;
+            clear: both;
+        }
+        #article-body .article-ad-frame {
+            position: relative;
+            border: 2px solid #0a0a0a;
+            background: #fff;
+            padding: 1.5rem;
+            box-shadow: 6px 6px 0 #0a0a0a;
+        }
+        #article-body .article-ad-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ccff00;
+        }
+        #article-body .article-ad-label {
+            position: absolute;
+            top: -0.85rem;
+            left: 1rem;
+            background: #0a0a0a;
+            color: #ccff00;
+            padding: 0.2rem 0.65rem;
+            font-family: 'Anton', sans-serif;
+            font-size: 0.75rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+        #article-body .article-ad-inner {
+            min-height: 120px;
+        }
+        #article-body .article-ad .adsbygoogle {
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (max-width: 640px) {
+            #article-body .article-ad {
+                margin: 2.5rem 0;
+            }
+            #article-body .article-ad-frame {
+                padding: 1rem;
+                box-shadow: 4px 4px 0 #0a0a0a;
+            }
+        }
+
         /* Custom Cursor for Menu Items */
         .menu-link:hover::before {
             content: ">>";
@@ -620,7 +670,10 @@
 </tbody></table><div class="table-scroll-hint">スクロールして全体を表示</div></div>
 <p>簡単に言うと、<strong>ソフトバンク・ワイモバイルユーザーならPayPay経済圏</strong>、そして<strong>ドコモ・ahamoユーザーならドコモ経済圏</strong>に身を置くことで、ポイント還元の恩恵を最大限に受けることができるんです。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -632,6 +685,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="ドコモ経済圏に乗り換える絶大なメリット4選">ドコモ経済圏に乗り換える絶大なメリット4選</h2>
 <p>「じゃあ、ドコモユーザーがドコモ経済圏に乗り換えると、具体的に何がそんなにすごいの？」と思いますよね。その答えは、PayPay経済圏にはない、強力すぎるメリットにあります。</p>
@@ -646,7 +701,10 @@
 <h3>4. dポイントの使い道が多様で無駄がない！</h3>
 <p>貯まったdポイントは、1ポイント＝1円として街のお店やネットショッピングで使えるのはもちろん、ドコモの携帯料金への充当、JALマイルへの交換、さらには「ポイント投資」で運用して増やすことも可能です。 ポイントの出口戦略が豊富なため、貯めたポイントを無駄なく活用できるのも嬉しいポイントです。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -658,6 +716,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="乗り換える前に知っておきたい注意点とデメリット">乗り換える前に！知っておきたい注意点とデメリット</h2>
 <p>もちろん、良いことばかりではありません。乗り換える前に、以下の注意点もしっかりと理解しておきましょう。</p>
@@ -668,7 +728,10 @@
 <h3>3. 個人店などではPayPayしか使えない場合も</h3>
 <p>加盟店数で言えば、やはりPayPayに軍配が上がります。 主要なチェーン店ではd払いもほとんど使えますが、個人経営のお店などでは「PayPayのみ対応」というケースもまだ見られます。完全にPayPayを捨てるのではなく、d払いをメインにしつつ、PayPayもサブとして残しておくのが賢い使い方かもしれません。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -680,6 +743,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="まとめ">まとめ</h2>
 <p>PayPay経済圏からドコモ経済圏への乗り換えについて、その魅力と注意点を解説してきました。</p>
@@ -693,7 +758,10 @@
 <p>もしあなたがドコモユーザーで、まだd払いやdカードをメインで使っていないなら、それは非常にもったいない状況かもしれません。</p>
 <p>特に、毎月のスマホ代が高いと感じている方ほど、「dカード GOLD」の恩恵は絶大です。この機会にあなたのキャッシュレス環境を見直して、dポイントがザクザク貯まるお得な「ドコモ経済圏」に足を踏み入れてみてはいかがでしょうか？</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -705,6 +773,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 
                     

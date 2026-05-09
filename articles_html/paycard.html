@@ -229,6 +229,56 @@
             border-bottom: none;
         }
 
+        /* AdSense Block */
+        #article-body .article-ad {
+            margin: 3rem 0;
+            clear: both;
+        }
+        #article-body .article-ad-frame {
+            position: relative;
+            border: 2px solid #0a0a0a;
+            background: #fff;
+            padding: 1.5rem;
+            box-shadow: 6px 6px 0 #0a0a0a;
+        }
+        #article-body .article-ad-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ccff00;
+        }
+        #article-body .article-ad-label {
+            position: absolute;
+            top: -0.85rem;
+            left: 1rem;
+            background: #0a0a0a;
+            color: #ccff00;
+            padding: 0.2rem 0.65rem;
+            font-family: 'Anton', sans-serif;
+            font-size: 0.75rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+        #article-body .article-ad-inner {
+            min-height: 120px;
+        }
+        #article-body .article-ad .adsbygoogle {
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (max-width: 640px) {
+            #article-body .article-ad {
+                margin: 2.5rem 0;
+            }
+            #article-body .article-ad-frame {
+                padding: 1rem;
+                box-shadow: 4px 4px 0 #0a0a0a;
+            }
+        }
+
         /* Custom Cursor for Menu Items */
         .menu-link:hover::before {
             content: ">>";
@@ -623,7 +673,10 @@
 $</p>
 <p>この計算により、「年間220万円」という損益分岐点が出てくるんですね。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -635,6 +688,8 @@ $</p>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="条件別あなたの損益分岐点はコレだ">【条件別】あなたの損益分岐点はコレだ！</h2>
 <p>それでは、あなたのライフスタイルに合わせて、もっと具体的に損益分岐点を見ていきましょう。特に、PayPayステップの達成と、ソフトバンク・ワイモバイルユーザーであるかどうかは、非常に大きなポイントになります。</p>
@@ -686,7 +741,10 @@ $</p>
 </ul>
 <p>なんと、これだけで<strong>年会費11,000円を余裕で上回る18,000円相当のポイント</strong>が貯まってしまうんです！ 通常のカード決済を全くしなくても、通信費の支払いだけで元が取れてしまう計算になります。ソフトバンクやワイモバイルユーザーの方にとっては、まさに最強のカードと言えるでしょう。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -698,6 +756,8 @@ $</p>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="元が取れるだけじゃないpaypayゴールドカードの豪華メリット">元が取れるだけじゃない！PayPayゴールドカードの豪華メリット</h2>
 <p>損益分岐点ばかりに目が行きがちですが、PayPayゴールドカードには年会費以上の価値がある豪華な特典がたくさん付いています。</p>
@@ -720,7 +780,10 @@ $</p>
 </ul>
 <p>これらの特典の価値を考えれば、損益分岐点のハードルはさらに低く感じられるはずです。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -732,6 +795,8 @@ $</p>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="まとめ">まとめ</h2>
 <p>今回は、PayPayゴールドカードの損益分岐点について、様々な角度から徹底的に解説しました。</p>
@@ -744,7 +809,10 @@ $</p>
 <p>結論として、PayPayゴールドカードは**「月々10万円程度のカード利用があり、PayPayステップを達成できる方」<strong>、そして何より</strong>「ソフトバンク・ワイモバイルユーザーの方」**には、絶対的におすすめできる一枚です。</p>
 <p>年会費という数字だけを見てためらうのは、もったいないかもしれません。あなたの決済スタイルとこの記事で解説した損益分岐点を照らし合わせて、ぜひ最適な一枚を選んでくださいね。あなたのキャッシュレスライフが、もっとお得で豊かなものになることを願っています！</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -756,6 +824,8 @@ $</p>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 
                     

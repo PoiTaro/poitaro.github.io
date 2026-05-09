@@ -229,6 +229,56 @@
             border-bottom: none;
         }
 
+        /* AdSense Block */
+        #article-body .article-ad {
+            margin: 3rem 0;
+            clear: both;
+        }
+        #article-body .article-ad-frame {
+            position: relative;
+            border: 2px solid #0a0a0a;
+            background: #fff;
+            padding: 1.5rem;
+            box-shadow: 6px 6px 0 #0a0a0a;
+        }
+        #article-body .article-ad-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ccff00;
+        }
+        #article-body .article-ad-label {
+            position: absolute;
+            top: -0.85rem;
+            left: 1rem;
+            background: #0a0a0a;
+            color: #ccff00;
+            padding: 0.2rem 0.65rem;
+            font-family: 'Anton', sans-serif;
+            font-size: 0.75rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+        #article-body .article-ad-inner {
+            min-height: 120px;
+        }
+        #article-body .article-ad .adsbygoogle {
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (max-width: 640px) {
+            #article-body .article-ad {
+                margin: 2.5rem 0;
+            }
+            #article-body .article-ad-frame {
+                padding: 1rem;
+                box-shadow: 4px 4px 0 #0a0a0a;
+            }
+        }
+
         /* Custom Cursor for Menu Items */
         .menu-link:hover::before {
             content: ">>";
@@ -605,7 +655,10 @@
 <p>本記事では、Apple純正の「Sidecar」を使い倒す方法から、あえてサードパーティ製アプリを選ぶ理由、そして安定性を極める有線接続のテクニックまで、筆者が実践している「iPadを最強のサブディスプレイに変える全手法」を余すことなくお伝えします。</p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -617,6 +670,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="1-apple純正sidecarを極める設定と最新機能">1. Apple純正「Sidecar」を極める：設定と最新機能</h2>
 <p>まずは、追加費用なしで利用できる純正機能「Sidecar（サイドカー）」です。2026年のシステム環境では、接続のスピードと解像度の最適化が一段と進んでいます。</p>
@@ -632,7 +687,10 @@
 <p>僕が特におすすめしたいのは、iPad側の「サイドバー」と「Touch Bar」の表示設定です。これらを活用することで、キーボードに手を伸ばさなくてもショートカット操作が可能になり、作業効率が飛躍的に向上します。</p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -644,6 +702,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="2-なぜ外部アプリが必要なのかsidecarの限界を突破する">2. なぜ「外部アプリ」が必要なのか？：Sidecarの限界を突破する</h2>
 <p>純正のSidecarは非常に優秀ですが、すべてのニーズを満たせるわけではありません。筆者が以下のようなケースでサードパーティ製アプリを推奨しています。</p>
@@ -661,7 +721,10 @@
 </ul>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -673,6 +736,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="3-遅延ゼロを実現する有線接続の裏技">3. 遅延ゼロを実現する「有線接続」の裏技</h2>
 <p>無線接続（Wi-Fi）は便利ですが、カフェなどの混雑した通信環境では、マウスの動きがワンテンポ遅れる「ラグ」が発生することがあります。クリエイティブな作業や、文字入力が多い場合は、<strong>あえての有線接続</strong>が正解です。</p>
@@ -680,7 +745,10 @@
 <p>実はSidecarも、USBケーブルで繋ぐだけで自動的に有線モードに切り替わります。これだけで、Wi-Fiの干渉を受けないストレスフリーな環境が手に入ります。</p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -692,6 +760,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="4-生産性を最大化する物理配置とアクセサリー">4. 生産性を最大化する「物理配置」とアクセサリー</h2>
 <p>ソフトウェアの設定と同じくらい重要なのが、iPadをどこに置くかという「物理的配置」です。</p>
@@ -704,7 +774,10 @@
 <p><img src="../images/ipad-mac-sub-display-guide_img3.png" alt="ipad-mac-sub-display-guide_img3.png"></p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -716,6 +789,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="5-よくあるトラブルと解決策2026年版">5. よくあるトラブルと解決策（2026年版）</h2>
 <p>「接続できない」「画面が真っ暗」といったトラブルに直面した際は、以下のステップを確認してください。</p>
@@ -726,7 +801,10 @@
 </ul>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -738,6 +816,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="まとめ自分だけのデュアルモニター環境を作ろう">まとめ：自分だけのデュアルモニター環境を作ろう</h2>
 <p>iPadをサブディスプレイ化することは、単に画面を増やすだけではありません。それは、どこにいても「自分にとって最高の集中環境」を再現できる自由を手に入れることです。</p>
@@ -745,7 +825,10 @@
 <p>この記事が、あなたのデジタルライフをより豊かにする一助となれば幸いです。</p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -757,6 +840,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 
                     
@@ -777,25 +862,25 @@
                     </div>
                 
                     <div class="group">
-                        <a href="../articles_html/watts.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
+                        <a href="../articles_html/sora2.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
                             <div class="w-full aspect-video overflow-hidden relative">
-                                <img src="../thumbnails/watts.png" alt="【2025年最新】ワッツオンラインストアの送料は？店舗受取のやり方と支払い方法を徹底解説！" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
+                                <img src="../thumbnails/sora2.png" alt="【2025年最新】Sora 2のウォーターマークを消す方法4選！公式・無料で安全に除去するやり方とは？" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
                                 <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </div>
                         </a>
-                        <a href="../articles_html/watts.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
+                        <a href="../articles_html/sora2.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
                             記事を見る >>
                         </a>
                     </div>
                 
                     <div class="group">
-                        <a href="../articles_html/vpn.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
+                        <a href="../articles_html/study.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
                             <div class="w-full aspect-video overflow-hidden relative">
-                                <img src="../thumbnails/vpn.png" alt="【2025年最新】海外からTVerやFODを見る方法！VPNで日本のテレビを視聴する裏ワザを徹底解説" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
+                                <img src="../thumbnails/study.png" alt="【2025年最新】学生必見！無料で使えるAIサービス5選＋割引特典まとめ｜レポート・勉強が爆速化！" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
                                 <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </div>
                         </a>
-                        <a href="../articles_html/vpn.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
+                        <a href="../articles_html/study.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
                             記事を見る >>
                         </a>
                     </div>

@@ -229,6 +229,56 @@
             border-bottom: none;
         }
 
+        /* AdSense Block */
+        #article-body .article-ad {
+            margin: 3rem 0;
+            clear: both;
+        }
+        #article-body .article-ad-frame {
+            position: relative;
+            border: 2px solid #0a0a0a;
+            background: #fff;
+            padding: 1.5rem;
+            box-shadow: 6px 6px 0 #0a0a0a;
+        }
+        #article-body .article-ad-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ccff00;
+        }
+        #article-body .article-ad-label {
+            position: absolute;
+            top: -0.85rem;
+            left: 1rem;
+            background: #0a0a0a;
+            color: #ccff00;
+            padding: 0.2rem 0.65rem;
+            font-family: 'Anton', sans-serif;
+            font-size: 0.75rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+        #article-body .article-ad-inner {
+            min-height: 120px;
+        }
+        #article-body .article-ad .adsbygoogle {
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (max-width: 640px) {
+            #article-body .article-ad {
+                margin: 2.5rem 0;
+            }
+            #article-body .article-ad-frame {
+                padding: 1rem;
+                box-shadow: 4px 4px 0 #0a0a0a;
+            }
+        }
+
         /* Custom Cursor for Menu Items */
         .menu-link:hover::before {
             content: ">>";
@@ -615,7 +665,10 @@
 <p>とはいえ、<strong>2026年1月現在、楽天ペイは依然として「楽天カード→楽天キャッシュチャージ→楽天ペイ支払い」で1.5%の高還元率を維持しています。</strong> このお得な状況が続いているうちに、ライバルたちの動向もしっかりチェックしておきましょう。</p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -627,6 +680,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="ライバルも黙っていないoliveと三菱ufjの超大型キャンペーン">ライバルも黙っていない！Oliveと三菱UFJの超大型キャンペーン</h2>
 <p>楽天ペイが足踏みしている間にも、ライバルたちは積極的なキャンペーンでユーザー獲得に乗り出しています。特に注目すべきは、三井住友銀行の「Olive」と三菱UFJグループです。</p>
@@ -684,7 +739,10 @@
 <p>これらのキャンペーンは、三菱UFJをメインバンクとして利用しようと考えている方や、複数の金融サービスをまとめて乗り換えたい方にとって、非常に大きなメリットがあります。</p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -696,6 +754,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="徹底比較楽天ペイ-vs-olive-vs-三菱ufj-あなたに最適なのはどれ">【徹底比較】楽天ペイ vs Olive vs 三菱UFJ あなたに最適なのはどれ？</h2>
 <p>さて、ここまで各サービスの特徴を見てきました。ここからは、3つのサービスを様々な角度から比較し、あなたが選ぶべき最適な決済サービスを明らかにします。</p>
@@ -782,7 +842,10 @@
 </ul>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -794,6 +857,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="後悔しないキャッシュレス決済選び3つの鉄則">後悔しない！キャッシュレス決済選び、3つの鉄則</h2>
 <p>最後に、どの決済サービスを選ぶにしても共通して言える、後悔しないための選び方のポイントを3つご紹介します。</p>
@@ -805,7 +870,10 @@
 <p>「最大〇万円還元！」といった派手なキャンペーンは非常に魅力的ですが、それはあくまで一時的なもの。大切なのは、キャンペーン終了後も**「普段使い」でどれだけお得か**という視点です。基本還元率や、特定の条件下での還元率アップなどを総合的に判断し、長期的に付き合えるサービスを選びましょう。</p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -817,6 +885,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="まとめ2026年キャッシュレス戦国時代勝者となるのは">まとめ：2026年キャッシュレス戦国時代、勝者となるのは？</h2>
 <p>楽天ペイの「改悪」見送りという衝撃的なニュースから始まった2026年のキャッシュレス決済市場。今回の騒動は、ユーザーの声がいかに重要であるかを改めて示す出来事となりました。</p>
@@ -828,7 +898,10 @@
 <p>もはや、どのサービスが絶対的に一番良い、と言い切れる時代ではありません。それぞれのサービスが、異なる強みとターゲットを持っています。</p>
 <p>この記事を参考に、あなたのライフスタイル、よく使うお店、貯めたいポイントを再確認し、自分にとっての「最高のパートナー」となるキャッシュレス決済を見つけてください。それが、このキャッシュレス戦国時代を賢く、そしてお得に生き抜くための唯一の方法です。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -840,6 +913,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 
                     
@@ -872,13 +947,13 @@
                     </div>
                 
                     <div class="group">
-                        <a href="../articles_html/tumutumu.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
+                        <a href="../articles_html/subwork.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
                             <div class="w-full aspect-video overflow-hidden relative">
-                                <img src="../thumbnails/tumutumu.png" alt="【ツムツム課金】完全無料でルビーをGET！学生でもできるポイ活でPayPayを稼ぐ裏ワザ" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
+                                <img src="../thumbnails/subwork.png" alt="【2025年最新】ポイ活の確定申告はいくらから？税金の計算方法から会社にバレない対策まで徹底解説！" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
                                 <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </div>
                         </a>
-                        <a href="../articles_html/tumutumu.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
+                        <a href="../articles_html/subwork.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
                             記事を見る >>
                         </a>
                     </div>

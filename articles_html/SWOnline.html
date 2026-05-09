@@ -229,6 +229,56 @@
             border-bottom: none;
         }
 
+        /* AdSense Block */
+        #article-body .article-ad {
+            margin: 3rem 0;
+            clear: both;
+        }
+        #article-body .article-ad-frame {
+            position: relative;
+            border: 2px solid #0a0a0a;
+            background: #fff;
+            padding: 1.5rem;
+            box-shadow: 6px 6px 0 #0a0a0a;
+        }
+        #article-body .article-ad-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ccff00;
+        }
+        #article-body .article-ad-label {
+            position: absolute;
+            top: -0.85rem;
+            left: 1rem;
+            background: #0a0a0a;
+            color: #ccff00;
+            padding: 0.2rem 0.65rem;
+            font-family: 'Anton', sans-serif;
+            font-size: 0.75rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+        #article-body .article-ad-inner {
+            min-height: 120px;
+        }
+        #article-body .article-ad .adsbygoogle {
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (max-width: 640px) {
+            #article-body .article-ad {
+                margin: 2.5rem 0;
+            }
+            #article-body .article-ad-frame {
+                padding: 1rem;
+                box-shadow: 4px 4px 0 #0a0a0a;
+            }
+        }
+
         /* Custom Cursor for Menu Items */
         .menu-link:hover::before {
             content: ">>";
@@ -630,7 +680,10 @@
 「限定ポイントは使いにくい」と思われがちですが、実は<strong>Amazonを経由する</strong>という裏ルートを使えば、Switchのソフト購入に充てることができます。これについては記事の後半でじっくり解説しますね。</p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -642,6 +695,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="結論これがswitch-online実質無料への2大ルートだ">【結論】これがSwitch Online実質無料への2大ルートだ！</h2>
 <p>dポイントをSwitchで使う方法は、大きく分けて2つの「正解ルート」があります。
@@ -674,7 +729,10 @@
 <p>それでは、それぞれのルートを詳しく見ていきましょう。</p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -686,6 +744,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="ルートa王道dカード-プリペイドで直接決済する">ルートA：【王道】dカード プリペイドで直接決済する</h2>
 <p>これが最も汎用性が高く、僕が一番おすすめする方法です。
@@ -721,7 +781,10 @@ dカード プリペイドで決済すると、なんと<strong>決済金額の0
 </ul>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -733,6 +796,8 @@ dカード プリペイドで決済すると、なんと<strong>決済金額の0
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="ルートb裏ワザamazonで期間・用途限定ポイントを消化する">ルートB：【裏ワザ】Amazonで「期間・用途限定ポイント」を消化する</h2>
 <p>「えっ、手持ちのポイント、ほとんど『期間・用途限定』だった…」
@@ -767,7 +832,10 @@ dカード プリペイドで決済すると、なんと<strong>決済金額の0
 </blockquote>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -779,6 +847,8 @@ dカード プリペイドで決済すると、なんと<strong>決済金額の0
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="実践編僕が実際にやっている年間0円計画の全貌">実践編：僕が実際にやっている「年間0円計画」の全貌</h2>
 <p>ここで、僕が実際に年間どれくらいお得にSwitchライフを送っているか、その「サイクル」を公開します。</p>
@@ -798,7 +868,10 @@ dカード プリペイドで決済すると、なんと<strong>決済金額の0
 実質、<strong>7,000円〜8,000円分の労力（元手）で、新作ソフト2本（定価合計15,000円相当など）をゲット</strong>している計算になります。</p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -810,6 +883,8 @@ dカード プリペイドで決済すると、なんと<strong>決済金額の0
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="よくある質問と注意点qa">よくある質問と注意点（Q&amp;A）</h2>
 <p>ここで、読者の皆さんが疑問に持ちそうなポイントを先回りして解説しておきます。</p>
@@ -826,7 +901,10 @@ Joshin webはdポイントが使える貴重なショップです。ゲームソ
 12歳以上（中学生以上）であれば発行可能です。ただし、未成年の場合は親権者の同意が必要です。クレジットカードを持てない学生さんにとっても、このカードはSwitchライフの強い味方になります。</p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -838,6 +916,8 @@ Joshin webはdポイントが使える貴重なショップです。ゲームソ
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="dポイントを爆発的に貯めるならここから始めよう">dポイントを爆発的に貯めるなら、ここから始めよう</h2>
 <p>ここまで読んで、「でも、肝心のdポイントがそんなに貯まらないよ…」と思った方もいるかもしれません。
@@ -855,7 +935,10 @@ Joshin webはdポイントが使える貴重なショップです。ゲームソ
 <p>まずは無料登録して、「ランキング」上位の案件を1つこなしてみてください。それだけで、Switch Onlineの1年分くらいは瞬殺で稼げますよ。</p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -867,6 +950,8 @@ Joshin webはdポイントが使える貴重なショップです。ゲームソ
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="まとめswitch-onlineにお金を払うのはもう終わりにしよう">まとめ：Switch Onlineにお金を払うのはもう終わりにしよう！</h2>
 <p>今回の記事の要点をまとめます。</p>
@@ -887,7 +972,10 @@ Joshin webはdポイントが使える貴重なショップです。ゲームソ
 <li><strong>限定ポイントがある人</strong>：Amazonでd払いの設定が済んでいるかチェックして、500円分からでもプリペイド番号を買ってみましょう。</li>
 </ul>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -899,6 +987,8 @@ Joshin webはdポイントが使える貴重なショップです。ゲームソ
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 
                     

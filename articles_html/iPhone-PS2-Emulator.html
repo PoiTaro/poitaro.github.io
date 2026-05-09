@@ -229,6 +229,56 @@
             border-bottom: none;
         }
 
+        /* AdSense Block */
+        #article-body .article-ad {
+            margin: 3rem 0;
+            clear: both;
+        }
+        #article-body .article-ad-frame {
+            position: relative;
+            border: 2px solid #0a0a0a;
+            background: #fff;
+            padding: 1.5rem;
+            box-shadow: 6px 6px 0 #0a0a0a;
+        }
+        #article-body .article-ad-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ccff00;
+        }
+        #article-body .article-ad-label {
+            position: absolute;
+            top: -0.85rem;
+            left: 1rem;
+            background: #0a0a0a;
+            color: #ccff00;
+            padding: 0.2rem 0.65rem;
+            font-family: 'Anton', sans-serif;
+            font-size: 0.75rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+        #article-body .article-ad-inner {
+            min-height: 120px;
+        }
+        #article-body .article-ad .adsbygoogle {
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (max-width: 640px) {
+            #article-body .article-ad {
+                margin: 2.5rem 0;
+            }
+            #article-body .article-ad-frame {
+                padding: 1rem;
+                box-shadow: 4px 4px 0 #0a0a0a;
+            }
+        }
+
         /* Custom Cursor for Menu Items */
         .menu-link:hover::before {
             content: ">>";
@@ -609,7 +659,10 @@ A19チップの実力を、実機で徹底的にテストしました。</p>
 これまでは動作が重すぎて「スライドショー（紙芝居）」状態でしたが、A19チップの登場で状況が一変しました。</p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -621,6 +674,8 @@ A19チップの実力を、実機で徹底的にテストしました。</p>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="a19-proチップ-vs-jitの壁実機動作検証">A19 Proチップ vs JITの壁：実機動作検証</h2>
 <p>では、実際にiPhone 17 Pro (A19 Pro) に「Play!」をインストールし、JITを有効化<strong>しない</strong>状態（＝PC接続なし、単体起動）でテストしてみます。</p>
@@ -651,7 +706,10 @@ A19チップの実力を、実機で徹底的にテストしました。</p>
 </ul>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -663,6 +721,8 @@ A19チップの実力を、実機で徹底的にテストしました。</p>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="発熱とバッテリーa19の代償">発熱とバッテリー：A19の代償</h2>
 <p>「JITなし」でPS2を動かすということは、CPUが常にフルパワーで「翻訳作業」を行っている状態です。
@@ -679,7 +739,10 @@ FF10を15分プレイしただけで、iPhoneの背面（カメラ横）が「�
 </ol>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -691,6 +754,8 @@ FF10を15分プレイしただけで、iPhoneの背面（カメラ横）が「�
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="導入方法2026年版playの入れ方">導入方法：2026年版「Play!」の入れ方</h2>
 <p>App Storeには「Play!」はありません。
@@ -706,7 +771,10 @@ FF10を15分プレイしただけで、iPhoneの背面（カメラ横）が「�
 </ol>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -718,6 +786,8 @@ FF10を15分プレイしただけで、iPhoneの背面（カメラ横）が「�
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="まとめ実用性はロマン枠を出たか">まとめ：実用性は「ロマン枠」を出たか？</h2>
 <p>2026年2月現在、iPhoneでのPS2エミュレーションは**「RPGならクリアまで行ける」**という段階に達しました。</p>
@@ -730,7 +800,10 @@ FF10を15分プレイしただけで、iPhoneの背面（カメラ横）が「�
 でも、その「無駄」にこそロマンがあるんですよね。</p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -742,24 +815,14 @@ FF10を15分プレイしただけで、iPhoneの背面（カメラ横）が「�
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 
                     
         <section class="mt-16 pt-10 border-t-2 border-black">
             <h2 class="font-anton text-3xl mb-6 flex items-center"><span class="text-brand-accent mr-2 text-4xl">>></span>RELATED ISSUES</h2>
             <div class="grid gap-4 grid-cols-1 md:grid-cols-3">
-                
-                    <div class="group">
-                        <a href="../articles_html/lolipop.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
-                            <div class="w-full aspect-video overflow-hidden relative">
-                                <img src="../thumbnails/lolipop.png" alt="【2026年最新】マルチサーバー代が実質タダ？ロリポップ！for Gamers×PayPay還元でマイクラ・パルワールドを遊ぶ裏ワザ" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
-                                <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            </div>
-                        </a>
-                        <a href="../articles_html/lolipop.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
-                            記事を見る >>
-                        </a>
-                    </div>
                 
                     <div class="group">
                         <a href="../articles_html/moppy2026newlife.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
@@ -769,6 +832,18 @@ FF10を15分プレイしただけで、iPhoneの背面（カメラ横）が「�
                             </div>
                         </a>
                         <a href="../articles_html/moppy2026newlife.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
+                            記事を見る >>
+                        </a>
+                    </div>
+                
+                    <div class="group">
+                        <a href="../articles_html/lolipop.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
+                            <div class="w-full aspect-video overflow-hidden relative">
+                                <img src="../thumbnails/lolipop.png" alt="【2026年最新】マルチサーバー代が実質タダ？ロリポップ！for Gamers×PayPay還元でマイクラ・パルワールドを遊ぶ裏ワザ" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
+                                <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                        </a>
+                        <a href="../articles_html/lolipop.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
                             記事を見る >>
                         </a>
                     </div>

@@ -229,6 +229,56 @@
             border-bottom: none;
         }
 
+        /* AdSense Block */
+        #article-body .article-ad {
+            margin: 3rem 0;
+            clear: both;
+        }
+        #article-body .article-ad-frame {
+            position: relative;
+            border: 2px solid #0a0a0a;
+            background: #fff;
+            padding: 1.5rem;
+            box-shadow: 6px 6px 0 #0a0a0a;
+        }
+        #article-body .article-ad-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ccff00;
+        }
+        #article-body .article-ad-label {
+            position: absolute;
+            top: -0.85rem;
+            left: 1rem;
+            background: #0a0a0a;
+            color: #ccff00;
+            padding: 0.2rem 0.65rem;
+            font-family: 'Anton', sans-serif;
+            font-size: 0.75rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+        #article-body .article-ad-inner {
+            min-height: 120px;
+        }
+        #article-body .article-ad .adsbygoogle {
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (max-width: 640px) {
+            #article-body .article-ad {
+                margin: 2.5rem 0;
+            }
+            #article-body .article-ad-frame {
+                padding: 1rem;
+                box-shadow: 4px 4px 0 #0a0a0a;
+            }
+        }
+
         /* Custom Cursor for Menu Items */
         .menu-link:hover::before {
             content: ">>";
@@ -625,7 +675,10 @@
 </tbody></table><div class="table-scroll-hint">スクロールして全体を表示</div></div>
 <p>PayPay経済圏はシンプルさが魅力ですが、楽天経済圏は各サービスを連携させることで相乗効果が生まれ、<strong>生活のあらゆる場面でポイントが貯まる仕組み</strong>が構築されています。特に、後述する「SPU（スーパーポイントアッププログラム）」が、他の経済圏を圧倒する大きな強みなんです。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -637,6 +690,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="楽天経済圏に乗り換える5つの巨大なメリット">楽天経済圏に乗り換える5つの巨大なメリット</h2>
 <p>それでは具体的に、楽天経済圏に乗り換えるとどんな良いことがあるのでしょうか？絶対に知っておきたい5つのメリットをご紹介します！</p>
@@ -652,7 +707,10 @@
 <h3>5. 楽天市場だけじゃない！金融から旅行までサービスが超豊富</h3>
 <p>楽天の強みは、ECサイトだけにとどまりません。楽天銀行、楽天証券、楽天トラベル、楽天ビューティなど、生活のあらゆるシーンをカバーするサービスが揃っています。これらのサービスを利用することで、さらにSPUの倍率を上げたり、お得なキャンペーンに参加できたりします。生活のインフラを楽天に集約させることで、あなたの家計はもっとスマートになります。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -664,6 +722,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="要注意楽天経済圏へ移行する前に知るべき3つの注意点">【要注意】楽天経済圏へ移行する前に知るべき3つの注意点</h2>
 <p>もちろん、良いことばかりではありません。楽天経済圏へ乗り換える前に、知っておくべき注意点もしっかりお伝えします。</p>
@@ -679,7 +739,10 @@
 </li>
 </ul>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -691,6 +754,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="まとめ">まとめ</h2>
 <p>PayPay経済圏のシンプルさも魅力的ですが、**「本気でお得を追求したい」「ポイ活で生活を豊かにしたい」**と考えるなら、楽天経済圏への引越しは非常に賢い選択です。</p>
@@ -703,7 +768,10 @@
 <p>最初は少し覚えることが多いかもしれませんが、この記事で紹介したポイントを押さえれば大丈夫。生活のインフラを楽天に集約させていくだけで、あなたのポイント通帳は毎月嬉しい悲鳴をあげることになるでしょう。</p>
 <p>さあ、今日からあなたも「楽天経済圏」の住人になって、お得でスマートな毎日を手に入れてくださいね！</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -715,6 +783,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 
                     

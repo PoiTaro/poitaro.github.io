@@ -229,6 +229,56 @@
             border-bottom: none;
         }
 
+        /* AdSense Block */
+        #article-body .article-ad {
+            margin: 3rem 0;
+            clear: both;
+        }
+        #article-body .article-ad-frame {
+            position: relative;
+            border: 2px solid #0a0a0a;
+            background: #fff;
+            padding: 1.5rem;
+            box-shadow: 6px 6px 0 #0a0a0a;
+        }
+        #article-body .article-ad-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ccff00;
+        }
+        #article-body .article-ad-label {
+            position: absolute;
+            top: -0.85rem;
+            left: 1rem;
+            background: #0a0a0a;
+            color: #ccff00;
+            padding: 0.2rem 0.65rem;
+            font-family: 'Anton', sans-serif;
+            font-size: 0.75rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+        #article-body .article-ad-inner {
+            min-height: 120px;
+        }
+        #article-body .article-ad .adsbygoogle {
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (max-width: 640px) {
+            #article-body .article-ad {
+                margin: 2.5rem 0;
+            }
+            #article-body .article-ad-frame {
+                padding: 1rem;
+                box-shadow: 4px 4px 0 #0a0a0a;
+            }
+        }
+
         /* Custom Cursor for Menu Items */
         .menu-link:hover::before {
             content: ">>";
@@ -598,7 +648,10 @@
 <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=45G91P+1E0FLE+5QD6+5ZEMP" alt="">
 
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -610,6 +663,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="ワッツオンラインストアの送料はいくら">ワッツオンラインストアの「送料」はいくら？</h2>
 <p>オンラインストアで一番気になるのが送料ですよね。ワッツの送料体系は「自宅などへの配送」と「店舗受取」の2パターンで大きく異なります。</p>
@@ -627,7 +682,10 @@
 <p>また、クーポンを利用する場合は、<strong>クーポン適用後の金額が7,700円（税込）以上</strong>である必要があるので、計算する際は気をつけてくださいね。</p>
 <p>「7,700円も買うものがないよ…」という方にこそ、次にご紹介する「店舗受取」がおすすめです！</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -639,6 +697,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="必見送料無料で超便利店舗受取のメリットと使い方">【必見】送料無料で超便利！「店舗受取」のメリットと使い方</h2>
 <p>「送料をどうしても払いたくない！」という方のための最強のサービスが、この「店舗受取」です。</p>
@@ -683,7 +743,10 @@
 <img border="0" width="600" height="499" alt="" src="https://www29.a8.net/svt/bgt?aid=251021005084&wid=001&eno=01&mid=s00000026745001005000&mc=1"></a>
 <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=45G91P+1E0FLE+5QD6+5ZEMP" alt=""></p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -695,6 +758,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="ワッツオンラインストアの支払い方法まとめ">ワッツオンラインストアの「支払い方法」まとめ</h2>
 <p>最後に、ワッツオンラインストアで利用できる支払い方法をご紹介します。実店舗とは使える決済方法が異なるので注意してくださいね。</p>
@@ -750,7 +815,10 @@
 <img border="0" width="600" height="499" alt="" src="https://www29.a8.net/svt/bgt?aid=251021005084&wid=001&eno=01&mid=s00000026745001005000&mc=1"></a>
 <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=45G91P+1E0FLE+5QD6+5ZEMP" alt=""></p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -762,6 +830,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="まとめワッツオンラインストアは店舗受取を活用してお得に賢く使おう">まとめ：ワッツオンラインストアは「店舗受取」を活用してお得に賢く使おう！</h2>
 <p>今回は、ワッツオンラインストアの送料、店舗受取、支払い方法について詳しく解説しました。</p>
@@ -776,7 +846,10 @@
 <p>ワッツオンラインストアは、送料がネックだと感じていた方も多いかもしれませんが、この「店舗受取」サービスを賢く利用すれば、送料を気にせずオンラインでの買い物を楽しめます。</p>
 <p>近くの店舗では見つからないアイテムや、オンライン限定のおしゃれな雑貨を、ぜひお得にゲットしてくださいね！</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -788,6 +861,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 
                     
@@ -796,37 +871,37 @@
             <div class="grid gap-4 grid-cols-1 md:grid-cols-3">
                 
                     <div class="group">
-                        <a href="../articles_html/vpn.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
+                        <a href="../articles_html/sora2.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
                             <div class="w-full aspect-video overflow-hidden relative">
-                                <img src="../thumbnails/vpn.png" alt="【2025年最新】海外からTVerやFODを見る方法！VPNで日本のテレビを視聴する裏ワザを徹底解説" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
+                                <img src="../thumbnails/sora2.png" alt="【2025年最新】Sora 2のウォーターマークを消す方法4選！公式・無料で安全に除去するやり方とは？" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
                                 <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </div>
                         </a>
-                        <a href="../articles_html/vpn.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
+                        <a href="../articles_html/sora2.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
                             記事を見る >>
                         </a>
                     </div>
                 
                     <div class="group">
-                        <a href="../articles_html/zoomcss.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
+                        <a href="../articles_html/study.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
                             <div class="w-full aspect-video overflow-hidden relative">
-                                <img src="../thumbnails/zoomcss.png" alt="【CSS解決】スマホでフォーム入力時に勝手にズーム（拡大）するのを防ぐ方法" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
+                                <img src="../thumbnails/study.png" alt="【2025年最新】学生必見！無料で使えるAIサービス5選＋割引特典まとめ｜レポート・勉強が爆速化！" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
                                 <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </div>
                         </a>
-                        <a href="../articles_html/zoomcss.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
+                        <a href="../articles_html/study.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
                             記事を見る >>
                         </a>
                     </div>
                 
                     <div class="group">
-                        <a href="../articles_html/tumutumu.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
+                        <a href="../articles_html/subwork.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
                             <div class="w-full aspect-video overflow-hidden relative">
-                                <img src="../thumbnails/tumutumu.png" alt="【ツムツム課金】完全無料でルビーをGET！学生でもできるポイ活でPayPayを稼ぐ裏ワザ" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
+                                <img src="../thumbnails/subwork.png" alt="【2025年最新】ポイ活の確定申告はいくらから？税金の計算方法から会社にバレない対策まで徹底解説！" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
                                 <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </div>
                         </a>
-                        <a href="../articles_html/tumutumu.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
+                        <a href="../articles_html/subwork.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
                             記事を見る >>
                         </a>
                     </div>

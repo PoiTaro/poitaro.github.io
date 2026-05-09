@@ -229,6 +229,56 @@
             border-bottom: none;
         }
 
+        /* AdSense Block */
+        #article-body .article-ad {
+            margin: 3rem 0;
+            clear: both;
+        }
+        #article-body .article-ad-frame {
+            position: relative;
+            border: 2px solid #0a0a0a;
+            background: #fff;
+            padding: 1.5rem;
+            box-shadow: 6px 6px 0 #0a0a0a;
+        }
+        #article-body .article-ad-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ccff00;
+        }
+        #article-body .article-ad-label {
+            position: absolute;
+            top: -0.85rem;
+            left: 1rem;
+            background: #0a0a0a;
+            color: #ccff00;
+            padding: 0.2rem 0.65rem;
+            font-family: 'Anton', sans-serif;
+            font-size: 0.75rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+        #article-body .article-ad-inner {
+            min-height: 120px;
+        }
+        #article-body .article-ad .adsbygoogle {
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (max-width: 640px) {
+            #article-body .article-ad {
+                margin: 2.5rem 0;
+            }
+            #article-body .article-ad-frame {
+                padding: 1rem;
+                box-shadow: 4px 4px 0 #0a0a0a;
+            }
+        }
+
         /* Custom Cursor for Menu Items */
         .menu-link:hover::before {
             content: ">>";
@@ -645,7 +695,10 @@
 </li>
 </ol>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -657,6 +710,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="体験談僕がスマートリモコンを導入して感動した5つの瞬間">【体験談】僕がスマートリモコンを導入して感動した5つの瞬間</h2>
 <p>理屈はわかっても、実際の生活がどう変わるのか気になりますよね。僕が「スマートリモコン、最高かよ…」と本気で感動した、リアルな体験談をお話しさせてください。</p>
@@ -678,7 +733,10 @@
 </li>
 </ol>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -690,6 +748,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="スマートリモコンの選び方失敗しないための5つのチェックポイント">スマートリモコンの選び方｜失敗しないための5つのチェックポイント</h2>
 <p>さて、スマートリモコンの魅力が伝わったところで、次に「じゃあ、どれを選べばいいの？」という疑問が出てきますよね。</p>
@@ -727,7 +787,10 @@
 <p>「スマートリモコン」は、スマートホーム化の第一歩。将来的に、他のスマートデバイス（スマートプラグ、スマート電球、カーテンの自動開閉機など）も導入したいと考えているなら、拡張性も重要です。</p>
 <p>特に「SwitchBot」シリーズは、自社製品のラインナップが非常に豊富で、アプリひとつでシームレスに連携できるのが大きな強みです。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -739,6 +802,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="2025年最新本当におすすめスマートリモコン厳選7選を徹底比較">【2025年最新】本当におすすめ！スマートリモコン厳選7選を徹底比較</h2>
 <p>お待たせしました！ここからは、僕が実際にリサーチし、一部は自宅でも愛用している「本当におすすめできる」スマートリモコンを、7つ厳選してご紹介します！</p>
@@ -910,7 +975,10 @@
 </li>
 </ul>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -922,6 +990,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="初めてでも簡単スマートリモコンの使い方と初期設定5ステップ">初めてでも簡単！スマートリモコンの「使い方」と初期設定5ステップ</h2>
 <p>「便利そうなのはわかったけど、設定が難しそう…」と不安な方、大丈夫です！どのメーカーも、アプリの指示に従っていくだけで、驚くほど簡単に設定できますよ。</p>
@@ -953,7 +1023,10 @@
 </ul>
 <p>最初は難しく感じるかもしれませんが、まずは簡単な「おやすみ」シーンから作ってみると、その便利さにハマるはずです。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -965,6 +1038,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="導入前に知っておきたいスマートリモコンのデメリットと注意点">導入前に知っておきたい！スマートリモコンの「デメリット」と注意点</h2>
 <p>ここまで良いことばかり話してきましたが、もちろん導入前に知っておくべき「デメリット」や「注意点」もあります。購入してから「しまった！」とならないよう、しっかり確認しておきましょう。</p>
@@ -1004,7 +1079,10 @@
 といった基本的な対策は、しっかり行いましょう。</li>
 </ul>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -1016,6 +1094,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="応用編スマートリモコンで生活をもっと便利にする活用術">【応用編】スマートリモコンで生活を「もっと」便利にする活用術</h2>
 <p>基本操作に慣れてきたら、こんな応用術はいかがでしょう？僕が実際に試している活用術をご紹介します。</p>
@@ -1040,7 +1120,10 @@
 スマートリモコン（SwitchBot ハブ）とこれを組み合わせれば、「アレクサ、加湿器つけて」→ ハブが指示を出す → ボットが加湿器のボタンを押す、という連携が可能になります。</p>
 <p>コーヒーメーカーのボタンなど、赤外線非対応のアナログ家電もスマート化できる、まさに裏技です。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -1052,6 +1135,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="まとめスマートリモコンで未来の暮らしを今すぐ手に入れよう">まとめ｜スマートリモコンで「未来の暮らし」を今すぐ手に入れよう！</h2>
 <p>長くなりましたが、スマートリモコンの魅力、選び方、そして具体的な使い方まで、僕の体験を交えて詳しく解説してきました。</p>
@@ -1070,7 +1155,10 @@
 <p>まずは「Nature Remo mini 2」や「SwitchBot ハブミニ」のような、比較的手に取りやすいモデルからでも大丈夫。ぜひ、あなたの家にもスマートリモコンを導入して、僕が体験した「未来の暮らし」の第一歩を踏み出してみてください。</p>
 <p>あなたの生活が、もっと快適でスマートになることを願っています！</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -1082,6 +1170,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 
                     

@@ -229,6 +229,56 @@
             border-bottom: none;
         }
 
+        /* AdSense Block */
+        #article-body .article-ad {
+            margin: 3rem 0;
+            clear: both;
+        }
+        #article-body .article-ad-frame {
+            position: relative;
+            border: 2px solid #0a0a0a;
+            background: #fff;
+            padding: 1.5rem;
+            box-shadow: 6px 6px 0 #0a0a0a;
+        }
+        #article-body .article-ad-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ccff00;
+        }
+        #article-body .article-ad-label {
+            position: absolute;
+            top: -0.85rem;
+            left: 1rem;
+            background: #0a0a0a;
+            color: #ccff00;
+            padding: 0.2rem 0.65rem;
+            font-family: 'Anton', sans-serif;
+            font-size: 0.75rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+        #article-body .article-ad-inner {
+            min-height: 120px;
+        }
+        #article-body .article-ad .adsbygoogle {
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (max-width: 640px) {
+            #article-body .article-ad {
+                margin: 2.5rem 0;
+            }
+            #article-body .article-ad-frame {
+                padding: 1rem;
+                box-shadow: 4px 4px 0 #0a0a0a;
+            }
+        }
+
         /* Custom Cursor for Menu Items */
         .menu-link:hover::before {
             content: ">>";
@@ -648,7 +698,10 @@
 </tbody></table><div class="table-scroll-hint">スクロールして全体を表示</div></div>
 <p>初売りの最大の特徴は、なんといっても**「福袋」**です。そして、特定カテゴリー（家電やおもちゃなど）のポイント還元率がグンと上がる傾向にあります。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -660,6 +713,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="これをやらないと損ポイントアップキャンペーンの仕組み2026年版">これをやらないと損！ポイントアップキャンペーンの仕組み【2026年版】</h2>
 <p>Amazonセールの醍醐味は、単なる値引きだけではありません。「ポイントアップキャンペーン」を併用することで、<strong>実質的な割引率をさらに高める</strong>ことができます。</p>
@@ -715,7 +770,10 @@
 <p>例えば、もし「家電」が対象カテゴリーで+5%だった場合、プライム会員(+1.5%)＋カード決済(+3%)＋家電ボーナス(+5%)で、<strong>合計9.5%還元</strong>。
 10万円のドラム式洗濯機を買えば、<strong>9,500円分のポイント</strong>が返ってくる計算です。これはデカい！</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -727,6 +785,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="必勝法実質還元率を高めるための事前準備4ステップ">【必勝法】実質還元率を高めるための「事前準備」4ステップ</h2>
 <p>セールが始まってから慌てないために、今（2025年内）からできる準備をしておきましょう。</p>
@@ -750,7 +810,10 @@
 以前は「ギフト券チャージでポイント還元」が定番でしたが、最近は開催頻度が減っています。しかし、初売りなどの大型イベントに合わせて復活するケースもあります。
 もし**「現金チャージで○%還元」<strong>や</strong>「初回購入で1,000ポイント」**といったキャンペーンが開催されていたら、必ずチャージしてから買い物をしましょう。これだけで実質還元率が0.5%〜2.0%上乗せされます。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -762,6 +825,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="これがなきゃ始まらないamazon初売り福袋の中身ネタバレ予想">これがなきゃ始まらない！Amazon初売り「福袋」の中身ネタバレ予想</h2>
 <p>初売りの目玉商品といえば福袋。Amazonの福袋には大きく分けて2つのタイプがあります。</p>
@@ -785,7 +850,10 @@
 <li><strong>食品・プロテイン福袋：</strong> SAVAS（ザバス）やマイプロテイン、カップ麺の詰め合わせ。消耗品なので絶対に無駄になりません。</li>
 </ul>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -797,6 +865,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="狙い目はコレ初売りで安くなりやすい商品リスト">狙い目はコレ！初売りで安くなりやすい商品リスト</h2>
 <p>ポイント還元だけでなく、元の価格自体がガッツリ下がる商品も把握しておきましょう。</p>
@@ -816,7 +886,10 @@
 <p>水、洗剤、オムツ、トイレットペーパー。
 地味ですが、これらをセールのタイミングで箱買いするのが一番の節約です。「定期おトク便」と組み合わせれば、さらに最大15%OFFになります。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -828,6 +901,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="意外と知らない初売りを安全に楽しむための注意点">意外と知らない？初売りを安全に楽しむための注意点</h2>
 <p>テンションが上がってポチりまくる前に、これだけは注意してください。</p>
@@ -845,7 +920,10 @@
 忘れた頃にやってきます。すぐに次の買い物に使えるわけではないので注意してください。</li>
 </ul>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -857,6 +935,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="まとめ2026年のスタートダッシュはamazonで決めろ">まとめ：2026年のスタートダッシュはAmazonで決めろ！</h2>
 <p>いかがでしたか？2026年のAmazon初売りは、ただ安いだけでなく、戦略的に攻めれば驚くほどお得になるイベントです。</p>
@@ -874,7 +954,10 @@
 <hr>
 <p><em>※本記事は2025年11月17日時点の情報を基に作成した予測記事です。正確なキャンペーン内容や日程は、Amazon公式サイトの正式発表をご確認ください。</em></p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -886,24 +969,14 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 
                     
         <section class="mt-16 pt-10 border-t-2 border-black">
             <h2 class="font-anton text-3xl mb-6 flex items-center"><span class="text-brand-accent mr-2 text-4xl">>></span>RELATED ISSUES</h2>
             <div class="grid gap-4 grid-cols-1 md:grid-cols-3">
-                
-                    <div class="group">
-                        <a href="../articles_html/lolipop.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
-                            <div class="w-full aspect-video overflow-hidden relative">
-                                <img src="../thumbnails/lolipop.png" alt="【2026年最新】マルチサーバー代が実質タダ？ロリポップ！for Gamers×PayPay還元でマイクラ・パルワールドを遊ぶ裏ワザ" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
-                                <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            </div>
-                        </a>
-                        <a href="../articles_html/lolipop.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
-                            記事を見る >>
-                        </a>
-                    </div>
                 
                     <div class="group">
                         <a href="../articles_html/moppy2026newlife.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
@@ -913,6 +986,18 @@
                             </div>
                         </a>
                         <a href="../articles_html/moppy2026newlife.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
+                            記事を見る >>
+                        </a>
+                    </div>
+                
+                    <div class="group">
+                        <a href="../articles_html/lolipop.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
+                            <div class="w-full aspect-video overflow-hidden relative">
+                                <img src="../thumbnails/lolipop.png" alt="【2026年最新】マルチサーバー代が実質タダ？ロリポップ！for Gamers×PayPay還元でマイクラ・パルワールドを遊ぶ裏ワザ" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
+                                <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                        </a>
+                        <a href="../articles_html/lolipop.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
                             記事を見る >>
                         </a>
                     </div>

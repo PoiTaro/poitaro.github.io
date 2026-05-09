@@ -229,6 +229,56 @@
             border-bottom: none;
         }
 
+        /* AdSense Block */
+        #article-body .article-ad {
+            margin: 3rem 0;
+            clear: both;
+        }
+        #article-body .article-ad-frame {
+            position: relative;
+            border: 2px solid #0a0a0a;
+            background: #fff;
+            padding: 1.5rem;
+            box-shadow: 6px 6px 0 #0a0a0a;
+        }
+        #article-body .article-ad-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ccff00;
+        }
+        #article-body .article-ad-label {
+            position: absolute;
+            top: -0.85rem;
+            left: 1rem;
+            background: #0a0a0a;
+            color: #ccff00;
+            padding: 0.2rem 0.65rem;
+            font-family: 'Anton', sans-serif;
+            font-size: 0.75rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+        #article-body .article-ad-inner {
+            min-height: 120px;
+        }
+        #article-body .article-ad .adsbygoogle {
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (max-width: 640px) {
+            #article-body .article-ad {
+                margin: 2.5rem 0;
+            }
+            #article-body .article-ad-frame {
+                padding: 1rem;
+                box-shadow: 4px 4px 0 #0a0a0a;
+            }
+        }
+
         /* Custom Cursor for Menu Items */
         .menu-link:hover::before {
             content: ">>";
@@ -608,7 +658,10 @@
 </ul>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -620,6 +673,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="2-戦略1aisns運用代行動画・画像生成の活用">2. 戦略1：AI×SNS運用代行（動画・画像生成の活用）</h2>
 <p><img src="../images/ai-side-hustle-2026_img2.png" alt="ai-side-hustle-2026_img2.png"></p>
@@ -633,7 +688,10 @@
 <p><strong>狙える収入：</strong> 1アカウント運用につき月額3万〜10万円。2〜3社掛け持つことで、大学生活と両立しながら月15万円以上稼ぐ学生も珍しくありません。</p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -645,6 +703,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="3-戦略2aiライティング・編集共感と一次情報の付加">3. 戦略2：AIライティング・編集（「共感」と「一次情報」の付加）</h2>
 <p>AIライティングは「AIが書いた記事」をそのまま納品する時代から、**「AIが構成し、人間が魂を吹き込む」**時代へ進化しました。</p>
@@ -657,7 +717,10 @@
 <p>大手メディアや企業ブログでは、現在「AI生成＋人間による校閲・加筆」が必須条件となっており、このフローを完璧にこなせるワーカーの需要が急増しています。</p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -669,6 +732,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="4-戦略3aiツール導入・運用コンサル地元の個人店向け">4. 戦略3：AIツール導入・運用コンサル（地元の個人店向け）</h2>
 <p>実は今、最も穴場なのが「地方の個人店や中小企業」を対象にした、簡単なAIツール導入のお手伝いです。</p>
@@ -681,7 +746,10 @@
 <p>「AIって難しそう」と感じている大人世代にとって、AIを当たり前に使いこなす大学生は、それだけで「ITの専門家」として頼られる存在になれます。</p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -693,6 +761,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="5-超重要2026年最新の著作権リスクと安全対策">5. 【超重要】2026年最新の著作権リスクと安全対策</h2>
 <p><img src="../images/ai-side-hustle-2026_img3.png" alt="ai-side-hustle-2026_img3.png"></p>
@@ -705,7 +775,10 @@
 <p>欧州のAI Actの影響を受け、日本でも「AI生成物であることを明記する」ことがマナーから義務へと変わりつつあります。納品時には必ずAI使用の有無と範囲をクライアントに伝えましょう。</p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -717,6 +790,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="まとめ今日から始めるai副業ロードマップ">まとめ：今日から始める「AI副業ロードマップ」</h2>
 <p>2026年のAI副業は、もはや「魔法の杖」ではありません。しかし、**「AIを最強の助手として使いこなす大学生」**になれば、間違いなくバイト代の数倍の価値を生み出せます。</p>
@@ -728,7 +803,10 @@
 <p>まずは月1万円。そこからステップアップして、4年生になる頃には「就活でAIディレクション実績を語れる」レベルを目指しましょう。</p>
 <p>僕もこのブログを通して、常に最新のAI活用術を発信し続けます。一緒にアップデートしていきましょう！</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -740,6 +818,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 
                     

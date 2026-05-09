@@ -229,6 +229,56 @@
             border-bottom: none;
         }
 
+        /* AdSense Block */
+        #article-body .article-ad {
+            margin: 3rem 0;
+            clear: both;
+        }
+        #article-body .article-ad-frame {
+            position: relative;
+            border: 2px solid #0a0a0a;
+            background: #fff;
+            padding: 1.5rem;
+            box-shadow: 6px 6px 0 #0a0a0a;
+        }
+        #article-body .article-ad-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ccff00;
+        }
+        #article-body .article-ad-label {
+            position: absolute;
+            top: -0.85rem;
+            left: 1rem;
+            background: #0a0a0a;
+            color: #ccff00;
+            padding: 0.2rem 0.65rem;
+            font-family: 'Anton', sans-serif;
+            font-size: 0.75rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+        #article-body .article-ad-inner {
+            min-height: 120px;
+        }
+        #article-body .article-ad .adsbygoogle {
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (max-width: 640px) {
+            #article-body .article-ad {
+                margin: 2.5rem 0;
+            }
+            #article-body .article-ad-frame {
+                padding: 1rem;
+                box-shadow: 4px 4px 0 #0a0a0a;
+            }
+        }
+
         /* Custom Cursor for Menu Items */
         .menu-link:hover::before {
             content: ">>";
@@ -642,7 +692,10 @@
 <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=44Z3ZC+FT6F3M+5INE+5YZ75" alt="">
 
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -654,6 +707,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="そもそもクラシルリワードレシチャレとは">そもそも「クラシルリワード（レシチャレ）」とは？</h2>
 <p>改名のニュースで初めてこのアプリを知った方のために、クラシルリワード（これからは「レシチャレ」と呼びますね！）がどんなアプリなのかを簡単にご紹介します。</p>
@@ -671,7 +726,10 @@
 「あ、今日の移動ゲージ貯まってた」「ついでにレシート撮っておこう」
 こんな感じで、ゲーム感覚で続けられるのが最大の魅力です。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -683,6 +741,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="めっちゃ稼げるは本当5つのポイントのため方">&quot;めっちゃ稼げる&quot;は本当？5つのポイントのため方</h2>
 <p>「どうせポイ活なんて、月に数十円くらいでしょ？」
@@ -750,7 +810,10 @@
 <p>5,000コインはかなり大きいボーナスです。
 夫婦で、親子で、一緒に始めれば、それだけで10,000コインが貯まりますね。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -762,6 +825,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="メリットとデメリット注意点">メリットとデメリット（注意点）</h2>
 <p>ここまで「レシチャレ」のすごいところばかり紹介してきましたが、もちろんデメリットや注意点もあります。
@@ -786,7 +851,10 @@
   レシート撮影が自動シャッター（手動で切れない）ため、ピントが合うまでに少し時間がかかると感じる人もいるようです。</li>
 </ul>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -798,6 +866,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="貯めたポイントのお得な交換先">貯めたポイントのお得な交換先</h2>
 <p>「よし、コインが貯まってきたぞ！」
@@ -825,7 +895,10 @@
 <p>交換レートは、例えば「33,000コイン → 300円分のPontaポイント」や「32,340コイン → 300円分のAmazonギフトカード」といった具合です。</p>
 <p>これだけ交換先が豊富なら、あなたが普段使っているポイントや、欲しいギフト券が必ず見つかりますよね！</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -837,6 +910,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="安全性は運営会社をチェック">安全性は？運営会社をチェック</h2>
 <p>「海外の怪しいアプリじゃないよね？」
@@ -846,7 +921,10 @@
 東証グロースにも上場しており、情報セキュリティの国際規格である「ISMS認証」も取得しています。</p>
 <p>これだけ信頼と実績のある会社が運営しているアプリなので、安全性については心配ないと言えるでしょう。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -858,6 +936,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="まとめ">まとめ</h2>
 <p>今回は、大人気ポイ活アプリ「クラシルリワード」の「レシチャレ」への改名ニュースと、その驚異的な稼ぎ方について徹底解説しました！</p>
@@ -877,7 +957,10 @@
 <a href="https://px.a8.net/svt/ejp?a8mat=44Z3ZC+FT6F3M+5INE+5YZ75" rel="nofollow">
 <img border="0" width="300" height="250" alt="" src="https://www25.a8.net/svt/bgt?aid=250221288956&wid=001&eno=01&mid=s00000025745001003000&mc=1"></a>
 <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=44Z3ZC+FT6F3M+5INE+5YZ75" alt="">
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -889,6 +972,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 
                     

@@ -229,6 +229,56 @@
             border-bottom: none;
         }
 
+        /* AdSense Block */
+        #article-body .article-ad {
+            margin: 3rem 0;
+            clear: both;
+        }
+        #article-body .article-ad-frame {
+            position: relative;
+            border: 2px solid #0a0a0a;
+            background: #fff;
+            padding: 1.5rem;
+            box-shadow: 6px 6px 0 #0a0a0a;
+        }
+        #article-body .article-ad-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ccff00;
+        }
+        #article-body .article-ad-label {
+            position: absolute;
+            top: -0.85rem;
+            left: 1rem;
+            background: #0a0a0a;
+            color: #ccff00;
+            padding: 0.2rem 0.65rem;
+            font-family: 'Anton', sans-serif;
+            font-size: 0.75rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+        #article-body .article-ad-inner {
+            min-height: 120px;
+        }
+        #article-body .article-ad .adsbygoogle {
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (max-width: 640px) {
+            #article-body .article-ad {
+                margin: 2.5rem 0;
+            }
+            #article-body .article-ad-frame {
+                padding: 1rem;
+                box-shadow: 4px 4px 0 #0a0a0a;
+            }
+        }
+
         /* Custom Cursor for Menu Items */
         .menu-link:hover::before {
             content: ">>";
@@ -656,7 +706,10 @@
 <p>脱獄は、いわば「家の壁を壊して勝手にリフォームする」ような行為。対してサイドローディングは、「正規の裏口の鍵を渡してもらう」ようなイメージです。</p>
 <p>サイドローディングなら、アプリはこれまで通り「サンドボックス（隔離された領域）」の中で動くため、もし変なアプリを入れてしまっても、iPhoneのシステム全体が乗っ取られるリスクは脱獄に比べて低くなります（ゼロではありませんが）。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -668,6 +721,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="2025年12月日本で何が起きる法改正のインパクト">2025年12月、日本で何が起きる？法改正のインパクト</h2>
 <p>では、具体的に2025年の年末に向けて、僕たちのiPhoneライフはどう変わるのでしょうか。</p>
@@ -698,7 +753,10 @@
 </li>
 </ul>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -710,6 +768,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="サイドローディング解禁の3つのメリット">サイドローディング解禁の3つのメリット</h2>
 <p>「危険もあるんでしょ？」と不安になる前に、まずは解禁されることで僕たちが得られる巨大なメリットを見ていきましょう。ワクワクするポイントがたくさんありますよ！</p>
@@ -742,7 +802,10 @@
 <p>これは僕たちユーザーには直接関係ないように見えて、実は大きなメリットです。</p>
 <p>「面白いアイデアがあるけど、Appleの厳しいルールのせいでアプリが出せない…」と諦めていた開発者たちが、自由な発想でアプリを作れるようになります。これまでに見たこともないような、尖った機能を持つアプリが日本から生まれるかもしれません。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -754,6 +817,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="警告絶対に知っておくべき危険性とデメリット">【警告】絶対に知っておくべき危険性とデメリット</h2>
 <p>さて、ここからが本題と言ってもいいでしょう。メリットの裏には、必ずリスクがあります。サイドローディングは、Appleという「守護神」の加護を自ら外す行為でもあります。</p>
@@ -775,7 +840,10 @@
 <p>親御さんにとっては深刻な問題です。Appleの「スクリーンタイム」機能で子供のアプリ利用を制限していても、サイドローディングで入れたアプリはその制限をすり抜けてしまう可能性があります。</p>
 <p>アダルトコンテンツや暴力的なゲームなど、見せたくないものに子供が簡単にアクセスできてしまうかもしれません。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -787,6 +855,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="今からできるサイドローディングの予習と準備altstore編">今からできる！サイドローディングの予習と準備【AltStore編】</h2>
 <p>2025年の完全解禁を待たずに、「今すぐサイドローディングを試してみたい！」というチャレンジャーなあなたへ。実は現在でも、**「AltStore（オルトストア）」**というツールを使えば、擬似的なサイドローディングが可能です。</p>
@@ -829,7 +899,10 @@
 </ol>
 <p><strong>ポイント：</strong> この方法だと「7日間」で署名の有効期限が切れてアプリが開けなくなります。ですが、PCと同じWi-Fiに繋がっていれば、AltStoreが自動で期限を更新（リフレッシュ）してくれます。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -841,6 +914,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="サイドローディングを安全に楽しむための鉄の掟5ヶ条">サイドローディングを安全に楽しむための「鉄の掟」5ヶ条</h2>
 <p>2025年の解禁後、あるいはAltStoreを使う場合でも、以下の5つのルールだけは絶対に守ってください。これを守るだけで、トラブルの99%は防げます。</p>
@@ -867,7 +942,10 @@
 </li>
 </ol>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -879,6 +957,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="まとめ自由には責任が伴う賢く使ってiphoneを進化させよう">まとめ：自由には責任が伴う。賢く使ってiPhoneを進化させよう！</h2>
 <p>いかがでしたか？2025年、日本のiPhone環境は大きく変わります。</p>
@@ -893,7 +973,10 @@
 <p>僕も新しいストアが登場したら、すぐに人柱になって（笑）、このブログでレビューする予定です。気になる方は、ぜひブックマークして続報を待っていてくださいね！</p>
 <p>あなたのiPhoneライフが、もっと刺激的で楽しいものになりますように！</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -905,6 +988,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 
                     

@@ -229,6 +229,56 @@
             border-bottom: none;
         }
 
+        /* AdSense Block */
+        #article-body .article-ad {
+            margin: 3rem 0;
+            clear: both;
+        }
+        #article-body .article-ad-frame {
+            position: relative;
+            border: 2px solid #0a0a0a;
+            background: #fff;
+            padding: 1.5rem;
+            box-shadow: 6px 6px 0 #0a0a0a;
+        }
+        #article-body .article-ad-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ccff00;
+        }
+        #article-body .article-ad-label {
+            position: absolute;
+            top: -0.85rem;
+            left: 1rem;
+            background: #0a0a0a;
+            color: #ccff00;
+            padding: 0.2rem 0.65rem;
+            font-family: 'Anton', sans-serif;
+            font-size: 0.75rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+        #article-body .article-ad-inner {
+            min-height: 120px;
+        }
+        #article-body .article-ad .adsbygoogle {
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (max-width: 640px) {
+            #article-body .article-ad {
+                margin: 2.5rem 0;
+            }
+            #article-body .article-ad-frame {
+                padding: 1rem;
+                box-shadow: 4px 4px 0 #0a0a0a;
+            }
+        }
+
         /* Custom Cursor for Menu Items */
         .menu-link:hover::before {
             content: ">>";
@@ -639,7 +689,10 @@
 <p>と思うかもしれませんが、これには理由があります。JIPCに加盟すると、「ポイント還元のルール」や「プロモーション手法」に一定の制限がかかることがあるんです。</p>
 <p>アメフリは、あえて加盟しないことで、**業界のルールに縛られない「攻撃的な高還元キャンペーン」**を実現しています。「安心感」よりも「実利（ポイントの高さ）」を取る、アメフリらしい戦略と言えるでしょう。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -651,6 +704,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="なぜyahooショッピング最強と言われるのか">なぜ「Yahoo!ショッピング最強」と言われるのか？</h2>
 <p>アメフリ最大の武器、それは<strong>Yahoo!ショッピングの還元率</strong>です。</p>
@@ -668,7 +723,10 @@
 <p>例えば、10,000円分のポイントを獲得した場合、最高ランクなら<strong>4,000円分がタダで上乗せ</strong>される計算です。この「+40%」という数字は、他社（最大15〜20%程度）と比較しても圧倒的です。</p>
 <p>Yahoo!ショッピングを頻繁に利用する人なら、自然とランクが上がり、常にボーナスポイントを受け取れる状態になります。これが「Yahoo!ショッピングユーザーはアメフリを使わないと損」と言われる最大の理由です。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -680,6 +738,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="地味にすごいアメフリ独自のメリット3選">地味にすごい！アメフリ独自のメリット3選</h2>
 <p>Yahoo!ショッピング以外にも、アメフリには「ユーザー目線」の嬉しいメリットがいくつかあります。</p>
@@ -705,7 +765,10 @@
 </ul>
 <p>電話番号を登録するのは「広告主に対する信頼の証」です。アメフリは「身元がしっかりしたユーザー」を優遇することで、広告主から高い報酬を引き出し、それをユーザーに還元しているわけですね。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -717,6 +780,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="ここは要注意アメフリの危険性とデメリット">ここは要注意！アメフリの「危険性」とデメリット</h2>
 <p>ここまで良いことばかり書いてきましたが、僕は「プロ」として、悪い部分も包み隠さずお伝えします。アメフリには明確なデメリットがあり、ここを理解していないと**「騙された！」**と感じてしまう可能性があります。</p>
@@ -734,7 +799,10 @@
 <h3>3. 本気で稼ぐには「案件利用」が必須</h3>
 <p>友達紹介制度などで大きく稼ぐためには、紹介した友達が実際に案件を利用（90日以内に10,000pt獲得など）する必要があります。単に登録してもらうだけでは報酬が発生しにくいため、アフィリエイト目的の場合は、読者へのしっかりとしたガイドが必要です。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -746,6 +814,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="徹底比較アメフリ-vs-モッピー-vs-ハピタス">徹底比較！アメフリ vs モッピー vs ハピタス</h2>
 <p>結局、どこを使えばいいの？という方のために、主要3サイトを比較してみました。</p>
@@ -802,7 +872,10 @@
 </ul>
 <p>この「二刀流」が、2025年のポイ活における最強の布陣です。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -814,6 +887,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="今日から稼ぐアメフリの効率的な使い方ロードマップ">今日から稼ぐ！アメフリの効率的な使い方ロードマップ</h2>
 <a href="https://px.a8.net/svt/ejp?a8mat=45IJ0Z+DP20A+4F8I+64JTD" rel="nofollow">
@@ -848,7 +923,10 @@ Yahoo!ショッピングで買い物をする時は、<strong>必ずアメフリ
 アメフリは口コミに対する報酬が非常に高く、承認されると1文字単位や1件あたり最大400pt（40円）程度もらえることがあります。</p>
 <p>一般的なサイトの口コミ報酬は数円程度なので、これは破格です。案件利用＋口コミ投稿で、骨の髄までポイントをしゃぶり尽くしましょう。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -860,6 +938,8 @@ Yahoo!ショッピングで買い物をする時は、<strong>必ずアメフリ
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="2025年最新友達紹介キャンペーンが熱い">【2025年最新】友達紹介キャンペーンが熱い！</h2>
 <p>アメフリは、友達紹介キャンペーンもかなり攻撃的です。
@@ -871,7 +951,10 @@ Yahoo!ショッピングで買い物をする時は、<strong>必ずアメフリ
 </ul>
 <p>特にダウン報酬の「50〜90%」という数字は業界でも異常な高さです。家族や友人に紹介するだけでも、ランチ代くらいは簡単に稼げてしまいますよ。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -883,6 +966,8 @@ Yahoo!ショッピングで買い物をする時は、<strong>必ずアメフリ
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="まとめアメフリは攻めのポイ活に必須のツール">まとめ：アメフリは「攻め」のポイ活に必須のツール</h2>
 <p>最後まで読んでいただき、ありがとうございます。
@@ -904,7 +989,10 @@ Yahoo!ショッピングで買い物をする時は、<strong>必ずアメフリ
 <a href="https://px.a8.net/svt/ejp?a8mat=45IJ0Z+DP20A+4F8I+67JU9" rel="nofollow">
 <img border="0" width="468" height="60" alt="" src="https://www23.a8.net/svt/bgt?aid=251127251023&wid=004&eno=01&mid=s00000020637001043000&mc=1"></a>
 <img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=45IJ0Z+DP20A+4F8I+67JU9" alt="">
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -916,6 +1004,8 @@ Yahoo!ショッピングで買い物をする時は、<strong>必ずアメフリ
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 
                     

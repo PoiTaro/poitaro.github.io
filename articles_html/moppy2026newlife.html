@@ -229,6 +229,56 @@
             border-bottom: none;
         }
 
+        /* AdSense Block */
+        #article-body .article-ad {
+            margin: 3rem 0;
+            clear: both;
+        }
+        #article-body .article-ad-frame {
+            position: relative;
+            border: 2px solid #0a0a0a;
+            background: #fff;
+            padding: 1.5rem;
+            box-shadow: 6px 6px 0 #0a0a0a;
+        }
+        #article-body .article-ad-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ccff00;
+        }
+        #article-body .article-ad-label {
+            position: absolute;
+            top: -0.85rem;
+            left: 1rem;
+            background: #0a0a0a;
+            color: #ccff00;
+            padding: 0.2rem 0.65rem;
+            font-family: 'Anton', sans-serif;
+            font-size: 0.75rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+        #article-body .article-ad-inner {
+            min-height: 120px;
+        }
+        #article-body .article-ad .adsbygoogle {
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (max-width: 640px) {
+            #article-body .article-ad {
+                margin: 2.5rem 0;
+            }
+            #article-body .article-ad-frame {
+                padding: 1rem;
+                box-shadow: 4px 4px 0 #0a0a0a;
+            }
+        }
+
         /* Custom Cursor for Menu Items */
         .menu-link:hover::before {
             content: ">>";
@@ -612,7 +662,10 @@
 <p>どちらか片方だけでは抽選対象外となってしまうため、戦略的な組み合わせが重要になります。</p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -624,6 +677,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="2-最短攻略カテゴリa・bおすすめ案件の組み合わせ術">2. 最短攻略！「カテゴリA・B」おすすめ案件の組み合わせ術</h2>
 <p><img src="../images/moppy-2026-newlife_img2.png" alt="moppy-2026-newlife_img2.png"></p>
@@ -644,7 +699,10 @@
 </ul>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -656,6 +714,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="3-新規限定最大2530円分2026年3月だけの入会特典をフルコンプする方法">3. 【新規限定】最大2,530円分！2026年3月だけの入会特典をフルコンプする方法</h2>
 <p><img src="../images/moppy-2026-newlife_img3.png" alt="moppy-2026-newlife_img3.png"></p>
@@ -672,7 +732,10 @@
 <p><a href="https://pc.moppy.jp/entry/invite.php?invite=RVjSe1f6&type=service"><img decoding="async" loading="lazy" src="https://img.moppy.jp/pub/global/sp/friend/banner/640x480-15.jpg" alt="新生活をお得に始めるならモッピー 新規申込・切替でポイントが貯まる！" width="640" height="480"></a></p>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -684,6 +747,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="4-失敗しないための注意点とポイ活設定の再確認">4. 失敗しないための注意点と「ポイ活」設定の再確認</h2>
 <p>2026年のブラウザセキュリティ強化（ITP 3.0以降の標準化）により、<strong>設定を一つ間違えるだけでポイントが反映されないケース</strong>が増えています。利用前に必ず以下をチェックしてください。</p>
@@ -697,7 +762,10 @@
 </ol>
 <hr>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -709,6 +777,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="5-まとめ2026年3月のモッピーは新生活を武器に勝つ">5. まとめ：2026年3月のモッピーは「新生活」を武器に勝つ</h2>
 <p>2026年3月のモッピー『新生活応援キャンペーン』は、単なる抽選イベントではなく、<strong>固定費見直しと入会特典の二重取りができる絶好のチャンス</strong>です。</p>
@@ -721,7 +791,10 @@
 <p><a href="https://pc.moppy.jp/entry/invite.php?invite=RVjSe1f6&type=service"><img decoding="async" loading="lazy" src="https://img.moppy.jp/pub/global/sp/friend/banner/green/640x480.jpg?v=20260306" alt="賢く貯めるならモッピー。1P=1円で交換先も多数！" width="640" height="480"></a></p>
 <p><a href="https://pc.moppy.jp/entry/invite.php?invite=RVjSe1f6&type=service"><img decoding="async" loading="lazy" src="https://img.moppy.jp/pub/global/sp/friend/banner/pink/640x480.jpg?v=20260306" alt="1日10分からできる！節約・副業でお小遣い稼ぎ！ポイ活ならモッピー" width="640" height="480"></a></p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -733,6 +806,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 
                     

@@ -229,6 +229,56 @@
             border-bottom: none;
         }
 
+        /* AdSense Block */
+        #article-body .article-ad {
+            margin: 3rem 0;
+            clear: both;
+        }
+        #article-body .article-ad-frame {
+            position: relative;
+            border: 2px solid #0a0a0a;
+            background: #fff;
+            padding: 1.5rem;
+            box-shadow: 6px 6px 0 #0a0a0a;
+        }
+        #article-body .article-ad-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ccff00;
+        }
+        #article-body .article-ad-label {
+            position: absolute;
+            top: -0.85rem;
+            left: 1rem;
+            background: #0a0a0a;
+            color: #ccff00;
+            padding: 0.2rem 0.65rem;
+            font-family: 'Anton', sans-serif;
+            font-size: 0.75rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+        #article-body .article-ad-inner {
+            min-height: 120px;
+        }
+        #article-body .article-ad .adsbygoogle {
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (max-width: 640px) {
+            #article-body .article-ad {
+                margin: 2.5rem 0;
+            }
+            #article-body .article-ad-frame {
+                padding: 1rem;
+                box-shadow: 4px 4px 0 #0a0a0a;
+            }
+        }
+
         /* Custom Cursor for Menu Items */
         .menu-link:hover::before {
             content: ">>";
@@ -597,7 +647,10 @@
 <p>といった心配事が、ほぼ解消されたことを意味します。App Storeの厳しい審査をクリアしているため、僕たちが安心して利用できるようになったんです。まさに、iPhoneエミュレーター界の革命と言えるでしょう。</p>
 
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -609,6 +662,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="merits">Manic EMUのメリット（App Store配信の絶大な恩恵）</h2>
 
@@ -660,7 +715,10 @@
 </div>
 
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -672,6 +730,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="how-to">【超簡単】Manic EMUの使い方・インストール方法</h2>
 
@@ -719,7 +779,10 @@ Manic EMU をダウンロード
 <p>たったこれだけで、あなたのiPhoneに懐かしの3DSのゲーム画面が表示されるはずです。</p>
 
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -731,6 +794,8 @@ Manic EMU をダウンロード
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="caution">【最重要】アプリは合法でも油断は禁物！利用時の法的注意点</h2>
 
@@ -756,7 +821,10 @@ Manic EMU をダウンロード
 <p>App Storeにあるアプリだからといって、ゲームデータまで公式に許諾されたわけではありません。この<strong>「ROMデータは自分で用意する」</strong>という大原則は、何があっても絶対に守ってください。</p>
 
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -768,6 +836,8 @@ Manic EMU をダウンロード
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="summary">まとめ</h2>
 
@@ -786,7 +856,10 @@ Manic EMU をダウンロード
 <p>公式アプリの登場により、iPhoneで昔のゲームを遊ぶハードルは劇的に下がりました。これは本当に喜ばしいことです。</p>
 
 <p>しかし、手軽になったからこそ、利用する僕たち一人ひとりのリテラシーが問われます。法律と著作権を正しく理解し、クリエイターへの敬意を忘れずに、健全なゲームライフを楽しんでくださいね。</p>
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -798,6 +871,8 @@ Manic EMU をダウンロード
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 
                     
@@ -830,13 +905,13 @@ Manic EMU をダウンロード
                     </div>
                 
                     <div class="group">
-                        <a href="../articles_html/watts.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
+                        <a href="../articles_html/sora2.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
                             <div class="w-full aspect-video overflow-hidden relative">
-                                <img src="../thumbnails/watts.png" alt="【2025年最新】ワッツオンラインストアの送料は？店舗受取のやり方と支払い方法を徹底解説！" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
+                                <img src="../thumbnails/sora2.png" alt="【2025年最新】Sora 2のウォーターマークを消す方法4選！公式・無料で安全に除去するやり方とは？" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
                                 <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </div>
                         </a>
-                        <a href="../articles_html/watts.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
+                        <a href="../articles_html/sora2.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
                             記事を見る >>
                         </a>
                     </div>

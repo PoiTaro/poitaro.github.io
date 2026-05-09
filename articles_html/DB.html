@@ -229,6 +229,56 @@
             border-bottom: none;
         }
 
+        /* AdSense Block */
+        #article-body .article-ad {
+            margin: 3rem 0;
+            clear: both;
+        }
+        #article-body .article-ad-frame {
+            position: relative;
+            border: 2px solid #0a0a0a;
+            background: #fff;
+            padding: 1.5rem;
+            box-shadow: 6px 6px 0 #0a0a0a;
+        }
+        #article-body .article-ad-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ccff00;
+        }
+        #article-body .article-ad-label {
+            position: absolute;
+            top: -0.85rem;
+            left: 1rem;
+            background: #0a0a0a;
+            color: #ccff00;
+            padding: 0.2rem 0.65rem;
+            font-family: 'Anton', sans-serif;
+            font-size: 0.75rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+        #article-body .article-ad-inner {
+            min-height: 120px;
+        }
+        #article-body .article-ad .adsbygoogle {
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (max-width: 640px) {
+            #article-body .article-ad {
+                margin: 2.5rem 0;
+            }
+            #article-body .article-ad-frame {
+                padding: 1rem;
+                box-shadow: 4px 4px 0 #0a0a0a;
+            }
+        }
+
         /* Custom Cursor for Menu Items */
         .menu-link:hover::before {
             content: ">>";
@@ -593,7 +643,10 @@
 <li><strong>開発の効率化</strong>: サーバーサイドの複雑なコードを書く必要がなく、フロントエンドの開発に集中できる。</li>
 </ul>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -605,6 +658,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="徹底比較チャットアプリ開発におすすめの無料db4選">【徹底比較】チャットアプリ開発におすすめの無料DB4選</h2>
 <p>お待たせしました！ここからは、チャットアプリ開発に本当におすすめできる、無料枠が充実したリアルタイムデータベースを4つ、詳しく見ていきましょう。</p>
@@ -742,7 +797,10 @@
 </tr>
 </tbody></table><div class="table-scroll-hint">スクロールして全体を表示</div></div>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -754,6 +812,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="あなたに合ったデータベースの選び方のポイント">あなたに合ったデータベースの選び方のポイント</h2>
 <p>「どれも良さそうだけど、結局どれを選べばいいの？」という方のために、選ぶ際のポイントを4つにまとめました。</p>
@@ -772,7 +832,10 @@
 </li>
 </ol>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -784,6 +847,8 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 <h2 id="まとめ">まとめ</h2>
 <p>今回は、チャットアプリ開発に欠かせない、無料で使えるリアルタイムデータベースを4つご紹介しました。</p>
@@ -795,7 +860,10 @@
 </ul>
 <p>どのサービスも非常にパワフルで、あなたの「作りたい！」という気持ちを強力に後押ししてくれます。無料枠を使えば、リスクなくプロトタイプを開発し、アイデアを形にすることができます。</p>
 
-<div class="article-ad my-8">
+<div class="article-ad my-8" aria-label="Advertisement">
+  <div class="article-ad-frame">
+    <div class="article-ad-label">ADVERTISEMENT</div>
+    <div class="article-ad-inner">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
@@ -807,24 +875,14 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+  </div>
 </div>
 
                     
         <section class="mt-16 pt-10 border-t-2 border-black">
             <h2 class="font-anton text-3xl mb-6 flex items-center"><span class="text-brand-accent mr-2 text-4xl">>></span>RELATED ISSUES</h2>
             <div class="grid gap-4 grid-cols-1 md:grid-cols-3">
-                
-                    <div class="group">
-                        <a href="../articles_html/tumutumu.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
-                            <div class="w-full aspect-video overflow-hidden relative">
-                                <img src="../thumbnails/tumutumu.png" alt="【ツムツム課金】完全無料でルビーをGET！学生でもできるポイ活でPayPayを稼ぐ裏ワザ" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
-                                <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            </div>
-                        </a>
-                        <a href="../articles_html/tumutumu.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
-                            記事を見る >>
-                        </a>
-                    </div>
                 
                     <div class="group">
                         <a href="../articles_html/sora2.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
@@ -846,6 +904,18 @@
                             </div>
                         </a>
                         <a href="../articles_html/study.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
+                            記事を見る >>
+                        </a>
+                    </div>
+                
+                    <div class="group">
+                        <a href="../articles_html/tumutumu.html" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
+                            <div class="w-full aspect-video overflow-hidden relative">
+                                <img src="../thumbnails/tumutumu.png" alt="【ツムツム課金】完全無料でルビーをGET！学生でもできるポイ活でPayPayを稼ぐ裏ワザ" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
+                                <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                        </a>
+                        <a href="../articles_html/tumutumu.html" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
                             記事を見る >>
                         </a>
                     </div>
