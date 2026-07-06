@@ -1,5 +1,49 @@
 [
     {
+        "slug": "dpoint-market-end-2026",
+        "url": "articles_html/dpoint-market-end-2026.html",
+        "title": "【7月28日終了】dポイントマーケット終了後はどこを経由する？損しない代替ルート3選",
+        "date": "2026-07-06",
+        "category": "ポイ活",
+        "categoryColor": "#cc0033",
+        "image": "../thumbnails/dpoint-market-end-2026.png",
+        "imageAbsolute": "https://poitaro.com/thumbnails/dpoint-market-end-2026.png",
+        "ogImage": "https://poitaro.com/thumbnails/dpoint-market-end-2026.png",
+        "description": "dポイントマーケットは2026年7月28日正午に終了します。終了日時、ポイント付与条件、毎日くじの扱い、終了後に使えるポイントサイトや楽天リーベイツなどの代替ルートを分かりやすく解説します。",
+        "tags": [
+            "dポイント",
+            "dポイントマーケット",
+            "ポイントサイト",
+            "ポイ活",
+            "楽天リーベイツ",
+            "モッピー",
+            "ハピタス"
+        ],
+        "toc": [
+            {
+                "text": "dポイントマーケットは2026年7月28日正午に終了",
+                "id": "dポイントマーケットは2026年7月28日正午に終了"
+            },
+            {
+                "text": "dポイントマーケット終了後に使いたい代替ルート3選",
+                "id": "dポイントマーケット終了後に使いたい代替ルート3選"
+            },
+            {
+                "text": "代替サービスを選ぶときの比較ポイント",
+                "id": "代替サービスを選ぶときの比較ポイント"
+            },
+            {
+                "text": "経由ポイントを取りこぼさないための注意点",
+                "id": "経由ポイントを取りこぼさないための注意点"
+            },
+            {
+                "text": "まとめ：終了後は「1サイト固定」から「買い物ごとの使い分け」へ",
+                "id": "まとめ終了後は1サイト固定から買い物ごとの使い分けへ"
+            }
+        ],
+        "updatedAt": "2026-07-06T07:06:42.209Z"
+    },
+    {
         "slug": "SHEINFriend",
         "url": "articles_html/SHEINFriend.html",
         "title": "SHEINで友達招待して最大1万円GET！無料ギフトのやり方と攻略法を徹底解説",
