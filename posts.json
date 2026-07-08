@@ -1,5 +1,47 @@
 [
     {
+        "slug": "vpoint-best-uses-2026",
+        "url": "articles_html/vpoint-best-uses-2026.html",
+        "title": "【2026年7月版】Vポイントの使い道おすすめ4選｜PayPay・SBI証券・支払い充当でどれが得？",
+        "date": "2026-07-08",
+        "category": "ポイ活",
+        "categoryColor": "#facc15",
+        "image": "../thumbnails/vpoint-best-uses-2026.png",
+        "imageAbsolute": "https://poitaro.com/thumbnails/vpoint-best-uses-2026.png",
+        "ogImage": "https://poitaro.com/thumbnails/vpoint-best-uses-2026.png",
+        "description": "Vポイントが貯まったけど結局どこで使うのが正解？2026年7月8日時点のおすすめ使い道を、PayPayポイント交換、SBI証券での投資、カード支払い充当、VポイントPayまでランキング形式で分かりやすく解説します。",
+        "tags": [
+            "Vポイント",
+            "PayPay",
+            "SBI証券",
+            "ポイ活",
+            "三井住友カード"
+        ],
+        "toc": [
+            {
+                "text": "いまVポイントの使い道を真面目に考えるべき理由",
+                "id": "いまvポイントの使い道を真面目に考えるべき理由"
+            },
+            {
+                "text": "Vポイントの使い道おすすめランキング4選",
+                "id": "vポイントの使い道おすすめランキング4選"
+            },
+            {
+                "text": "結局どれを選べばいい？タイプ別のおすすめ",
+                "id": "結局どれを選べばいいタイプ別のおすすめ"
+            },
+            {
+                "text": "やりがちな失敗3つ",
+                "id": "やりがちな失敗3つ"
+            },
+            {
+                "text": "まとめ：迷ったら「PayPay」か「投資」で考えれば大きく外さない",
+                "id": "まとめ迷ったらpaypayか投資で考えれば大きく外さない"
+            }
+        ],
+        "updatedAt": "2026-07-08T01:05:43.125Z"
+    },
+    {
         "slug": "dpoint-market-end-2026",
         "url": "articles_html/dpoint-market-end-2026.html",
         "title": "【7月28日終了】dポイントマーケット終了後はどこを経由する？損しない代替ルート3選",
