@@ -307,7 +307,7 @@ description: "2026年7月30日のGPT-5.6価格改定を受け、CodexでLuna・T
 <p class="text-base leading-loose mb-6 text-justify">ここまでの内容を、性能とコストの散布図にまとめました。縦軸は性能イメージ、横軸は入力10万トークン＋出力2万トークンのAPI料金を基準にした推定コストです。点はつながず、各モデル・effortを独立した選択肢として配置しています。</p>
 
 <figure class="my-10">
-![gpt56-codex-effort-cost-graph.png](../images/gpt56-codex-effort-cost-graph.png)
+<img src="/images/gpt56-codex-effort-cost-graph.png">
 
 <figcaption class="text-xs text-gray-500 leading-relaxed mt-3">※モデル単位の価格は公式値。effort別の性能・消費倍率は非公開のため、グラフ内の点は比較用の試算です。実際の消費はコードベース、入力、出力、ツール実行によって変動します。</figcaption>
 </figure>
