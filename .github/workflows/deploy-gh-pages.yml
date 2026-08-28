@@ -52,6 +52,7 @@ jobs:
           # Copy essential files
           cp sitemap.xml dist/sitemap.xml
           cp robots.txt dist/robots.txt || true
+          cp llms.txt dist/llms.txt || true
           cp ads.txt dist/ads.txt || true
           cp CNAME dist/CNAME
           cp -r *.ico dist/ 2>/dev/null || true
