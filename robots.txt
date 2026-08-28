@@ -62,4 +62,5 @@ Disallow: /_config.yml
 # Allow essential files
 Allow: /posts.json
 Allow: /sitemap.xml
+Allow: /llms.txt
 Allow: /ads.txt

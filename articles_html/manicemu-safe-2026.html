@@ -19,12 +19,18 @@
     <meta property="og:url" content="https://poitaro.com/articles_html/manicemu-safe-2026.html">
     <meta property="og:site_name" content="ポイ活Pay太郎">
     <meta property="og:locale" content="ja_JP">
+    <meta property="article:published_time" content="2026-07-21T15:00:00.000Z">
+    <meta property="article:modified_time" content="2026-08-28T05:00:47.538Z">
+    <meta property="article:section" content="iPhone活用術">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ManicEmuは安全？危険性・注意点・導入前に知ること【2026年版】">
     <meta name="twitter:description" content="ManicEmuは安全に使えるのか？App Store配信の安心感、ROM入手のリスク、課金や権限まわりで気をつけたい点まで2026年版で整理します。">
     <meta name="twitter:image" content="https://poitaro.com/thumbnails/manicemu-safe-2026.png">
+
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://poitaro.com/articles_html/manicemu-safe-2026.html"},"headline":"ManicEmuは安全？危険性・注意点・導入前に知ること【2026年版】","description":"ManicEmuは安全に使えるのか？App Store配信の安心感、ROM入手のリスク、課金や権限まわりで気をつけたい点まで2026年版で整理します。","image":["https://poitaro.com/thumbnails/manicemu-safe-2026.png"],"datePublished":"2026-07-21T15:00:00.000Z","dateModified":"2026-08-28T05:00:47.538Z","author":{"@type":"Person","name":"ポイ活Pay太郎","url":"https://poitaro.com/about.html#author"},"publisher":{"@type":"Organization","name":"ポイ活Pay太郎","url":"https://poitaro.com/","logo":{"@type":"ImageObject","url":"https://poitaro.com/blog/favicon.ico"}},"articleSection":"iPhone活用術","keywords":"Manic EMU, 安全性, iPhone, エミュレーター, App Store","inLanguage":"ja-JP"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://poitaro.com/"},{"@type":"ListItem","position":2,"name":"iPhone活用術","item":"https://poitaro.com/index.html?category=iPhone%E6%B4%BB%E7%94%A8%E8%A1%93"},{"@type":"ListItem","position":3,"name":"ManicEmuは安全？危険性・注意点・導入前に知ること【2026年版】","item":"https://poitaro.com/articles_html/manicemu-safe-2026.html"}]}</script>
 
     <!-- Favicon -->
     <link rel="icon" href="https://poitaro.com/blog/favicon.ico" type="image/x-icon">
@@ -416,6 +422,7 @@
             color: #b4a0ff;
         }
     </style>
+    <link rel="stylesheet" href="../theme-modern.css">
 
 <script async src="https://fundingchoicesmessages.google.com/i/pub-2213699949048480?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
 
@@ -425,10 +432,13 @@
 
     <!-- Sticky Nav -->
     <nav class="fixed top-0 w-full z-[80] flex justify-between items-center px-4 py-3 bg-brand-white/95 backdrop-blur-md border-b border-black transition-colors duration-300" id="main-nav">
-        <a href="../index.html" class="font-sans text-xl font-black tracking-tight cursor-pointer hover:text-brand-purple transition-colors z-[90]">ポイ活Pay太郎</a>
+        <a href="../index.html" class="brand-lockup z-[90]" aria-label="ポイ活Pay太郎 トップページ">
+            <span class="brand-mark">P</span>
+            <span>ポイ活Pay太郎</span>
+        </a>
         <div class="flex items-center gap-4 z-[90]">
-            <span class="hidden md:inline font-bold text-xs tracking-widest text-brand-black" id="nav-issue">ISSUE 024</span>
-            <button onclick="toggleMenu()" class="p-2 border border-black hover:bg-black hover:text-white transition-colors rounded-full relative group bg-brand-white text-black">
+            <span class="hidden md:inline font-bold text-xs tracking-widest text-brand-black nav-label" id="nav-issue">STRATEGY DATABASE // LIVE</span>
+            <button type="button" onclick="toggleMenu()" class="nav-menu-button p-2 border border-black hover:bg-black hover:text-white transition-colors rounded-full relative group bg-brand-white text-black" aria-label="メニューを開く">
                 <i data-lucide="menu" class="w-5 h-5 transition-all duration-300 group-hover:rotate-90" id="menu-icon"></i>
                 <i data-lucide="x" class="w-5 h-5 absolute top-2 left-2 opacity-0 transition-all duration-300 rotate-90 scale-0" id="close-icon"></i>
             </button>
@@ -512,11 +522,11 @@
         
         <!-- === DYNAMIC ARTICLE PAGE === -->
         <div id="article-page" class="fade-in bg-brand-white min-h-screen relative">
-            <!-- Progress Bar (Mobile Only) -->
-            <div class="md:hidden fixed top-[53px] left-0 h-1.5 bg-brand-accent z-40 w-0" id="read-progress"></div>
-            
+            <!-- Progress Bar -->
+            <div class="fixed top-0 left-0 h-1.5 bg-brand-accent z-[100] w-0" id="read-progress"></div>
+
             <!-- Breadcrumbs -->
-            <nav class="max-w-7xl mx-auto px-4 pt-6 pb-2" aria-label="パンくずリスト">
+            <nav class="article-shell article-breadcrumb" aria-label="パンくずリスト">
                 <ol class="flex items-center gap-2 text-sm font-sans flex-wrap">
                     <li>
                         <a href="../index.html" class="hover:text-brand-purple transition-colors flex items-center gap-1">
@@ -532,14 +542,29 @@
                     <li class="text-gray-600 truncate max-w-[200px] md:max-w-md" title="ManicEmuは安全？危険性・注意点・導入前に知ること【2026年版】">ManicEmuは安全？危険性・注意点・導入前に知ること【2026年版】</li>
                 </ol>
             </nav>
-            
+
+            <!-- Article Hero -->
+            <header class="article-shell article-hero">
+                <div class="article-hero-content">
+                    <span class="eyebrow">iPhone活用術</span>
+                    <h1>ManicEmuは安全？危険性・注意点・導入前に知ること【2026年版】</h1>
+                    <p class="article-description">ManicEmuは安全に使えるのか？App Store配信の安心感、ROM入手のリスク、課金や権限まわりで気をつけたい点まで2026年版で整理します。</p>
+                    <div class="article-meta">
+                        <span><i data-lucide="calendar-days" class="w-3.5 h-3.5 inline mr-1"></i>公開 <time datetime="2026-07-21T15:00:00.000Z">2026-07-22</time></span>
+                        <span><i data-lucide="rotate-cw" class="w-3.5 h-3.5 inline mr-1"></i>更新 <time datetime="2026-08-28T05:00:47.538Z">2026-08-28</time></span>
+                        <span><i data-lucide="user-round" class="w-3.5 h-3.5 inline mr-1"></i><a href="../about.html#author" class="hover:text-brand-purple transition-colors">執筆・編集: ポイ活Pay太郎</a></span>
+                        <span><i data-lucide="badge-check" class="w-3.5 h-3.5 inline mr-1"></i><a href="../about.html#editorial-policy" class="hover:text-brand-purple transition-colors">編集・検証方針</a></span>
+                    </div>
+                </div>
+            </header>
+
             <!-- Header Image (Thumbnail Only) -->
-            <div class="w-full max-w-7xl mx-auto mt-4 mb-12 px-4">
-                <img src="../thumbnails/manicemu-safe-2026.png" class="w-full aspect-video object-cover shadow-lg">
+            <div class="article-shell article-cover">
+                <img src="../thumbnails/manicemu-safe-2026.png" alt="ManicEmuは安全？危険性・注意点・導入前に知ること【2026年版】" class="w-full aspect-video object-cover">
             </div>
 
             <!-- Article Content with Sidebar Layout -->
-            <div class="max-w-7xl mx-auto px-4 md:flex md:gap-8 relative">
+            <div class="article-shell article-layout md:flex relative">
                 
                 <!-- Main Article Content -->
                 <article id="article-body" class="md:w-2/3 pt-10 pb-16">
@@ -962,7 +987,7 @@
                         </div>
                         
                         <!-- Quick Actions -->
-                        <div class="mb-8 p-6 border-2 border-black bg-brand-white">
+                        <div class="sidebar-card mb-8 p-6 border-2 border-black bg-brand-white">
                             <h3 class="font-anton text-xl mb-4 tracking-wider">ACTIONS</h3>
                             <div class="space-y-3">
                                 <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="block text-sm font-bold hover:text-brand-purple transition-colors border-b border-gray-300 pb-2">
@@ -985,8 +1010,8 @@
 
             <!-- Back Link Footer -->
             <div class="pb-24 pt-12 text-center bg-brand-white">
-                <a href="../index.html" class="text-sm font-bold uppercase tracking-widest border-b border-gray-400 pb-1 hover:border-black transition-colors hover:text-brand-purple">
-                    Back to Index
+                <a href="../index.html" class="article-back text-sm font-bold transition-colors hover:text-brand-purple">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> 記事一覧へ戻る
                 </a>
             </div>
         </div>
@@ -1028,10 +1053,6 @@
                 closeIcon.classList.remove('opacity-0', 'scale-0');
                 closeIcon.classList.add('rotate-0'); // reset rotation
                 
-                // Text color update for contrast
-                navIssue.classList.add('text-white');
-                navIssue.classList.remove('text-brand-black');
-
             } else {
                 // Close Menu
                 menuOverlay.classList.add('-translate-y-full');
@@ -1041,9 +1062,6 @@
                 closeIcon.classList.add('opacity-0', 'scale-0');
                 closeIcon.classList.remove('rotate-0');
                 
-                 // Text color update
-                navIssue.classList.remove('text-white');
-                navIssue.classList.add('text-brand-black');
             }
         }
         
