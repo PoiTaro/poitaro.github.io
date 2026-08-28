@@ -12,6 +12,26 @@ const sitemapPath = path.join(__dirname, 'sitemap.xml');
 // on GitHub Pages / when external services (like Search Console) expect the other case.
 const sitemapPathUpper = path.join(__dirname, 'Sitemap.xml');
 const articleTemplatePath = path.join(__dirname, 'article-template.html'); // テンプレートファイルのパス
+const author = {
+    name: 'ポイ活Pay太郎',
+    url: 'https://poitaro.com/about.html#author'
+};
+const publisher = {
+    name: 'ポイ活Pay太郎',
+    url: 'https://poitaro.com/',
+    logo: 'https://poitaro.com/blog/favicon.ico'
+};
+
+function toPublishedIso(dateValue) {
+    const date = /^\d{4}-\d{2}-\d{2}$/.test(dateValue)
+        ? new Date(`${dateValue}T00:00:00+09:00`)
+        : new Date(dateValue);
+    return Number.isNaN(date.getTime()) ? new Date().toISOString() : date.toISOString();
+}
+
+function toJsonLd(value) {
+    return JSON.stringify(value).replace(/</g, '\\u003c');
+}
 
 // Wrap the main script in an async IIFE so we can dynamically import ESM modules
 (async () => {
@@ -205,13 +225,18 @@ const rawPosts = articleFiles.map(file => {
 
     // Resolve OGP Image (Text-heavy)
     const ogImageValue = generatedThumbAbs || displayImageAbs;
+    const publishedDate = attributes.date || new Date(stats.mtime).toISOString().split('T')[0];
+    const modifiedDate = new Date(stats.mtime).toISOString();
 
         return {
         slug: slug, // スラッグを追加
         url: articleRelativeUrl, // 新しいURL形式
         mtime: stats.mtime.getTime(),
         title: attributes.title || '無題の記事',
-        date: attributes.date || new Date(stats.mtime).toISOString().split('T')[0],
+        date: publishedDate,
+        datePublished: toPublishedIso(publishedDate),
+        dateModified: modifiedDate,
+        dateModifiedLabel: modifiedDate.slice(0, 10),
         category: attributes.category || '未分類',
         categoryColor: attributes.categoryColor || 'gray',
     image: displayImageValue, // Used for site display (clean)
@@ -309,6 +334,60 @@ rawPosts.forEach(current => {
     
     // カテゴリをURLパラメータ用にエンコード（実際のカテゴリ名をそのまま使用）
     const categoryForUrl = encodeURIComponent(current.category || '');
+    const articleJsonLd = toJsonLd({
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': current.articleAbsoluteUrl
+        },
+        headline: current.title,
+        description: current.description,
+        image: [current.ogImage || current.imageAbsolute],
+        datePublished: current.datePublished,
+        dateModified: current.dateModified,
+        author: {
+            '@type': 'Person',
+            name: author.name,
+            url: author.url
+        },
+        publisher: {
+            '@type': 'Organization',
+            name: publisher.name,
+            url: publisher.url,
+            logo: {
+                '@type': 'ImageObject',
+                url: publisher.logo
+            }
+        },
+        articleSection: current.category,
+        keywords: current.tags.join(', '),
+        inLanguage: 'ja-JP'
+    });
+    const breadcrumbJsonLd = toJsonLd({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'ホーム',
+                item: baseUrl
+            },
+            {
+                '@type': 'ListItem',
+                position: 2,
+                name: current.category,
+                item: `${baseUrl}index.html?category=${categoryForUrl}`
+            },
+            {
+                '@type': 'ListItem',
+                position: 3,
+                name: current.title,
+                item: current.articleAbsoluteUrl
+            }
+        ]
+    });
 
     // テーブルを横スクロール可能にラップ（補助テキスト付き）
     let contentWithScrollableTables = current.content.replace(
@@ -322,6 +401,9 @@ rawPosts.forEach(current => {
     let finalHtml = articleTemplate
                 .replace(/{{title}}/g, current.title)
                 .replace(/{{date}}/g, current.date)
+                .replace(/{{datePublished}}/g, current.datePublished)
+                .replace(/{{dateModified}}/g, current.dateModified)
+                .replace(/{{dateModifiedLabel}}/g, current.dateModifiedLabel)
                 .replace(/{{category}}/g, current.category)
                 .replace(/{{category_slug}}/g, categoryForUrl)
                 .replace(/{{description}}/g, current.description)
@@ -330,6 +412,8 @@ rawPosts.forEach(current => {
                 .replace(/{{url}}/g, current.articleAbsoluteUrl)
                 .replace(/{{alt_title}}/g, current.title)
                 .replace(/{{categoryColor}}/g, current.categoryColor)
+                .replace(/{{articleJsonLd}}/g, articleJsonLd)
+                .replace(/{{breadcrumbJsonLd}}/g, breadcrumbJsonLd)
                 .replace(/<!-- Tags will be displayed here -->/g, current.tagsHtml)
             .replace(/<!-- TOC will be displayed here -->/g, tocHtml)
             .replace(/{{content}}/g, contentWithScrollableTables)
