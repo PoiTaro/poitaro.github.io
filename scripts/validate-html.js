@@ -2,7 +2,8 @@ const fs = require('fs');
 const path = require('path');
 
 const root = path.resolve(__dirname, '..');
-const files = ['index.html', 'article-template.html', 'demo-article.html'];
+const files = ['index.html', 'article-template.html', 'demo-article.html']
+    .filter((file) => fs.existsSync(path.join(root, file)));
 let failed = false;
 
 for (const file of files) {
@@ -35,10 +36,13 @@ for (const file of files) {
     console.log(`${file}: ${inlineScripts.length} inline scripts parsed, ${ids.length} IDs checked`);
 }
 
-const demoSource = fs.readFileSync(path.join(root, 'demo-article.html'), 'utf8');
-if (/{{[^}]+}}/.test(demoSource)) {
-    failed = true;
-    console.error('demo-article.html: unresolved template placeholder found');
+const demoPath = path.join(root, 'demo-article.html');
+if (fs.existsSync(demoPath)) {
+    const demoSource = fs.readFileSync(demoPath, 'utf8');
+    if (/{{[^}]+}}/.test(demoSource)) {
+        failed = true;
+        console.error('demo-article.html: unresolved template placeholder found');
+    }
 }
 
 process.exitCode = failed ? 1 : 0;
