@@ -12,6 +12,25 @@ description: "ローカルLLM用のミニPCは何を選ぶべき？GMKtec EVO-X1
 
 <style>
 #article-body .a8-banner img:not([width="1"]) { max-width: 100%; height: auto; display: block; }
+#article-body .a8-banner { position: relative; }
+#article-body .a8-banner > img[width="1"][height="1"] {
+  position: absolute !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 1px !important;
+  min-width: 1px !important;
+  max-width: 1px !important;
+  height: 1px !important;
+  min-height: 1px !important;
+  max-height: 1px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+}
 </style>
 
 <div class="mb-8 p-5 border-2 border-[#0a0a0a] bg-[#fffbe8] relative">
