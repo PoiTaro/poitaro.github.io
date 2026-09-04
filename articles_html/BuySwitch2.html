@@ -1165,27 +1165,6 @@ Switch 2は画面が大きくなりました。割れてからでは遅いので
         });
     </script>
 
-    <!-- GAS Analytics Tracking Code -->
-<script>
-(function() {
-  var endpoint = "https://script.google.com/macros/s/AKfycbz_AgOafZudZooJKnNGuArtwl1FZlUUqhC8_khEOzYz2cdc-4z2etYGuZ0fgyhEJBm6/exec";
-  var data = {
-    type: "pv",
-    slug: location.pathname.split("/").pop().replace(".html", "") || "home",
-    title: document.title,
-    referrer: document.referrer,
-    userAgent: navigator.userAgent,
-    timestamp: new Date().toISOString()
-  };
-  if(navigator.sendBeacon) {
-    navigator.sendBeacon(endpoint, JSON.stringify(data));
-  } else {
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", endpoint);
-    xhr.send(JSON.stringify(data));
-  }
-})();
-</script>
     
 </body>
 
