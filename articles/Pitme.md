@@ -19,7 +19,7 @@ tags: ["2026", "最新", "ポイ活", "Pitme", "シェアフル", "PayPay"]
 </ul>
 </nav>
 
-<div id="article-body" class="text-[#0a0a0a] font-sans">
+<div class="text-[#0a0a0a] font-sans">
 
 <p class="text-base leading-loose mb-6 text-justify">
 <span class="float-left font-anton text-[4.5rem] leading-[4rem] pr-4 pt-1 text-[#0a0a0a]">「</span>ポイ活って、毎日ちまちま作業する割に全然稼げない…」「もっと一気に、効率よく稼ぐ方法はないの？」
@@ -187,15 +187,15 @@ tags: ["2026", "最新", "ポイ活", "Pitme", "シェアフル", "PayPay"]
 
 <ul class="list-none pl-0 space-y-3 mb-6">
 <li class="relative pl-8 text-sm font-bold text-[#0a0a0a]">
-<span class="absolute left-0 top-0 text-[#00C300] font-black text-lg">✓</span> 
+<span class="absolute left-0 top-0 text-[#00C300] font-black text-lg">✓</span>
 チマチマ稼ぐ時代は終了。<strong>「移動×スキマバイト」</strong>が圧倒的タイパ。
 </li>
 <li class="relative pl-8 text-sm font-bold text-[#0a0a0a]">
-<span class="absolute left-0 top-0 text-[#00C300] font-black text-lg">✓</span> 
+<span class="absolute left-0 top-0 text-[#00C300] font-black text-lg">✓</span>
 歩くポイ活は2026年2月登場の<strong>「Pitme（セレス運営）」</strong>が最強。
 </li>
 <li class="relative pl-8 text-sm font-bold text-[#0a0a0a]">
-<span class="absolute left-0 top-0 text-[#00C300] font-black text-lg">✓</span> 
+<span class="absolute left-0 top-0 text-[#00C300] font-black text-lg">✓</span>
 <strong>「シェアフル」</strong>のPayPay連携（2026年3月〜）で、即時受け取りのシームレス化が完成。
 </li>
 </ul>

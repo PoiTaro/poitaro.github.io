@@ -34,38 +34,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Restore deployed thumbnails
-        run: |
-          git fetch origin gh-pages --depth=1
-          git checkout origin/gh-pages -- thumbnails || true
-
       - name: Build site (generate thumbnails & articles)
         run: npm run build
 
-      - name: Prepare publish directory
-        run: |
-          mkdir -p dist
-          # Copy all HTML files from root
-          cp *.html dist/ 2>/dev/null || true
-          # Copy all JSON files from root
-          cp *.json dist/ 2>/dev/null || true
-          # Copy essential files
-          cp sitemap.xml dist/sitemap.xml
-          cp robots.txt dist/robots.txt || true
-          cp llms.txt dist/llms.txt || true
-          cp ads.txt dist/ads.txt || true
-          cp CNAME dist/CNAME
-          cp -r *.ico dist/ 2>/dev/null || true
-          # Copy directories
-          cp -r articles_html dist/articles_html
-          cp -r thumbnails dist/thumbnails
-          cp -r images dist/images 2>/dev/null || true
-          cp -r articles dist/articles || true
+      - name: Prepare and validate publish directory
+        run: npm run prepare:release
 
       - name: Publish to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./release-candidate
           publish_branch: gh-pages
           commit_message: 'deploy: site with generated thumbnails and articles'

@@ -7,16 +7,34 @@
     <title>CONTACT | ポイ活Pay太郎</title>
     <meta name="description" content="お問い合わせ | ポイ活Pay太郎 - Smart Living Editorial">
     <meta name="robots" content="index, follow">
-    
+    <link rel="canonical" href="https://poitaro.com/contact.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="お問い合わせ | ポイ活Pay太郎">
+    <meta property="og:description" content="ポイ活Pay太郎へのお問い合わせページです。">
+    <meta property="og:url" content="https://poitaro.com/contact.html">
+    <meta property="og:site_name" content="ポイ活Pay太郎">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:image" content="https://poitaro.com/thumbnails/og-image-editorial-v1.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ポイ活Pay太郎 — 知りたいことを、わかりやすく。">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="お問い合わせ | ポイ活Pay太郎">
+    <meta name="twitter:description" content="ポイ活Pay太郎へのお問い合わせページです。">
+    <meta name="twitter:image" content="https://poitaro.com/thumbnails/og-image-editorial-v1.png">
+    <meta name="twitter:image:alt" content="ポイ活Pay太郎 — 知りたいことを、わかりやすく。">
+
     <!-- Favicon -->
-    <link rel="icon" href="https://poitaro.com/blog/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="https://poitaro.com/blog/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="https://poitaro.com/blog/favicon.ico">
-    <link rel="icon" sizes="192x192" href="https://poitaro.com/blog/favicon.ico">
-    <meta name="msapplication-TileImage" content="https://poitaro.com/blog/favicon.ico">
+    <link rel="icon" href="images/favicon-editorial-book-32-v1.png" type="image/png" sizes="32x32">
+    <link rel="shortcut icon" href="images/favicon-editorial-book-32-v1.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-editorial-book-180-v1.png" sizes="180x180">
+    <link rel="icon" href="images/favicon-editorial-book-192-v1.png" type="image/png" sizes="192x192">
+    <meta name="msapplication-TileImage" content="images/favicon-editorial-book-192-v1.png">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#0a0a0a">
-    
+    <meta name="theme-color" content="#1F2937">
+    <link rel="manifest" href="site.webmanifest">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -25,17 +43,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'brand-black': '#0a0a0a',
-                        'brand-white': '#f8f8f8',
-                        'brand-accent': '#ccff00', // Neon Lime
-                        'brand-purple': '#b4a0ff', // Secondary Accent
-                        'brand-gray': '#e5e5e5',
+                        'brand-black': '#1F2937',
+                        'brand-white': '#FAFAF8',
+                        'brand-accent': '#67B7E1', // Soft Sky Blue
+                        'brand-purple': '#2F6FB3', // Calm Blue
+                        'brand-gray': '#E5E7EB',
                     },
                     fontFamily: {
                         'anton': ['Anton', 'sans-serif'],
@@ -56,16 +74,16 @@
         }
     </script>
     <style>
-        .text-stroke { -webkit-text-stroke: 1px black; color: transparent; }
+        .text-stroke { -webkit-text-stroke: 1px #1F2937; color: transparent; }
         .text-stroke-white { -webkit-text-stroke: 1px white; color: transparent; }
         .fade-in { animation: fadeIn 0.5s ease-in-out forwards; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .menu-link:hover::before { content: ">>"; color: #ccff00; position: absolute; left: -40px; }
-        
+        .menu-link:hover::before { content: ">>"; color: #67B7E1; position: absolute; left: -40px; }
+
         /* Form Styling */
         .form-input {
             background-color: transparent;
-            border-bottom: 2px solid #0a0a0a;
+            border-bottom: 2px solid #1F2937;
             padding: 1rem 0;
             width: 100%;
             font-family: 'Noto Sans JP', sans-serif;
@@ -74,7 +92,7 @@
             transition: border-color 0.3s;
         }
         .form-input:focus {
-            border-color: #ccff00;
+            border-color: #67B7E1;
         }
         .form-label {
             font-family: 'Anton', sans-serif;
@@ -85,14 +103,14 @@
         }
     </style>
 </head>
-<body class="bg-brand-white text-brand-black font-sans antialiased overflow-x-hidden selection:bg-brand-accent selection:text-black">
+<body class="bg-brand-white text-brand-black font-sans antialiased overflow-x-hidden selection:bg-brand-accent selection:text-brand-black">
 
     <!-- Sticky Nav -->
-    <nav class="fixed top-0 w-full z-[80] flex justify-between items-center px-4 py-3 bg-brand-white/95 backdrop-blur-md border-b border-black transition-colors duration-300" id="main-nav">
-        <a href="index.html" class="font-sans text-xl font-black tracking-tight cursor-pointer hover:text-brand-purple transition-colors z-[90]">ポイ活Pay太郎</a>
+    <nav class="fixed top-0 w-full z-[80] flex justify-between items-center px-4 py-3 bg-brand-white/95 backdrop-blur-md border-b border-brand-black transition-colors duration-300" id="main-nav">
+        <a href="index.html" class="z-[90] cursor-pointer" aria-label="ポイ活Pay太郎・トップページへ戻る"><img src="images/header-title-nav-v1.webp" alt="ポイ活Pay太郎" width="900" height="160" class="h-8 md:h-9 w-auto max-w-[68vw] object-contain"></a>
         <div class="flex items-center gap-4 z-[90]">
             <span class="hidden md:inline font-bold text-xs tracking-widest text-brand-black" id="nav-issue">ISSUE 024</span>
-            <button onclick="toggleMenu()" class="p-2 border border-black hover:bg-black hover:text-white transition-colors rounded-full relative group bg-brand-white text-black">
+            <button onclick="toggleMenu()" class="p-2 border border-brand-black hover:bg-brand-black hover:text-white transition-colors rounded-full relative group bg-brand-white text-brand-black">
                 <i data-lucide="menu" class="w-5 h-5 transition-all duration-300 group-hover:rotate-90" id="menu-icon"></i>
                 <i data-lucide="x" class="w-5 h-5 absolute top-2 left-2 opacity-0 transition-all duration-300 rotate-90 scale-0" id="close-icon"></i>
             </button>
@@ -109,16 +127,16 @@
         <!-- Menu Search Bar -->
         <div class="absolute top-20 left-1/2 -translate-x-1/2 w-full max-w-md px-4 relative z-10">
             <div class="relative">
-                <input 
-                    type="text" 
-                    id="menu-search-input" 
+                <input
+                    type="text"
+                    id="menu-search-input"
                     placeholder="キーワードで検索..."
                     class="w-full px-4 py-3 pl-12 border-2 border-brand-accent bg-brand-black text-white font-sans text-sm focus:outline-none focus:border-white transition-colors placeholder:text-gray-500"
                     onkeypress="if(event.key === 'Enter') { window.location.href = 'index.html?search=' + encodeURIComponent(this.value); }"
                 />
                 <i data-lucide="search" class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-brand-accent"></i>
-                <button 
-                    id="menu-clear-search" 
+                <button
+                    id="menu-clear-search"
                     class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors hidden"
                     onclick="document.getElementById('menu-search-input').value = ''; this.classList.add('hidden');"
                 >
@@ -174,14 +192,14 @@
 
             <!-- Google Form Embed (Responsive Wrapper) -->
             <div class="relative w-full">
-                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSedMG0dK7va2t9sg_WIBG-Akmmv6a6XI4AY3bYoUd-eOJm0MA/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" class="bg-gray-100 border-2 border-black">読み込んでいます…</iframe>
+                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSedMG0dK7va2t9sg_WIBG-Akmmv6a6XI4AY3bYoUd-eOJm0MA/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" class="bg-gray-100 border-2 border-brand-black">読み込んでいます…</iframe>
             </div>
         </div>
     </main>
 
     <!-- === ABOUT MODAL (Simple Overlay) === -->
     <div id="about-modal" class="fixed inset-0 bg-brand-white/95 backdrop-blur z-[85] hidden p-8 flex flex-col justify-center items-center text-center">
-            <button onclick="hideAbout()" class="absolute top-20 right-8 font-anton text-xl border border-black rounded-full w-10 h-10 hover:bg-black hover:text-white transition-colors">X</button>
+            <button onclick="hideAbout()" class="absolute top-20 right-8 font-anton text-xl border border-brand-black rounded-full w-10 h-10 hover:bg-brand-black hover:text-white transition-colors">X</button>
             <h2 class="font-anton text-6xl mb-4">CONCEPT</h2>
             <p class="max-w-md font-medium leading-loose text-sm">
             "THE RETURN"は、現代社会における「還元」をテーマにしたライフスタイルマガジンです。
@@ -207,7 +225,7 @@
         // Menu search input handler
         const menuSearchInput = document.getElementById('menu-search-input');
         const menuClearButton = document.getElementById('menu-clear-search');
-        
+
         if (menuSearchInput) {
             menuSearchInput.addEventListener('input', (e) => {
                 const value = e.target.value.trim();

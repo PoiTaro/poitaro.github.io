@@ -1,483 +1,199 @@
 const fs = require('fs');
 const path = require('path');
-// marked is an ESM-only package; import it dynamically inside an async wrapper below
-let marked;
+const { marked } = require('marked');
 
-const articlesDir = path.join(__dirname, 'articles');
-const articlesHtmlDir = path.join(__dirname, 'articles_html'); // 新しい出力ディレクトリ
-const postsJsonPath = path.join(__dirname, 'posts.json');
-const sitemapPath = path.join(__dirname, 'sitemap.xml');
-// Some tools or previous registrations may use a capitalized filename ("Sitemap.xml").
-// Create an uppercase-variant path so we can write both and avoid case-sensitivity issues
-// on GitHub Pages / when external services (like Search Console) expect the other case.
-const sitemapPathUpper = path.join(__dirname, 'Sitemap.xml');
-const articleTemplatePath = path.join(__dirname, 'article-template.html'); // テンプレートファイルのパス
-const author = {
-    name: 'ポイ活Pay太郎',
-    url: 'https://poitaro.com/about.html#author'
-};
-const publisher = {
-    name: 'ポイ活Pay太郎',
-    url: 'https://poitaro.com/',
-    logo: 'https://poitaro.com/blog/favicon.ico'
-};
+const ROOT = __dirname;
+const ARTICLES_DIR = path.join(ROOT, 'articles');
+const OUTPUT_DIR = path.join(ROOT, 'articles_html');
+const TEMPLATE_PATH = path.join(ROOT, 'article-template.html');
+const POSTS_PATH = path.join(ROOT, 'posts.json');
+const SITE_URL = 'https://poitaro.com';
+const CHECK_ONLY = process.argv.includes('--check');
 
-function toPublishedIso(dateValue) {
-    const date = /^\d{4}-\d{2}-\d{2}$/.test(dateValue)
-        ? new Date(`${dateValue}T00:00:00+09:00`)
-        : new Date(dateValue);
-    return Number.isNaN(date.getTime()) ? new Date().toISOString() : date.toISOString();
+function parseFrontmatter(source, filename) {
+  const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
+  if (!match) throw new Error(`${filename}: frontmatter がありません`);
+  const data = {};
+  for (const line of match[1].split(/\r?\n/)) {
+    const field = line.match(/^([A-Za-z][\w-]*):\s*(.*)$/);
+    if (!field) continue;
+    const [, key, raw] = field;
+    const value = raw.trim();
+    if (!value) data[key] = '';
+    else if (value.startsWith('[') || value.startsWith('{') || value.startsWith('"')) {
+      try { data[key] = JSON.parse(value); }
+      catch { data[key] = value.replace(/^['"]|['"]$/g, ''); }
+    } else if (value.startsWith("'") && value.endsWith("'")) {
+      data[key] = value.slice(1, -1).replace(/''/g, "'");
+    } else data[key] = value;
+  }
+  return { data, body: source.slice(match[0].length) };
 }
 
-function toJsonLd(value) {
-    return JSON.stringify(value).replace(/</g, '\\u003c');
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
-// Wrap the main script in an async IIFE so we can dynamically import ESM modules
-(async () => {
-    ({ marked } = await import('marked'));
-
-
-// サイトURLを新ドメインに変更
-const baseUrl = 'https://poitaro.com/';
-
-// articles_html ディレクトリが存在しない場合は作成
-if (!fs.existsSync(articlesHtmlDir)) {
-    fs.mkdirSync(articlesHtmlDir);
+function plainText(html) {
+  return String(html).replace(/<[^>]*>/g, '').replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'");
 }
 
-// --- Frontmatterをパースする関数 ---
-function parseFrontmatter(markdown) {
-    const frontmatterRegex = /^---\s*([\s\S]*?)\s*---/;
-    const match = frontmatterRegex.exec(markdown);
-    const attributes = {};
-    if (match) {
-        const frontmatter = match[1];
-        frontmatter.split('\n').forEach(line => {
-            const [key, ...valueParts] = line.split(':');
-            if (key && valueParts.length) {
-                let value = valueParts.join(':').trim();
-                if (value.startsWith('[') && value.endsWith(']')) {
-                    attributes[key.trim()] = value.slice(1, -1).split(',').map(tag => tag.trim().replace(/^"|"$/g, ''));
-                } else {
-                    attributes[key.trim()] = value.replace(/^['" ]|['" ]$/g, '');
-                }
-            }
-        });
-    }
-    return attributes;
+function headingId(text, used) {
+  const base = plainText(text).normalize('NFKC').toLowerCase()
+    .replace(/[^\p{L}\p{N}-]+/gu, '');
+  let id = base || 'section';
+  let suffix = 2;
+  while (used.has(id)) id = `${base || 'section'}-${suffix++}`;
+  used.add(id);
+  return id;
 }
 
-// --- Markdownコンテンツを抽出する関数 ---
-function extractMarkdownContent(markdown) {
-    const frontmatterRegex = /^---\s*[\s\S]*?\s*---/;
-    return markdown.replace(frontmatterRegex, '').trim();
-}
-
-function stripOuterArticleBodyWrapper(html) {
-    const openTagMatch = html.match(/^\s*<div\b(?=[^>]*\bid=["']article-body["'])[^>]*>\s*/i);
-    if (!openTagMatch || !html.trimEnd().endsWith('</div>')) {
-        return html;
-    }
-
-    const withoutOpenTag = html.slice(openTagMatch[0].length);
-    const lastCloseIndex = withoutOpenTag.trimEnd().lastIndexOf('</div>');
-    if (lastCloseIndex === -1) {
-        return html;
-    }
-
-    return withoutOpenTag.slice(0, lastCloseIndex).trim();
-}
-
-// 1. articlesディレクトリからマークダウンファイルの一覧を取得
-const articleFiles = fs.readdirSync(articlesDir).filter(file => file.endsWith('.md'));
-
-// 記事テンプレートを読み込む
-const articleTemplate = fs.readFileSync(articleTemplatePath, 'utf8');
-
-// 2. 各ファイルの情報を取得し、新しい順にソート
-const rawPosts = articleFiles.map(file => {
-    const filePath = path.join(articlesDir, file);
-    const content = fs.readFileSync(filePath, 'utf8');
-    const stats = fs.statSync(filePath);
-    const attributes = parseFrontmatter(content);
-    const markdownContent = extractMarkdownContent(content);
-    let htmlContent = marked(markdownContent); // MarkdownをHTMLに変換
-
-    // Remove the first H1 tag if it exists (to prevent duplicate titles)
-    htmlContent = htmlContent.replace(/^\s*<h1[^>]*>.*?<\/h1>\s*/is, '');
-    htmlContent = stripOuterArticleBodyWrapper(htmlContent);
-
-    // Google AdSense広告のHTMLテンプレート
-    const adTemplate = `
-<div class="article-ad my-8">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-2213699949048480"
-     data-ad-slot="4891282874"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-`;
-
-    // H2見出しを抽出して目次を作成し、本文内のH2にidアンカーを付与
-    const h2Regex = /<h2>(.*?)<\/h2>/g;
-    const h2Matches = [...htmlContent.matchAll(h2Regex)].map(m => m[1]);
-    const slugify = (s) => s
-        .toString()
-        .trim()
-        .toLowerCase()
-        .replace(/<[^>]+>/g, '') // strip HTML
-        .replace(/&[^;]+;/g, '') // strip entities
-        .replace(/[^a-z0-9\u3040-\u30ff\u4e00-\u9faf\s-]/g, '') // keep jp chars
-        .replace(/\s+/g, '-')
-        .replace(/-+/g, '-');
-
-    const h2Anchors = h2Matches.map(text => ({ text, id: slugify(text) }));
-    if (h2Anchors.length > 0) {
-        // 本文の<h2>にidを付与
-        h2Anchors.forEach(({ id, text }) => {
-            const h2Tag = `<h2>${text}</h2>`;
-            const h2TagWithId = `<h2 id="${id}">${text}</h2>`;
-            htmlContent = htmlContent.replace(h2Tag, h2TagWithId);
-        });
-    }
-
-    // H2タグの後（次のH2タグまたは次のH3タグまたは本文の終わり）に広告を挿入
-    // H2セクションが完結するポイントを見つけて広告を挿入
-    const h2Positions = [];
-    let match;
-    const h2RegexGlobal = /<h2[^>]*>[\s\S]*?<\/h2>/g;
-    while ((match = h2RegexGlobal.exec(htmlContent)) !== null) {
-        h2Positions.push({
-            index: match.index,
-            length: match[0].length,
-            fullMatch: match[0]
-        });
-    }
-
-    if (h2Positions.length > 0) {
-        // H2タグのすぐ後に広告を挿入するのではなく、H2セクションの終わり（次のH2の前）に挿入
-
-        // 後ろから処理して、インデックスのずれを防ぐ
-        for (let i = h2Positions.length - 1; i >= 0; i--) {
-            const currentH2 = h2Positions[i];
-            const nextH2 = h2Positions[i + 1];
-            
-            // 現在のH2の終わりから、次のH2の始まりまでのセクションを取得
-            const sectionStart = currentH2.index + currentH2.length;
-            const sectionEnd = nextH2 ? nextH2.index : htmlContent.length;
-            const section = htmlContent.substring(sectionStart, sectionEnd);
-            
-            // セクション内に十分なコンテンツがある場合のみ広告を挿入（最低100文字）
-            const textContent = section.replace(/<[^>]+>/g, '').trim();
-            if (textContent.length > 100) {
-                // セクションの終わり（次のH2の直前、またはコンテンツの最後）に広告を挿入
-                htmlContent = htmlContent.substring(0, sectionEnd) + adTemplate + htmlContent.substring(sectionEnd);
-            }
-        }
-    }
-
-    const slug = file.replace(/\.md$/, ''); // ファイル名からスラッグを生成
-    const articleHtmlFileName = `${slug}.html`;
-    const articleRelativeUrl = `articles_html/${articleHtmlFileName}`;
-    const articleAbsoluteUrl = `${baseUrl}${articleRelativeUrl}`;
-    const articleHtmlFilePath = path.join(articlesHtmlDir, articleHtmlFileName);
-
-    // タグのHTMLを生成
-    let tagsHtml = '';
-    if (attributes.tags && attributes.tags.length > 0) {
-        tagsHtml = attributes.tags.map(tag => `<a href="${baseUrl}index.html?tag=${encodeURIComponent(tag)}">${tag}</a>`).join('');
-    } else {
-        // タグがない場合はタグセクションを非表示にするためのコメント
-        tagsHtml = '<!-- No tags, hide section -->';
-    }
-
-    // Determine image fields
-    const fmImage = attributes.thumbnail || attributes.image || attributes.image_url || attributes.imageUrl || attributes.img || null;
-    const generatedThumbRel = `thumbnails/${slug}.png`;
-    const generatedThumbExists = (() => { try { return fs.existsSync(path.join(__dirname, generatedThumbRel)); } catch { return false; } })();
-    const generatedThumbAbs = generatedThumbExists ? `${baseUrl}${generatedThumbRel}` : null;
-
-    // Logic Update:
-    // 1. Site Display (Hero/Grid): Prefer Clean Image (Frontmatter) -> Fallback to Generated -> Fallback to Placeholder
-    // 2. OGP (Social): Prefer Generated (Text) -> Fallback to Clean -> Fallback to Placeholder
-
-    let displayImageValue;
-    let displayImageAbs;
-    
-    // Resolve Display Image (Prioritize Generated Thumbnail for "Text on Image" look)
-    if (generatedThumbExists) {
-        displayImageValue = `../${generatedThumbRel}`;
-        displayImageAbs = generatedThumbAbs;
-    } else if (fmImage) {
-        displayImageValue = fmImage;
-        displayImageAbs = /^https?:\/\//.test(fmImage) ? fmImage : `${baseUrl}${fmImage.replace(/^\.\/?/, '')}`;
-    } else {
-        displayImageValue = 'https://placehold.co/1200x630/111827/FFFFFF?text=PoiTaro';
-        displayImageAbs = displayImageValue;
-    }
-
-    // Resolve OGP Image (Text-heavy)
-    const ogImageValue = generatedThumbAbs || displayImageAbs;
-    const publishedDate = attributes.date || new Date(stats.mtime).toISOString().split('T')[0];
-    const modifiedDate = new Date(stats.mtime).toISOString();
-
-        return {
-        slug: slug, // スラッグを追加
-        url: articleRelativeUrl, // 新しいURL形式
-        mtime: stats.mtime.getTime(),
-        title: attributes.title || '無題の記事',
-        date: publishedDate,
-        datePublished: toPublishedIso(publishedDate),
-        dateModified: modifiedDate,
-        dateModifiedLabel: modifiedDate.slice(0, 10),
-        category: attributes.category || '未分類',
-        categoryColor: attributes.categoryColor || 'gray',
-    image: displayImageValue, // Used for site display (clean)
-    imageAbsolute: displayImageAbs,
-    ogImage: ogImageValue, // Used for meta tags (text)
-        description: attributes.description || '記事の説明がありません。',
-        tags: attributes.tags || [],
-            content: htmlContent, // Add the full HTML content
-            toc: h2Anchors, // Array of {text, id}
-                articleHtmlFilePath,
-                articleAbsoluteUrl,
-                tagsHtml
-    };
-}).sort((a, b) => {
-    // date frontmatterで降順ソート（新しい記事が先頭）
-    const dateA = new Date(a.date);
-    const dateB = new Date(b.date);
-    return dateB - dateA;
-}); // 降順（新しいものが先頭）にソート
-
-// 関連記事を計算する関数（タグ一致を優先、次にカテゴリ一致。自分自身は除外。最大3件）
-function getRelatedPosts(current, all) {
-    const candidates = all.filter(p => p.slug !== current.slug);
-    const score = (p) => {
-        const tagOverlap = (current.tags || []).filter(t => (p.tags || []).includes(t)).length;
-        const categoryBonus = current.category && p.category && current.category === p.category ? 0.5 : 0;
-        return tagOverlap + categoryBonus;
-    };
-    const scored = candidates
-        .map(p => ({ p, s: score(p) }))
-        .sort((a, b) => b.s - a.s || b.p.mtime - a.p.mtime);
-
-    // まずスコア>0を優先的に最大3件
-    const primary = scored.filter(({ s }) => s > 0).slice(0, 3).map(({ p }) => p);
-    if (primary.length === 3) return primary;
-
-    // 足りない分は最新順で補充（重複を避ける）
-    const need = 3 - primary.length;
-    const fallback = candidates
-        .filter(p => !primary.some(pp => pp.slug === p.slug))
-        .sort((a, b) => b.mtime - a.mtime)
-        .slice(0, need);
-    return primary.concat(fallback);
-}
-
-// 関連記事セクションのHTMLを生成
-function buildRelatedHtml(related) {
-        if (!related || related.length === 0) return '';
-        return `
-        <section class="mt-16 pt-10 border-t-2 border-black">
-            <h2 class="font-anton text-3xl mb-6 flex items-center"><span class="text-brand-accent mr-2 text-4xl">>></span>RELATED ISSUES</h2>
-            <div class="grid gap-4 grid-cols-1 md:grid-cols-3">
-                ${related.map(r => `
-                    <div class="group">
-                        <a href="../${r.url}" class="block bg-white border border-gray-200 hover:border-black transition-colors overflow-hidden">
-                            <div class="w-full aspect-video overflow-hidden relative">
-                                <img src="${r.image}" alt="${r.title}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply">
-                                <div class="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            </div>
-                        </a>
-                        <a href="../${r.url}" class="block mt-2 text-center py-2 border border-black bg-white hover:bg-black hover:text-brand-accent transition-colors font-anton text-sm tracking-wider">
-                            記事を見る >>
-                        </a>
-                    </div>
-                `).join('')}
-            </div>
-        </section>
-        `;
-}
-
-// 目次のHTMLを生成（H2のみ）
-function buildTocHtml(toc) {
-        if (!toc || toc.length === 0) return '';
-        return `
-        <nav aria-label="目次" class="mb-12 p-6 border border-gray-300 bg-brand-white relative">
+function renderMarkdown(markdown) {
+  const withoutTitle = markdown
+    .replace(/^\s*#\s+[^\r\n]+\r?\n+/, '')
+    .replace(/\s+id=["']article-body["']/gi, '');
+  let html = marked.parse(withoutTitle, { gfm: true, breaks: false });
+  const toc = [];
+  const used = new Set();
+  html = html.replace(/<h([23])(?:\s[^>]*)?>([\s\S]*?)<\/h\1>/g, (_, depth, inner) => {
+    const id = headingId(inner, used);
+    if (depth === '2') toc.push({ text: plainText(inner), id });
+    return `<h${depth} id="${escapeHtml(id)}">${inner}</h${depth}>`;
+  });
+  const tocHtml = toc.length ? `<nav aria-label="目次" class="mb-12 p-6 border border-gray-300 bg-brand-white relative">
             <div class="absolute -top-3 left-4 bg-brand-white px-2 font-anton text-xl tracking-wider">INDEX</div>
             <ul class="space-y-3 mt-2">
-                ${toc.map((item, index) => `
-                    <li class="flex items-baseline group">
-                        <span class="font-anton text-brand-accent mr-3 text-lg">0${index + 1}.</span>
-                        <a href="#${item.id}" class="font-sans font-bold text-sm border-b border-transparent hover:border-black transition-colors group-hover:text-brand-purple">
-                            ${item.text}
-                        </a>
-                    </li>
-                `).join('')}
+${toc.map((item, index) => `                <li class="flex items-baseline group">
+                    <span class="font-anton text-brand-accent mr-3 text-lg">${String(index + 1).padStart(2, '0')}.</span>
+                    <a href="#${escapeHtml(item.id)}" class="font-sans font-bold text-sm border-b border-transparent hover:border-brand-black transition-colors group-hover:text-brand-purple">${escapeHtml(item.text)}</a>
+                </li>`).join('\n')}
             </ul>
-        </nav>`;
+        </nav>\n` : '';
+  return { html: tocHtml + html, toc };
 }
 
-// 3. 各記事の最終HTMLを生成（関連記事を挿入）
-rawPosts.forEach(current => {
-        const related = getRelatedPosts(current, rawPosts);
-        const relatedHtml = buildRelatedHtml(related);
-    const tocHtml = buildTocHtml(current.toc);
-    
-    // カテゴリをURLパラメータ用にエンコード（実際のカテゴリ名をそのまま使用）
-    const categoryForUrl = encodeURIComponent(current.category || '');
-    const articleJsonLd = toJsonLd({
-        '@context': 'https://schema.org',
-        '@type': 'BlogPosting',
-        mainEntityOfPage: {
-            '@type': 'WebPage',
-            '@id': current.articleAbsoluteUrl
-        },
-        headline: current.title,
-        description: current.description,
-        image: [current.ogImage || current.imageAbsolute],
-        datePublished: current.datePublished,
-        dateModified: current.dateModified,
-        author: {
-            '@type': 'Person',
-            name: author.name,
-            url: author.url
-        },
-        publisher: {
-            '@type': 'Organization',
-            name: publisher.name,
-            url: publisher.url,
-            logo: {
-                '@type': 'ImageObject',
-                url: publisher.logo
-            }
-        },
-        articleSection: current.category,
-        keywords: current.tags.join(', '),
-        inLanguage: 'ja-JP'
-    });
-    const breadcrumbJsonLd = toJsonLd({
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-            {
-                '@type': 'ListItem',
-                position: 1,
-                name: 'ホーム',
-                item: baseUrl
-            },
-            {
-                '@type': 'ListItem',
-                position: 2,
-                name: current.category,
-                item: `${baseUrl}index.html?category=${categoryForUrl}`
-            },
-            {
-                '@type': 'ListItem',
-                position: 3,
-                name: current.title,
-                item: current.articleAbsoluteUrl
-            }
-        ]
-    });
-
-    // テーブルを横スクロール可能にラップ（補助テキスト付き）
-    let contentWithScrollableTables = current.content.replace(
-        /<table\b[^>]*>/g,
-        match => `<div class="table-wrapper">${match}`
-    ).replace(
-        /<\/table>/g,
-        '</table><div class="table-scroll-hint">スクロールして全体を表示</div></div>'
-    );
-
-    let finalHtml = articleTemplate
-                .replace(/{{title}}/g, current.title)
-                .replace(/{{date}}/g, current.date)
-                .replace(/{{datePublished}}/g, current.datePublished)
-                .replace(/{{dateModified}}/g, current.dateModified)
-                .replace(/{{dateModifiedLabel}}/g, current.dateModifiedLabel)
-                .replace(/{{category}}/g, current.category)
-                .replace(/{{category_slug}}/g, categoryForUrl)
-                .replace(/{{description}}/g, current.description)
-                .replace(/{{image}}/g, current.image)
-        .replace(/{{ogImage}}/g, current.ogImage || current.imageAbsolute)
-                .replace(/{{url}}/g, current.articleAbsoluteUrl)
-                .replace(/{{alt_title}}/g, current.title)
-                .replace(/{{categoryColor}}/g, current.categoryColor)
-                .replace(/{{articleJsonLd}}/g, articleJsonLd)
-                .replace(/{{breadcrumbJsonLd}}/g, breadcrumbJsonLd)
-                .replace(/<!-- Tags will be displayed here -->/g, current.tagsHtml)
-            .replace(/<!-- TOC will be displayed here -->/g, tocHtml)
-            .replace(/{{content}}/g, contentWithScrollableTables)
-                .replace(/<!-- Related posts will be displayed here -->/g, relatedHtml);
-
-        fs.writeFileSync(current.articleHtmlFilePath, finalHtml);
-});
-
-// posts.jsonファイルに書き出す（公開メタ + 更新日時）
-const finalPosts = rawPosts.map(({ mtime, articleHtmlFilePath, articleAbsoluteUrl, tagsHtml, content, ...rest }) => ({
-    ...rest,
-    updatedAt: new Date(mtime).toISOString()
-}));
-fs.writeFileSync(postsJsonPath, JSON.stringify(finalPosts, null, 4));
-
-console.log(`Successfully generated posts.json with ${finalPosts.length} articles.`);
-console.log(`Successfully generated ${finalPosts.length} HTML articles in ${articlesHtmlDir}.`);
-
-// 4. サイトマップ(sitemap.xml)を生成
-const sitemapContent = `
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>${baseUrl}</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}index.html</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-    <url>
-        <loc>${baseUrl}contact.html</loc>
-        <lastmod>${new Date().toISOString()}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.4</priority>
-    </url>
-${rawPosts.map(post => `
-  <url>
-    <loc>${baseUrl}${post.url}</loc>
-    <lastmod>${new Date(post.mtime).toISOString()}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-`).join('')}
-</urlset>
-`.trim();
-
-fs.writeFileSync(sitemapPath, sitemapContent);
-// Also write an uppercase variant to cover tooling or registration that used a different case
-try {
-    fs.writeFileSync(sitemapPathUpper, sitemapContent);
-    console.log('Also wrote Sitemap.xml (uppercase) for compatibility.');
-} catch (e) {
-    // Non-fatal: log and continue
-    console.warn('Failed to write uppercase Sitemap.xml (this is non-fatal):', e && e.message);
+function isoPublished(date) {
+  const parsed = new Date(`${date}T00:00:00+09:00`);
+  if (Number.isNaN(parsed.getTime())) throw new Error(`不正な日付: ${date}`);
+  return parsed.toISOString();
 }
 
-console.log('Successfully generated sitemap.xml');
+function replaceTemplate(template, values) {
+  return template.replace(/\{\{([A-Za-z0-9_]+)\}\}/g, (whole, key) => {
+    if (!(key in values)) throw new Error(`テンプレート値がありません: ${key}`);
+    return values[key];
+  });
+}
 
-})().catch(err => {
-    console.error('Fatal error in generate-posts.js:', err);
-    process.exit(1);
-});
+function jsonLd(post) {
+  const article = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.description,
+    image: [post.ogImage],
+    datePublished: post.datePublished,
+    dateModified: post.dateModified,
+    author: { '@type': 'Person', name: 'ポイ活Pay太郎', url: `${SITE_URL}/about.html` },
+    publisher: { '@type': 'Organization', name: 'ポイ活Pay太郎', url: `${SITE_URL}/` },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/${post.url}` },
+    articleSection: post.category,
+    keywords: post.tags.join(', ')
+  };
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'ホーム', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: post.category, item: `${SITE_URL}/?category=${encodeURIComponent(post.category)}` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `${SITE_URL}/${post.url}` }
+    ]
+  };
+  return { article: JSON.stringify(article), breadcrumb: JSON.stringify(breadcrumb) };
+}
+
+function main() {
+  const template = fs.readFileSync(TEMPLATE_PATH, 'utf8');
+  const previous = fs.existsSync(POSTS_PATH) ? JSON.parse(fs.readFileSync(POSTS_PATH, 'utf8')) : [];
+  const previousBySlug = new Map(previous.map(post => [post.slug, post]));
+  const generated = [];
+  const errors = [];
+
+  for (const filename of fs.readdirSync(ARTICLES_DIR).filter(name => name.endsWith('.md')).sort()) {
+    try {
+      const slug = path.basename(filename, '.md');
+      const fullPath = path.join(ARTICLES_DIR, filename);
+      const { data, body } = parseFrontmatter(fs.readFileSync(fullPath, 'utf8'), filename);
+      const old = previousBySlug.get(slug);
+      for (const key of ['title', 'date', 'category', 'description', 'categoryColor']) {
+        if (!data[key] && old?.[key]) data[key] = old[key];
+      }
+      if ((!Array.isArray(data.tags) || data.tags.length === 0) && Array.isArray(old?.tags)) data.tags = old.tags;
+      for (const required of ['title', 'date', 'category', 'description']) {
+        if (!data[required]) throw new Error(`${filename}: ${required} がありません`);
+      }
+      const rendered = renderMarkdown(body);
+      const stat = fs.statSync(fullPath);
+      const datePublished = old?.datePublished || isoPublished(data.date);
+      const dateModified = old?.dateModified || stat.mtime.toISOString();
+      const thumbnail = `../thumbnails/${slug}.png`;
+      const absoluteThumbnail = `${SITE_URL}/thumbnails/${encodeURIComponent(slug)}.png`;
+      const post = {
+        slug,
+        url: `articles_html/${slug}.html`,
+        title: String(data.title),
+        date: String(data.date),
+        datePublished,
+        dateModified,
+        dateModifiedLabel: dateModified.slice(0, 10),
+        category: String(data.category),
+        categoryColor: String(data.categoryColor || '#2F6FB3'),
+        image: thumbnail,
+        imageAbsolute: absoluteThumbnail,
+        ogImage: absoluteThumbnail,
+        description: String(data.description),
+        tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
+        toc: rendered.toc,
+        updatedAt: dateModified
+      };
+      const ld = jsonLd(post);
+      const html = replaceTemplate(template, {
+        title: escapeHtml(post.title), alt_title: escapeHtml(post.title),
+        description: escapeHtml(post.description), category: escapeHtml(post.category),
+        categoryColor: escapeHtml(post.categoryColor), date: escapeHtml(post.date),
+        datePublished: escapeHtml(post.datePublished), dateModified: escapeHtml(post.dateModified),
+        dateModifiedLabel: escapeHtml(post.dateModifiedLabel), image: escapeHtml(post.image),
+        ogImage: escapeHtml(post.ogImage), url: escapeHtml(`${SITE_URL}/${post.url}`),
+        articleJsonLd: ld.article.replace(/</g, '\\u003c'),
+        breadcrumbJsonLd: ld.breadcrumb.replace(/</g, '\\u003c'), content: rendered.html
+      });
+      const thumbPath = path.join(ROOT, 'thumbnails', `${slug}.png`);
+      if (!fs.existsSync(thumbPath)) throw new Error(`${filename}: サムネイルがありません (${thumbPath})`);
+      generated.push({ post, html, filename });
+    } catch (error) { errors.push(error.message); }
+  }
+
+  if (errors.length) {
+    console.error(errors.join('\n'));
+    process.exitCode = 1;
+    return;
+  }
+
+  const previousOrder = new Map(previous.map((post, index) => [post.slug, index]));
+  generated.sort((a, b) => b.post.date.localeCompare(a.post.date) ||
+    (previousOrder.get(a.post.slug) ?? 9999) - (previousOrder.get(b.post.slug) ?? 9999) ||
+    a.post.slug.localeCompare(b.post.slug));
+
+  if (!CHECK_ONLY) {
+    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+    for (const item of generated) fs.writeFileSync(path.join(OUTPUT_DIR, `${item.post.slug}.html`), item.html);
+    fs.writeFileSync(POSTS_PATH, `${JSON.stringify(generated.map(item => item.post), null, 2)}\n`);
+  }
+  console.log(`${generated.length} 記事を${CHECK_ONLY ? '検査' : '生成'}しました。`);
+}
+
+main();

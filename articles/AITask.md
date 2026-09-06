@@ -19,7 +19,7 @@ tags: ["2026", "最新", "ポイ活", "AI", "データラベリング", "副業"
 </ul>
 </nav>
 
-<div id="article-body" class="text-[#0a0a0a] font-sans">
+<div class="text-[#0a0a0a] font-sans">
 
 <p class="text-base leading-loose mb-6 text-justify">
 <span class="float-left font-anton text-[4.5rem] leading-[4rem] pr-4 pt-1 text-[#0a0a0a]">「</span>ポイ活のアンケート、設問が長いわりに3円しかもらえなくて心が折れた…」
@@ -190,15 +190,15 @@ AI開発データ提供の世界的トップ企業。これまでPCのブラウ�
 
 <ul class="list-none pl-0 space-y-3 mb-6">
 <li class="relative pl-8 text-sm font-bold text-[#0a0a0a]">
-<span class="absolute left-0 top-0 text-[#0055FF] font-black text-lg">✓</span> 
+<span class="absolute left-0 top-0 text-[#0055FF] font-black text-lg">✓</span>
 アンケートより圧倒的に高単価。スマホ単体で<strong>時給1,500円以上</strong>も狙える。
 </li>
 <li class="relative pl-8 text-sm font-bold text-[#0a0a0a]">
-<span class="absolute left-0 top-0 text-[#0055FF] font-black text-lg">✓</span> 
+<span class="absolute left-0 top-0 text-[#0055FF] font-black text-lg">✓</span>
 日本人ネイティブの直感が必要なため、<strong>あなたの日常的な感覚がお金になる</strong>。
 </li>
 <li class="relative pl-8 text-sm font-bold text-[#0a0a0a]">
-<span class="absolute left-0 top-0 text-[#0055FF] font-black text-lg">✓</span> 
+<span class="absolute left-0 top-0 text-[#0055FF] font-black text-lg">✓</span>
 まずは<strong>「Toloka日本版」</strong>や<strong>「Yahoo!クラウドソーシング」</strong>から始めるのがおすすめ！
 </li>
 </ul>

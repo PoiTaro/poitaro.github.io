@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "main": "generate-posts.js",
   "scripts": {
-    "build": "node scripts/generate-thumbnails.js && node generate-posts.js",
+    "build": "node scripts/generate-thumbnails.js && node generate-posts.js && node scripts/generate-sitemap.js && node scripts/validate-html.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate": "node generate-posts.js",
     "thumbnails": "node scripts/generate-thumbnails.js",
-    "validate:html": "node scripts/validate-html.js"
+    "sitemap": "node scripts/generate-sitemap.js",
+    "validate:html": "node scripts/validate-html.js",
+    "smoke": "node scripts/smoke-test.js",
+    "prepare:release": "node scripts/validate-html.js && node scripts/prepare-release.js && node scripts/validate-html.js release-candidate"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +18,6 @@
   "description": "",
   "dependencies": {
     "marked": "^16.4.1",
-    "puppeteer": "^23.0.0"
+    "puppeteer": "^25.10.0"
   }
 }

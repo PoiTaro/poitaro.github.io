@@ -5,16 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>あなたにピッタリのポイ活は？！ | ポイ活Pay太郎</title>
-    <link rel="icon" href="https://poitaro.com/blog/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="https://poitaro.com/blog/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="https://poitaro.com/blog/favicon.ico">
-    <link rel="icon" sizes="192x192" href="https://poitaro.com/blog/favicon.ico">
-    <meta name="msapplication-TileImage" content="https://poitaro.com/blog/favicon.ico">
+    <meta name="description" content="質問に答えて、自分に合うポイ活の始め方を見つける診断ページです。">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://poitaro.com/shindan.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="あなたにピッタリのポイ活は？！ | ポイ活Pay太郎">
+    <meta property="og:description" content="質問に答えて、自分に合うポイ活の始め方を見つけましょう。">
+    <meta property="og:url" content="https://poitaro.com/shindan.html">
+    <meta property="og:site_name" content="ポイ活Pay太郎">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:image" content="https://poitaro.com/thumbnails/og-image-editorial-v1.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ポイ活Pay太郎 — 知りたいことを、わかりやすく。">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="あなたにピッタリのポイ活は？！ | ポイ活Pay太郎">
+    <meta name="twitter:description" content="質問に答えて、自分に合うポイ活の始め方を見つけましょう。">
+    <meta name="twitter:image" content="https://poitaro.com/thumbnails/og-image-editorial-v1.png">
+    <meta name="twitter:image:alt" content="ポイ活Pay太郎 — 知りたいことを、わかりやすく。">
+    <link rel="icon" href="images/favicon-editorial-book-32-v1.png" type="image/png" sizes="32x32">
+    <link rel="shortcut icon" href="images/favicon-editorial-book-32-v1.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-editorial-book-180-v1.png" sizes="180x180">
+    <link rel="icon" href="images/favicon-editorial-book-192-v1.png" type="image/png" sizes="192x192">
+    <meta name="msapplication-TileImage" content="images/favicon-editorial-book-192-v1.png">
     <meta name="msapplication-TileColor" content="#ffffff">
-    
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
      crossorigin="anonymous"></script>
-    
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJJCP2Q6SC"></script>
     <script>
@@ -26,12 +45,12 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts - Fashion Magazine Style -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
-    
+
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -43,11 +62,11 @@
                         'sans': ['Noto Sans JP', 'sans-serif'],
                     },
                     colors: {
-                        'brand-black': '#0a0a0a',
-                        'brand-white': '#f8f8f8',
-                        'brand-accent': '#ccff00',
-                        'brand-purple': '#b4a0ff',
-                        'brand-gray': '#e5e5e5',
+                        'brand-black': '#1F2937',
+                        'brand-white': '#FAFAF8',
+                        'brand-accent': '#67B7E1',
+                        'brand-purple': '#2F6FB3',
+                        'brand-gray': '#E5E7EB',
                     }
                 }
             }
@@ -65,40 +84,37 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; visibility: hidden; } }
         @keyframes slideInUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        
+
         .loader {
             border: 4px solid #f3f3f3;
-            border-top: 4px solid #ccff00;
+            border-top: 4px solid #67B7E1;
             border-radius: 50%;
             width: 40px;
             height: 40px;
             animation: spin 1s linear infinite;
         }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        
+
         .result-card-item {
-            border: 2px solid #0a0a0a;
+            border: 2px solid #1F2937;
             background: white;
             transition: all 0.3s ease;
         }
         .result-card-item:hover {
-            border-color: #ccff00;
+            border-color: #67B7E1;
             box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
             transform: translate(-2px, -2px);
         }
     </style>
+    <link rel="manifest" href="site.webmanifest">
 </head>
 <body class="bg-brand-white text-brand-black font-sans antialiased">
     <!-- ===== ヘッダー ===== -->
-    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-brand-white/95 backdrop-blur-md border-b-2 border-black transition-all duration-500">
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-brand-white/95 backdrop-blur-md border-b-2 border-brand-black transition-all duration-500">
         <div class="container mx-auto px-6 lg:px-12 py-5 flex justify-between items-center">
             <!-- ロゴ -->
-            <a href="index.html" class="flex items-center space-x-3 main-logo group">
-                <img src="https://poitaro.com/blog/favicon.ico" alt="ポイ活Pay太郎" class="w-10 h-10 rounded-full">
-                <div class="flex flex-col">
-                    <span class="text-xl font-sans font-black tracking-tight">ポイ活Pay太郎</span>
-                    <span class="text-[10px] text-gray-500 tracking-widest uppercase font-anton">SMART SAVINGS</span>
-                </div>
+            <a href="index.html" class="main-logo" aria-label="ポイ活Pay太郎・トップページへ戻る">
+                <img src="images/header-title-nav-v1.webp" alt="ポイ活Pay太郎" width="900" height="160" class="h-8 md:h-9 w-auto max-w-[68vw] object-contain">
             </a>
 
             <!-- ナビゲーション (デスクトップ) -->
@@ -110,7 +126,7 @@
 
             <div class="flex items-center space-x-3">
                 <!-- モバイルメニューボタン -->
-                <button id="mobile-menu-button" class="md:hidden w-10 h-10 flex items-center justify-center border-2 border-black hover:bg-black hover:text-white transition-colors">
+                <button id="mobile-menu-button" class="md:hidden w-10 h-10 flex items-center justify-center border-2 border-brand-black hover:bg-brand-black hover:text-white transition-colors">
                     <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
@@ -119,7 +135,7 @@
         </div>
 
         <!-- モバイルメニュー -->
-        <div id="mobile-menu" class="hidden md:hidden border-t-2 border-black">
+        <div id="mobile-menu" class="hidden md:hidden border-t-2 border-brand-black">
             <nav class="px-6 py-6 space-y-4 bg-white">
                 <a href="index.html" class="block text-base font-medium hover:text-brand-purple">Home</a>
                 <a href="index.html#blog" class="block text-base font-medium hover:text-brand-purple">Articles</a>
@@ -133,7 +149,7 @@
 
         <!-- Start Screen -->
         <div id="start-screen" class="w-full text-center space-y-8 fade-in">
-            <div class="rounded-2xl border-2 border-black p-8 md:p-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-white">
+            <div class="rounded-2xl border-2 border-brand-black p-8 md:p-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-white">
                 <svg class="mx-auto h-16 w-16 text-brand-500 dark:text-brand-400 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" /></svg>
                 <h1 class="text-3xl md:text-4xl font-display font-bold text-neutral-900 dark:text-white mb-4 tracking-tight">ポイ活診断</h1>
                 <p class="text-neutral-600 dark:text-neutral-400 mb-8 max-w-md mx-auto">あなたの回答傾向を分析し、質問を最適化。15の質問で、あなたのための最高のポイ活を見つけます。</p>
@@ -157,7 +173,7 @@
                 <div id="answers-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
             </div>
         </div>
-        
+
         <!-- Loading Screen -->
         <div id="loading-screen" class="w-full hidden text-center p-8">
             <div class="glass-card rounded-2xl shadow-xl p-12 inline-flex flex-col items-center justify-center border border-neutral-200/50 dark:border-neutral-700/50">
@@ -174,10 +190,10 @@
                 <h2 id="result-title" class="text-2xl md:text-3xl font-display font-bold text-neutral-900 dark:text-white my-3"></h2>
                 <div id="result-icon" class="w-20 h-20 mx-auto my-6 bg-gradient-to-br from-brand-400 to-brand-600 dark:from-brand-300 dark:to-brand-500 text-white rounded-full flex items-center justify-center shadow-lg"></div>
                 <p id="result-description" class="text-neutral-600 dark:text-neutral-400 mb-8 text-left bg-brand-50/50 dark:bg-brand-900/20 p-4 rounded-lg border border-brand-200 dark:border-brand-800"></p>
-                
+
                 <h3 class="font-bold text-neutral-900 dark:text-white text-xl mb-4">👑 あなたへのおすすめポイ活 👑</h3>
                 <div id="recommendations" class="space-y-6"></div>
-                
+
                 <button id="restart-btn" class="mt-8 w-full sm:w-auto bg-neutral-600 hover:bg-neutral-700 dark:bg-neutral-700 dark:hover:bg-neutral-600 text-white font-bold py-3 px-12 rounded-full transition-all transform hover:scale-105 duration-300">
                     もう一度診断する
                 </button>
@@ -246,7 +262,7 @@
             { id: 'q29', text: "美容やコスメに興味がある？", tags: ['ショッピング'], answers: [ { text: "とても興味があり、よく買う", points: { ショッピング: 3 } }, { text: "人並みに興味がある", points: { ショッピング: 1 } }, { text: "あまり興味はない", points: { アクティブ: 1 } }, { text: "全く興味はない", points: { コツコツ: 1, ガッツリ: 1 } } ] },
             { id: 'q30', text: "食事の記録をつけるのは苦にならない？", tags: ['コツコツ', 'アクティブ'], answers: [ { text: "全く苦にならない", points: { コツコツ: 2, アクティブ: 2 } }, { text: "たまにならできる", points: { コツコツ: 1 } }, { text: "面倒だと感じる", points: { ショッピング: 1 } }, { text: "絶対にやりたくない", points: { ガッツリ: 1 } } ] },
         ];
-        
+
         // --- Result Data ---
         const resultData = {
             コツコツ: { title: "【ゲーム感覚のデイリー型】", icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>`, description: "あなたは毎日の小さな努力をゲーム感覚で積み重ねるのが得意な「デイリー型」。アンケート回答やレシート撮影、ミニゲームなどで着実にポイントを貯めるスタイルがピッタリ！日々の生活の中で、無理なく楽しくポイ活を続けられます。", sites: [{name: "マクロミル", html: `<div class="p-4 rounded-lg result-card-item"><h3 class="font-bold text-lg text-neutral-900 dark:text-white">マクロミル</h3><p class="text-sm text-neutral-500 dark:text-neutral-400 my-2">アンケートモニターの最大手。スキマ時間にアンケートに答えるだけで、着実にポイントが貯まります。</p><div class="flex justify-center mt-3"><a href="https://px.a8.net/svt/ejp?a8mat=45IJ0Z+1I6J56+2WL0+CPE1T" rel="nofollow"><img border="0" width="300" height="250" alt="" src="https://www27.a8.net/svt/bgt?aid=251127251091&wid=004&eno=01&mid=s00000013554002134000&mc=1"></a><img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=45IJ0Z+1I6J56+2WL0+CPE1T" alt=""></div></div>`}, {name: "ちょびリッチ", html: `<div class="p-4 rounded-lg result-card-item"><h3 class="font-bold text-lg text-neutral-900 dark:text-white">ちょびリッチ</h3><p class="text-sm text-neutral-500 dark:text-neutral-400 my-2">運営20年以上の実績！お買い物、ゲーム、アンケートなど、自分に合った方法で安心してポイ活ができます。</p><div class="flex justify-center mt-3"><a href="https://px.a8.net/svt/ejp?a8mat=45IJ0Z+M14H6+389A+674EP" rel="nofollow"><img border="0" width="300" height="250" alt="" src="https://www21.a8.net/svt/bgt?aid=251127251037&wid=004&eno=01&mid=s00000015067001041000&mc=1"></a><img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=45IJ0Z+M14H6+389A+674EP" alt=""></div></div>`}] },
@@ -283,12 +299,12 @@
 
                 // Prioritize questions tagged with both top categories
                 let potentialQuestions = unaskedQuestions.filter(q => q.tags.includes(topCategory) && q.tags.includes(secondCategory));
-                
+
                 // Fallback: questions tagged with the top category
                 if (potentialQuestions.length === 0) {
                     potentialQuestions = unaskedQuestions.filter(q => q.tags.includes(topCategory));
                 }
-                
+
                 // Fallback: any unasked question
                 if (potentialQuestions.length === 0) {
                     potentialQuestions = unaskedQuestions;
@@ -333,13 +349,13 @@
                 transitionToLoading();
             }
         }
-        
+
         function updateProgress() {
             const progress = (questionsAskedCount / TOTAL_QUESTIONS_TO_ASK) * 100;
             progressBar.style.width = `${progress}%`;
             progressText.innerText = `質問 ${questionsAskedCount + 1} / ${TOTAL_QUESTIONS_TO_ASK}`;
         }
-        
+
         function transitionToLoading() {
              questionScreen.classList.add('fade-out');
             setTimeout(() => {
@@ -349,12 +365,12 @@
                 setTimeout(showResult, 2000); // Simulate analysis
             }, 600);
         }
-        
+
         function showResult() {
             loadingScreen.classList.add('fade-out');
              setTimeout(() => {
                 loadingScreen.classList.add('hidden');
-                
+
                 // Determine result with tie-breaking
                 const typeOrder = ['ガッツリ', 'ショッピング', 'アクティブ', 'コツコツ'];
                 let maxScore = -1;
@@ -377,7 +393,7 @@
                     div.innerHTML = site.html;
                     recommendations.appendChild(div);
                 });
-                
+
                 resultScreen.classList.remove('hidden');
                 resultScreen.classList.add('fade-in');
                 window.scrollTo(0, 0);
@@ -390,7 +406,7 @@
                 resultScreen.classList.add('hidden');
                 startScreen.classList.remove('hidden', 'fade-out');
                 startScreen.classList.add('fade-in');
-                
+
                 // Reset state
                 questionsAskedCount = 0;
                 askedQuestionIds.clear();
@@ -446,10 +462,11 @@
             mobileMenu.classList.toggle('hidden');
         });
     </script>
-    
+
 <!-- GAS Analytics Tracking Code -->
 <script>
 (function() {
+  if (!/^(?:www\.)?poitaro\.com$/i.test(location.hostname)) return;
   var endpoint = "https://script.google.com/macros/s/AKfycbz3RkdSq3AEGJy_VyxG8XespXWGoRI4Gd488JTg1a3CFn2pbO3wN-Gl5O96bjQJqAgPkg/exec";
   var data = {
     type: "pv",

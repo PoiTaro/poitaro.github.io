@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta name="google-adsense-account" content="ca-pub-2213699949048480">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LM Studioの使い方｜WindowsでローカルLLMを始める手順【2026年版】 | ポイ活Pay太郎</title>
+    <meta name="description" content="LM StudioをWindowsへインストールし、モデルの検索・ダウンロード・読み込み・日本語チャットを始める手順を2026年版の公式情報に基づいて解説します。">
+    <meta name="keywords" content="AI・テクノロジー,ポイ活,節約,お得情報">
+    <meta name="author" content="ポイ活Pay太郎">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://poitaro.com/articles_html/lm-studio-windows-how-to-use-2026.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="LM Studioの使い方｜WindowsでローカルLLMを始める手順【2026年版】">
+    <meta property="og:description" content="LM StudioをWindowsへインストールし、モデルの検索・ダウンロード・読み込み・日本語チャットを始める手順を2026年版の公式情報に基づいて解説します。">
+    <meta property="og:image" content="https://poitaro.com/thumbnails/lm-studio-windows-how-to-use-2026.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="LM Studioの使い方｜WindowsでローカルLLMを始める手順【2026年版】">
+    <meta property="og:url" content="https://poitaro.com/articles_html/lm-studio-windows-how-to-use-2026.html">
+    <meta property="og:site_name" content="ポイ活Pay太郎">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="article:published_time" content="2026-09-01T15:00:00.000Z">
+    <meta property="article:modified_time" content="2026-09-04T04:02:12.120Z">
+    <meta property="article:section" content="AI・テクノロジー">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LM Studioの使い方｜WindowsでローカルLLMを始める手順【2026年版】">
+    <meta name="twitter:description" content="LM StudioをWindowsへインストールし、モデルの検索・ダウンロード・読み込み・日本語チャットを始める手順を2026年版の公式情報に基づいて解説します。">
+    <meta name="twitter:image" content="https://poitaro.com/thumbnails/lm-studio-windows-how-to-use-2026.png">
+    <meta name="twitter:image:alt" content="LM Studioの使い方｜WindowsでローカルLLMを始める手順【2026年版】">
+
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"LM Studioの使い方｜WindowsでローカルLLMを始める手順【2026年版】","description":"LM StudioをWindowsへインストールし、モデルの検索・ダウンロード・読み込み・日本語チャットを始める手順を2026年版の公式情報に基づいて解説します。","image":["https://poitaro.com/thumbnails/lm-studio-windows-how-to-use-2026.png"],"datePublished":"2026-09-01T15:00:00.000Z","dateModified":"2026-09-04T04:02:12.120Z","author":{"@type":"Person","name":"ポイ活Pay太郎","url":"https://poitaro.com/about.html"},"publisher":{"@type":"Organization","name":"ポイ活Pay太郎","url":"https://poitaro.com/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://poitaro.com/articles_html/lm-studio-windows-how-to-use-2026.html"},"articleSection":"AI・テクノロジー","keywords":"LM Studio, ローカルLLM, Windows, 使い方, GGUF, AI PC"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://poitaro.com/"},{"@type":"ListItem","position":2,"name":"AI・テクノロジー","item":"https://poitaro.com/?category=AI%E3%83%BB%E3%83%86%E3%82%AF%E3%83%8E%E3%83%AD%E3%82%B8%E3%83%BC"},{"@type":"ListItem","position":3,"name":"LM Studioの使い方｜WindowsでローカルLLMを始める手順【2026年版】","item":"https://poitaro.com/articles_html/lm-studio-windows-how-to-use-2026.html"}]}</script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon-editorial-book-32-v1.png" type="image/png" sizes="32x32">
+    <link rel="shortcut icon" href="../images/favicon-editorial-book-32-v1.png" type="image/png">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon-editorial-book-180-v1.png" sizes="180x180">
+    <link rel="icon" href="../images/favicon-editorial-book-192-v1.png" type="image/png" sizes="192x192">
+    <meta name="msapplication-TileImage" content="../images/favicon-editorial-book-192-v1.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#1F2937">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2213699949048480"
+     crossorigin="anonymous"></script>
+    <!-- GAS Analytics Tracking Code -->
+<script>
+(function() {
+  if (!/^(?:www\.)?poitaro\.com$/i.test(location.hostname)) return;
+  var endpoint = "https://script.google.com/macros/s/AKfycbz3RkdSq3AEGJy_VyxG8XespXWGoRI4Gd488JTg1a3CFn2pbO3wN-Gl5O96bjQJqAgPkg/exec";
+  var data = {
+    type: "pv",
+    slug: location.pathname.split("/").pop().replace(".html", "") || "home",
+    title: document.title,
+    referrer: document.referrer,
+    userAgent: navigator.userAgent,
+    timestamp: new Date().toISOString()
+  };
+  if(navigator.sendBeacon) {
+    navigator.sendBeacon(endpoint, JSON.stringify(data));
+  } else {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", endpoint);
+    xhr.send(JSON.stringify(data));
+  }
+})();
+</script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-black': '#1F2937',
+                        'brand-white': '#FAFAF8',
+                        'brand-accent': '#67B7E1', // Soft Sky Blue
+                        'brand-purple': '#2F6FB3', // Calm Blue
+                        'brand-gray': '#E5E7EB',
+                    },
+                    fontFamily: {
+                        'anton': ['Anton', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Noto Sans JP', 'sans-serif'],
+                    },
+                    spacing: {
+                        '128': '32rem',
+                    },
+                    animation: {
+                        'slide-down': 'slideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'slide-up': 'slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    },
+                    keyframes: {
+                        slideDown: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(0)' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(0)' },
+                            '100%': { transform: 'translateY(-100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Typography Utilities */
+        .text-stroke {
+            -webkit-text-stroke: 1px #1F2937;
+            color: transparent;
+        }
+        .text-stroke-white {
+            -webkit-text-stroke: 1px white;
+            color: transparent;
+        }
+
+        /* Smooth Fade Transition */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Drop Cap & Formatting */
+        .drop-cap::first-letter {
+            float: left;
+            font-family: 'Anton', sans-serif;
+            font-size: 4.5rem;
+            line-height: 4rem;
+            padding-right: 1rem;
+            padding-top: 0.2rem;
+            color: #1F2937;
+        }
+
+        /* Custom Spec Table */
+        .spec-container {
+            border: 2px solid #1F2937;
+            margin-bottom: 1.5rem;
+        }
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #E5E7EB;
+            padding: 0.75rem 1rem;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.875rem;
+            background-color: #fff;
+        }
+        .spec-row:last-child {
+            border-bottom: none;
+        }
+        .spec-label {
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #666;
+        }
+        .spec-value {
+            font-weight: 500;
+            text-align: right;
+        }
+        /* Table Wrapper for Horizontal Scroll */
+        #article-body .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            -webkit-overflow-scrolling: touch;
+            position: relative;
+            border: 1px solid #E5E7EB;
+            border-radius: 4px;
+        }
+        #article-body .table-scroll-hint {
+            font-size: 0.75rem;
+            color: #666;
+            text-align: right;
+            padding: 0.5rem 1rem;
+            background: #FAFAF8;
+            border-top: 1px solid #E5E7EB;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        #article-body .table-scroll-hint::before {
+            content: "→ ";
+        }
+
+        /* Standard Table Styling (Markdown Support) */
+        #article-body table {
+            min-width: 100%;
+            width: 100%;
+            border: 2px solid #1F2937;
+            border-collapse: collapse;
+            margin-bottom: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.875rem;
+            background-color: #fff;
+        }
+        #article-body th {
+            background-color: #1F2937;
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.75rem 1rem;
+            border-bottom: 2px solid #1F2937;
+            text-align: left;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 0.05em;
+            min-width: 100px;
+        }
+        #article-body td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #E5E7EB;
+            color: #1F2937;
+            min-width: 100px;
+        }
+        #article-body tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Custom Cursor for Menu Items */
+        .menu-link:hover::before {
+            content: ">>";
+            color: #67B7E1;
+            position: absolute;
+            left: -40px;
+        }
+
+        /* Markdown Content Styling */
+        #article-body h2 {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 900;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-top: 1rem;
+            border-top: 2px solid black;
+            display: flex;
+            align-items: center;
+        }
+        #article-body h2::before {
+            content: ">>";
+            color: #67B7E1;
+            margin-right: 0.5rem;
+            font-size: 2.5rem;
+            font-family: 'Anton', sans-serif;
+        }
+        #article-body h3 {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 900;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #2F6FB3;
+        }
+        #article-body p {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1rem;
+            line-height: 2;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        #article-body ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 2rem;
+            border-left: 3px solid #67B7E1;
+            padding-left: 1.5rem;
+            background: linear-gradient(to right, #67B7E108, transparent);
+        }
+        #article-body ol {
+            list-style-type: none;
+            counter-reset: item;
+            padding-left: 0;
+            margin-bottom: 2rem;
+            border-left: 3px solid #2F6FB3;
+            padding-left: 1.5rem;
+            background: linear-gradient(to right, #2F6FB308, transparent);
+        }
+        #article-body li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2rem;
+            line-height: 1.8;
+        }
+        #article-body ul > li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #67B7E1;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        #article-body ol > li {
+            counter-increment: item;
+        }
+        #article-body ol > li::before {
+            content: counter(item, decimal-leading-zero);
+            position: absolute;
+            left: 0;
+            color: #2F6FB3;
+            font-weight: bold;
+            font-family: 'Anton', sans-serif;
+            font-size: 0.9em;
+        }
+        #article-body a {
+            color: #2F6FB3;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s ease;
+        }
+        #article-body a:hover {
+            color: #1F2937;
+        }
+        #article-body blockquote {
+            border-left: 6px solid #1F2937;
+            background-color: #FAFAF8;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        #article-body blockquote::before {
+            content: """;
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            font-size: 4rem;
+            color: #67B7E1;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+        #article-body code {
+            background-color: #1F2937;
+            color: #67B7E1;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        #article-body pre {
+            background-color: #1F2937;
+            color: #FAFAF8;
+            padding: 1.5rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin-bottom: 2rem;
+            border: 2px solid #67B7E1;
+        }
+        #article-body pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        #article-body strong {
+            font-weight: 900;
+            color: #1F2937;
+            background: linear-gradient(to top, #67B7E140 40%, transparent 40%);
+            padding: 0 4px;
+        }
+        #article-body em {
+            font-style: italic;
+            color: #2F6FB3;
+            font-family: 'Playfair Display', serif;
+        }
+        #article-body img {
+            width: 100%;
+            height: auto;
+            margin: 2rem 0;
+            border: 1px solid #E5E7EB;
+        }
+        #article-body hr {
+            border: none;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #67B7E1, transparent);
+            margin: 3rem 0;
+        }
+
+        /* Mobile relaxed article layout */
+        .mobile-toc-toggle,
+        .article-meta-toggle {
+            display: none;
+        }
+        @media (max-width: 767px) {
+            html,
+            body,
+            .article-page-shell {
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+            #article-body {
+                width: 100%;
+                min-width: 0;
+                max-width: 100%;
+                padding-top: 2rem !important;
+                padding-inline: 0.5rem;
+                overflow-wrap: anywhere;
+            }
+            #article-body > div {
+                min-width: 0;
+                max-width: 100%;
+            }
+            #article-body .overflow-x-auto,
+            #article-body .table-wrapper {
+                display: block;
+                width: 100%;
+                min-width: 0;
+                max-width: 100%;
+                overflow-x: auto;
+            }
+            #article-body > header {
+                margin-bottom: 3rem !important;
+            }
+            #article-body > header h1 {
+                font-size: 1.7rem !important;
+                line-height: 1.48 !important;
+            }
+            #article-body > header > p {
+                margin-bottom: 0;
+                text-align: left;
+            }
+            #article-body > header > p:not(:first-child) {
+                margin-top: 1rem !important;
+                line-height: 1.9 !important;
+            }
+            .article-meta {
+                gap: 0.55rem 1rem !important;
+                margin-top: 1.25rem !important;
+                padding: 0.9rem 0 !important;
+                border-top: 1px solid rgba(31, 41, 55, 0.14);
+                border-bottom: 1px solid rgba(31, 41, 55, 0.14);
+            }
+            .article-meta-secondary {
+                display: none !important;
+                width: 100%;
+            }
+            .article-meta.meta-open .article-meta-secondary {
+                display: inline-flex !important;
+            }
+            .article-meta-toggle {
+                display: inline-flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 0.75rem;
+                margin-left: auto;
+                padding: 0.3rem 0;
+                color: #2F6FB3;
+                font-size: 0.75rem;
+                font-weight: 700;
+            }
+            .article-meta-toggle .toggle-symbol,
+            .mobile-toc-toggle .toggle-symbol {
+                display: inline-block;
+                transition: transform 0.2s ease;
+            }
+            .article-meta.meta-open .toggle-symbol,
+            .mobile-toc.toc-open .toggle-symbol {
+                transform: rotate(45deg);
+            }
+            .mobile-toc {
+                margin-bottom: 3.5rem !important;
+                padding: 0 !important;
+                overflow: hidden;
+                background: rgba(255, 255, 255, 0.72) !important;
+                border: 1px solid rgba(31, 41, 55, 0.28) !important;
+            }
+            .mobile-toc > .absolute {
+                display: none !important;
+            }
+            .mobile-toc > ul {
+                display: none;
+                margin: 0 !important;
+                padding: 0 1.1rem 1.25rem;
+            }
+            .mobile-toc.toc-open > ul {
+                display: block;
+            }
+            .mobile-toc-toggle {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1rem 1.1rem;
+                color: #1F2937;
+                text-align: left;
+                font-size: 0.8rem;
+                font-weight: 700;
+            }
+            .mobile-toc-toggle .toc-title {
+                font-size: 1rem;
+                font-weight: 900;
+            }
+            .mobile-toc-toggle .toc-count {
+                margin-right: 0.75rem;
+                color: #6B7280;
+                font-size: 0.7rem;
+                font-weight: 500;
+            }
+            #article-body h2 {
+                display: block;
+                margin-top: 4rem;
+                margin-bottom: 1.75rem;
+                padding-top: 1.25rem;
+                border-top: 1px solid rgba(47, 111, 179, 0.35);
+                font-size: 1.45rem;
+                font-weight: 800;
+                line-height: 1.55;
+            }
+            #article-body h2::before {
+                content: "";
+                display: block;
+                width: 2rem;
+                height: 4px;
+                margin: 0 0 0.85rem;
+                background: #67B7E1;
+            }
+            #article-body h3 {
+                margin-top: 3rem;
+                margin-bottom: 1.25rem;
+                font-size: 1.18rem;
+                font-weight: 800;
+                line-height: 1.65;
+            }
+            #article-body p {
+                margin-bottom: 1.9rem;
+                line-height: 1.95;
+                text-align: left;
+            }
+            #article-body strong {
+                padding: 0;
+                background: none;
+                font-weight: 700;
+            }
+            #article-body ul,
+            #article-body ol {
+                margin: 2.25rem 0 2.75rem;
+                padding: 1.1rem 1rem 1.1rem 1.25rem;
+                border-left-width: 2px;
+            }
+            #article-body li {
+                margin-bottom: 1.15rem;
+                padding-left: 1.75rem;
+                line-height: 1.9;
+            }
+            #article-body blockquote {
+                margin: 2.75rem 0;
+                padding: 1.35rem 1.25rem;
+                border-left-width: 3px;
+                font-size: 1rem;
+                line-height: 1.9;
+            }
+            #article-body img {
+                margin: 2.75rem 0;
+            }
+            #article-body hr {
+                margin: 4rem 0;
+            }
+        }
+
+        /* Article desktop reading width */
+        @media (min-width: 768px) {
+            .article-page-shell {
+                width: calc(100% - 64px);
+                max-width: 1200px;
+                margin-inline: auto;
+            }
+            .article-thumbnail-shell {
+                width: calc(100% - 96px);
+                max-width: 1160px;
+                margin-inline: auto;
+            }
+        }
+
+        /* Sidebar Styles */
+        #sidebar-toc-content a {
+            display: block;
+            font-size: 0.875rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #E5E7EB;
+            transition: all 0.2s;
+            color: #1F2937;
+        }
+        #sidebar-toc-content a:hover {
+            color: #2F6FB3;
+            padding-left: 0.5rem;
+        }
+        #sidebar-related-content a {
+            display: block;
+            font-size: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #E5E7EB;
+            transition: color 0.2s;
+            font-weight: 600;
+        }
+        #sidebar-related-content a:hover {
+            color: #2F6FB3;
+        }
+    </style>
+
+<script async src="https://fundingchoicesmessages.google.com/i/pub-2213699949048480?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+
+
+</head>
+<body class="bg-brand-white text-brand-black font-sans antialiased overflow-x-hidden selection:bg-brand-accent selection:text-brand-black">
+
+    <!-- Sticky Nav -->
+    <nav class="fixed top-0 w-full z-[80] flex justify-between items-center px-4 py-3 bg-brand-white/95 backdrop-blur-md border-b border-brand-black transition-colors duration-300" id="main-nav">
+        <a href="../index.html" class="z-[90] cursor-pointer" aria-label="ポイ活Pay太郎・トップページへ戻る"><img src="../images/header-title-nav-v1.webp" alt="ポイ活Pay太郎" width="900" height="160" class="h-8 md:h-9 w-auto max-w-[68vw] object-contain"></a>
+        <div class="flex items-center gap-4 z-[90]">
+            <span class="hidden md:inline font-bold text-xs tracking-widest text-brand-black" id="nav-issue">ISSUE 024</span>
+            <button type="button" onclick="toggleMenu()" aria-controls="menu-overlay" aria-expanded="false" aria-label="メニューを開く" class="p-2 border border-brand-black hover:bg-brand-black hover:text-white transition-colors rounded-full relative group bg-brand-white text-brand-black">
+                <i data-lucide="menu" class="w-5 h-5 transition-all duration-300 group-hover:rotate-90" id="menu-icon"></i>
+                <i data-lucide="x" class="w-5 h-5 absolute top-2 left-2 opacity-0 transition-all duration-300 rotate-90 scale-0" id="close-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- EDITORIAL MENU OVERLAY -->
+    <div id="menu-overlay" aria-hidden="true" class="fixed inset-0 z-[70] transform -translate-y-full overflow-y-auto bg-[#F4F9FC] text-brand-black transition-transform duration-500 ease-in-out hidden-menu">
+        <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+            <div class="absolute inset-y-0 right-0 w-1/2 opacity-70" style="background-image: radial-gradient(circle, rgba(47, 111, 179, 0.18) 1.4px, transparent 1.4px); background-size: 18px 18px;"></div>
+            <div class="absolute -left-24 top-24 h-64 w-64 rounded-full border-[36px] border-brand-accent/15"></div>
+            <div class="absolute -right-20 bottom-10 h-72 w-80 -rotate-12 bg-brand-accent/10"></div>
+        </div>
+
+        <div class="relative z-10 mx-auto grid min-h-full w-full max-w-6xl grid-cols-1 px-5 pb-8 pt-24 md:grid-cols-[0.92fr_1.08fr] md:grid-rows-[1fr_auto] md:gap-x-12 md:px-10 md:pb-7 md:pt-28">
+            <section class="flex flex-col justify-center md:border-r md:border-brand-black/20 md:pr-12">
+                <div class="flex items-center gap-4">
+                    <img src="../images/editorial-desk-mark-transparent-v1.webp" alt="" width="640" height="640" class="h-16 w-16 object-contain md:h-24 md:w-24">
+                    <div>
+                        <p class="font-serif text-[10px] italic text-gray-500 md:text-xs">Smart Living Editorial</p>
+                        <h2 class="mt-1 font-sans text-xl font-black leading-tight md:text-3xl">
+                            <span class="block">知りたいことを、</span>
+                            <span class="block text-brand-purple">わかりやすく。</span>
+                        </h2>
+                    </div>
+                </div>
+                <p class="mt-4 max-w-md text-xs font-medium leading-[1.9] text-gray-600 md:mt-6 md:text-sm">ポイ活・AI・テクノロジーを、暮らしに役立つ形で届ける情報メディアです。</p>
+
+                <div class="relative mt-5 md:mt-8">
+                    <input type="text" id="menu-search-input" placeholder="記事をキーワードで検索..." class="w-full border-2 border-brand-black bg-white/90 px-4 py-3.5 pl-12 font-sans text-sm outline-none transition-colors placeholder:text-gray-400 focus:border-brand-purple" onkeypress="if(event.key === 'Enter') { window.location.href = '../index.html?search=' + encodeURIComponent(this.value); }">
+                    <i data-lucide="search" class="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-brand-purple"></i>
+                    <button type="button" id="menu-clear-search" aria-label="検索語を消去" class="absolute right-4 top-1/2 hidden -translate-y-1/2 text-gray-400 transition-colors hover:text-brand-purple" onclick="document.getElementById('menu-search-input').value = ''; this.classList.add('hidden');">
+                        <i data-lucide="x-circle" class="h-5 w-5"></i>
+                    </button>
+                </div>
+
+                <nav class="mt-4 flex flex-wrap gap-2" aria-label="カテゴリーから探す">
+                    <a href="../index.html?category=AI・テクノロジー" class="border border-brand-black bg-white/80 px-3 py-2 text-[10px] font-bold transition-colors hover:bg-brand-purple hover:text-white">AI・テクノロジー</a>
+                    <a href="../index.html?category=ポイ活" class="border border-brand-black bg-white/80 px-3 py-2 text-[10px] font-bold transition-colors hover:bg-brand-purple hover:text-white">ポイ活</a>
+                    <a href="../index.html?category=ガジェット" class="border border-brand-black bg-white/80 px-3 py-2 text-[10px] font-bold transition-colors hover:bg-brand-purple hover:text-white">ガジェット</a>
+                </nav>
+            </section>
+
+            <nav class="mt-8 flex flex-col justify-center md:mt-0" aria-label="メインメニュー">
+                <div class="mb-3 flex items-center gap-3">
+                    <span class="font-anton text-xs tracking-[0.24em] text-brand-purple">MENU</span>
+                    <span class="h-px flex-1 bg-brand-black/20"></span>
+                </div>
+                <ul class="border-y-2 border-brand-black">
+                    <li class="border-b border-brand-black/20">
+                        <a href="../index.html" class="group grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-3 py-3.5 md:py-5">
+                            <span class="font-anton text-sm text-brand-accent">01</span><span><strong class="block text-lg font-black md:text-2xl">トップページ</strong><small class="font-serif text-[10px] italic text-gray-500">Index / Latest stories</small></span><span class="text-brand-purple transition-transform group-hover:translate-x-1">→</span>
+                        </a>
+                    </li>
+                    <li class="border-b border-brand-black/20">
+                        <a href="#" onclick="toggleMenu(); showAbout();" class="group grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-3 py-3.5 md:py-5">
+                            <span class="font-anton text-sm text-brand-accent">02</span><span><strong class="block text-lg font-black md:text-2xl">このサイトについて</strong><small class="font-serif text-[10px] italic text-gray-500">About / Concept</small></span><span class="text-brand-purple transition-transform group-hover:translate-x-1">→</span>
+                        </a>
+                    </li>
+                    <li class="border-b border-brand-black/20">
+                        <a href="../contact.html" class="group grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-3 py-3.5 md:py-5">
+                            <span class="font-anton text-sm text-brand-accent">03</span><span><strong class="block text-lg font-black md:text-2xl">お問い合わせ</strong><small class="font-serif text-[10px] italic text-gray-500">Contact / Get in touch</small></span><span class="text-brand-purple transition-transform group-hover:translate-x-1">→</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="policy.html" class="group grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-3 py-3.5 md:py-5">
+                            <span class="font-anton text-sm text-brand-accent">04</span><span><strong class="block text-lg font-black md:text-2xl">プライバシーポリシー</strong><small class="font-serif text-[10px] italic text-gray-500">Policy / Privacy</small></span><span class="text-brand-purple transition-transform group-hover:translate-x-1">→</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="mt-8 flex items-center justify-between border-t border-brand-black/20 pt-4 text-[10px] text-gray-500 md:col-span-2 md:mt-5">
+                <p>© 2024 ポイ活Pay太郎</p>
+                <p class="font-serif italic">Tokyo / Smart Living Editorial</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <main id="app" class="pt-16 pb-20 min-h-screen">
+
+        <!-- === DYNAMIC ARTICLE PAGE === -->
+        <div id="article-page" class="fade-in bg-brand-white min-h-screen relative">
+            <!-- Progress Bar (Mobile Only) -->
+            <div class="md:hidden fixed top-[53px] left-0 h-1.5 bg-brand-accent z-40 w-0" id="read-progress"></div>
+
+            <!-- Breadcrumbs -->
+            <nav class="article-page-shell mx-auto px-4 pt-6 pb-2" aria-label="パンくずリスト">
+                <ol class="flex items-center gap-2 text-sm font-sans flex-wrap">
+                    <li>
+                        <a href="../index.html" class="hover:text-brand-purple transition-colors flex items-center gap-1">
+                            <i data-lucide="home" class="w-4 h-4"></i>
+                            <span>ホーム</span>
+                        </a>
+                    </li>
+                    <li class="text-gray-400">/</li>
+                    <li>
+                        <a href="../index.html?category=AI・テクノロジー" class="hover:text-brand-purple transition-colors" style="color: gray;">AI・テクノロジー</a>
+                    </li>
+                    <li class="text-gray-400">/</li>
+                    <li class="text-gray-600 truncate max-w-[200px] md:max-w-md" title="LM Studioの使い方｜WindowsでローカルLLMを始める手順【2026年版】">LM Studioの使い方｜WindowsでローカルLLMを始める手順【2026年版】</li>
+                </ol>
+            </nav>
+
+            <!-- Header Image (Thumbnail Only) -->
+            <div class="w-full article-thumbnail-shell mx-auto mt-4 mb-8 px-4 md:px-0">
+                <img src="../thumbnails/lm-studio-windows-how-to-use-2026.png" alt="LM Studioの使い方｜WindowsでローカルLLMを始める手順【2026年版】" class="block w-full h-auto object-contain bg-white shadow-lg">
+            </div>
+
+            <!-- Article Content with Sidebar Layout -->
+            <div class="article-page-shell mx-auto px-4 md:flex md:gap-8 relative">
+
+                <!-- Main Article Content -->
+                <article id="article-body" class="w-full min-w-0 md:w-2/3 pt-10 pb-16">
+                    <header class="mb-10">
+                        <p class="font-anton text-sm tracking-wider text-brand-purple uppercase">AI・テクノロジー</p>
+                        <h1 class="font-sans text-2xl md:text-4xl font-black leading-tight tracking-tight mt-2">LM Studioの使い方｜WindowsでローカルLLMを始める手順【2026年版】</h1>
+                        <p class="mt-3 text-sm md:text-base leading-relaxed text-gray-700">LM StudioをWindowsへインストールし、モデルの検索・ダウンロード・読み込み・日本語チャットを始める手順を2026年版の公式情報に基づいて解説します。</p>
+                        <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-4 text-xs md:text-sm font-bold text-gray-600">
+                            <span><i data-lucide="calendar-days" class="w-3.5 h-3.5 inline mr-1"></i>公開 <time datetime="2026-09-01T15:00:00.000Z">2026-09-02</time></span>
+                            <span><i data-lucide="rotate-cw" class="w-3.5 h-3.5 inline mr-1"></i>更新 <time datetime="2026-09-04T04:02:12.120Z">2026-09-04</time></span>
+                            <a href="../about.html#author" class="hover:text-brand-purple transition-colors"><i data-lucide="user-round" class="w-3.5 h-3.5 inline mr-1"></i>執筆・編集: ポイ活Pay太郎</a>
+                            <a href="../about.html#editorial-policy" class="hover:text-brand-purple transition-colors"><i data-lucide="badge-check" class="w-3.5 h-3.5 inline mr-1"></i>編集・検証方針</a>
+                        </div>
+                    </header>
+                    <!-- TOC will be displayed here -->
+                    <nav aria-label="目次" class="mb-12 p-6 border border-gray-300 bg-brand-white relative">
+            <div class="absolute -top-3 left-4 bg-brand-white px-2 font-anton text-xl tracking-wider">INDEX</div>
+            <ul class="space-y-3 mt-2">
+                <li class="flex items-baseline group">
+                    <span class="font-anton text-brand-accent mr-3 text-lg">01.</span>
+                    <a href="#lmstudioを始める5ステップ" class="font-sans font-bold text-sm border-b border-transparent hover:border-brand-black transition-colors group-hover:text-brand-purple">LM Studioを始める5ステップ</a>
+                </li>
+                <li class="flex items-baseline group">
+                    <span class="font-anton text-brand-accent mr-3 text-lg">02.</span>
+                    <a href="#lmstudioとは何ができる" class="font-sans font-bold text-sm border-b border-transparent hover:border-brand-black transition-colors group-hover:text-brand-purple">LM Studioとは？何ができる？</a>
+                </li>
+                <li class="flex items-baseline group">
+                    <span class="font-anton text-brand-accent mr-3 text-lg">03.</span>
+                    <a href="#必要なpcとインストール前の準備" class="font-sans font-bold text-sm border-b border-transparent hover:border-brand-black transition-colors group-hover:text-brand-purple">必要なPCとインストール前の準備</a>
+                </li>
+                <li class="flex items-baseline group">
+                    <span class="font-anton text-brand-accent mr-3 text-lg">04.</span>
+                    <a href="#手順1lmstudioをwindowsへインストール" class="font-sans font-bold text-sm border-b border-transparent hover:border-brand-black transition-colors group-hover:text-brand-purple">手順1：LM StudioをWindowsへインストール</a>
+                </li>
+                <li class="flex items-baseline group">
+                    <span class="font-anton text-brand-accent mr-3 text-lg">05.</span>
+                    <a href="#手順2最初のモデルを検索ダウンロード" class="font-sans font-bold text-sm border-b border-transparent hover:border-brand-black transition-colors group-hover:text-brand-purple">手順2：最初のモデルを検索・ダウンロード</a>
+                </li>
+                <li class="flex items-baseline group">
+                    <span class="font-anton text-brand-accent mr-3 text-lg">06.</span>
+                    <a href="#手順3モデルをメモリへ読み込んで会話する" class="font-sans font-bold text-sm border-b border-transparent hover:border-brand-black transition-colors group-hover:text-brand-purple">手順3：モデルをメモリへ読み込んで会話する</a>
+                </li>
+                <li class="flex items-baseline group">
+                    <span class="font-anton text-brand-accent mr-3 text-lg">07.</span>
+                    <a href="#最初に覚えたい3つの設定" class="font-sans font-bold text-sm border-b border-transparent hover:border-brand-black transition-colors group-hover:text-brand-purple">最初に覚えたい3つの設定</a>
+                </li>
+                <li class="flex items-baseline group">
+                    <span class="font-anton text-brand-accent mr-3 text-lg">08.</span>
+                    <a href="#lmstudioは完全オフラインで使える" class="font-sans font-bold text-sm border-b border-transparent hover:border-brand-black transition-colors group-hover:text-brand-purple">LM Studioは完全オフラインで使える？</a>
+                </li>
+                <li class="flex items-baseline group">
+                    <span class="font-anton text-brand-accent mr-3 text-lg">09.</span>
+                    <a href="#モデルが動かない遅いときの確認項目" class="font-sans font-bold text-sm border-b border-transparent hover:border-brand-black transition-colors group-hover:text-brand-purple">モデルが動かない・遅いときの確認項目</a>
+                </li>
+                <li class="flex items-baseline group">
+                    <span class="font-anton text-brand-accent mr-3 text-lg">10.</span>
+                    <a href="#lmstudio用pcを買うならモデルから逆算する" class="font-sans font-bold text-sm border-b border-transparent hover:border-brand-black transition-colors group-hover:text-brand-purple">LM Studio用PCを買うなら、モデルから逆算する</a>
+                </li>
+                <li class="flex items-baseline group">
+                    <span class="font-anton text-brand-accent mr-3 text-lg">11.</span>
+                    <a href="#よくある質問" class="font-sans font-bold text-sm border-b border-transparent hover:border-brand-black transition-colors group-hover:text-brand-purple">よくある質問</a>
+                </li>
+                <li class="flex items-baseline group">
+                    <span class="font-anton text-brand-accent mr-3 text-lg">12.</span>
+                    <a href="#まとめ最初は小さなq4モデルで一周する" class="font-sans font-bold text-sm border-b border-transparent hover:border-brand-black transition-colors group-hover:text-brand-purple">まとめ：最初は小さなQ4モデルで一周する</a>
+                </li>
+                <li class="flex items-baseline group">
+                    <span class="font-anton text-brand-accent mr-3 text-lg">13.</span>
+                    <a href="#参考にした公式情報" class="font-sans font-bold text-sm border-b border-transparent hover:border-brand-black transition-colors group-hover:text-brand-purple">参考にした公式情報</a>
+                </li>
+            </ul>
+        </nav>
+<div class="text-[#0a0a0a] font-sans">
+
+<style>
+#article-body .a8-banner img:not([width="1"]) { max-width: 100%; height: auto; display: block; }
+#article-body .a8-banner { position: relative; }
+#article-body .a8-banner > img[width="1"][height="1"] {
+  position: absolute !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  min-width: 1px !important;
+  max-width: 1px !important;
+  min-height: 1px !important;
+  max-height: 1px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+}
+</style>
+
+<div class="mb-8 p-5 border-2 border-[#0a0a0a] bg-[#fffbe8] relative">
+<div class="absolute -top-4 left-5 bg-[#0a0a0a] text-[#ccff00] font-anton px-4 py-1 tracking-widest">PR</div>
+<p class="text-sm leading-relaxed mb-0 mt-2">本記事にはA8.netのアフィリエイト広告が含まれます。操作画面や機能名はアップデートで変わる場合があります。モデルごとの利用条件、出力内容、必要メモリは配布元と実行環境によって異なります。</p>
+</div>
+
+<div class="mb-10 border-l-[10px] border-[#ccff00] pl-6 py-2">
+<p class="font-anton text-sm tracking-[0.25em] text-[#6d55d8] mb-2">LOCAL LLM GUIDE / 03</p>
+<p class="text-xl md:text-2xl font-black leading-relaxed mb-3">ChatGPTのようなAIを、<br class="hidden md:block">自分のWindows PCだけで動かしてみたい。</p>
+<p class="text-base leading-loose mb-0"><strong class="bg-[#ccff00] px-1">LM Studio</strong>を使えば、対応モデルの検索、ダウンロード、読み込み、チャットまでを画面操作で進められます。本記事では、初めての人が迷いやすいモデルと量子化の選び方も含めて順番に解説します。</p>
+</div>
+
+<section id="quick-answer" class="mb-12">
+<div class="bg-[#0a0a0a] text-white p-7 md:p-10 border-4 border-[#0a0a0a] relative overflow-hidden">
+<div class="absolute -right-8 -top-12 font-anton text-[140px] leading-none text-[#ccff00] opacity-10">5</div>
+<p class="font-anton text-[#ccff00] tracking-[0.25em] mb-3">QUICK START</p>
+<h2 id="lmstudioを始める5ステップ">LM Studioを始める5ステップ</h2>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-3 mt-7">
+<div class="border border-gray-600 p-4 bg-[#171717]"><p class="font-anton text-3xl text-[#ccff00] mb-1">01</p><p class="text-sm font-bold mb-0">公式サイトから入手</p></div>
+<div class="border border-gray-600 p-4 bg-[#171717]"><p class="font-anton text-3xl text-[#ccff00] mb-1">02</p><p class="text-sm font-bold mb-0">インストール</p></div>
+<div class="border border-gray-600 p-4 bg-[#171717]"><p class="font-anton text-3xl text-[#ccff00] mb-1">03</p><p class="text-sm font-bold mb-0">モデルを取得</p></div>
+<div class="border border-gray-600 p-4 bg-[#171717]"><p class="font-anton text-3xl text-[#ccff00] mb-1">04</p><p class="text-sm font-bold mb-0">メモリへ読み込む</p></div>
+<div class="border border-gray-600 p-4 bg-[#171717]"><p class="font-anton text-3xl text-[#ccff00] mb-1">05</p><p class="text-sm font-bold mb-0">日本語で質問</p></div>
+</div>
+</div>
+</section>
+
+<nav aria-label="目次" class="my-10 p-8 border-4 border-[#0a0a0a] bg-white relative shadow-sm">
+<div class="absolute -top-5 left-6 bg-[#0a0a0a] text-[#ccff00] font-anton text-2xl px-6 py-1 tracking-widest">INDEX</div>
+<ul class="list-none pl-0 space-y-3 mt-2">
+<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#what-is" class="font-bold hover:text-[#6d55d8]">LM Studioでできること</a></li>
+<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#requirements" class="font-bold hover:text-[#6d55d8]">必要なPCと事前準備</a></li>
+<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#install" class="font-bold hover:text-[#6d55d8]">インストール手順</a></li>
+<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#download-model" class="font-bold hover:text-[#6d55d8]">モデルの探し方・選び方</a></li>
+<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#load-chat" class="font-bold hover:text-[#6d55d8]">モデルを読み込んで会話する</a></li>
+<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#settings" class="font-bold hover:text-[#6d55d8]">最初に覚えたい設定</a></li>
+<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#offline" class="font-bold hover:text-[#6d55d8]">オフラインで使える範囲</a></li>
+<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#trouble" class="font-bold hover:text-[#6d55d8]">動かないときの確認項目</a></li>
+<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#faq" class="font-bold hover:text-[#6d55d8]">よくある質問</a></li>
+</ul>
+</nav>
+
+<h2 id="lmstudioとは何ができる">LM Studioとは？何ができる？</h2>
+
+<p class="text-base leading-loose mb-6 text-justify">LM Studioは、PC上でLLMを検索・管理・実行できるデスクトップアプリです。Windows、macOS、Linuxに対応し、画面上のチャットだけでなく、文書との会話、ローカルサーバー、CLIなども利用できます。初心者は、まずデスクトップアプリのチャット機能から始めるのが分かりやすいでしょう。</p>
+
+<div class="grid md:grid-cols-2 gap-5 my-8">
+<div class="border-4 border-[#0a0a0a] p-6 bg-white"><p class="font-anton text-2xl mb-2">CHAT</p><p class="font-black mb-2">ローカルAIと会話</p><p class="text-sm leading-relaxed mb-0">文章作成、要約、翻訳、アイデア整理、コード補助などを、取得したモデルで試せます。</p></div>
+<div class="border-4 border-[#0a0a0a] p-6 bg-white"><p class="font-anton text-2xl mb-2">DOCUMENTS</p><p class="font-black mb-2">手元の文書へ質問</p><p class="text-sm leading-relaxed mb-0">文書をチャットへ添付し、内容について質問できます。処理をローカルで完結できます。</p></div>
+<div class="border-4 border-[#0a0a0a] p-6 bg-white"><p class="font-anton text-2xl mb-2">LOCAL SERVER</p><p class="font-black mb-2">他アプリから利用</p><p class="text-sm leading-relaxed mb-0">互換APIを使い、開発ツールや自作プログラムからローカルモデルを呼び出せます。</p></div>
+<div class="border-4 border-[#0a0a0a] p-6 bg-[#ccff00]"><p class="font-anton text-2xl mb-2">OFFLINE</p><p class="font-black mb-2">取得後は通信なしでも会話</p><p class="text-sm leading-relaxed mb-0">モデルと必要なランタイムを先に取得すれば、チャットなど主要機能をオフラインで使えます。</p></div>
+</div>
+
+<div class="p-6 border-2 border-[#6d55d8] bg-[#f4f0ff] my-8">
+<p class="font-black text-lg mb-2">「オープンソースモデル」とは限らない</p>
+<p class="text-sm leading-relaxed mb-0">取得できるモデルは、重みが公開されていてもライセンスや利用条件がそれぞれ異なります。商用利用、再配布、生成物の扱いはモデルカードとライセンスを確認してください。</p>
+</div>
+
+<h2 id="必要なpcとインストール前の準備">必要なPCとインストール前の準備</h2>
+
+<p class="text-base leading-loose mb-6 text-justify">LM Studio公式は、Windowsのx64・ARM64環境を含む複数のOSを案内しています。ただし、アプリが起動することと、大きなモデルを快適に動かせることは別です。必要性能は選ぶモデル規模と量子化によって大きく変わります。</p>
+
+<table class="w-full min-w-[720px] border-2 border-[#0a0a0a] border-collapse bg-white text-sm">
+<thead><tr class="bg-[#0a0a0a] text-white"><th class="p-4 text-left">確認項目</th><th class="p-4 text-left">最初の目安</th><th class="p-4 text-left">理由</th></tr></thead>
+<tbody>
+<tr><td class="p-4 border-b font-black bg-[#f8f8f8]">OS・CPU</td><td class="p-4 border-b">対応するWindows PC</td><td class="p-4 border-b">公式のシステム要件をインストール前に確認</td></tr>
+<tr><td class="p-4 border-b font-black bg-[#f8f8f8]">メモリ</td><td class="p-4 border-b bg-[#f7ffe0] font-bold">32GBあると始めやすい</td><td class="p-4 border-b">8B～14B級の量子化モデルとOSの余裕を確保しやすい</td></tr>
+<tr><td class="p-4 border-b font-black bg-[#f8f8f8]">空き容量</td><td class="p-4 border-b">数十GB以上</td><td class="p-4 border-b">モデルを複数試すとSSD容量を使う</td></tr>
+<tr><td class="p-4 font-black bg-[#f8f8f8]">GPU</td><td class="p-4">なくても動く場合あり</td><td class="p-4">対応GPUへ処理を移すと高速化できるが、CPU実行も可能</td></tr>
+</tbody>
+</table>
+
+<p class="text-xs text-gray-500 leading-relaxed mt-3 mb-8">※32GBはLM Studio自体の公式最低要件という意味ではなく、本サイトが小～中規模のモデルを試す人へ提示する実用上の目安です。</p>
+
+<div class="grid md:grid-cols-2 gap-5 my-8">
+<div class="border-2 border-[#0a0a0a] p-6 bg-[#fffbe8]"><p class="font-black mb-3">メモリ容量から確認する</p><p class="text-sm leading-relaxed mb-4">モデル、KVキャッシュ、OSを含めた32GB・64GB・128GBの考え方はこちら。</p><a href="https://poitaro.com/articles_html/local-llm-memory-32gb-64gb-128gb-2026.html" class="font-black border-b-2 border-[#0a0a0a]">メモリ容量ガイド →</a></div>
+<div class="border-2 border-[#0a0a0a] p-6 bg-[#f4f0ff]"><p class="font-black mb-3">Q4・Q5・Q8を確認する</p><p class="text-sm leading-relaxed mb-4">同じモデル名に複数のファイルが表示されたときの選び方はこちら。</p><a href="https://poitaro.com/articles_html/lm-studio-quantization-q4-q5-q8-2026.html" class="font-black border-b-2 border-[#0a0a0a]">量子化ガイド →</a></div>
+</div>
+
+<h2 id="手順1lmstudioをwindowsへインストール">手順1：LM StudioをWindowsへインストール</h2>
+
+<div class="my-8 space-y-0 border-4 border-[#0a0a0a]">
+<div class="grid grid-cols-[70px_1fr] border-b-2 border-[#0a0a0a]"><div class="bg-[#0a0a0a] text-[#ccff00] font-anton text-3xl p-5 flex items-center justify-center">01</div><div class="p-5 bg-white"><p class="font-black text-lg mb-1">公式ダウンロードページを開く</p><p class="text-sm leading-relaxed mb-2">検索広告や非公式配布サイトではなく、LM Studio公式サイトからWindows版を取得します。</p><a href="https://lmstudio.ai/download?os=win32" target="_blank" rel="noopener noreferrer" class="font-bold border-b border-[#6d55d8]">LM Studio公式ダウンロードページ</a></div></div>
+<div class="grid grid-cols-[70px_1fr] border-b-2 border-[#0a0a0a]"><div class="bg-[#ccff00] font-anton text-3xl p-5 flex items-center justify-center">02</div><div class="p-5 bg-[#f7ffe0]"><p class="font-black text-lg mb-1">Windows用インストーラーを実行</p><p class="text-sm leading-relaxed mb-0">ダウンロードしたファイルを開き、表示される案内に従ってインストールします。警告が出た場合は、入手元と署名を確認してください。</p></div></div>
+<div class="grid grid-cols-[70px_1fr]"><div class="bg-[#b4a0ff] font-anton text-3xl p-5 flex items-center justify-center">03</div><div class="p-5 bg-white"><p class="font-black text-lg mb-1">LM Studioを一度起動する</p><p class="text-sm leading-relaxed mb-0">初回起動後、必要に応じてランタイムを取得します。モデル検索やダウンロードにはインターネット接続が必要です。</p></div></div>
+</div>
+
+<h3 id="インストール先とモデル保存先は別に考える">インストール先とモデル保存先は別に考える</h3>
+
+<p class="text-base leading-loose mb-6 text-justify">アプリ本体よりも、あとから取得するモデルがSSD容量を使います。7B～8B級のQ4でも数GB、32Bや70B級では数十GBになる場合があります。Cドライブが小さいPCでは、モデルを増やす前にMy Modelsから保存場所を確認しましょう。</p>
+
+<h2 id="手順2最初のモデルを検索ダウンロード">手順2：最初のモデルを検索・ダウンロード</h2>
+
+<p class="text-base leading-loose mb-6 text-justify">LM Studioを起動したら、<strong>Discover</strong>を開きます。公式ドキュメントでは、ここからキーワード、配布者名とモデル名、Hugging FaceのURLなどで対応モデルを検索できます。</p>
+
+<div class="my-8 border-4 border-[#0a0a0a] bg-white">
+<div class="p-5 bg-[#0a0a0a] text-white"><p class="font-anton text-2xl mb-0">FIRST MODEL CHECKLIST</p></div>
+<div class="grid md:grid-cols-2">
+<div class="p-6 border-b-2 md:border-r-2 border-[#0a0a0a]"><p class="font-black mb-2">① Instruct系を選ぶ</p><p class="text-sm leading-relaxed mb-0">会話や指示応答が目的なら、モデル名のInstruct・Chatなどを確認します。</p></div>
+<div class="p-6 border-b-2 border-[#0a0a0a]"><p class="font-black mb-2">② 日本語対応を確認</p><p class="text-sm leading-relaxed mb-0">モデルカードの対応言語と評価を見ます。日本語性能はモデルごとに異なります。</p></div>
+<div class="p-6 md:border-r-2 border-[#0a0a0a]"><p class="font-black mb-2">③ Q4_K_M前後から始める</p><p class="text-sm leading-relaxed mb-0">公式も、PCで実行できるなら4bit以上を案内しています。</p></div>
+<div class="p-6 bg-[#f7ffe0]"><p class="font-black mb-2">④ 実ファイル容量を見る</p><p class="text-sm leading-relaxed mb-0">空きSSDだけでなく、読み込み時のRAMにも余裕があるか確認します。</p></div>
+</div>
+</div>
+
+<h3 id="32gbpcなら何から試す">32GB PCなら何から試す？</h3>
+
+<p class="text-base leading-loose mb-6 text-justify">最初は7B～14B級のInstructモデルをQ4前後で試すと、モデルの取得・読み込み・会話という流れを確認しやすいでしょう。いきなり最大モデルを選ぶと、ダウンロードに時間がかかり、読み込み時にメモリ不足になったときの原因も分かりにくくなります。</p>
+
+<div class="p-6 border-2 border-[#0a0a0a] bg-[#fffbe8] my-8">
+<p class="font-black text-lg mb-2">モデルの安全性も確認する</p>
+<p class="text-sm leading-relaxed mb-0">配布元、モデルカード、ライセンス、ベースモデル、量子化方式を確認します。モデルの回答は誤ることがあるため、医療・法律・金融など重要な判断をそのまま任せないでください。</p>
+</div>
+
+<h2 id="手順3モデルをメモリへ読み込んで会話する">手順3：モデルをメモリへ読み込んで会話する</h2>
+
+<p class="text-base leading-loose mb-6 text-justify">ダウンロードが終わったら<strong>Chat</strong>を開き、モデルローダーから取得済みモデルを選びます。Windowsでは<strong>Ctrl + L</strong>でもモデルローダーを開けます。読み込みとは、モデルの重みなどをPCのメモリへ配置する処理です。</p>
+
+<div class="my-8 grid grid-cols-1 md:grid-cols-[1fr_60px_1fr_60px_1fr] items-stretch gap-3">
+<div class="border-4 border-[#0a0a0a] p-5 bg-white text-center"><p class="font-anton text-3xl mb-2">SELECT</p><p class="font-black mb-0">取得済みモデルを選択</p></div>
+<div class="font-anton text-4xl flex items-center justify-center rotate-90 md:rotate-0">→</div>
+<div class="border-4 border-[#0a0a0a] p-5 bg-[#ccff00] text-center"><p class="font-anton text-3xl mb-2">LOAD</p><p class="font-black mb-0">RAM・GPUへ読み込み</p></div>
+<div class="font-anton text-4xl flex items-center justify-center rotate-90 md:rotate-0">→</div>
+<div class="border-4 border-[#0a0a0a] p-5 bg-white text-center"><p class="font-anton text-3xl mb-2">CHAT</p><p class="font-black mb-0">日本語でメッセージ</p></div>
+</div>
+
+<h3 id="最初に試す日本語プロンプト">最初に試す日本語プロンプト</h3>
+
+<pre class="bg-[#0a0a0a] text-[#ccff00] p-5 overflow-x-auto border-4 border-[#0a0a0a] text-sm whitespace-pre-wrap"><code>あなたは日本語の編集アシスタントです。
+次の文章を、意味を変えずに読みやすく整えてください。
+修正後の文章と、変更したポイントを3つ示してください。
+
+文章：今日はローカルLLMを初めてパソコンで動かしました。</code></pre>
+
+<p class="text-base leading-loose mb-6 text-justify">応答が返れば基本設定は完了です。次に要約、翻訳、箇条書き、コード説明など、自分が実際に使いたい課題を試します。モデルの性能を見るときは、同じ質問と設定で比較しましょう。</p>
+
+<h2 id="最初に覚えたい3つの設定">最初に覚えたい3つの設定</h2>
+
+<div class="grid md:grid-cols-3 gap-5 my-8">
+<div class="border-4 border-[#0a0a0a] p-6 bg-white"><p class="font-anton text-2xl mb-2">CONTEXT</p><p class="font-black mb-2">コンテキスト長</p><p class="text-sm leading-relaxed mb-0">会話で参照できるトークン量。増やすほどKVキャッシュのメモリ使用量も増えます。</p></div>
+<div class="border-4 border-[#0a0a0a] p-6 bg-[#f7ffe0]"><p class="font-anton text-2xl mb-2">GPU OFFLOAD</p><p class="font-black mb-2">GPUへの割り当て</p><p class="text-sm leading-relaxed mb-0">対応GPUへ処理を移します。LM Studioは未指定なら適切なGPU使用量を自動判断します。</p></div>
+<div class="border-4 border-[#0a0a0a] p-6 bg-white"><p class="font-anton text-2xl mb-2">TEMPERATURE</p><p class="font-black mb-2">出力の変化</p><p class="text-sm leading-relaxed mb-0">高くすると出力が多様になりやすく、低くすると安定寄りになります。モデルごとの推奨も確認します。</p></div>
+</div>
+
+<p class="text-base leading-loose mb-6 text-justify">最初は読み込み設定を大きく変更せず、コンテキスト長も既定値または控えめで試すのがおすすめです。メモリ不足が出る場合、より小さな量子化、短いコンテキスト、GPUオフロード設定を確認します。</p>
+
+<h3 id="cliなら読み込み前にメモリを見積もれる">CLIなら読み込み前にメモリを見積もれる</h3>
+
+<p class="text-base leading-loose mb-6 text-justify">LM Studioに同梱されるCLIの<strong>lms</strong>では、モデルを実際に読み込まず、必要リソースを見積もれます。LM Studioを一度起動したあと、Windows Terminalなどで実行します。</p>
+
+<pre class="bg-[#0a0a0a] text-[#ccff00] p-5 overflow-x-auto border-4 border-[#0a0a0a] text-sm"><code>lms ls
+lms load --estimate-only &lt;model_key&gt;</code></pre>
+
+<p class="text-sm leading-relaxed mb-6">見積もりはコンテキスト長、GPUオフロード、Flash Attention、画像対応モデルなどを考慮します。画面操作に慣れてから使えば十分ですが、複数モデルを比較するときに便利です。</p>
+
+<h2 id="lmstudioは完全オフラインで使える">LM Studioは完全オフラインで使える？</h2>
+
+<p class="text-base leading-loose mb-6 text-justify">LM Studio公式によると、必要なモデルファイルを取得した後は、モデルとの会話、文書との会話、ローカルサーバーなどの主要機能を通信なしで使えます。一方、モデル検索・ダウンロード、ランタイム取得、アップデート確認などには通信が必要です。</p>
+
+<table class="w-full min-w-[660px] border-2 border-[#0a0a0a] border-collapse bg-white text-sm">
+<thead><tr class="bg-[#0a0a0a] text-white"><th class="p-4 text-left">操作</th><th class="p-4 text-left">オフライン</th><th class="p-4 text-left">補足</th></tr></thead>
+<tbody>
+<tr><td class="p-4 border-b font-bold">取得済みモデルとのチャット</td><td class="p-4 border-b bg-[#ccff00] font-black">可能</td><td class="p-4 border-b">入力は端末内で処理</td></tr>
+<tr><td class="p-4 border-b font-bold">文書とのチャット</td><td class="p-4 border-b bg-[#ccff00] font-black">可能</td><td class="p-4 border-b">文書処理もローカル</td></tr>
+<tr><td class="p-4 border-b font-bold">ローカルサーバー</td><td class="p-4 border-b bg-[#ccff00] font-black">可能</td><td class="p-4 border-b">localhostやローカルネットワークで利用</td></tr>
+<tr><td class="p-4 border-b font-bold">モデルの検索・取得</td><td class="p-4 border-b font-black">不可</td><td class="p-4 border-b">Hugging Faceなどへの通信が必要</td></tr>
+<tr><td class="p-4 font-bold">ランタイム・アプリ更新</td><td class="p-4 font-black">不可</td><td class="p-4">更新ファイルの取得に通信が必要</td></tr>
+</tbody>
+</table>
+
+<div class="p-6 border-2 border-[#0a0a0a] bg-[#fffbe8] my-8">
+<p class="font-black text-lg mb-2">「ローカルだから何を入力しても安全」とは限らない</p>
+<p class="text-sm leading-relaxed mb-0">クラウド連携、Web検索、外部MCP、ネットワーク公開したAPIなどを追加すると、データの流れは変わります。機密情報を扱う前に、使用機能、拡張機能、モデル、PC自体の安全性を確認してください。</p>
+</div>
+
+<h2 id="モデルが動かない遅いときの確認項目">モデルが動かない・遅いときの確認項目</h2>
+
+<div class="grid md:grid-cols-2 gap-5 my-8">
+<div class="border-2 border-[#0a0a0a] p-6 bg-white"><p class="font-anton text-[#6d55d8] text-xl mb-2">LOAD ERROR</p><p class="font-black mb-2">モデルを読み込めない</p><p class="text-sm leading-relaxed mb-0">RAM不足を疑います。小さいモデル、Q4前後、短いコンテキストで試し、他アプリを閉じます。</p></div>
+<div class="border-2 border-[#0a0a0a] p-6 bg-white"><p class="font-anton text-[#6d55d8] text-xl mb-2">TOO SLOW</p><p class="font-black mb-2">回答が極端に遅い</p><p class="text-sm leading-relaxed mb-0">GPUオフロード、モデル規模、量子化、メモリ帯域を確認します。最初の入力処理と生成速度は分けて見ます。</p></div>
+<div class="border-2 border-[#0a0a0a] p-6 bg-white"><p class="font-anton text-[#6d55d8] text-xl mb-2">BAD JAPANESE</p><p class="font-black mb-2">日本語が不自然</p><p class="text-sm leading-relaxed mb-0">日本語対応モデルか、Instruct版か、推奨チャットテンプレートかを確認します。</p></div>
+<div class="border-2 border-[#0a0a0a] p-6 bg-white"><p class="font-anton text-[#6d55d8] text-xl mb-2">NO MODEL</p><p class="font-black mb-2">検索・取得できない</p><p class="text-sm leading-relaxed mb-0">インターネット接続、空きSSD、ランタイム、LM Studioの更新状況を確認します。</p></div>
+</div>
+
+<h2 id="lmstudio用pcを買うならモデルから逆算する">LM Studio用PCを買うなら、モデルから逆算する</h2>
+
+<p class="text-base leading-loose mb-6 text-justify">LM StudioのためにPCを買う場合、「AI PC」や「NPU搭載」という広告だけでは決められません。使いたいモデル規模、量子化、コンテキスト長を決め、必要なメモリ容量とGPU対応を逆算します。メモリ増設ができないミニPCでは、購入時の容量選びが特に重要です。</p>
+
+<div class="my-8 p-6 md:p-8 border-4 border-[#0a0a0a] bg-[#ccff00]">
+<p class="font-anton text-3xl mb-3">TRY FIRST. BUY SECOND.</p>
+<p class="font-black text-lg mb-3">今のPCで小さなモデルを先に試す</p>
+<p class="text-sm leading-relaxed mb-5">7B～8B級のQ4前後を動かし、必要な速度と品質を把握してから、64GB・128GBのPCを検討すると失敗を減らせます。</p>
+<a href="https://poitaro.com/articles_html/local-llm-mini-pc-gmktec-2026.html" class="inline-block bg-[#0a0a0a] text-white font-black px-6 py-3 border-2 border-[#0a0a0a] hover:bg-white hover:text-[#0a0a0a] transition-colors">GMKtecのローカルLLM向けPC比較へ →</a>
+</div>
+
+<div class="my-8 p-5 border-2 border-[#0a0a0a] bg-[#fffbe8]">
+<p class="font-black mb-3">ローカルLLM向けミニPCを探す</p>
+<p class="text-sm leading-relaxed mb-4">GMKtec公式ストアでは、64GB・128GB構成を選べるAI向けミニPCの現在価格と在庫を確認できます。</p>
+<div class="a8-banner flex justify-center max-w-full overflow-hidden">
+<a href="https://px.a8.net/svt/ejp?a8mat=4BC1MF+8VPUY2+5W12+5ZU29" rel="nofollow">
+<img border="0" width="300" height="250" alt="" src="https://www21.a8.net/svt/bgt?aid=260902455537&wid=004&eno=01&mid=s00000027479001007000&mc=1"></a>
+<img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=4BC1MF+8VPUY2+5W12+5ZU29" alt="">
+</div>
+</div>
+
+<h2 id="よくある質問">よくある質問</h2>
+
+<div class="space-y-4 my-8">
+<details class="group border-2 border-[#0a0a0a] bg-white" open><summary class="cursor-pointer list-none p-5 font-black flex justify-between gap-4">LM Studioは無料ですか？<span class="text-[#6d55d8]">＋</span></summary><div class="px-5 pb-5 text-sm leading-relaxed">デスクトップアプリは公式サイトから入手できます。ただし、利用条件はLM Studioの規約をご確認ください。モデルごとにも別のライセンスがあります。</div></details>
+<details class="group border-2 border-[#0a0a0a] bg-white"><summary class="cursor-pointer list-none p-5 font-black flex justify-between gap-4">GPUなしでも使えますか？<span class="text-[#6d55d8]">＋</span></summary><div class="px-5 pb-5 text-sm leading-relaxed">対応CPUと十分なメモリがあれば動くモデルはあります。ただし生成速度はGPUを使う場合より遅くなることがあります。まず小さな量子化モデルで確認してください。</div></details>
+<details class="group border-2 border-[#0a0a0a] bg-white"><summary class="cursor-pointer list-none p-5 font-black flex justify-between gap-4">日本語で使えるおすすめモデルは？<span class="text-[#6d55d8]">＋</span></summary><div class="px-5 pb-5 text-sm leading-relaxed">モデルは頻繁に更新されるため、Discoverで日本語対応と明記されたInstruct系モデルを確認してください。人気順位だけでなく、モデルカード、ライセンス、サイズ、量子化を見て選びます。</div></details>
+<details class="group border-2 border-[#0a0a0a] bg-white"><summary class="cursor-pointer list-none p-5 font-black flex justify-between gap-4">ChatGPTの代わりになりますか？<span class="text-[#6d55d8]">＋</span></summary><div class="px-5 pb-5 text-sm leading-relaxed">文章作成や要約など一部用途では活用できますが、モデル性能、Web情報、ツール連携、長文処理などに違いがあります。完全な置き換えではなく、機密性やオフライン性が必要な作業との使い分けが現実的です。</div></details>
+<details class="group border-2 border-[#0a0a0a] bg-white"><summary class="cursor-pointer list-none p-5 font-black flex justify-between gap-4">アンインストールすればモデルも消えますか？<span class="text-[#6d55d8]">＋</span></summary><div class="px-5 pb-5 text-sm leading-relaxed">アプリ本体とモデル保存先は別の場合があります。削除前にMy Modelsで保存場所を確認し、必要なモデルやチャットのバックアップも確認してください。</div></details>
+</div>
+
+<h2 id="まとめ最初は小さなq4モデルで一周する">まとめ：最初は小さなQ4モデルで一周する</h2>
+
+<div class="border-4 border-[#0a0a0a] p-7 bg-white my-8">
+<ul class="space-y-3 pl-5 text-sm leading-relaxed mb-0">
+<li><strong>入手：</strong>LM Studio公式サイトからWindows版をダウンロード</li>
+<li><strong>モデル：</strong>Discoverで日本語対応のInstruct系を探す</li>
+<li><strong>量子化：</strong>最初はQ4_K_M前後を基準にする</li>
+<li><strong>読み込み：</strong>ChatのモデルローダーまたはCtrl + Lを使う</li>
+<li><strong>設定：</strong>コンテキストを欲張らず、既定値から試す</li>
+<li><strong>オフライン：</strong>必要ファイルの取得後は主要機能を通信なしで利用可能</li>
+</ul>
+</div>
+
+<p class="text-base leading-loose mb-6 text-justify">初回は高性能なモデルを探し続けるより、小さなモデルでダウンロードから日本語チャットまでを一度完了させる方が理解しやすくなります。その後、回答品質、速度、メモリ使用量を見ながらモデル規模や量子化を上げていきましょう。</p>
+
+<h2 id="参考にした公式情報">参考にした公式情報</h2>
+
+<ul class="space-y-3 pl-5 text-sm leading-relaxed">
+<li><a href="https://lmstudio.ai/docs/app" target="_blank" rel="noopener noreferrer" class="font-bold border-b border-[#6d55d8]">LM Studio公式：対応OSと主な機能</a></li>
+<li><a href="https://lmstudio.ai/docs/app/basics" target="_blank" rel="noopener noreferrer" class="font-bold border-b border-[#6d55d8]">LM Studio公式：導入からチャットまで</a></li>
+<li><a href="https://lmstudio.ai/docs/app/basics/download-model" target="_blank" rel="noopener noreferrer" class="font-bold border-b border-[#6d55d8]">LM Studio公式：モデルの検索・ダウンロード</a></li>
+<li><a href="https://lmstudio.ai/docs/app/offline" target="_blank" rel="noopener noreferrer" class="font-bold border-b border-[#6d55d8]">LM Studio公式：オフラインで使える機能</a></li>
+<li><a href="https://lmstudio.ai/docs/cli/local-models/load" target="_blank" rel="noopener noreferrer" class="font-bold border-b border-[#6d55d8]">LM Studio公式：モデル読み込みとメモリ見積もり</a></li>
+<li><a href="https://lmstudio.ai/app-privacy" target="_blank" rel="noopener noreferrer" class="font-bold border-b border-[#6d55d8]">LM Studio公式：プライバシーポリシー</a></li>
+</ul>
+
+<p class="text-xs text-gray-500 leading-relaxed mt-8">情報は2026年9月2日時点で確認しています。LM Studioの画面、配布バージョン、対応ランタイム、モデル一覧は更新される可能性があります。導入前に公式のシステム要件と最新リリースをご確認ください。</p>
+
+</div>
+
+                    <!-- Related posts will be displayed here -->
+                </article>
+
+                <!-- Sidebar (Desktop Only) -->
+                <aside class="hidden md:block md:w-1/3 pt-10">
+                    <div class="sticky top-20">
+                        <!-- TOC Sidebar -->
+                        <div id="sidebar-toc" class="mb-8 p-6 border-2 border-brand-black bg-brand-white">
+                            <h3 class="font-anton text-xl mb-4 tracking-wider">INDEX</h3>
+                            <div id="sidebar-toc-content"></div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="mb-8 p-6 border-2 border-brand-black bg-brand-white">
+                            <h3 class="font-anton text-xl mb-4 tracking-wider">ACTIONS</h3>
+                            <div class="space-y-3">
+                                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="block text-sm font-bold hover:text-brand-purple transition-colors border-b border-gray-300 pb-2">
+                                    <i data-lucide="arrow-up" class="w-4 h-4 inline mr-2"></i>TOPに戻る
+                                </a>
+                                <a href="../index.html" class="block text-sm font-bold hover:text-brand-purple transition-colors border-b border-gray-300 pb-2">
+                                    <i data-lucide="home" class="w-4 h-4 inline mr-2"></i>トップページ
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Related Articles Sidebar -->
+                        <div id="sidebar-related" class="p-6 border-2 border-brand-black bg-brand-white">
+                            <h3 class="font-anton text-xl mb-4 tracking-wider">RELATED</h3>
+                            <div id="sidebar-related-content"></div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Back Link Footer -->
+            <div class="pb-24 pt-12 text-center bg-brand-white">
+                <a href="../index.html" class="text-sm font-bold uppercase tracking-widest border-b border-gray-400 pb-1 hover:border-brand-black transition-colors hover:text-brand-purple">
+                    Back to Index
+                </a>
+            </div>
+        </div>
+
+        <!-- === ABOUT MODAL (Simple Overlay) === -->
+        <div id="about-modal" class="fixed inset-0 bg-brand-white/95 backdrop-blur z-[85] hidden p-8 flex flex-col justify-center items-center text-center">
+             <button onclick="hideAbout()" class="absolute top-20 right-8 font-anton text-xl border border-brand-black rounded-full w-10 h-10 hover:bg-brand-black hover:text-white transition-colors">X</button>
+             <h2 class="font-anton text-6xl mb-4">CONCEPT</h2>
+             <p class="max-w-md font-medium leading-loose text-sm">
+                「ポイ活Pay太郎」は、現代社会における「還元」をテーマにしたライフスタイルマガジンです。
+                <br><br>
+                消費は浪費ではない。それは未来への投資であり、システムへのハッキングである。
+                ポイ活、ミニマリズム、投資。これらを単なる節約術から、洗練された生活美学へと昇華させます。
+             </p>
+        </div>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        // --- MENU SYSTEM ---
+        const menuOverlay = document.getElementById('menu-overlay');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const navIssue = document.getElementById('nav-issue');
+        const menuButton = document.querySelector('[aria-controls="menu-overlay"]');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            menuOverlay.setAttribute('aria-hidden', String(!isMenuOpen));
+            menuButton?.setAttribute('aria-expanded', String(isMenuOpen));
+            document.body.classList.toggle('overflow-hidden', isMenuOpen);
+
+            if (isMenuOpen) {
+                // Open Menu
+                menuOverlay.classList.remove('hidden-menu'); // ensure display block if needed
+                menuOverlay.classList.remove('-translate-y-full');
+
+                // Icon Animation
+                menuIcon.classList.add('opacity-0', 'rotate-90', 'scale-0');
+                closeIcon.classList.remove('opacity-0', 'scale-0');
+                closeIcon.classList.add('rotate-0'); // reset rotation
+                if (window.innerWidth >= 768) {
+                    window.setTimeout(() => document.getElementById('menu-search-input')?.focus(), 450);
+                }
+
+            } else {
+                // Close Menu
+                menuOverlay.classList.add('-translate-y-full');
+
+                // Icon Animation
+                menuIcon.classList.remove('opacity-0', 'rotate-90', 'scale-0');
+                closeIcon.classList.add('opacity-0', 'scale-0');
+                closeIcon.classList.remove('rotate-0');
+            }
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && isMenuOpen) toggleMenu();
+        });
+
+        // --- ABOUT MODAL ---
+        function showAbout() {
+            document.getElementById('about-modal').classList.remove('hidden');
+        }
+        function hideAbout() {
+            document.getElementById('about-modal').classList.add('hidden');
+        }
+
+        // Reading Progress
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("read-progress").style.width = scrolled + "%";
+        });
+
+        // Populate Sidebar TOC and Related Articles
+        document.addEventListener('DOMContentLoaded', () => {
+            // Populate Sidebar TOC
+            const mainToc = document.querySelector('nav[aria-label="目次"]');
+            if (mainToc) {
+                mainToc.classList.add('mobile-toc');
+                const tocCount = mainToc.querySelectorAll('li').length;
+                const tocToggle = document.createElement('button');
+                tocToggle.type = 'button';
+                tocToggle.className = 'mobile-toc-toggle';
+                tocToggle.setAttribute('aria-expanded', 'false');
+                tocToggle.innerHTML = `<span class="toc-title">目次</span><span><span class="toc-count">全${tocCount}項目</span><span class="toggle-symbol" aria-hidden="true">＋</span></span>`;
+                tocToggle.addEventListener('click', () => {
+                    const isOpen = mainToc.classList.toggle('toc-open');
+                    tocToggle.setAttribute('aria-expanded', String(isOpen));
+                });
+                mainToc.insertBefore(tocToggle, mainToc.firstChild);
+                mainToc.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+                    mainToc.classList.remove('toc-open');
+                    tocToggle.setAttribute('aria-expanded', 'false');
+                }));
+            }
+
+            const articleHeader = document.querySelector('#article-body > header');
+            const articleMeta = articleHeader?.querySelector('div.flex.flex-wrap');
+            if (articleMeta) {
+                articleMeta.classList.add('article-meta');
+                const secondaryMeta = articleMeta.querySelectorAll('a[href*="#author"], a[href*="#editorial-policy"]');
+                secondaryMeta.forEach(item => item.classList.add('article-meta-secondary'));
+                if (secondaryMeta.length) {
+                    const metaToggle = document.createElement('button');
+                    metaToggle.type = 'button';
+                    metaToggle.className = 'article-meta-toggle';
+                    metaToggle.setAttribute('aria-expanded', 'false');
+                    metaToggle.innerHTML = '<span>記事情報</span><span class="toggle-symbol" aria-hidden="true">＋</span>';
+                    metaToggle.addEventListener('click', () => {
+                        const isOpen = articleMeta.classList.toggle('meta-open');
+                        metaToggle.setAttribute('aria-expanded', String(isOpen));
+                    });
+                    articleMeta.appendChild(metaToggle);
+                }
+            }
+
+            const sidebarTocContent = document.getElementById('sidebar-toc-content');
+            if (mainToc && sidebarTocContent) {
+                const tocLinks = mainToc.querySelectorAll('a');
+                if (tocLinks.length > 0) {
+                    const sidebarLinks = Array.from(tocLinks).map(link => {
+                        return `<a href="${link.getAttribute('href')}">${link.textContent}</a>`;
+                    }).join('');
+                    sidebarTocContent.innerHTML = sidebarLinks;
+                } else {
+                    document.getElementById('sidebar-toc').style.display = 'none';
+                }
+            } else {
+                const sidebarToc = document.getElementById('sidebar-toc');
+                if (sidebarToc) sidebarToc.style.display = 'none';
+            }
+
+            // Populate Sidebar Related Articles
+            const mainRelated = document.querySelector('section.mt-16');
+            const sidebarRelatedContent = document.getElementById('sidebar-related-content');
+            if (mainRelated && sidebarRelatedContent) {
+                const relatedLinks = mainRelated.querySelectorAll('a[href*="articles_html"]');
+                const uniqueLinks = new Set();
+                const sidebarLinks = [];
+
+                relatedLinks.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (!uniqueLinks.has(href)) {
+                        uniqueLinks.add(href);
+                        const img = link.querySelector('img');
+                        const title = img ? img.getAttribute('alt') : link.textContent;
+                        if (title && title !== '記事を見る >>') {
+                            sidebarLinks.push(`<a href="${href}">${title}</a>`);
+                        }
+                    }
+                });
+
+                if (sidebarLinks.length > 0) {
+                    sidebarRelatedContent.innerHTML = sidebarLinks.slice(0, 3).join('');
+                } else {
+                    document.getElementById('sidebar-related').style.display = 'none';
+                }
+            } else {
+                const sidebarRelated = document.getElementById('sidebar-related');
+                if (sidebarRelated) sidebarRelated.style.display = 'none';
+            }
+
+            lucide.createIcons();
+
+            // Menu search input handler
+            const menuSearchInput = document.getElementById('menu-search-input');
+            const menuClearButton = document.getElementById('menu-clear-search');
+
+            if (menuSearchInput) {
+                menuSearchInput.addEventListener('input', (e) => {
+                    const value = e.target.value.trim();
+                    if (value) {
+                        menuClearButton.classList.remove('hidden');
+                    } else {
+                        menuClearButton.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

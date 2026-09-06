@@ -33,7 +33,7 @@ image: "https://placehold.co/1280x720/00C300/FFFFFF?text=CreditCard+Ranking"
 </nav>
 <hr class="border-none h-[3px] bg-gradient-to-r from-transparent via-[#ccff00] to-transparent my-12">
 
-## <span id="trend">2026年最新！クレジットカード＆ポイ活の最新トレンド</span>
+## 2026年最新！クレジットカード＆ポイ活の最新トレンド
 
 <p class="text-base leading-loose mb-6 text-justify">ランキングを発表する前に、まずは2026年現在のクレジットカード業界とポイ活市場のトレンドを把握しておきましょう。ここを押さえておくことで、なぜこれから紹介するカードやサイトが「最強」なのかが深く理解できます。</p>
 
@@ -57,7 +57,7 @@ JCBの「My JCB Pay」のように、貯まったポイントをそのまま日�
 
 <hr class="border-none h-[3px] bg-gradient-to-r from-transparent via-[#ccff00] to-transparent my-12">
 
-## <span id="ranking">【2026年版】最強クレジットカードランキングTOP3</span>
+## 【2026年版】最強クレジットカードランキングTOP3
 
 <p class="text-base leading-loose mb-8 text-justify">それでは、還元率の高さとポイントの使い勝手（出口戦略）を総合的に評価した、2026年最新の「最強クレジットカード」を発表します。</p>
 
@@ -184,7 +184,7 @@ JCBの「My JCB Pay」のように、貯まったポイントをそのまま日�
 
 <hr class="border-none h-[3px] bg-gradient-to-r from-transparent via-[#ccff00] to-transparent my-12">
 
-## <span id="pointsite">一番稼げる！使い勝手抜群の最強ポイントサイト厳選3社</span>
+## 一番稼げる！使い勝手抜群の最強ポイントサイト厳選3社
 
 <p class="text-base leading-loose mb-8 text-justify">クレジットカードをそのまま公式サイトから申し込むのはナンセンスです。必ず「ポイントサイト」を経由して、数千円〜数万円分のポイントを二重取りしましょう。ここでは、2026年現在で案件数、還元率、安全性のすべてがトップクラスの3社を厳選しました。</p>
 
@@ -214,7 +214,7 @@ JCBの「My JCB Pay」のように、貯まったポイントをそのまま日�
 
 <hr class="border-none h-[3px] bg-gradient-to-r from-transparent via-[#ccff00] to-transparent my-12">
 
-## <span id="route">タイパ重視！最強の「クレジットカード×ポイントサイト」ルート</span>
+## タイパ重視！最強の「クレジットカード×ポイントサイト」ルート
 
 <p class="text-base leading-loose mb-6 text-justify">最後に、ここまで紹介した知識を組み合わせた「2026年版 最強のポイ活ルート」を具体的に解説します。面倒なことは一切省き、タイパ（タイムパフォーマンス）を極限まで高めたルーティンです。</p>
 
