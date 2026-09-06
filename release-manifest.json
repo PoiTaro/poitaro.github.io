@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T16:59:39.895Z",
+  "generatedAt": "2026-09-06T17:05:12.376Z",
   "source": "poitaro-maximize-working",
   "productionTouched": false,
   "excludedLegacyFiles": [
@@ -1011,7 +1011,7 @@
     {
       "path": "sitemap.xml",
       "bytes": 25527,
-      "sha256": "67f0f1c77e1a7d7d2d54dfa4359d583657208e853e7324a1e2cb6b9ed0cbfaf0"
+      "sha256": "546ae72613a596ac7cd4cebd8901fdf71f90e12fb87e90722599779c7540bc57"
     },
     {
       "path": "thumbnails/-iosaltstore-pal.png",
