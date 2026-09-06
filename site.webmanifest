@@ -1,0 +1,22 @@
+{
+  "name": "ポイ活Pay太郎",
+  "short_name": "Pay太郎",
+  "description": "ポイ活・AI・テクノロジーを、暮らしに役立つ形で届ける情報メディア。",
+  "lang": "ja",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAF8",
+  "theme_color": "#1F2937",
+  "icons": [
+    {
+      "src": "/images/favicon-editorial-book-192-v1.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/apple-touch-icon-editorial-book-180-v1.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

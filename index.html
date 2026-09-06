@@ -10,29 +10,35 @@
     <meta name="author" content="ポイ活Pay太郎">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://poitaro.com/">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://poitaro.com/">
     <meta property="og:title" content="ポイ活Pay太郎">
     <meta property="og:description" content="ポイ活の始め方から上級テクニックまで徹底解説。">
-    <meta property="og:image" content="https://poitaro.com/thumbnails/og-image.png">
+    <meta property="og:image" content="https://poitaro.com/thumbnails/og-image-editorial-v1.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ポイ活Pay太郎 — 知りたいことを、わかりやすく。">
     <meta property="og:site_name" content="ポイ活Pay太郎">
     <meta property="og:locale" content="ja_JP">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ポイ活Pay太郎">
     <meta name="twitter:description" content="ポイ活の始め方から上級テクニックまで徹底解説。">
-    <meta name="twitter:image" content="https://poitaro.com/thumbnails/og-image.png">
-    
-    <link rel="icon" href="https://poitaro.com/blog/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="https://poitaro.com/blog/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="https://poitaro.com/blog/favicon.ico">
-    <link rel="icon" sizes="192x192" href="https://poitaro.com/blog/favicon.ico">
-    <meta name="msapplication-TileImage" content="https://poitaro.com/blog/favicon.ico">
+    <meta name="twitter:image" content="https://poitaro.com/thumbnails/og-image-editorial-v1.png">
+    <meta name="twitter:image:alt" content="ポイ活Pay太郎 — 知りたいことを、わかりやすく。">
+
+    <link rel="icon" href="images/favicon-editorial-book-32-v1.png" type="image/png" sizes="32x32">
+    <link rel="shortcut icon" href="images/favicon-editorial-book-32-v1.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-editorial-book-180-v1.png" sizes="180x180">
+    <link rel="icon" href="images/favicon-editorial-book-192-v1.png" type="image/png" sizes="192x192">
+    <meta name="msapplication-TileImage" content="images/favicon-editorial-book-192-v1.png">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#0a0a0a">
+    <meta name="theme-color" content="#1F2937">
+    <link rel="manifest" href="site.webmanifest">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -47,6 +53,7 @@
     <!-- GAS Analytics Tracking Code -->
 <script>
 (function() {
+  if (!/^(?:www\.)?poitaro\.com$/i.test(location.hostname)) return;
   var endpoint = "https://script.google.com/macros/s/AKfycbz3RkdSq3AEGJy_VyxG8XespXWGoRI4Gd488JTg1a3CFn2pbO3wN-Gl5O96bjQJqAgPkg/exec";
   var data = {
     type: "pv",
@@ -70,11 +77,11 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-black': '#0a0a0a',
-                        'brand-white': '#f8f8f8',
-                        'brand-accent': '#ccff00', // Neon Lime
-                        'brand-purple': '#b4a0ff', // Secondary Accent
-                        'brand-gray': '#e5e5e5',
+                        'brand-black': '#1F2937',
+                        'brand-white': '#FAFAF8',
+                        'brand-accent': '#67B7E1', // Soft Sky Blue
+                        'brand-purple': '#2F6FB3', // Calm Blue
+                        'brand-gray': '#E5E7EB',
                     },
                     fontFamily: {
                         'anton': ['Anton', 'sans-serif'],
@@ -105,34 +112,22 @@
     <style>
         /* Typography Utilities */
         .text-stroke {
-            -webkit-text-stroke: 1px black;
+            -webkit-text-stroke: 1px #1F2937;
             color: transparent;
         }
         .text-stroke-white {
             -webkit-text-stroke: 1px white;
             color: transparent;
         }
-        
+
         /* Smooth Fade Transition */
         .fade-in {
             animation: fadeIn 0.5s ease-in-out forwards;
         }
-        
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Image Filters */
-        .img-grayscale {
-            filter: grayscale(100%);
-            transition: filter 0.5s ease;
-        }
-        .article-card:hover .img-grayscale {
-            filter: grayscale(0%);
-        }
-        .article-card:hover .hover-zoom {
-            transform: scale(1.05);
         }
 
         /* Fashion Magazine Article Cards */
@@ -147,7 +142,7 @@
             left: -8px;
             right: -8px;
             bottom: -8px;
-            background: linear-gradient(135deg, #ccff00 0%, transparent 30%);
+            background: linear-gradient(135deg, #67B7E1 0%, transparent 30%);
             opacity: 0;
             transition: opacity 0.3s ease;
             z-index: -1;
@@ -159,7 +154,7 @@
         .accent-stripe {
             position: absolute;
             height: 4px;
-            background: #ccff00;
+            background: #67B7E1;
             width: 0;
             bottom: 0;
             left: 0;
@@ -186,30 +181,54 @@
             left: 100%;
         }
 
-        /* Running Ticker */
-        .ticker-wrap {
-            width: 100%;
+        /* Mobile Editorial Home */
+        .mobile-snap-row {
+            display: flex;
+            gap: 0.875rem;
+            overflow-x: auto;
+            padding: 0.25rem 1rem 1rem;
+            margin-inline: -1rem;
+            scroll-snap-type: x mandatory;
+            scroll-padding-inline: 1rem;
+            scrollbar-width: none;
+        }
+        .mobile-snap-row::-webkit-scrollbar {
+            display: none;
+        }
+        .mobile-snap-card {
+            flex: 0 0 min(76vw, 18rem);
+            scroll-snap-align: start;
+        }
+        .mobile-line-clamp-2,
+        .mobile-line-clamp-3 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
             overflow: hidden;
-            background-color: #ccff00;
-            padding-top: 4px;
-            padding-bottom: 2px;
         }
-        .ticker {
-            display: inline-block;
-            white-space: nowrap;
-            animation: ticker 20s linear infinite;
+        .mobile-line-clamp-2 {
+            -webkit-line-clamp: 2;
         }
-        .ticker-item {
-            display: inline-block;
-            padding: 0 2rem;
-            font-family: 'Anton', sans-serif;
-            font-size: 1.2rem;
-            color: black;
-            text-transform: uppercase;
+        .mobile-line-clamp-3 {
+            -webkit-line-clamp: 3;
         }
-        @keyframes ticker {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
+        @media (max-width: 767px) {
+            #article-grid,
+            #pagination {
+                display: none !important;
+            }
+        }
+        .desktop-editorial-shell {
+            width: min(100%, 1080px);
+            margin-inline: auto;
+        }
+        .editorial-footer-content {
+            width: 100%;
+            margin-inline: auto;
+        }
+        @media (min-width: 768px) {
+            .editorial-footer-content {
+                max-width: 860px;
+            }
         }
 
         /* Drop Cap & Formatting */
@@ -220,18 +239,18 @@
             line-height: 4rem;
             padding-right: 1rem;
             padding-top: 0.2rem;
-            color: #0a0a0a;
+            color: #1F2937;
         }
-        
+
         /* Custom Spec Table */
         .spec-container {
-            border: 2px solid #0a0a0a;
+            border: 2px solid #1F2937;
             margin-bottom: 1.5rem;
         }
         .spec-row {
             display: flex;
             justify-content: space-between;
-            border-bottom: 1px solid #e5e5e5;
+            border-bottom: 1px solid #E5E7EB;
             padding: 0.75rem 1rem;
             font-family: 'Noto Sans JP', sans-serif;
             font-size: 0.875rem;
@@ -253,7 +272,7 @@
         /* Standard Table Styling (Markdown Support) */
         #article-content table {
             width: 100%;
-            border: 2px solid #0a0a0a;
+            border: 2px solid #1F2937;
             border-collapse: collapse;
             margin-bottom: 1.5rem;
             font-family: 'Noto Sans JP', sans-serif;
@@ -261,20 +280,20 @@
             background-color: #fff;
         }
         #article-content th {
-            background-color: #0a0a0a;
+            background-color: #1F2937;
             color: #fff;
             font-weight: 700;
             text-transform: uppercase;
             padding: 0.75rem 1rem;
-            border-bottom: 2px solid #0a0a0a;
+            border-bottom: 2px solid #1F2937;
             text-align: left;
             font-family: 'Anton', sans-serif;
             letter-spacing: 0.05em;
         }
         #article-content td {
             padding: 0.75rem 1rem;
-            border-bottom: 1px solid #e5e5e5;
-            color: #0a0a0a;
+            border-bottom: 1px solid #E5E7EB;
+            color: #1F2937;
         }
         #article-content tr:last-child td {
             border-bottom: none;
@@ -283,7 +302,7 @@
         /* Custom Cursor for Menu Items */
         .menu-link:hover::before {
             content: ">>";
-            color: #ccff00;
+            color: #67B7E1;
             position: absolute;
             left: -40px;
         }
@@ -301,7 +320,7 @@
         }
         #article-content h2::before {
             content: ">>";
-            color: #ccff00;
+            color: #67B7E1;
             margin-right: 0.5rem;
             font-size: 2.5rem;
         }
@@ -310,7 +329,7 @@
             font-size: 1.5rem;
             margin-top: 2rem;
             margin-bottom: 1rem;
-            color: #b4a0ff;
+            color: #2F6FB3;
         }
         #article-content p {
             font-family: 'Noto Sans JP', sans-serif;
@@ -328,12 +347,12 @@
             margin-bottom: 0.5rem;
         }
         #article-content a {
-            color: #b4a0ff;
+            color: #2F6FB3;
             text-decoration: underline;
             font-weight: bold;
         }
         #article-content blockquote {
-            border-left: 8px solid #ccff00;
+            border-left: 8px solid #67B7E1;
             padding-left: 1.5rem;
             background-color: #f3f4f6;
             padding-top: 1rem;
@@ -346,146 +365,171 @@
             width: 100%;
             height: auto;
             margin-bottom: 1.5rem;
-            border: 1px solid #e5e5e5;
+            border: 1px solid #E5E7EB;
         }
     </style>
 
 <script async src="https://fundingchoicesmessages.google.com/i/pub-2213699949048480?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
-    
+
 </head>
-<body class="bg-brand-white text-brand-black font-sans antialiased overflow-x-hidden selection:bg-brand-accent selection:text-black">
+<body class="bg-brand-white text-brand-black font-sans antialiased overflow-x-hidden selection:bg-brand-accent selection:text-brand-black">
 
     <!-- Sticky Nav -->
-    <nav class="fixed top-0 w-full z-[80] flex justify-between items-center px-4 py-3 bg-brand-white/95 backdrop-blur-md border-b border-black transition-colors duration-300" id="main-nav">
-        <div class="font-sans text-xl font-black tracking-tight cursor-pointer hover:text-brand-purple transition-colors z-[90]" onclick="goHome()">ポイ活Pay太郎</div>
+    <nav class="fixed top-0 w-full z-[80] flex justify-between items-center px-4 py-3 bg-brand-white/95 backdrop-blur-md border-b border-brand-black transition-colors duration-300" id="main-nav">
+        <button type="button" class="z-[90] cursor-pointer" onclick="goHome()" aria-label="ポイ活Pay太郎・トップページへ戻る">
+            <img
+                src="images/header-title-nav-v1.webp"
+                alt="ポイ活Pay太郎"
+                width="900"
+                height="160"
+                class="h-8 md:h-9 w-auto max-w-[68vw] object-contain"
+            >
+        </button>
         <div class="flex items-center gap-4 z-[90]">
             <span class="hidden md:inline font-bold text-xs tracking-widest text-brand-black" id="nav-issue">ISSUE 024</span>
-            <button onclick="toggleMenu()" class="p-2 border border-black hover:bg-black hover:text-white transition-colors rounded-full relative group bg-brand-white text-black">
+            <button onclick="toggleMenu()" aria-controls="menu-overlay" aria-expanded="false" aria-label="メニューを開く" class="p-2 border border-brand-black hover:bg-brand-black hover:text-white transition-colors rounded-full relative group bg-brand-white text-brand-black">
                 <i data-lucide="menu" class="w-5 h-5 transition-all duration-300 group-hover:rotate-90" id="menu-icon"></i>
                 <i data-lucide="x" class="w-5 h-5 absolute top-2 left-2 opacity-0 transition-all duration-300 rotate-90 scale-0" id="close-icon"></i>
             </button>
         </div>
     </nav>
 
-    <!-- FULL SCREEN MENU OVERLAY -->
-    <div id="menu-overlay" class="fixed inset-0 bg-brand-black z-[70] transform -translate-y-full transition-transform duration-500 ease-in-out flex flex-col justify-center items-center text-white hidden-menu">
-        
-        <!-- Menu Background Text -->
-        <div class="absolute inset-0 overflow-hidden opacity-10 pointer-events-none flex flex-col justify-center select-none">
-            <span class="font-anton text-[20vw] leading-none text-stroke-white whitespace-nowrap -ml-20">ポイ活</span>
-            <span class="font-anton text-[20vw] leading-none text-stroke-white whitespace-nowrap ml-20">PAY太郎</span>
+    <!-- EDITORIAL MENU OVERLAY -->
+    <div id="menu-overlay" aria-hidden="true" class="fixed inset-0 z-[70] transform -translate-y-full overflow-y-auto bg-[#F4F9FC] text-brand-black transition-transform duration-500 ease-in-out hidden-menu">
+        <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+            <div class="absolute inset-y-0 right-0 w-1/2 opacity-70" style="background-image: radial-gradient(circle, rgba(47, 111, 179, 0.18) 1.4px, transparent 1.4px); background-size: 18px 18px;"></div>
+            <div class="absolute -left-24 top-24 h-64 w-64 rounded-full border-[36px] border-brand-accent/15"></div>
+            <div class="absolute -right-20 bottom-10 h-72 w-80 -rotate-12 bg-brand-accent/10"></div>
         </div>
 
-        <!-- Menu Search Bar -->
-        <div class="absolute top-20 left-1/2 -translate-x-1/2 w-full max-w-md px-4 relative z-10">
-            <div class="relative">
-                <input 
-                    type="text" 
-                    id="menu-search-input" 
-                    placeholder="キーワードで検索..."
-                    class="w-full px-4 py-3 pl-12 border-2 border-brand-accent bg-brand-black text-white font-sans text-sm focus:outline-none focus:border-white transition-colors placeholder:text-gray-500"
-                />
-                <i data-lucide="search" class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-brand-accent"></i>
-                <button 
-                    id="menu-clear-search" 
-                    class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors hidden"
-                    onclick="clearMenuSearch()"
-                >
-                    <i data-lucide="x-circle" class="w-5 h-5"></i>
-                </button>
-            </div>
-        </div>
+        <div class="relative z-10 mx-auto grid min-h-full w-full max-w-6xl grid-cols-1 px-5 pb-8 pt-24 md:grid-cols-[0.92fr_1.08fr] md:grid-rows-[1fr_auto] md:gap-x-12 md:px-10 md:pb-7 md:pt-28">
+            <section class="flex flex-col justify-center md:border-r md:border-brand-black/20 md:pr-12">
+                <div class="flex items-center gap-4">
+                    <img src="images/editorial-desk-mark-transparent-v1.webp" alt="" width="640" height="640" class="h-16 w-16 object-contain md:h-24 md:w-24">
+                    <div>
+                        <p class="font-serif text-[10px] italic text-gray-500 md:text-xs">Smart Living Editorial</p>
+                        <h2 class="mt-1 font-sans text-xl font-black leading-tight md:text-3xl">
+                            <span class="block">知りたいことを、</span>
+                            <span class="block text-brand-purple">わかりやすく。</span>
+                        </h2>
+                    </div>
+                </div>
+                <p class="mt-4 max-w-md text-xs font-medium leading-[1.9] text-gray-600 md:mt-6 md:text-sm">ポイ活・AI・テクノロジーを、暮らしに役立つ形で届ける情報メディアです。</p>
 
-        <ul class="text-center space-y-4 relative z-10">
-            <li class="relative">
-                <a href="#" onclick="toggleMenu(); goHome();" class="menu-link font-anton text-5xl md:text-7xl hover:text-brand-accent transition-colors block">INDEX</a>
-                <span class="text-xs font-serif italic text-gray-500">Top Page</span>
-            </li>
-             <li class="relative">
-                <a href="#" onclick="toggleMenu(); showAbout();" class="menu-link font-anton text-5xl md:text-7xl hover:text-brand-accent transition-colors block">ABOUT</a>
-                <span class="text-xs font-serif italic text-gray-500">Concept</span>
-            </li>
-            <li class="relative">
-                <a href="contact.html" class="menu-link font-anton text-5xl md:text-7xl hover:text-brand-accent transition-colors block">CONTACT</a>
-                <span class="text-xs font-serif italic text-gray-500">Get in Touch</span>
-            </li>
-            <li class="relative">
-                <a href="articles_html/policy.html" class="menu-link font-anton text-5xl md:text-7xl hover:text-brand-accent transition-colors block">POLICY</a>
-                <span class="text-xs font-serif italic text-gray-500">Privacy Policy</span>
-            </li>
-        </ul>
+                <div class="relative mt-5 md:mt-8">
+                    <input type="text" id="menu-search-input" placeholder="記事をキーワードで検索..." class="w-full border-2 border-brand-black bg-white/90 px-4 py-3.5 pl-12 font-sans text-sm outline-none transition-colors placeholder:text-gray-400 focus:border-brand-purple">
+                    <i data-lucide="search" class="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-brand-purple"></i>
+                    <button type="button" id="menu-clear-search" aria-label="検索語を消去" class="absolute right-4 top-1/2 hidden -translate-y-1/2 text-gray-400 transition-colors hover:text-brand-purple" onclick="clearMenuSearch()">
+                        <i data-lucide="x-circle" class="h-5 w-5"></i>
+                    </button>
+                </div>
 
-        <div class="absolute bottom-10 w-full px-8 flex justify-between items-end border-t border-gray-800 pt-4 max-w-4xl">
-            <div class="text-left">
-                <p class="font-sans font-black text-brand-accent text-base tracking-tight">ポイ活Pay太郎</p>
-                <p class="text-gray-500 text-xs mt-1">Tokyo, Japan</p>
-            </div>
-            <div class="flex gap-4">
-                 <i data-lucide="instagram" class="w-5 h-5 hover:text-brand-accent cursor-pointer transition-colors"></i>
-                 <i data-lucide="twitter" class="w-5 h-5 hover:text-brand-accent cursor-pointer transition-colors"></i>
+                <nav class="mt-4 flex flex-wrap gap-2" aria-label="カテゴリーから探す">
+                    <a href="?category=AI・テクノロジー" class="border border-brand-black bg-white/80 px-3 py-2 text-[10px] font-bold transition-colors hover:bg-brand-purple hover:text-white">AI・テクノロジー</a>
+                    <a href="?category=ポイ活" class="border border-brand-black bg-white/80 px-3 py-2 text-[10px] font-bold transition-colors hover:bg-brand-purple hover:text-white">ポイ活</a>
+                    <a href="?category=ガジェット" class="border border-brand-black bg-white/80 px-3 py-2 text-[10px] font-bold transition-colors hover:bg-brand-purple hover:text-white">ガジェット</a>
+                </nav>
+            </section>
+
+            <nav class="mt-8 flex flex-col justify-center md:mt-0" aria-label="メインメニュー">
+                <div class="mb-3 flex items-center gap-3">
+                    <span class="font-anton text-xs tracking-[0.24em] text-brand-purple">MENU</span>
+                    <span class="h-px flex-1 bg-brand-black/20"></span>
+                </div>
+                <ul class="border-y-2 border-brand-black">
+                    <li class="border-b border-brand-black/20">
+                        <a href="#" onclick="toggleMenu(); goHome();" class="group grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-3 py-3.5 md:py-5">
+                            <span class="font-anton text-sm text-brand-accent">01</span><span><strong class="block text-lg font-black md:text-2xl">トップページ</strong><small class="font-serif text-[10px] italic text-gray-500">Index / Latest stories</small></span><span class="text-brand-purple transition-transform group-hover:translate-x-1">→</span>
+                        </a>
+                    </li>
+                    <li class="border-b border-brand-black/20">
+                        <a href="#" onclick="toggleMenu(); showAbout();" class="group grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-3 py-3.5 md:py-5">
+                            <span class="font-anton text-sm text-brand-accent">02</span><span><strong class="block text-lg font-black md:text-2xl">このサイトについて</strong><small class="font-serif text-[10px] italic text-gray-500">About / Concept</small></span><span class="text-brand-purple transition-transform group-hover:translate-x-1">→</span>
+                        </a>
+                    </li>
+                    <li class="border-b border-brand-black/20">
+                        <a href="contact.html" class="group grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-3 py-3.5 md:py-5">
+                            <span class="font-anton text-sm text-brand-accent">03</span><span><strong class="block text-lg font-black md:text-2xl">お問い合わせ</strong><small class="font-serif text-[10px] italic text-gray-500">Contact / Get in touch</small></span><span class="text-brand-purple transition-transform group-hover:translate-x-1">→</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="articles_html/policy.html" class="group grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-3 py-3.5 md:py-5">
+                            <span class="font-anton text-sm text-brand-accent">04</span><span><strong class="block text-lg font-black md:text-2xl">プライバシーポリシー</strong><small class="font-serif text-[10px] italic text-gray-500">Policy / Privacy</small></span><span class="text-brand-purple transition-transform group-hover:translate-x-1">→</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="mt-8 flex items-center justify-between border-t border-brand-black/20 pt-4 text-[10px] text-gray-500 md:col-span-2 md:mt-5">
+                <p>© 2024 ポイ活Pay太郎</p>
+                <p class="font-serif italic">Tokyo / Smart Living Editorial</p>
             </div>
         </div>
     </div>
 
     <!-- Main Content Container -->
     <main id="app" class="pt-16 pb-20 min-h-screen">
-        
+
         <!-- === TOP PAGE === -->
         <div id="top-page" class="fade-in">
-            
-            <!-- Hero -->
-            <header class="relative px-4 mb-10 mt-4 text-center">
-                <p class="font-serif italic text-sm text-gray-500 mb-2">Smart Living Editorial</p>
-                <h1 class="font-anton text-[15vw] md:text-[8rem] leading-[1.25] tracking-tight mb-4 break-words">
-                    MAXIMIZE<br>
-                    <span class="text-stroke">VALUE.</span><br>
-                    <span class="bg-brand-accent px-1">MINIMIZE</span><br>
-                    COST.
-                </h1>
-                <p class="text-[10px] md:text-xs font-bold tracking-widest border-t border-b border-black py-2 mt-4 flex justify-between uppercase">
-                    <span>Tokyo / NYC / Web3</span>
-                    <span>Est. 2024</span>
-                    <span>Asset Mgmt</span>
-                </p>
-            </header>
 
-            <!-- Marquee -->
-            <div class="ticker-wrap mb-12 -rotate-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] border-y-2 border-black">
-                <div class="ticker">
-                    <span class="ticker-item">POINT HACKING IS A LIFESTYLE ///</span>
-                    <span class="ticker-item">NO BUY YEAR CHALLENGE ///</span>
-                    <span class="ticker-item">PROTOCOL 20: ACTIVATED ///</span>
-                    <span class="ticker-item">INVEST IN YOURSELF ///</span>
-                    <span class="ticker-item">DIGITAL GOLD RUSH ///</span>
+            <!-- Compact Editorial Brand Strip -->
+            <header class="px-4 mb-8 mt-4">
+                <div class="relative isolate max-w-5xl mx-auto flex items-center justify-center gap-4 md:gap-6 overflow-hidden border-y-2 border-brand-black bg-white/70 px-3 md:px-6 py-4 md:py-5">
+                    <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+                        <div class="absolute inset-y-0 left-0 w-2/5 opacity-60" style="background-image: radial-gradient(circle, rgba(47, 111, 179, 0.22) 1.4px, transparent 1.4px); background-size: 14px 14px;"></div>
+                        <div class="absolute -left-10 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full border-[16px] border-brand-accent/20"></div>
+                        <div class="absolute -right-10 -top-16 h-44 w-52 rotate-12 bg-brand-accent/15"></div>
+                        <div class="absolute bottom-3 right-8 h-1.5 w-16 bg-brand-purple/25 md:w-28"></div>
+                    </div>
+                    <img
+                        src="images/editorial-desk-mark-transparent-v1.webp"
+                        alt=""
+                        width="640"
+                        height="640"
+                        fetchpriority="high"
+                        decoding="async"
+                        class="w-24 h-24 md:w-32 md:h-32 shrink-0 object-contain"
+                    >
+                    <div class="min-w-0">
+                        <p class="font-serif italic text-[10px] md:text-xs text-gray-500 mb-1">Smart Living Editorial</p>
+                        <h1 class="font-sans text-xl sm:text-2xl md:text-3xl font-black leading-tight tracking-tight">
+                            <span class="block whitespace-nowrap">知りたいことを、</span>
+                            <span class="block whitespace-nowrap text-brand-purple">わかりやすく。</span>
+                        </h1>
+                        <p class="mt-2 text-xs md:text-sm font-medium leading-relaxed text-gray-700">
+                            ポイ活・AI・テクノロジーを、暮らしに役立つ形で。
+                        </p>
+                    </div>
                 </div>
-            </div>
+            </header>
 
             <!-- Search & Filter Section -->
             <section class="px-4 mb-12 max-w-4xl mx-auto">
                 <div class="flex flex-col md:flex-row gap-4">
                     <!-- Search Bar -->
                     <div class="flex-1 relative">
-                        <input 
-                            type="text" 
-                            id="search-input" 
+                        <input
+                            type="text"
+                            id="search-input"
                             placeholder="キーワードで記事を検索..."
-                            class="w-full px-4 py-3 pl-12 border-2 border-black font-sans text-sm focus:outline-none focus:border-brand-purple transition-colors"
+                            class="w-full px-4 py-3 pl-12 border-2 border-brand-black font-sans text-sm focus:outline-none focus:border-brand-purple transition-colors"
                         />
                         <i data-lucide="search" class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                        <button 
-                            id="clear-search" 
-                            class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black transition-colors hidden"
+                        <button
+                            id="clear-search"
+                            class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-brand-black transition-colors hidden"
                             onclick="clearSearch()"
                         >
                             <i data-lucide="x-circle" class="w-5 h-5"></i>
                         </button>
                     </div>
-                    
+
                     <!-- Category Dropdown -->
                     <div class="relative">
-                        <select 
-                            id="category-select" 
-                            class="appearance-none px-4 py-3 pr-10 border-2 border-black font-sans text-sm focus:outline-none focus:border-brand-purple transition-colors bg-white cursor-pointer min-w-[200px]"
+                        <select
+                            id="category-select"
+                            class="appearance-none px-4 py-3 pr-10 border-2 border-brand-black font-sans text-sm focus:outline-none focus:border-brand-purple transition-colors bg-white cursor-pointer min-w-[200px]"
                             onchange="filterByCategory(this.value)"
                         >
                             <option value="all">すべてのカテゴリー</option>
@@ -496,8 +540,15 @@
                 </div>
             </section>
 
-            <!-- Grid Layout -->
-            <section id="article-grid" class="px-4 grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-6 mb-12">
+            <!-- Mobile Editorial Layout -->
+            <section id="mobile-editorial-feed" class="md:hidden px-4 mb-12" aria-live="polite">
+                <div class="text-center py-16">
+                    <p class="font-anton text-xl tracking-wider">LOADING EDITORIAL...</p>
+                </div>
+            </section>
+
+            <!-- Desktop Editorial Layout -->
+            <section id="article-grid" class="hidden px-4 md:block mb-12">
                 <!-- Articles will be injected here -->
                 <div class="col-span-2 text-center py-20">
                     <p class="font-anton text-2xl">LOADING ARCHIVES...</p>
@@ -507,71 +558,60 @@
             <!-- Pagination -->
             <div id="pagination" class="hidden px-4 mb-12">
                 <div class="flex justify-center items-center gap-2 flex-wrap">
-                    <button onclick="changePage('prev')" id="prev-btn" class="px-4 py-2 border-2 border-black hover:bg-black hover:text-white transition-colors font-anton text-sm disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-black">
+                    <button onclick="changePage('prev')" id="prev-btn" class="px-4 py-2 border-2 border-brand-black hover:bg-brand-black hover:text-white transition-colors font-anton text-sm disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-brand-black">
                         << PREV
                     </button>
                     <div id="page-numbers" class="flex gap-2">
                         <!-- Page numbers will be injected here -->
                     </div>
-                    <button onclick="changePage('next')" id="next-btn" class="px-4 py-2 border-2 border-black hover:bg-black hover:text-white transition-colors font-anton text-sm disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-black">
+                    <button onclick="changePage('next')" id="next-btn" class="px-4 py-2 border-2 border-brand-black hover:bg-brand-black hover:text-white transition-colors font-anton text-sm disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-brand-black">
                         NEXT >>
                     </button>
                 </div>
             </div>
-            
-            <!-- Footer -->
-            <footer class="bg-brand-black text-brand-white px-6 py-20 text-center relative overflow-hidden">
-                <!-- Background Text -->
-                <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none select-none">
-                    <span class="font-anton text-[20vw] text-stroke-white whitespace-nowrap">RETURN</span>
-                </div>
-                
-                <!-- Content -->
-                <div class="relative z-10">
-                    <div class="max-w-2xl mx-auto mb-12">
-                        <h2 class="font-anton text-4xl md:text-6xl mb-6 leading-tight">
-                            HACK THE SYSTEM.<br>
-                            <span class="text-brand-accent">MAXIMIZE</span> RETURNS.
-                        </h2>
-                        <p class="font-serif italic text-gray-400 text-base md:text-lg mb-8">
-                            「還元」を超えた、新しい価値創造へ。<br>
-                            消費を投資に変える、スマートライフの実践者たちへ。
-                        </p>
+
+            <!-- Editorial Footer -->
+            <footer class="bg-brand-white px-4 py-10 md:py-14">
+                <div class="relative isolate max-w-5xl mx-auto overflow-hidden border-y-2 border-brand-black bg-white/70">
+                    <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+                        <div class="absolute inset-y-0 right-0 w-2/5 opacity-60" style="background-image: radial-gradient(circle, rgba(47, 111, 179, 0.22) 1.4px, transparent 1.4px); background-size: 14px 14px;"></div>
+                        <div class="absolute -left-10 top-1/2 h-32 w-32 -translate-y-1/2 rounded-full border-[18px] border-brand-accent/20"></div>
+                        <div class="absolute -right-8 -bottom-20 h-44 w-56 -rotate-12 bg-brand-accent/15"></div>
+                        <div class="absolute top-4 left-1/2 h-1.5 w-20 bg-brand-purple/20 md:w-32"></div>
                     </div>
-                    
-                    <!-- Decorative Elements -->
-                    <div class="mb-12">
-                        <p class="text-xs tracking-widest uppercase text-gray-500 mb-6">JOIN THE MOVEMENT</p>
-                        <div class="flex justify-center items-center gap-8 mb-6">
-                            <div class="flex flex-col items-center">
-                                <div class="w-12 h-12 border-2 border-brand-accent flex items-center justify-center">
-                                    <span class="font-anton text-brand-accent text-xl">P</span>
-                                </div>
-                                <span class="text-[10px] text-gray-600 mt-2 font-sans">POINTS</span>
-                            </div>
-                            <div class="flex flex-col items-center">
-                                <div class="w-12 h-12 border-2 border-brand-purple flex items-center justify-center">
-                                    <span class="font-anton text-brand-purple text-xl">A</span>
-                                </div>
-                                <span class="text-[10px] text-gray-600 mt-2 font-sans">ASSETS</span>
-                            </div>
-                            <div class="flex flex-col items-center">
-                                <div class="w-12 h-12 border-2 border-brand-accent flex items-center justify-center">
-                                    <span class="font-anton text-brand-accent text-xl">Y</span>
-                                </div>
-                                <span class="text-[10px] text-gray-600 mt-2 font-sans">YIELD</span>
+
+                    <div class="editorial-footer-content relative z-10 flex flex-col items-center px-4 py-6 md:px-0 md:py-8">
+                        <div class="grid w-fit max-w-full grid-cols-[5.5rem_minmax(0,1fr)] md:grid-cols-[7rem_auto] items-center justify-center gap-x-4 md:gap-x-8">
+                            <img
+                                src="images/editorial-desk-mark-transparent-v1.webp"
+                                alt=""
+                                width="640"
+                                height="640"
+                                loading="lazy"
+                                decoding="async"
+                                class="h-20 w-20 md:h-28 md:w-28 object-contain"
+                            >
+                            <div class="min-w-0">
+                                <p class="font-serif italic text-[10px] md:text-xs text-gray-500 mb-1">Smart Living Editorial</p>
+                                <h2 class="font-sans text-xl sm:text-2xl md:text-3xl font-black leading-tight tracking-tight">
+                                    <span class="block whitespace-nowrap">知ることを、</span>
+                                    <span class="block whitespace-nowrap text-brand-purple">暮らしの力に。</span>
+                                </h2>
+                                <p class="mt-2 text-xs md:text-sm font-medium leading-relaxed text-gray-700">
+                                    ポイ活・AI・テクノロジーを、次の行動につながる情報へ。
+                                </p>
                             </div>
                         </div>
-                        <a href="contact.html" class="inline-block px-8 py-3 border-2 border-white hover:bg-brand-accent hover:border-brand-accent hover:text-black transition-all duration-300 font-sans text-sm tracking-wider">
-                            CONTACT US
+                        <a href="contact.html" class="mt-6 inline-flex items-center gap-2 border-2 border-brand-black bg-brand-purple px-6 py-3 text-xs font-bold tracking-wider text-white transition-colors hover:bg-brand-black">
+                            お問い合わせ
+                            <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
                         </a>
                     </div>
-                    
-                    <!-- Divider -->
-                    <div class="border-t border-gray-800 pt-8">
-                        <h2 class="font-sans text-xl font-black mb-2 text-brand-gray/30 select-none tracking-tight">ポイ活Pay太郎</h2>
-                        <p class="font-serif italic text-gray-500 text-xs">© 2024 ポイ活Pay太郎<br>Smart Asset Management for Modern Living.</p>
-                    </div>
+                </div>
+
+                <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 pt-5 text-[10px] md:text-xs text-gray-500">
+                    <p>© 2024 ポイ活Pay太郎</p>
+                    <p class="font-serif italic">Smart Living Editorial</p>
                 </div>
             </footer>
         </div>
@@ -580,21 +620,21 @@
         <div id="article-page" class="hidden opacity-0 bg-brand-white min-h-screen relative">
             <!-- Progress Bar -->
             <div class="fixed top-[53px] left-0 h-1.5 bg-brand-accent z-40 w-0" id="read-progress"></div>
-            
+
             <!-- Article Content Injection Container -->
             <div id="article-content"></div>
 
             <!-- Back Link Footer -->
             <div class="pb-24 pt-12 text-center bg-brand-white">
-                <button onclick="goHome()" class="text-sm font-bold uppercase tracking-widest border-b border-gray-400 pb-1 hover:border-black transition-colors hover:text-brand-purple">
+                <button onclick="goHome()" class="text-sm font-bold uppercase tracking-widest border-b border-gray-400 pb-1 hover:border-brand-black transition-colors hover:text-brand-purple">
                     Back to Index
                 </button>
             </div>
         </div>
-        
+
         <!-- === ABOUT MODAL (Simple Overlay) === -->
         <div id="about-modal" class="fixed inset-0 bg-brand-white/95 backdrop-blur z-[85] hidden p-8 flex flex-col justify-center items-center text-center">
-             <button onclick="hideAbout()" class="absolute top-20 right-8 font-anton text-xl border border-black rounded-full w-10 h-10 hover:bg-black hover:text-white transition-colors">X</button>
+             <button onclick="hideAbout()" class="absolute top-20 right-8 font-anton text-xl border border-brand-black rounded-full w-10 h-10 hover:bg-brand-black hover:text-white transition-colors">X</button>
              <h2 class="font-anton text-6xl mb-4">CONCEPT</h2>
              <p class="max-w-md font-medium leading-loose text-sm">
                 「ポイ活Pay太郎」は、現代社会における「還元」をテーマにしたライフスタイルマガジンです。
@@ -605,7 +645,7 @@
         </div>
 
     </main>
-    
+
     <!-- TOAST NOTIFICATION -->
     <div id="toast" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-brand-black text-brand-accent px-6 py-3 font-anton tracking-wider text-lg z-[100] translate-y-24 transition-transform duration-300 shadow-xl border border-brand-accent w-max">
         ACTION COMPLETED
@@ -613,7 +653,7 @@
 
     <script>
         lucide.createIcons();
-        
+
         let allPosts = [];
         let filteredPosts = [];
         let currentPage = 1;
@@ -632,7 +672,7 @@
                 const response = await fetch('posts.json');
                 allPosts = await response.json();
                 filteredPosts = allPosts;
-                
+
                 // Fix image paths for root context
                 allPosts.forEach(post => {
                     if (post.image && post.image.startsWith('../')) {
@@ -645,7 +685,7 @@
 
                 // Generate category filter buttons
                 generateCategoryButtons();
-                
+
                 // Check URL parameters for category filter
                 const urlParams = new URLSearchParams(window.location.search);
                 const categoryParam = urlParams.get('category');
@@ -653,11 +693,12 @@
                     filterByCategory(categoryParam);
                 } else {
                     renderGrid(allPosts);
+                    renderMobileLayout(allPosts);
                 }
-                
+
                 // Setup search input
                 setupSearch();
-                
+
                 lucide.createIcons();
             } catch (error) {
                 console.error('Error loading posts:', error);
@@ -672,10 +713,10 @@
                     categoriesSet.add(JSON.stringify({ name: post.category, color: post.categoryColor }));
                 }
             });
-            
+
             const categories = Array.from(categoriesSet).map(cat => JSON.parse(cat));
             categories.sort((a, b) => a.name.localeCompare(a.name, 'ja'));
-            
+
             const categorySelect = document.getElementById('category-select');
             categories.forEach(cat => {
                 const option = document.createElement('option');
@@ -689,7 +730,7 @@
         function setupSearch() {
             const searchInput = document.getElementById('search-input');
             const clearButton = document.getElementById('clear-search');
-            
+
             searchInput.addEventListener('input', (e) => {
                 currentSearchQuery = e.target.value.trim();
                 if (currentSearchQuery) {
@@ -703,7 +744,7 @@
             // Menu search functionality
             const menuSearchInput = document.getElementById('menu-search-input');
             const menuClearButton = document.getElementById('menu-clear-search');
-            
+
             if (menuSearchInput) {
                 menuSearchInput.addEventListener('input', (e) => {
                     const value = e.target.value.trim();
@@ -753,12 +794,12 @@
 
         function performSearch() {
             let results = allPosts;
-            
+
             // Apply category filter first
             if (currentCategory !== 'all') {
                 results = results.filter(post => post.category === currentCategory);
             }
-            
+
             // Apply search query
             if (currentSearchQuery) {
                 const query = currentSearchQuery.toLowerCase();
@@ -771,71 +812,338 @@
                     );
                 });
             }
-            
+
             filteredPosts = results;
             currentPage = 1;
             renderGrid(filteredPosts);
+            renderMobileLayout(filteredPosts);
         }
 
         function filterByCategory(category) {
             currentCategory = category;
             currentPage = 1;
-            
+
             // Update select value
             const categorySelect = document.getElementById('category-select');
             if (categorySelect) {
                 categorySelect.value = category;
             }
-            
+
             performSearch();
+        }
+
+        function getMobileImage(post) {
+            return post.image || 'https://images.unsplash.com/photo-1550523177-3335347d4e41?q=80&w=1000&auto=format&fit=crop';
+        }
+
+        function getMobilePostType(post) {
+            const searchable = `${post.category || ''} ${(post.tags || []).join(' ')} ${post.title || ''}`;
+            if (/AI|テク|ガジェット|iPhone|アプリ|Web|ゲーム|ソフト|VPN|生成/i.test(searchable)) return 'tech';
+            if (/ポイ活|ポイント|PayPay|クレジット|節約|マネー|キャッシュレス|資産|副業|楽天/i.test(searchable)) return 'money';
+            return 'living';
+        }
+
+        function createMobileCompactCard(post, index) {
+            return `
+                <a href="${post.url}" class="group grid grid-cols-[7rem_minmax(0,1fr)] gap-3 py-4 border-b border-brand-black/15 last:border-b-0">
+                    <div class="relative overflow-hidden border border-brand-black bg-gray-100 shadow-[3px_3px_0_rgba(103,183,225,0.24)]">
+                        <img src="${getMobileImage(post)}" alt="" loading="lazy" decoding="async" class="block w-full h-auto object-contain">
+                        <span class="absolute left-1.5 top-1.5 min-w-6 h-6 px-1 flex items-center justify-center bg-white/95 border border-brand-black font-anton text-[11px] text-brand-purple">${String(index + 1).padStart(2, '0')}</span>
+                    </div>
+                    <div class="min-w-0 self-center">
+                        <div class="flex items-center gap-2 mb-1.5">
+                            <span class="text-[9px] font-bold tracking-wide text-brand-purple">${post.category || '記事'}</span>
+                            <span class="text-[9px] font-serif italic text-gray-400">${post.date || ''}</span>
+                        </div>
+                        <h3 class="font-sans text-[15px] font-bold leading-[1.55] tracking-tight mobile-line-clamp-3 group-hover:text-brand-purple transition-colors">${post.title}</h3>
+                    </div>
+                </a>
+            `;
+        }
+
+        function createMobileTopicSection(topic, posts) {
+            if (!posts.length) return '';
+            return `
+                <section id="mobile-topic-${topic.key}" class="mt-9 scroll-mt-4">
+                    <div class="flex items-end justify-between gap-3 pb-2 border-b-2 border-brand-black">
+                        <div class="flex items-center gap-2.5">
+                            <span class="${topic.markClass}" aria-hidden="true"></span>
+                            <div>
+                                <p class="font-anton text-[10px] tracking-[0.2em] text-brand-purple">${topic.english}</p>
+                                <h2 class="font-sans text-xl font-black tracking-tight">${topic.label}</h2>
+                            </div>
+                        </div>
+                        <span class="font-serif italic text-[10px] text-gray-400">Editor's selection</span>
+                    </div>
+                    <div>${posts.map((post, index) => createMobileCompactCard(post, index)).join('')}</div>
+                </section>
+            `;
+        }
+
+        function createMobilePagination(totalPages) {
+            if (totalPages <= 1) return '';
+
+            const candidatePages = [1, currentPage - 1, currentPage, currentPage + 1, totalPages]
+                .filter(page => page >= 1 && page <= totalPages);
+            const visiblePages = [...new Set(candidatePages)].sort((a, b) => a - b);
+            let lastPage = 0;
+            const pageButtons = visiblePages.map(page => {
+                const gap = lastPage && page - lastPage > 1
+                    ? '<span class="px-1 text-gray-300">…</span>'
+                    : '';
+                const isActive = page === currentPage;
+                lastPage = page;
+                return `${gap}<button type="button" onclick="goToPage(${page})" ${isActive ? 'aria-current="page"' : ''} class="w-9 h-9 border border-brand-black font-anton text-xs ${isActive ? 'bg-brand-purple text-white' : 'bg-white text-brand-black'}">${page}</button>`;
+            }).join('');
+
+            return `
+                <nav class="mt-10 pt-6 border-t-2 border-brand-black" aria-label="記事一覧のページ切り替え">
+                    <p class="mb-4 text-center font-anton text-[10px] tracking-[0.2em] text-gray-400">PAGE ${currentPage} / ${totalPages}</p>
+                    <div class="flex items-center justify-center gap-2">
+                        <button type="button" onclick="changePage('prev')" ${currentPage === 1 ? 'disabled' : ''} class="h-9 px-3 border border-brand-black bg-white font-bold text-[10px] disabled:opacity-25">← 前へ</button>
+                        ${pageButtons}
+                        <button type="button" onclick="changePage('next')" ${currentPage === totalPages ? 'disabled' : ''} class="h-9 px-3 border border-brand-black bg-white font-bold text-[10px] disabled:opacity-25">次へ →</button>
+                    </div>
+                </nav>
+            `;
+        }
+
+        function renderMobileLayout(posts) {
+            const container = document.getElementById('mobile-editorial-feed');
+            if (!container) return;
+
+            if (!posts.length) {
+                container.innerHTML = `
+                    <div class="py-16 text-center border-y-2 border-brand-black">
+                        <p class="font-anton text-2xl mb-2">NO ARTICLES FOUND</p>
+                        <p class="text-xs text-gray-500">条件を変えて、もう一度お試しください。</p>
+                    </div>`;
+                return;
+            }
+
+            const totalPages = Math.ceil(posts.length / postsPerPage);
+            if (currentPage > totalPages) currentPage = Math.max(1, totalPages);
+            const startIndex = (currentPage - 1) * postsPerPage;
+            const currentPosts = posts.slice(startIndex, startIndex + postsPerPage);
+            const isFiltered = currentCategory !== 'all' || currentSearchQuery;
+            if (isFiltered || currentPage > 1) {
+                container.innerHTML = `
+                    <div class="flex items-end justify-between border-b-2 border-brand-black pb-3 mb-1">
+                        <div>
+                            <p class="font-anton text-[10px] tracking-[0.2em] text-brand-purple">${isFiltered ? 'SEARCH RESULTS' : 'ARTICLE ARCHIVE'}</p>
+                            <h2 class="font-sans text-2xl font-black">${isFiltered ? '記事を探す' : '過去の記事'}</h2>
+                        </div>
+                        <span class="text-xs font-bold text-gray-500">${posts.length}件</span>
+                    </div>
+                    <div>${currentPosts.map((post, index) => createMobileCompactCard(post, startIndex + index)).join('')}</div>
+                    ${createMobilePagination(totalPages)}
+                `;
+                return;
+            }
+
+            const featured = currentPosts[0];
+            const latest = currentPosts.slice(1, 5);
+            const topicPool = currentPosts.slice(5);
+            const topics = [
+                { key: 'tech', label: 'AI・テクノロジー', english: 'TECH & DIGITAL', markClass: 'block w-5 h-5 bg-brand-purple' },
+                { key: 'money', label: 'ポイ活・マネー', english: 'POINTS & MONEY', markClass: 'block w-5 h-5 rounded-full bg-brand-accent border border-brand-black' },
+                { key: 'living', label: '暮らし・エンタメ', english: 'SMART LIVING', markClass: 'block w-6 h-1.5 bg-brand-purple' }
+            ];
+
+            container.innerHTML = `
+                <nav class="flex gap-2 overflow-x-auto pb-4 -mt-3 mb-2 scrollbar-none" aria-label="注目カテゴリー">
+                    ${topics.map(topic => `<a href="#mobile-topic-${topic.key}" class="shrink-0 border border-brand-black bg-white px-3 py-2 text-[10px] font-bold tracking-wide">${topic.label}</a>`).join('')}
+                </nav>
+
+                <section>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="font-anton text-brand-purple text-4xl leading-none">01</span>
+                        <div>
+                            <p class="font-anton text-[11px] tracking-[0.22em] text-brand-purple">PICK UP</p>
+                            <p class="font-serif italic text-[10px] text-gray-400">Today's featured story</p>
+                        </div>
+                        <span class="h-px flex-1 bg-brand-black/30"></span>
+                    </div>
+                    <a href="${featured.url}" class="group block">
+                        <div class="relative overflow-hidden border-2 border-brand-black bg-gray-100 shadow-[5px_5px_0_rgba(103,183,225,0.34)]">
+                            <img src="${getMobileImage(featured)}" alt="" fetchpriority="high" decoding="async" class="block w-full h-auto object-contain">
+                            <span class="absolute bottom-0 left-0 bg-brand-purple text-white px-3 py-1.5 text-[10px] font-bold tracking-[0.14em]">FEATURED</span>
+                        </div>
+                        <div class="pt-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="bg-brand-black text-white rounded-full px-2.5 py-1 text-[9px] font-bold">${featured.category || '記事'}</span>
+                                <span class="font-serif italic text-[10px] text-gray-400">${featured.date || ''}</span>
+                            </div>
+                            <h2 class="font-sans text-[1.65rem] font-black leading-[1.38] tracking-tight group-hover:text-brand-purple transition-colors">${featured.title}</h2>
+                            <p class="mt-2 text-xs font-medium leading-[1.8] text-gray-600 mobile-line-clamp-2">${featured.description || ''}</p>
+                        </div>
+                    </a>
+                </section>
+
+                <section class="mt-10 py-6 border-y-2 border-brand-black bg-brand-accent/10 -mx-4 px-4">
+                    <div class="flex items-end justify-between mb-3">
+                        <div>
+                            <p class="font-anton text-[10px] tracking-[0.2em] text-brand-purple">NEW STORIES</p>
+                            <h2 class="font-sans text-xl font-black">新着記事</h2>
+                        </div>
+                        <span class="text-[9px] font-bold text-gray-400">横にスワイプ →</span>
+                    </div>
+                    <div class="mobile-snap-row">
+                        ${latest.map(post => `
+                            <a href="${post.url}" class="mobile-snap-card group bg-white border border-brand-black p-2.5 shadow-[4px_4px_0_rgba(31,41,55,0.11)]">
+                                <div class="overflow-hidden bg-gray-100 mb-3">
+                                    <img src="${getMobileImage(post)}" alt="" loading="lazy" decoding="async" class="block w-full h-auto object-contain">
+                                </div>
+                                <span class="text-[9px] font-bold text-brand-purple">${post.category || '記事'} ・ ${post.date || ''}</span>
+                                <h3 class="mt-1.5 font-sans text-base font-bold leading-[1.5] mobile-line-clamp-3 group-hover:text-brand-purple transition-colors">${post.title}</h3>
+                            </a>`).join('')}
+                    </div>
+                </section>
+
+                ${topics.map(topic => createMobileTopicSection(topic, topicPool.filter(post => getMobilePostType(post) === topic.key).slice(0, 4))).join('')}
+                ${createMobilePagination(totalPages)}
+            `;
+        }
+
+        function createDesktopLatestCard(post, index) {
+            return `
+                <a href="${post.url}" class="group grid grid-cols-[7.25rem_minmax(0,1fr)] gap-4 py-3.5 border-b border-brand-black/20 first:pt-0 last:border-b-0">
+                    <div class="relative overflow-hidden border border-brand-black bg-gray-100">
+                        <img src="${getMobileImage(post)}" alt="" loading="lazy" decoding="async" class="block w-full h-auto object-contain">
+                        <span class="absolute left-1.5 top-1.5 bg-white/95 border border-brand-black px-1.5 py-0.5 font-anton text-[10px] text-brand-purple">0${index + 2}</span>
+                    </div>
+                    <div class="min-w-0 self-center">
+                        <p class="mb-1.5 text-[9px] font-bold tracking-wide text-brand-purple">${post.category || '記事'} ・ ${post.date || ''}</p>
+                        <h3 class="font-sans text-base font-bold leading-[1.55] line-clamp-3 group-hover:text-brand-purple transition-colors">${post.title}</h3>
+                    </div>
+                </a>`;
+        }
+
+        function createDesktopTopicCard(post, featured = false) {
+            return `
+                <a href="${post.url}" class="group block h-full border-t border-brand-black pt-3">
+                    <div class="relative overflow-hidden border border-brand-black bg-gray-100 shadow-[4px_4px_0_rgba(103,183,225,0.2)]">
+                        <img src="${getMobileImage(post)}" alt="" loading="lazy" decoding="async" class="block w-full h-auto object-contain">
+                    </div>
+                    <p class="mt-3 mb-1.5 text-[10px] font-bold tracking-wide text-brand-purple">${post.category || '記事'} ・ ${post.date || ''}</p>
+                    <h3 class="font-sans ${featured ? 'text-[1.35rem]' : 'text-base'} font-bold leading-[1.55] line-clamp-3 group-hover:text-brand-purple transition-colors">${post.title}</h3>
+                </a>`;
+        }
+
+        function createDesktopTopicSection(topic, topicPosts, mode = 'feature-left') {
+            if (!topicPosts.length) return '';
+            const primary = topicPosts[0];
+            const secondary = topicPosts.slice(1, 3);
+            const title = `
+                <div class="flex items-end justify-between gap-4 pb-3 mb-5 border-b-2 border-brand-black">
+                    <div class="flex items-center gap-3">
+                        <span class="${topic.markClass}" aria-hidden="true"></span>
+                        <div>
+                            <p class="font-anton text-[10px] tracking-[0.22em] text-brand-purple">${topic.english}</p>
+                            <h2 class="font-sans text-2xl font-black tracking-tight">${topic.label}</h2>
+                        </div>
+                    </div>
+                    <span class="font-serif italic text-xs text-gray-400">Editor's selection</span>
+                </div>`;
+
+            if (mode === 'equal') {
+                return `<section class="mt-14">${title}<div class="grid grid-cols-3 gap-6">${topicPosts.slice(0, 3).map(post => createDesktopTopicCard(post)).join('')}</div></section>`;
+            }
+
+            const primaryHtml = `<div class="col-span-6">${createDesktopTopicCard(primary, true)}</div>`;
+            const secondaryHtml = secondary.map(post => `<div class="col-span-3">${createDesktopTopicCard(post)}</div>`).join('');
+            return `<section class="mt-14">${title}<div class="grid grid-cols-12 gap-6">${mode === 'feature-right' ? secondaryHtml + primaryHtml : primaryHtml + secondaryHtml}</div></section>`;
+        }
+
+        function createDesktopArchiveCard(post, index) {
+            return `
+                <a href="${post.url}" class="group grid grid-cols-[11rem_minmax(0,1fr)] gap-5 py-5 border-t border-brand-black/25">
+                    <div class="relative overflow-hidden border border-brand-black bg-gray-100">
+                        <img src="${getMobileImage(post)}" alt="" loading="lazy" decoding="async" class="block w-full h-auto object-contain">
+                        <span class="absolute left-2 top-2 bg-white/95 border border-brand-black px-2 py-1 font-anton text-[10px] text-brand-purple">${String(index + 1).padStart(2, '0')}</span>
+                    </div>
+                    <div class="min-w-0 self-center">
+                        <p class="mb-2 text-[10px] font-bold tracking-wide text-brand-purple">${post.category || '記事'} ・ ${post.date || ''}</p>
+                        <h3 class="font-sans text-xl font-bold leading-[1.5] line-clamp-3 group-hover:text-brand-purple transition-colors">${post.title}</h3>
+                    </div>
+                </a>`;
         }
 
         function renderGrid(posts) {
             const gridContainer = document.getElementById('article-grid');
-            gridContainer.innerHTML = ''; // Clear existing
-
-            // Calculate pagination
             const totalPages = Math.ceil(posts.length / postsPerPage);
+            if (currentPage > totalPages) currentPage = Math.max(1, totalPages);
             const startIndex = (currentPage - 1) * postsPerPage;
-            const endIndex = startIndex + postsPerPage;
-            const currentPosts = posts.slice(startIndex, endIndex);
+            const currentPosts = posts.slice(startIndex, startIndex + postsPerPage);
+            const isFiltered = currentCategory !== 'all' || currentSearchQuery;
 
-            currentPosts.forEach((post, index) => {
-                // Adjust index for feature article detection (only first post of first page is feature)
-                const globalIndex = startIndex + index;
-                const isFeature = globalIndex === 0;
-                const colSpanClass = isFeature ? 'col-span-1 md:col-span-2' : '';
-                // Force 16:9 aspect ratio for all thumbnails (mobile and PC)
-                const aspectRatioClass = isFeature ? 'aspect-video md:aspect-[21/9]' : 'aspect-video';
-                const titleSizeClass = isFeature ? 'text-4xl md:text-6xl' : 'text-3xl';
-                
-                // Use image from post or placeholder
-                const imageUrl = post.image || 'https://images.unsplash.com/photo-1550523177-3335347d4e41?q=80&w=1000&auto=format&fit=crop';
-                
-                const html = `
-                    <a href="${post.url}" class="${colSpanClass} cursor-pointer article-card group block pb-8 border-b border-gray-300 relative">
-                        <div class="relative w-full ${aspectRatioClass} overflow-hidden border-2 border-black mb-4 bg-gray-200 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)] group-hover:shadow-[8px_8px_0px_0px_rgba(204,255,0,0.3)] transition-all duration-300">
-                            <img src="${imageUrl}" class="object-cover w-full h-full img-grayscale hover-zoom transition-transform duration-700">
-                            ${isFeature ? `<div class="absolute bottom-0 left-0 bg-brand-accent text-black font-anton px-3 py-1 text-3xl md:text-5xl transform -translate-y-4 translate-x-4 border border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">LATEST ISSUE</div>` : ''}
-                            <div class="absolute top-0 right-0 w-0 h-0 border-t-[40px] border-t-brand-accent border-l-[40px] border-l-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            if (!posts.length) {
+                gridContainer.innerHTML = '<div class="max-w-6xl mx-auto py-24 text-center border-y-2 border-brand-black"><p class="font-anton text-3xl mb-2">NO ARTICLES FOUND</p><p class="text-sm text-gray-500">条件を変えて、もう一度お試しください。</p></div>';
+                updatePagination(0);
+                return;
+            }
+
+            if (isFiltered || currentPage > 1) {
+                gridContainer.innerHTML = `
+                    <div class="desktop-editorial-shell">
+                        <div class="flex items-end justify-between pb-4 mb-2 border-b-2 border-brand-black">
+                            <div>
+                                <p class="font-anton text-xs tracking-[0.22em] text-brand-purple">${isFiltered ? 'SEARCH RESULTS' : 'ARTICLE ARCHIVE'}</p>
+                                <h2 class="font-sans text-3xl font-black">${isFiltered ? '記事を探す' : '過去の記事'}</h2>
+                            </div>
+                            <p class="text-sm font-bold text-gray-500">${posts.length} ARTICLES</p>
                         </div>
-                        <div class="flex items-baseline space-x-2 mb-3">
-                            <span class="category-badge bg-black text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">${post.category || 'Article'}</span>
-                            <span class="font-serif italic text-gray-500 text-xs">${post.date}</span>
+                        <div class="grid grid-cols-2 gap-x-8">
+                            ${currentPosts.map((post, index) => createDesktopArchiveCard(post, startIndex + index)).join('')}
                         </div>
-                        <h2 class="font-sans ${titleSizeClass} font-bold leading-tight mb-2 group-hover:text-brand-purple transition-colors relative">
-                            ${post.title}
-                        </h2>
-                        <p class="text-sm font-medium leading-relaxed line-clamp-2 md:w-2/3 mb-4">
-                            ${post.description || ''}
-                        </p>
-                        <div class="accent-stripe"></div>
-                    </a>
-                `;
-                gridContainer.insertAdjacentHTML('beforeend', html);
-            });
-            
-            // Update pagination
+                    </div>`;
+            } else {
+                const featured = posts[0];
+                const latest = posts.slice(1, 4);
+                const topicPool = posts.slice(4);
+                const topics = [
+                    { key: 'tech', label: 'AI・テクノロジー', english: 'TECH & DIGITAL', markClass: 'block w-6 h-6 bg-brand-purple', mode: 'feature-left' },
+                    { key: 'money', label: 'ポイ活・マネー', english: 'POINTS & MONEY', markClass: 'block w-6 h-6 rounded-full bg-brand-accent border border-brand-black', mode: 'feature-right' },
+                    { key: 'living', label: '暮らし・エンタメ', english: 'SMART LIVING', markClass: 'block w-8 h-2 bg-brand-purple', mode: 'equal' }
+                ];
+
+                gridContainer.innerHTML = `
+                    <div class="desktop-editorial-shell">
+                        <div class="flex items-center gap-4 mb-5">
+                            <span class="font-anton text-brand-purple text-5xl leading-none">01</span>
+                            <div>
+                                <p class="font-anton text-xs tracking-[0.25em] text-brand-purple">PICK UP</p>
+                                <p class="font-serif italic text-xs text-gray-400">Stories selected by the editorial desk</p>
+                            </div>
+                            <span class="h-px flex-1 bg-brand-black/30"></span>
+                        </div>
+                        <div class="grid grid-cols-12 gap-7 items-start">
+                            <a href="${featured.url}" class="group col-span-7 block">
+                                <div class="relative overflow-hidden border-2 border-brand-black bg-gray-100 shadow-[7px_7px_0_rgba(103,183,225,0.35)]">
+                                    <img src="${getMobileImage(featured)}" alt="" fetchpriority="high" decoding="async" class="block w-full h-auto object-contain">
+                                    <span class="absolute left-0 bottom-0 bg-brand-purple text-white px-4 py-2 text-[10px] font-bold tracking-[0.18em]">FEATURED STORY</span>
+                                </div>
+                                <div class="pt-5">
+                                    <p class="mb-2 text-[10px] font-bold tracking-wide text-brand-purple">${featured.category || '記事'} ・ ${featured.date || ''}</p>
+                                    <h2 class="font-sans text-[2rem] font-black leading-[1.42] tracking-tight group-hover:text-brand-purple transition-colors">${featured.title}</h2>
+                                    <p class="mt-3 max-w-xl text-[13px] font-medium leading-[1.85] text-gray-600 line-clamp-2">${featured.description || ''}</p>
+                                </div>
+                            </a>
+                            <aside class="col-span-5 border-l-2 border-brand-black pl-6">
+                                <div class="flex items-end justify-between pb-3 mb-1 border-b border-brand-black">
+                                    <div>
+                                        <p class="font-anton text-[10px] tracking-[0.2em] text-brand-purple">NEW STORIES</p>
+                                        <h2 class="font-sans text-xl font-black">新着記事</h2>
+                                    </div>
+                                    <span class="font-serif italic text-[10px] text-gray-400">Latest</span>
+                                </div>
+                                ${latest.map((post, index) => createDesktopLatestCard(post, index)).join('')}
+                            </aside>
+                        </div>
+                        ${topics.map(topic => createDesktopTopicSection(topic, topicPool.filter(post => getMobilePostType(post) === topic.key).slice(0, 3), topic.mode)).join('')}
+                    </div>`;
+            }
+
             updatePagination(totalPages);
             lucide.createIcons();
         }
@@ -851,7 +1159,7 @@
                 paginationContainer.classList.add('hidden');
                 return;
             }
-            
+
             paginationContainer.classList.remove('hidden');
             pageNumbersContainer.innerHTML = '';
 
@@ -863,7 +1171,7 @@
             const maxVisible = 7;
             let startPage = Math.max(1, currentPage - Math.floor(maxVisible / 2));
             let endPage = Math.min(totalPages, startPage + maxVisible - 1);
-            
+
             if (endPage - startPage < maxVisible - 1) {
                 startPage = Math.max(1, endPage - maxVisible + 1);
             }
@@ -871,7 +1179,7 @@
             // First page
             if (startPage > 1) {
                 pageNumbersContainer.insertAdjacentHTML('beforeend', `
-                    <button onclick="goToPage(1)" class="w-10 h-10 border-2 border-black hover:bg-black hover:text-white transition-colors font-anton text-sm">1</button>
+                    <button onclick="goToPage(1)" class="w-10 h-10 border-2 border-brand-black hover:bg-brand-black hover:text-white transition-colors font-anton text-sm">1</button>
                 `);
                 if (startPage > 2) {
                     pageNumbersContainer.insertAdjacentHTML('beforeend', `<span class="flex items-center px-2">...</span>`);
@@ -881,9 +1189,9 @@
             // Page numbers
             for (let i = startPage; i <= endPage; i++) {
                 const isActive = i === currentPage;
-                const activeClass = isActive ? 'bg-black text-brand-accent' : 'hover:bg-black hover:text-white';
+                const activeClass = isActive ? 'bg-brand-black text-brand-accent' : 'hover:bg-brand-black hover:text-white';
                 pageNumbersContainer.insertAdjacentHTML('beforeend', `
-                    <button onclick="goToPage(${i})" class="w-10 h-10 border-2 border-black ${activeClass} transition-colors font-anton text-sm">${i}</button>
+                    <button onclick="goToPage(${i})" class="w-10 h-10 border-2 border-brand-black ${activeClass} transition-colors font-anton text-sm">${i}</button>
                 `);
             }
 
@@ -893,25 +1201,35 @@
                     pageNumbersContainer.insertAdjacentHTML('beforeend', `<span class="flex items-center px-2">...</span>`);
                 }
                 pageNumbersContainer.insertAdjacentHTML('beforeend', `
-                    <button onclick="goToPage(${totalPages})" class="w-10 h-10 border-2 border-black hover:bg-black hover:text-white transition-colors font-anton text-sm">${totalPages}</button>
+                    <button onclick="goToPage(${totalPages})" class="w-10 h-10 border-2 border-brand-black hover:bg-brand-black hover:text-white transition-colors font-anton text-sm">${totalPages}</button>
                 `);
             }
         }
 
         function goToPage(page) {
             currentPage = page;
-            renderGrid(allPosts);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            renderGrid(filteredPosts);
+            renderMobileLayout(filteredPosts);
+            scrollToArticleFeed();
         }
 
         function changePage(direction) {
             if (direction === 'prev' && currentPage > 1) {
                 currentPage--;
-            } else if (direction === 'next' && currentPage < Math.ceil(allPosts.length / postsPerPage)) {
+            } else if (direction === 'next' && currentPage < Math.ceil(filteredPosts.length / postsPerPage)) {
                 currentPage++;
             }
-            renderGrid(allPosts);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            renderGrid(filteredPosts);
+            renderMobileLayout(filteredPosts);
+            scrollToArticleFeed();
+        }
+
+        function scrollToArticleFeed() {
+            if (window.innerWidth < 768) {
+                document.getElementById('mobile-editorial-feed')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         }
 
         async function loadArticle(url) {
@@ -919,22 +1237,22 @@
             const topPage = document.getElementById('top-page');
             const articlePage = document.getElementById('article-page');
             const articleContent = document.getElementById('article-content');
-            
+
             window.scrollTo(0, 0);
             topPage.style.opacity = '0';
-            
+
             try {
                 // 2. Fetch the HTML file
                 const response = await fetch(url);
                 const text = await response.text();
-                
+
                 // 3. Parse HTML
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(text, 'text/html');
-                
+
                 // 4. Extract content
                 let contentHtml = '';
-                
+
                 // Try New Template first
                 const newBody = doc.getElementById('article-body');
                 if (newBody) {
@@ -950,19 +1268,19 @@
                         if (main) contentHtml = main.innerHTML;
                     }
                 }
-                
+
                 // Find post metadata
                 const post = allPosts.find(p => p.url === url || url.endsWith(p.url) || p.url.endsWith(url));
-                
+
                 if (contentHtml) {
                     // Fix relative paths in injected content
                     contentHtml = contentHtml.replace(/src="\.\.\//g, 'src="');
                     contentHtml = contentHtml.replace(/href="\.\.\//g, 'href="');
-                    
+
                     if (post) {
                          const headerHtml = `
                             <div class="w-full max-w-4xl mx-auto mt-8 mb-12">
-                                <img src="${post.image || ''}" class="w-full aspect-video object-cover shadow-lg">
+                                <img src="${post.image || ''}" class="block w-full h-auto object-contain bg-white shadow-lg">
                             </div>
                             <article class="px-5 max-w-2xl mx-auto pt-10 pb-16 drop-cap">
                                 ${contentHtml}
@@ -972,14 +1290,14 @@
                     } else {
                         articleContent.innerHTML = contentHtml;
                     }
-                    
+
                     lucide.createIcons();
 
                     // Transition
                     setTimeout(() => {
                         topPage.classList.add('hidden');
                         articlePage.classList.remove('hidden');
-                        void articlePage.offsetWidth; 
+                        void articlePage.offsetWidth;
                         articlePage.style.opacity = '1';
                         articlePage.classList.add('fade-in');
                     }, 300);
@@ -994,7 +1312,7 @@
         function goHome() {
             const topPage = document.getElementById('top-page');
             const articlePage = document.getElementById('article-page');
-            
+
             window.scrollTo(0, 0);
             articlePage.style.opacity = '0';
             setTimeout(() => {
@@ -1011,11 +1329,11 @@
             const toast = document.getElementById('toast');
             toast.innerText = message;
             toast.classList.remove('translate-y-24'); // Slide up
-            
+
             setTimeout(() => {
                 toast.classList.add('translate-y-24'); // Slide down
             }, 3000);
-            
+
             // Clear input if exists
             const emailInput = document.getElementById('email-input');
             if(emailInput) emailInput.value = '';
@@ -1026,40 +1344,43 @@
         const menuIcon = document.getElementById('menu-icon');
         const closeIcon = document.getElementById('close-icon');
         const navIssue = document.getElementById('nav-issue');
+        const menuButton = document.querySelector('[aria-controls="menu-overlay"]');
         let isMenuOpen = false;
 
         function toggleMenu() {
             isMenuOpen = !isMenuOpen;
-            
+            menuOverlay.setAttribute('aria-hidden', String(!isMenuOpen));
+            menuButton?.setAttribute('aria-expanded', String(isMenuOpen));
+            document.body.classList.toggle('overflow-hidden', isMenuOpen);
+
             if (isMenuOpen) {
                 // Open Menu
                 menuOverlay.classList.remove('hidden-menu'); // ensure display block if needed
                 menuOverlay.classList.remove('-translate-y-full');
-                
+
                 // Icon Animation
                 menuIcon.classList.add('opacity-0', 'rotate-90', 'scale-0');
                 closeIcon.classList.remove('opacity-0', 'scale-0');
                 closeIcon.classList.add('rotate-0'); // reset rotation
-                
-                // Text color update for contrast
-                navIssue.classList.add('text-white');
-                navIssue.classList.remove('text-brand-black');
+                if (window.innerWidth >= 768) {
+                    window.setTimeout(() => document.getElementById('menu-search-input')?.focus(), 450);
+                }
 
             } else {
                 // Close Menu
                 menuOverlay.classList.add('-translate-y-full');
-                
+
                 // Icon Animation
                 menuIcon.classList.remove('opacity-0', 'rotate-90', 'scale-0');
                 closeIcon.classList.add('opacity-0', 'scale-0');
                 closeIcon.classList.remove('rotate-0');
-                
-                 // Text color update
-                navIssue.classList.remove('text-white');
-                navIssue.classList.add('text-brand-black');
             }
         }
-        
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && isMenuOpen) toggleMenu();
+        });
+
         // --- ABOUT MODAL ---
         function showAbout() {
             document.getElementById('about-modal').classList.remove('hidden');
