@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-06T17:05:12.376Z",
+  "generatedAt": "2026-09-07T02:04:17.925Z",
   "source": "poitaro-maximize-working",
   "productionTouched": false,
   "excludedLegacyFiles": [
     "articles_html/recommended-point-sites.html"
   ],
   "payloadFileCount": 331,
-  "totalBytes": 124245785,
+  "totalBytes": 124523739,
   "files": [
     {
       "path": ".nojekyll",
@@ -45,628 +45,628 @@
     },
     {
       "path": "articles_html/-iosaltstore-pal.html",
-      "bytes": 76248,
-      "sha256": "cde87a317d8dedbb8f8a09189594071862cbea33f5e3ffa550abaf8ea7a4f55d"
+      "bytes": 80662,
+      "sha256": "2313debba30cb800d25f96d62508709b11eec8b053950ba9ec5aad1d733b6fba"
     },
     {
       "path": "articles_html/3DS.html",
-      "bytes": 65273,
-      "sha256": "92d24c4a96ee590e0e0f836ba31b576eaf9fd4066064eb585072471454edc02a"
+      "bytes": 67111,
+      "sha256": "58489a2904bbe8183ea65a93563fca85e8a8eaa48dc1f66ee3042d2da353da44"
     },
     {
       "path": "articles_html/a8.html",
-      "bytes": 63581,
-      "sha256": "dc8e789cd84041f0c7992c171da0bd200f3e3bfebc312dda0ab5bc250ed08606"
+      "bytes": 65051,
+      "sha256": "56301e35feceedb858a27efca71c00f786101a846b7a6fe1d25b3d0074f3aed1"
     },
     {
       "path": "articles_html/affiliate-tools-2026.html",
-      "bytes": 62456,
-      "sha256": "5d9a492a301cffdea0821633e5c78f6a72af5c40842323f13a80ee6bc7da8714"
+      "bytes": 64294,
+      "sha256": "35b1da624cdef94240882f73313a28769da3f1e6aebfa00c41274ee22b13d73f"
     },
     {
       "path": "articles_html/affinity.html",
-      "bytes": 71929,
-      "sha256": "1aa9e923cee2b285c1c05908c79d92b687ef990f4f3a565eee2c7691c71fcbce"
+      "bytes": 74135,
+      "sha256": "aec0c77a8a7756d650014ecb2ee7c84b2f223d1de114e443b5a091f90d2c6bdb"
     },
     {
       "path": "articles_html/ai-job-student.html",
-      "bytes": 60720,
-      "sha256": "ed31deaba39f8cb6f2361a99459c7c48ecbe47cd8f5d34ff8bf39e535d3aed24"
+      "bytes": 62926,
+      "sha256": "6d6077d62de4a50ab6fa9ccb8b21c31d5d1bdd9938d9dfe3eeddec4a0029abbd"
     },
     {
       "path": "articles_html/AIImg.html",
-      "bytes": 65468,
-      "sha256": "a0eb9a68869401019c92893a097e7725394029f87d74bcab4457382ca76dc4d6"
+      "bytes": 67306,
+      "sha256": "2006f9eb13559e40fd698b633d49149a39ce8018f0e713a2788d467170817ee9"
     },
     {
       "path": "articles_html/AITask.html",
-      "bytes": 70069,
-      "sha256": "863f86f4a4c197c25ffc9eff86ee23dacc507ebce5b3f08830a0ecb691047570"
+      "bytes": 71907,
+      "sha256": "507dda7c880bc179ea0ea0cc39e66b07d4fd977a47a231306f12f5f34a028e3d"
     },
     {
       "path": "articles_html/amazon.html",
-      "bytes": 71144,
-      "sha256": "235dd57aa90e482b20540cdebaee997d3e2c2fe39b4d6dcdcbaab1416475a710"
+      "bytes": 73718,
+      "sha256": "a5a88f2de1470918e364ddb40020bdabb0b687e2921dd823582fa6944cb15e3f"
     },
     {
       "path": "articles_html/AmefuriToDpoint.html",
-      "bytes": 72805,
-      "sha256": "7309d154b3576f3b0db07c6ac2699d7b07fc9c067c96b310931a97c949c83e05"
+      "bytes": 75379,
+      "sha256": "8d9ce508c2b6112ed32874018650c3d7f06dffcb0720b9148b1360d52eb408c9"
     },
     {
       "path": "articles_html/amehuri.html",
-      "bytes": 73838,
-      "sha256": "bedf9c7e5a2ded32bda950ce251b56bbb36a1a17b7e3b77d68fd6036c8997bfb"
+      "bytes": 76780,
+      "sha256": "e06c266986010368b873f15a07026c88fc46e6197ba243a50806d026a123d459"
     },
     {
       "path": "articles_html/baito.html",
-      "bytes": 60597,
-      "sha256": "fe5bb971206aa805f0f00df93e130a1d0998a1e445516c1d6dc299a9795dfe79"
+      "bytes": 62067,
+      "sha256": "49e35b5d3aaf3b5642fb1d1bea08ec5e007e957683a561d0a3c7c5eb20b29be5"
     },
     {
       "path": "articles_html/BlackFriday.html",
-      "bytes": 63809,
-      "sha256": "242a28b58b979a940764df3d24a61d6749850daeb6187863dc80ab1a164aa690"
+      "bytes": 66015,
+      "sha256": "23ccae39884dae23da663a487987e21e0e628728c44625d7be315c73b153b1b1"
     },
     {
       "path": "articles_html/BuySwitch2.html",
-      "bytes": 70034,
-      "sha256": "b15a421d6395692c0eea2b797be3a7b2f3b1995b595d0032ce2c08507b0622fa"
+      "bytes": 72608,
+      "sha256": "c48486529246b5d36c9297012a0cd8d5c45265e359e39d8e290b59f4ab6444f0"
     },
     {
       "path": "articles_html/coconala-ai-2026.html",
-      "bytes": 51669,
-      "sha256": "3774a3673c123dc841014754f8445b0d10a54967cf4c1894d800ff35ee9599f5"
+      "bytes": 52035,
+      "sha256": "99a63512d6d8244548bfcb7b3ab2ffe1db9d5e04cf9fe2150dae5cd56eb0e156"
     },
     {
       "path": "articles_html/credit_card_selection.html",
-      "bytes": 58875,
-      "sha256": "24c74e9e68a48d69555ce2796193ed8dc35e68f4caa0b4749257909cd471730a"
+      "bytes": 60345,
+      "sha256": "5bfed36930e24d3f61f3cce0a03bea31674dc5beccd0b8c1a3c9856dd7f85b03"
     },
     {
       "path": "articles_html/DB.html",
-      "bytes": 66693,
-      "sha256": "c5a115cae9921e6a5d2d3125cb44b16cbc9bdcaaa37073a45c3c04adce847e4a"
+      "bytes": 68163,
+      "sha256": "e385e0f1f672f37a931d0a63e52cf48a4a8cf35dc8a9e742d98c3585ea680b2e"
     },
     {
       "path": "articles_html/Dcard.html",
-      "bytes": 63610,
-      "sha256": "8f581a8395e0db7128cb20924e9fcbcd1567249986e4b8c0815c4e0ad7f5d400"
+      "bytes": 65448,
+      "sha256": "c99e7e10191916eaabdf4b8576a8f47f7510df287fa0d44a9816b7990dd23bf3"
     },
     {
       "path": "articles_html/DePIN.html",
-      "bytes": 62004,
-      "sha256": "3d114b1ebe1682ac9607f1f4c5c153dbbe9b7883312d37bb9164b79919a216aa"
+      "bytes": 63842,
+      "sha256": "851692f8d6e425314d9026549eac9a1c12af0f65c7fe941fa2cf00445672d7b9"
     },
     {
       "path": "articles_html/Direx.html",
-      "bytes": 55554,
-      "sha256": "f659cd324daeba971029dc974be211f183215dd6cdbfe47c9b3d64cb17ce8347"
+      "bytes": 57024,
+      "sha256": "9e2674bc9f9c4ae44891d77ea1cadc303b8d776b3d5c8578c3c3279b6eecc5a2"
     },
     {
       "path": "articles_html/dokodemo-diga-free-tv.html",
-      "bytes": 65278,
-      "sha256": "8d8691afc41ad71d8801e2727c765ebac3e5d34a2bfc8ff310b19d50427c56f0"
+      "bytes": 67484,
+      "sha256": "e814326cd07db574bb1344edbb2c595950b04a0034a424bbb27ed5e917639abb"
     },
     {
       "path": "articles_html/DolphiniOS.html",
-      "bytes": 73157,
-      "sha256": "ebe3174cfa762b0d6b80761aef9c9c41bac192ddb31a47ffcc98733822f5191a"
+      "bytes": 76835,
+      "sha256": "85b256df6aa3e3bf558f7f9bf71ea7a15a052baf0ef62b0e87c7de16b8221ac5"
     },
     {
       "path": "articles_html/domain.html",
-      "bytes": 85888,
-      "sha256": "df3fe568db4d27cb68fd6bdb2ac32d489a72a4573da61f25bf309177fceccb60"
+      "bytes": 88830,
+      "sha256": "0599c02772a1dcc578856502a41dcf0c38603c4e604254221b1f796a6c00f3ad"
     },
     {
       "path": "articles_html/Dpay.html",
-      "bytes": 60204,
-      "sha256": "b70e968233b574ccd215959128d38a2a11bab74073cbe8d4c32dd5f1bfb6cbf2"
+      "bytes": 61674,
+      "sha256": "fbfdc4929c3ee85c1846e41b2c69cf09c7a26a670efe9f22df33bd7307db425d"
     },
     {
       "path": "articles_html/dpoint-market-end-2026.html",
-      "bytes": 66126,
-      "sha256": "86f2a3c4a4e8e097b946fe702e477e43644f3e282c5b4faaaaa240be599942bb"
+      "bytes": 67964,
+      "sha256": "d17438a2c0f90c451d0800347c9fd8dd82eaace0dc2ec060b7955b6e31dacca7"
     },
     {
       "path": "articles_html/epos-platinum.html",
-      "bytes": 69519,
-      "sha256": "7c22488ea5d80943f46f1835986ee207c5715955d8c5cf3840c2b5dff72d3b44"
+      "bytes": 72093,
+      "sha256": "1dabadbc70d0ffd0310081f65cc54facedcfb4d196a51bb60bb1317e28fe8ab0"
     },
     {
       "path": "articles_html/ExpressVPN.html",
-      "bytes": 64665,
-      "sha256": "160e14e90a494606968101d1215b2db28a597bd9a580a1786b20aaebac778546"
+      "bytes": 66871,
+      "sha256": "cbbb4f22cc87e702b2d5d47cf2125f7fc937016cb81099da71c34d43d29afab3"
     },
     {
       "path": "articles_html/fgo.html",
-      "bytes": 63084,
-      "sha256": "081db4139b0b4a46b5c5c4e3a14ec8a71bdec2bd3360a2ba365d09040553d647"
+      "bytes": 65290,
+      "sha256": "77d0d01b18445b8b36f9657b6677c6f8662d19d6916b10b98042ee9b2741fb5c"
     },
     {
       "path": "articles_html/ForeignPoint.html",
-      "bytes": 63893,
-      "sha256": "576165524fabdcd6c3afb853aa66aefb9e75a90473b9354e79454a99c0483991"
+      "bytes": 65363,
+      "sha256": "59cc0a88ba89da1ce4a69e6a12d5be0136ae7fdd611d69c721e40313d7ef10b4"
     },
     {
       "path": "articles_html/ForeignPointMix.html",
-      "bytes": 76725,
-      "sha256": "271f593de29b9e362462d8665ef48f64c14ffae7c57d145b165c09311b807144"
+      "bytes": 78931,
+      "sha256": "1c907904ae0f417bdfa2a64e9420095d164e6caf7f8a8296cf315c09af012df1"
     },
     {
       "path": "articles_html/friday-roadshow-oita-2026.html",
-      "bytes": 60752,
-      "sha256": "63170b322ad0fc38581284c68e4e9988fdb261b9931ebca42a1917ca2abd0849"
+      "bytes": 63326,
+      "sha256": "02654fd6454faa55238219b03b7ae9ea11cd1dfaf0b3a7ef18c22d94e9badf51"
     },
     {
       "path": "articles_html/fridayTV.html",
-      "bytes": 56263,
-      "sha256": "31084051b5c7239aa48c04538b8262311e5d9169dea6d79c42029f4c6a70e4a4"
+      "bytes": 58468,
+      "sha256": "d0305d5b0ceb0dca4b030a947ab0e6f04080b79fd40624c931105abf1047888f"
     },
     {
       "path": "articles_html/furo.html",
-      "bytes": 66646,
-      "sha256": "9358d7a70a247e2fe7b4edfeff7d576bee036d4f4ea28a089045e5c8a3fece64"
+      "bytes": 68484,
+      "sha256": "ac91ba3add85cab0f3175fa38d52e18652b5a82d983147ecb17a21a85d79021e"
     },
     {
       "path": "articles_html/Furusato.html",
-      "bytes": 71508,
-      "sha256": "e94cac1edb913bf05ad9648b096e92b0132607ff02e18f90bd7712c5b5df39be"
+      "bytes": 73714,
+      "sha256": "785c1f0cf14ad28199ede75ef7f0fd0a3a2440c0da535d90a7ea4c6460535393"
     },
     {
       "path": "articles_html/GPT56_Codex_Cost_Performance_2026-07.html",
-      "bytes": 92947,
-      "sha256": "74f8d548cf59adc008c767d331b1698a86c1a631955bb722940fda097bbf133e"
+      "bytes": 95889,
+      "sha256": "f4e637e67e5b9cf644234f6bef013ad33bb29c90694dc292b4525af03bdc9a3a"
     },
     {
       "path": "articles_html/HavingSeveralCards.html",
-      "bytes": 71389,
-      "sha256": "e3f8f7baf6e509dfe1e7721a96ea2f67bc4a37dc2e15c5afa3718186c020e7ab"
+      "bytes": 73227,
+      "sha256": "da631cb0f53cb31a12aebd826362efd614b7c30662bf3c8741a7eb2457ad65c0"
     },
     {
       "path": "articles_html/instastory.html",
-      "bytes": 73183,
-      "sha256": "1bb50890088d8131b9038a5e31be7221f89b6017d867c1c3eb2ff1590568cd8b"
+      "bytes": 75021,
+      "sha256": "fa4a7e9a46253301e17c3fb65c9aeccf3f2487f5957fab6e9e927008b9096567"
     },
     {
       "path": "articles_html/invest.html",
-      "bytes": 66287,
-      "sha256": "5753119fb5536e338300882bc53e2eb586389aee962f028231014cbfa6047920"
+      "bytes": 68125,
+      "sha256": "79f63a6fe746a319fb258d1201123030d5483e03f59e093c8b772b59fd367461"
     },
     {
       "path": "articles_html/iPadSubDisplay.html",
-      "bytes": 60208,
-      "sha256": "f9908c8772602a9efcb1b6f0e69087dc3b9c9e0448524f0f0f7d0658652bd472"
+      "bytes": 62782,
+      "sha256": "051f8f20e9e83878a1cd86399ed15a47153594a289fda98989c31299c4428353"
     },
     {
       "path": "articles_html/iphone-2devices-simless.html",
-      "bytes": 66210,
-      "sha256": "60d154eac2176e1b83995d1e59687e279e840973b4c1de780155ed69e47412fe"
+      "bytes": 68416,
+      "sha256": "29d49161b22c8afd9aaaf615bd3c982248a5927dfdb7724b08045d9e761b816a"
     },
     {
       "path": "articles_html/iPhone-PS2-Emulator.html",
-      "bytes": 59668,
-      "sha256": "8a1f06ec024dad9ae419135c1299ba0ea7f2ba92e15365585e13a097b4a3c660"
+      "bytes": 61506,
+      "sha256": "dfdb53e82c589e64f9e735d7f6bd01c03194fd282caa11aa5d786c4da0e0ce3d"
     },
     {
       "path": "articles_html/iphone-wii-gamecube-2026.html",
-      "bytes": 62987,
-      "sha256": "18e934e86976167008ee4d380285a35f672b223cbf4149d78f354aed69a2e56c"
+      "bytes": 66297,
+      "sha256": "1f51d9d4c18e77303b910ef8e9764a14276e5215e2f0805aaa44790fce3b6c99"
     },
     {
       "path": "articles_html/items.html",
-      "bytes": 68142,
-      "sha256": "c6814f1b2434a9f6ee5cca0c6410341553175018323140cb04c1cc9e6b9d6981"
+      "bytes": 69980,
+      "sha256": "f4ed92f35a703e9b83e2fdd9e22148a3e9b8bc8a5c494fe734b799e2899da535"
     },
     {
       "path": "articles_html/JQ.html",
-      "bytes": 63147,
-      "sha256": "ca76a3f7c43920b7a2c5bba2c2da688603f6427c33de90ac636d18de7246e569"
+      "bytes": 64985,
+      "sha256": "346cb9b5d941a8734d96d119d134da6441969f178a6de5c333db1696a08d43a3"
     },
     {
       "path": "articles_html/JRE-BANK.html",
-      "bytes": 58935,
-      "sha256": "22ebd2e1495d2a3ab9b81f8280d638ef037078de741cff97071ad41c680360bc"
+      "bytes": 60405,
+      "sha256": "c4f5387815b9d6c06cfe612066b3271b83674875e6856ee58fab045ba289a126"
     },
     {
       "path": "articles_html/JRE.html",
-      "bytes": 65651,
-      "sha256": "7b250e49bd9f99d1c53e55f5efc1bad833b650084d4538cf68defedc25f1df74"
+      "bytes": 67857,
+      "sha256": "65d203cf7f500fbef77db79631996d7a93086d75e0d09eeff0598a700e11a3f9"
     },
     {
       "path": "articles_html/Kanji.html",
-      "bytes": 73350,
-      "sha256": "f4fbbd61c0c5db692f7958af47e8abfa04f9c3a87e949177413bb1b8b5899606"
+      "bytes": 76292,
+      "sha256": "d30a6aee4981870f481357016a54fdd8e7d82af02995c244a369deafbe6f6642"
     },
     {
       "path": "articles_html/Kurashiru.html",
-      "bytes": 73791,
-      "sha256": "84054785c9bb84e7b54e9c3107cd2978f5bae7069ce2762f095be04419e1164c"
+      "bytes": 76365,
+      "sha256": "b677bf8f4eab394a49f19b83dbd22822d9a4e0a8d10c26fe39eca0af06e72d48"
     },
     {
       "path": "articles_html/line_point_urawaza.html",
-      "bytes": 64712,
-      "sha256": "d6b1d04f3a95c29234244e2347742492add54b4ca721ebd29b21d2fc70ede87f"
+      "bytes": 66550,
+      "sha256": "66412b4288ea6ec0334491eb83a86d5c127b7ef2593281cf7f8c93240ef7406c"
     },
     {
       "path": "articles_html/LINEPoint.html",
-      "bytes": 68990,
-      "sha256": "d72b6270c7cfb796419182d1f062a4fc872b2aad2471dbd5b5ebcf05f3766668"
+      "bytes": 71564,
+      "sha256": "b5d1718e8ba5fc2010594d0c6f451fbf4967903ad377885b3a387be3aa299c1f"
     },
     {
       "path": "articles_html/LineWalk.html",
-      "bytes": 70513,
-      "sha256": "55e97291d1e5cdc975d8a683578ad523aee424a758edcb3793e9acf4728dccbb"
+      "bytes": 71983,
+      "sha256": "b6036db5e40ac89dfed081872032ac173c441175ac0a0dbdbe67fd797b3cde27"
     },
     {
       "path": "articles_html/lm-studio-quantization-q4-q5-q8-2026.html",
-      "bytes": 83287,
-      "sha256": "1390b3628b564089134e44ed21eb0ef71762422dacbc7884edb5382c883daecd"
+      "bytes": 87333,
+      "sha256": "6479c641e711711c6f6ad6446c804dab520b45536b61936f019465d1217c0462"
     },
     {
       "path": "articles_html/lm-studio-windows-how-to-use-2026.html",
-      "bytes": 85274,
-      "sha256": "67e1327e96b8524ecaaf479ba8dddf0f8175a43e9a3f835df7d5650d758f9fc3"
+      "bytes": 90056,
+      "sha256": "935afc96ad40ddf8687c957513de884716852da239ec38c267844491832c5cc9"
     },
     {
       "path": "articles_html/local-llm-memory-32gb-64gb-128gb-2026.html",
-      "bytes": 85088,
-      "sha256": "a08634b841bbb1f20139ead5fb0f1271d1ad2578ea69ed454d1bb0be55788daa"
+      "bytes": 88766,
+      "sha256": "975cc1e6e6de6af0d7f48b7770e3f474af20e4266799b50b2c61a6f17672f49b"
     },
     {
       "path": "articles_html/local-llm-mini-pc-gmktec-2026.html",
-      "bytes": 88968,
-      "sha256": "697d3fe1aac77da75655d2417b37a35be4e6c3dbf63167042def7091ec38afb6"
+      "bytes": 92646,
+      "sha256": "7f372c230712de12018ed5c50a60dc2ac5859a1803d37695a8f64b6fa4d6b066"
     },
     {
       "path": "articles_html/lolipop.html",
-      "bytes": 62711,
-      "sha256": "8d90fc3e6bbaabae7392bc08065f34d93cdc9d213a6e8828ba4f0abeca050154"
+      "bytes": 64917,
+      "sha256": "478f84ed4d15d2fed1cf6e382c33e3427047ff11e4c5c1b3be3ead55e09cf69f"
     },
     {
       "path": "articles_html/LYP.html",
-      "bytes": 62861,
-      "sha256": "70162f0c0c80b5a601c7876f3405610a6423bc5471734b81e66cae637666a176"
+      "bytes": 64699,
+      "sha256": "89c0ee0d0a94897295695f226c2229f98110e0feb2994a9f42c8bd8f31d14b99"
     },
     {
       "path": "articles_html/manicemu-3ds-2026.html",
-      "bytes": 61751,
-      "sha256": "c63931faed7e2691cfcaa0b48d04ac0c0de34041511f815220a0edc79dc12936"
+      "bytes": 65061,
+      "sha256": "b542c7c621943af11ca94ca8da0227b2d6f5e529eb012a4137af399aa2a252d1"
     },
     {
       "path": "articles_html/manicemu-safe-2026.html",
-      "bytes": 63209,
-      "sha256": "ba974c8e8b421878d35702ff828ffa5ff9986c5567e391518dedbe2e947acb93"
+      "bytes": 66151,
+      "sha256": "87a50681d91600eb0a34cbe293f201522064fa6690d3a4168442d93db3093634"
     },
     {
       "path": "articles_html/ManicEmu.html",
-      "bytes": 59953,
-      "sha256": "c1814c77fab584c9509d5d1ec1991e799ebc15182e65ff68c463aa627c5da7df"
+      "bytes": 62527,
+      "sha256": "a720bd5647d8db741ba4f38f2ce2c78787f9300f86443f9c9eafb3aa54354794"
     },
     {
       "path": "articles_html/Minecraft.html",
-      "bytes": 62908,
-      "sha256": "a29c3b84916b5b368542912702e228478cd0118dc49ec03f18fa55faa599733d"
+      "bytes": 65114,
+      "sha256": "aaec02d48ae6175bcf8b0eeedfbd0a25a9dd277779263d91fe9bd72e3847a1c3"
     },
     {
       "path": "articles_html/Mitsui.html",
-      "bytes": 72002,
-      "sha256": "656cea98cc0c360ccd351c3aecc134a661f83c3bdfe06ce5b9dc9cbf1bf2a522"
+      "bytes": 74576,
+      "sha256": "a4f19c8e179427b786241ae826268c43d2c66b30d543ca6e8f6d0bc74c197360"
     },
     {
       "path": "articles_html/monst.html",
-      "bytes": 60775,
-      "sha256": "48a9b226a441a9d315d58210feaad905e4cc748cdddd11aaea1dfe6f46ae8256"
+      "bytes": 62613,
+      "sha256": "d4222effdced17cce581fd47522abac09d8df1b5887b2d031787a5b89614dfb5"
     },
     {
       "path": "articles_html/moppy-jal-dream-campaign-2026-08.html",
-      "bytes": 63102,
-      "sha256": "4e5f2194a8be588b90acae04e9e5ee4b39f43ad75cb2610537a192afb555dbff"
+      "bytes": 65676,
+      "sha256": "9d1377be5ae098c64308f10fe18fa579e323abdf8817d5f8ca5fd5155eef964e"
     },
     {
       "path": "articles_html/moppy-travel-silver-week-2026.html",
-      "bytes": 60369,
-      "sha256": "fd19d4434809c38a321b32cd82f5d247b79676d86f29fa9168a9757ff4421ef7"
+      "bytes": 62575,
+      "sha256": "2014a61711e88699c4b9d274ca9662963ee6fede3b775cc860a7411aebe10c03"
     },
     {
       "path": "articles_html/moppy2026newlife.html",
-      "bytes": 62805,
-      "sha256": "fb02ca445aa521754c2c64a7e107c2cf97bb2869f5fd252b38096e418008d358"
+      "bytes": 64643,
+      "sha256": "5d3e8b4fab765f6bd9f6e598c6f2659199d462dd7bc8e3ca6c67b3076e3a78ff"
     },
     {
       "path": "articles_html/NewForeignPoint.html",
-      "bytes": 72116,
-      "sha256": "96cbe8997d13240673b3a8aedec20d1f6b9ca9d7298cb622d1e794df54b4eb1e"
+      "bytes": 73218,
+      "sha256": "3e54b2ccc32161b9cb5dce03dad9d606a527890a7889d6e742a94900225784e0"
     },
     {
       "path": "articles_html/NewYearSale.html",
-      "bytes": 69473,
-      "sha256": "4a03e89ea53ac81625d163ab397bf8899e0528d9835ed8106c9cf547a5474215"
+      "bytes": 72047,
+      "sha256": "5d50fbac3b7ce9481430e993376c754001c21ba8a852a0aa5e63983fc25237a3"
     },
     {
       "path": "articles_html/nintendo.html",
-      "bytes": 62027,
-      "sha256": "307967a2e92920feb38cfa39193553bc925f9c8959f4128f5b4b7c3f54e1af84"
+      "bytes": 63497,
+      "sha256": "38e15614fbe93cb9543df401833d9c99fe9a6feea0d5ae141bfebfe04e275d56"
     },
     {
       "path": "articles_html/NottaEarphone.html",
-      "bytes": 76758,
-      "sha256": "36ddc31959d9e1c9f34eeef3c259187fc5aeaef40b085d47d58baa4c7a7ec151"
+      "bytes": 80068,
+      "sha256": "e0eb20493d281e55d6f97dd94fdf9efd7eb0679a3cad9b4a4c087b38e1e6dba2"
     },
     {
       "path": "articles_html/NS-Controller.html",
-      "bytes": 79064,
-      "sha256": "90b8a26629ba19dc7ad543884bd7a4eb994b988cd466a2ae6186437032be4de5"
+      "bytes": 81638,
+      "sha256": "446c7f8a10c659770cacc30affcc4b3d5eff7a9b02fdae109a4de0c2af13c652"
     },
     {
       "path": "articles_html/pasmo.html",
-      "bytes": 64419,
-      "sha256": "f783a8a2102be2c73c4071c1218658b51aeced45a3dab501af8d39444bdfdaa9"
+      "bytes": 66625,
+      "sha256": "e7e63830d6242a8a56559993cecc529330389d6daa6eb4ab6f054667e5b2e419"
     },
     {
       "path": "articles_html/PassiveIncome.html",
-      "bytes": 72436,
-      "sha256": "34bf5fe6fa9b290cb88fd1b1428e2b1c1773ece7e51d4a37576194ce83883797"
+      "bytes": 74642,
+      "sha256": "4b66851c41a311778d4f9301fbbbec50173dae4736bdadc41a31e84dd0ae8eea"
     },
     {
       "path": "articles_html/paycard.html",
-      "bytes": 62187,
-      "sha256": "6b52a7eb7b895ae4b47291f8f95de3b80a824770124133e31ddd9298d730cb72"
+      "bytes": 63657,
+      "sha256": "5e5dff93009ac1e6393f39c6b8735a6cbc8d41ca784ca00857a6799778730c83"
     },
     {
       "path": "articles_html/PayGCard.html",
-      "bytes": 64173,
-      "sha256": "bb5e76bb14dac71012c605e035b0dcfdbf422373222ee13d7bb3469630d6b99b"
+      "bytes": 66011,
+      "sha256": "c696fe2b4cbd270f5e5bfe47ae30c3f87362332ac21db3dd828a62c094257092"
     },
     {
       "path": "articles_html/paypay-credit-referral-2026-07.html",
-      "bytes": 60649,
-      "sha256": "ce7104403a21d6aeed6bc345f888e00ce9f9fc4e1c213a09b40237ca1ac0590b"
+      "bytes": 63959,
+      "sha256": "e2975071799669846609cef1a92b2d069354586546515ad9939afa2edb438c9b"
     },
     {
       "path": "articles_html/PayPay-Gold-Loss.html",
-      "bytes": 65966,
-      "sha256": "91fe320fee00649a7f30910f6469a67c5dffdf0554d3ad923f6e2be0694703e0"
+      "bytes": 68172,
+      "sha256": "bbf9fcad2c994655a4343e15a2ba7d7ae920cc7bdfd24c4b03d50a14ec5cb1e5"
     },
     {
       "path": "articles_html/paypay-points-5-tips.html",
-      "bytes": 53644,
-      "sha256": "3284c3130f20acecfd0d135f6a704d247659bc266e79213957285ebaec858bde"
+      "bytes": 55482,
+      "sha256": "26029a318e120e162f75bc90b49e7d8e76a6adc6730f709cd270a4ab75f4d76d"
     },
     {
       "path": "articles_html/paypay-support-local-2026-07.html",
-      "bytes": 59898,
-      "sha256": "3214e0204a694fc2c044359123836d41862415907cf0d1a713299db8d8187364"
+      "bytes": 62104,
+      "sha256": "0851601dd73f61d8fd7bdc0e6a2977f2ce157c5838c6f11d1fd3262fcbc2c278"
     },
     {
       "path": "articles_html/paypay-to-dbarai-2026.html",
-      "bytes": 61517,
-      "sha256": "b6bff6672bfc694224adb4738a490895e162a3e0bdf42a7abef5e0ad2f40a53a"
+      "bytes": 64091,
+      "sha256": "1ebbeeb13870982293bfcca9348d103a8eac8af8c6eaaeb844be0eed902330f8"
     },
     {
       "path": "articles_html/PayPay2.html",
-      "bytes": 60664,
-      "sha256": "069ab93bf8734faf53cb118f82e16c427d1bd7070421f9c97788c1982b50c1de"
+      "bytes": 62134,
+      "sha256": "ecf9c59d131692bd13f560320e1418da3a2df08954db022689a64341994992de"
     },
     {
       "path": "articles_html/PayPayGold0410.html",
-      "bytes": 65989,
-      "sha256": "f74e69b9c7bef303d216cb427a976616eeef0fce7310be40c4059c9b64efe5f5"
+      "bytes": 67459,
+      "sha256": "ac2a368fed8861f6caeb1e441d4a393b08bbcf6d52623dd3c32b52771591955f"
     },
     {
       "path": "articles_html/phone.html",
-      "bytes": 64922,
-      "sha256": "18de282b56714e7922d6cd4d4301175c006a8d1988818f51fa580a647b0bb611"
+      "bytes": 66760,
+      "sha256": "42617cdaf014f7a85ac611598b119969ba6fb64dc4d34d61ff9c9d4e7f67fda5"
     },
     {
       "path": "articles_html/Pitme.html",
-      "bytes": 69236,
-      "sha256": "7bebc6bf61b279e42dde97450e2a323c6e4b675542594de6053cc9fcdc62d5b1"
+      "bytes": 71074,
+      "sha256": "320c11bc5336219ad28922f4e3ff55f27b500794bdbb0657722b301838e16646"
     },
     {
       "path": "articles_html/Poikatsu-Tax.html",
-      "bytes": 60965,
-      "sha256": "4f0527b1eb3b8dd0b9f57284f2bde836a681ba2e1ffcb0c6ad557c80aa5e51fd"
+      "bytes": 62803,
+      "sha256": "76121ecabf4f8a6080ff03c73318eaab3a482d591d944fa1937112bb93298115"
     },
     {
       "path": "articles_html/Point-LINE.html",
-      "bytes": 56517,
-      "sha256": "c87a96401d6707ee38e9fd5d4f589b53ea62f5c6f4110d4b6837685048d241d5"
+      "bytes": 58723,
+      "sha256": "27025b7b9879230c2f95801d65c6fcf82f5763559f2b049a8e4cdccbf80f5d0f"
     },
     {
       "path": "articles_html/pokepoke.html",
-      "bytes": 60246,
-      "sha256": "44e4f7e1c913e7c7bf44c9e47e343eff786eca2453bb38e1b1ac9bbd2576f885"
+      "bytes": 61716,
+      "sha256": "ae3476100f68fd0e2c2d8bf23bb815b88fbb7bb6a40121e8b5f3840c50df3d1c"
     },
     {
       "path": "articles_html/policy.html",
-      "bytes": 58707,
-      "sha256": "0c2c1acf1caef49392e67910524f589c0e57dde38b8d49640d2543804f690271"
+      "bytes": 62017,
+      "sha256": "d042274431ba1597b431d63e7656aa36b2e979af583e3a3ff77c179b56db114e"
     },
     {
       "path": "articles_html/ponta-summer-campaign-2026.html",
-      "bytes": 62318,
-      "sha256": "4619aec39eef354e2326a34ad7491ac49eae693b38d6198be1e1ae7ec1e3a54b"
+      "bytes": 65260,
+      "sha256": "c58eabbbc72afb3ed1f159abe06d326b7bd166e446326fc569cd933bc17b4637"
     },
     {
       "path": "articles_html/Raku.html",
-      "bytes": 62385,
-      "sha256": "d0b288e2e71ab94ec7e021e09c719723f1ffc2626774d6e06b8d631ebb47926c"
+      "bytes": 63855,
+      "sha256": "3d7c6f9bedda46dbd479abcc0904d76a952a7016686b31265b4a7ff4fad9905d"
     },
     {
       "path": "articles_html/rakuten-spu-guide.html",
-      "bytes": 50246,
-      "sha256": "21e624e0ed046409130af744ecb19ec4d25e8a4c47d16736a319667ee715a688"
+      "bytes": 50612,
+      "sha256": "e6e5821abfc3bcaeac64f59fe75dfeb42a0d79ee25a3f91815c2521648571e85"
     },
     {
       "path": "articles_html/rakuten-tametoku-mode-2026-07.html",
-      "bytes": 61620,
-      "sha256": "feb32c25babc7a3b367bcd839f9c81e43576d332ffba893aba260368ebbe16a4"
+      "bytes": 64194,
+      "sha256": "bb9bf214f08616a5d9c4ca402c634fd6a61d2ed77a6637698bad79876d825878"
     },
     {
       "path": "articles_html/RakutenKaiaku.html",
-      "bytes": 71349,
-      "sha256": "1ba5350bd6051d226d0b4aaf6be7303ecad48757c420b0566d861b648c173fde"
+      "bytes": 73187,
+      "sha256": "cb79627979bed7ea0a633be147a7a5c69350ba433d5d69deb12e509aea9d24b7"
     },
     {
       "path": "articles_html/ReceiTame.html",
-      "bytes": 65545,
-      "sha256": "6d57e7046198247a58c5c1c5cba397e8ebeec18cf850c5337325bd52b4a7a40b"
+      "bytes": 67383,
+      "sha256": "0ba4fb7c10b11b3be4aa160dc590a0250f52c1f831484ed65792fc8a2e285e0b"
     },
     {
       "path": "articles_html/Remote.html",
-      "bytes": 94245,
-      "sha256": "6448c66c8049fbc6a819ed73e1ec45200c42e0e2d916be432bff93cdc4271656"
+      "bytes": 97187,
+      "sha256": "115d255aa7ed9d2eb121e3fd3521e96ece7ed15c14ab294050b7e2fea328765d"
     },
     {
       "path": "articles_html/ring.html",
-      "bytes": 63905,
-      "sha256": "8d40210e5e674a4668b7935cfbbcb5c3147063281ef07156971d39f572bccc21"
+      "bytes": 65743,
+      "sha256": "d855a50907c2fca39552a0c64cf7dff55f0c01b94f23570dd81fe52774974833"
     },
     {
       "path": "articles_html/rom.html",
-      "bytes": 62826,
-      "sha256": "7c45a20532dc6be25c8daecc1acfdce1c31b78d76c1ad9e8f2c3cfc39a0ceda0"
+      "bytes": 64664,
+      "sha256": "de7e31b9d94e1e163b60d0fde2864d059ed0af82e0d5949b46864e8519bbfd5a"
     },
     {
       "path": "articles_html/ScreenX.html",
-      "bytes": 81537,
-      "sha256": "76f1b18bbcd4f81dea9eb3a8e9bcccfa65730e1e5b85d5e364dbd4c440956746"
+      "bytes": 85583,
+      "sha256": "f1783db39c2f3c4e32998189318c534ce7d870d7f7d65f0db7ff81e89b59ab80"
     },
     {
       "path": "articles_html/SHEIN.html",
-      "bytes": 62907,
-      "sha256": "a63a4c5bba1e0cafcbc15b1dc0e7319637c2a0a2ccca15254cbe1500ba33a0a7"
+      "bytes": 64745,
+      "sha256": "f3295c50750f72e4f80fa570003d764d861755a15a8522448a1ce43650482e64"
     },
     {
       "path": "articles_html/SHEINFriend.html",
-      "bytes": 79694,
-      "sha256": "e82bc4041e4ca6e7df1be601c7d777f5ca1a9de18f02b9eea5fce0b8770c45cb"
+      "bytes": 83004,
+      "sha256": "b5282cbc7105dff1e700ec9684ad8855afec5d4a609e042fd0979f5d64cee8bb"
     },
     {
       "path": "articles_html/SHEINPayPay.html",
-      "bytes": 64138,
-      "sha256": "514305e888a7ca5472a152018bb2ce703fdd8a6a7d3fb9ec845c04793b2197d3"
+      "bytes": 65976,
+      "sha256": "cca846f9204fdbf5dc122b331748ed837308edb4aee025a6ebaed2ff8d1a00f9"
     },
     {
       "path": "articles_html/Sideloading.html",
-      "bytes": 73937,
-      "sha256": "2aca41abf9cb48d8da15985e332b16ec988863cb1d21c08984906d8bb56653f1"
+      "bytes": 76511,
+      "sha256": "ac841ef1ef1e73a7d6b9485221c5527d1b2617a0c287c90aad9ebc99e805f772"
     },
     {
       "path": "articles_html/SmartTV.html",
-      "bytes": 71341,
-      "sha256": "5bbfccb472833d148e8a16dd380e2d61cb32fdcb91c300c5542e09655fda97ac"
+      "bytes": 73179,
+      "sha256": "e33c541277c0ae497aa361977135418364a37b4afb829940c6b16a76b7a2dacb"
     },
     {
       "path": "articles_html/SocialCommerce.html",
-      "bytes": 82027,
-      "sha256": "63659dafcd3f14402c709fd5ddc5b0e0f67830ed63d4e1acda5b74516ab821c0"
+      "bytes": 85337,
+      "sha256": "506a800510f097948d14ec0ecb7aee659f3e4017b8f5598541da0ca0fd8f7fd8"
     },
     {
       "path": "articles_html/sora2.html",
-      "bytes": 73210,
-      "sha256": "e7766c8045f0d4bb59dc7831e1b1f4f6a574adad3a676bc0117543e61dd671a4"
+      "bytes": 75416,
+      "sha256": "4f4fa0fc2f9ea74204143a19a38e8bac6c387efb37511f26e5e1c6cdf3cd076d"
     },
     {
       "path": "articles_html/studentAI.html",
-      "bytes": 69393,
-      "sha256": "adc902a6f1bc45919af3de808919e72fd7baf5bf2d27fada42680722cb4d8f89"
+      "bytes": 72335,
+      "sha256": "044ce077057e555bf8982184ca3cb7339fe05c9973df264a33861c9c9338dbe6"
     },
     {
       "path": "articles_html/study.html",
-      "bytes": 76886,
-      "sha256": "6bd9fd94e518e1e9f0b65a8313abf7b5e06c11a6945cf8a61df01f8af8623a04"
+      "bytes": 79460,
+      "sha256": "ab069e6bb3623f4ad2556e4e1dc81844008b5089be069a28548a5a85e32b1f70"
     },
     {
       "path": "articles_html/subwork.html",
-      "bytes": 60796,
-      "sha256": "9b7f023c98a1912f2bfca4a8ded53c59ab65e16dc09aa91fd4348b7e7262c216"
+      "bytes": 62266,
+      "sha256": "66ac2c3d37483bb31f6dcf072f5c0ef26549e58e6631fb6fa176bb33db717f43"
     },
     {
       "path": "articles_html/swag.html",
-      "bytes": 63951,
-      "sha256": "1c5fcf883960ea9446b86f2890c84d09fef1ee2343f776deb7df91673e04ce97"
+      "bytes": 66157,
+      "sha256": "1e11c611c9310728366e0e3752d27d6d65f47044e7c390311e9916944571023f"
     },
     {
       "path": "articles_html/SWOnline.html",
-      "bytes": 72970,
-      "sha256": "9e0a3f28e2a63b0b0e31d414a658a80e8d4050321e59424264b5b9afd0ba7f0c"
+      "bytes": 75912,
+      "sha256": "e8885600c534b555933396d37d6f161c0745548ee3ca8cf2f4a6894ae9349cb7"
     },
     {
       "path": "articles_html/toho.html",
-      "bytes": 63383,
-      "sha256": "2f043d5272430cbfb2772d270fcb1f67bf5ceb891d3404b9150e2bcefe541db9"
+      "bytes": 65589,
+      "sha256": "777c90ad69f4638e5716d9e8ddccfcda7c4bcb4d839fa111c65de8d40a9f99ef"
     },
     {
       "path": "articles_html/Topaz-video-ai-7.html",
-      "bytes": 61120,
-      "sha256": "ed96259271d82a105487a809e2c0acccfab4eccaabf513eb21bc675e60baceab"
+      "bytes": 62590,
+      "sha256": "5fb514e066b017e512579b42cf8f38a10ae9868d1fe115d7b7195796aa7d64fe"
     },
     {
       "path": "articles_html/TopCreditCardRank.html",
-      "bytes": 75356,
-      "sha256": "56d2cd3c78ee40719b5fd30b38db2786d543f237dec550dba02c465e6576b073"
+      "bytes": 76826,
+      "sha256": "beb05936ebd3750284fe76e5fd354b27532b277b5b4caa5bc14657b3d3804240"
     },
     {
       "path": "articles_html/tumutumu.html",
-      "bytes": 61791,
-      "sha256": "5a82597d6b96bbf4cb58ef11eea82c876bb9b8b3778c123970739e56863a6a76"
+      "bytes": 63629,
+      "sha256": "a2804bac8ebb2d3b2cbf12f91c881e932348b587a703a81147f2134a5ac17381"
     },
     {
       "path": "articles_html/TV.html",
-      "bytes": 65944,
-      "sha256": "a3d885ff81f0ea5726d76c5df7a3e28a2539cea96aca564f99697ad5b4cae32c"
+      "bytes": 68518,
+      "sha256": "9430288c4c6c66fb8672ce0d1da5ab56416960107538198cb34b504c7fc66dc3"
     },
     {
       "path": "articles_html/Tver.html",
-      "bytes": 62023,
-      "sha256": "dd97a815313fb0e7663b3deb2448ebd4bc2a81f1702db5b06220090495a5a151"
+      "bytes": 63861,
+      "sha256": "2f56ce38e0ae0cfd3c7c0ecb64aeab730fd06812c0c24ead58fe64f713dcccd7"
     },
     {
       "path": "articles_html/TvRecord.html",
-      "bytes": 68240,
-      "sha256": "d013917c24ff2ac3d79ce0bfe68725538f2acad39241362df3a29a4a3a4cadd8"
+      "bytes": 70814,
+      "sha256": "82ca01be98ba21e2fa1ad29db24d013078c575c169f87420b712d2c1822080a7"
     },
     {
       "path": "articles_html/VHS.html",
-      "bytes": 66302,
-      "sha256": "21c43359e8d7753cb38ddca60b38427384dac1ea5435a4267193b44f33cfae6e"
+      "bytes": 68140,
+      "sha256": "badb4214ce9af5c74717c45f943d0e18de7d171c714f72b0be081053a6dc673e"
     },
     {
       "path": "articles_html/vpn.html",
-      "bytes": 66104,
-      "sha256": "87558ad1cd46d0814c4d08f161ff89abb15f624d9eafc5c1dfc28ffb2600d43e"
+      "bytes": 68307,
+      "sha256": "0ce17abdc420dfad6c93d6f54df17bf718dfa1c838b9eb32b66a90bd857f236c"
     },
     {
       "path": "articles_html/vpoint-best-uses-2026.html",
-      "bytes": 64418,
-      "sha256": "5846ce88d3ffc587d262f557bb5ed6c65c501e4d8ec0e0e1df2825d34366fa71"
+      "bytes": 66256,
+      "sha256": "5204c442e2a108434044b3760b8f665a223dacfb981b2ae3ced5ae351a43ef8d"
     },
     {
       "path": "articles_html/vpoint-to-paypay-2026.html",
-      "bytes": 58130,
-      "sha256": "3c048dd610d907deb6435907d158262fda1129d293399eb3378c05f1fb796c4d"
+      "bytes": 60336,
+      "sha256": "e86024e7eae58332b503d4e37672459711ed75f39ff4da8fd7a456dbd146f4aa"
     },
     {
       "path": "articles_html/Watch.html",
-      "bytes": 62133,
-      "sha256": "a13db3212d273d6adeac79b5ea5348096d770f189c2879e2ce8efe9d5f35a73d"
+      "bytes": 63603,
+      "sha256": "234401795884c0a78d7474367f3fa92a61c91e945cfda7b5c6b33709ad9ca876"
     },
     {
       "path": "articles_html/watts.html",
-      "bytes": 64509,
-      "sha256": "181fd638518bec82b3f3fe6ded52f552d010f3ff219e100fdd7149e3d4ca973a"
+      "bytes": 66347,
+      "sha256": "790df36f43e80da5bb84b9a57efde6d44f0061941958d427678c81edb37c2af2"
     },
     {
       "path": "articles_html/Yafuoku.html",
-      "bytes": 66515,
-      "sha256": "98a56a7816cb14dfb28f13374293f3d66b0e9e1e292be1b374fd05cedd125f14"
+      "bytes": 69089,
+      "sha256": "f1e8ec5b66126ab5ee648c89a5ff456a40ce8c35bb882d778a06acab8a6a5dec"
     },
     {
       "path": "articles_html/zoomcss.html",
-      "bytes": 56336,
-      "sha256": "8dc09b28a75d809397ecf253d6f730f16daced5c70aa4c5303c469cfd45832a0"
+      "bytes": 57806,
+      "sha256": "91b860cf29872edfe7c86958314e4c354a16b5eaf1dba22187a24632415a6e70"
     },
     {
       "path": "CNAME",
@@ -1011,7 +1011,7 @@
     {
       "path": "sitemap.xml",
       "bytes": 25527,
-      "sha256": "546ae72613a596ac7cd4cebd8901fdf71f90e12fb87e90722599779c7540bc57"
+      "sha256": "2ad50747701e273b6627f27adaa16c88b62d4969874e473183095fbf8e862420"
     },
     {
       "path": "thumbnails/-iosaltstore-pal.png",
