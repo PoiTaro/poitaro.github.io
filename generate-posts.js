@@ -9,6 +9,9 @@ const TEMPLATE_PATH = path.join(ROOT, 'article-template.html');
 const POSTS_PATH = path.join(ROOT, 'posts.json');
 const SITE_URL = 'https://poitaro.com';
 const CHECK_ONLY = process.argv.includes('--check');
+const ADSENSE_CLIENT = 'ca-pub-2213699949048480';
+const ADSENSE_SLOT = '4891282874';
+const MIN_AD_SECTION_TEXT_LENGTH = 100;
 
 function parseFrontmatter(source, filename) {
   const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
@@ -52,6 +55,49 @@ function headingId(text, used) {
   return id;
 }
 
+function articleAdHtml() {
+  return `
+<div class="article-ad my-8" aria-label="広告">
+  <ins class="adsbygoogle"
+       style="display:block; text-align:center;"
+       data-ad-layout="in-article"
+       data-ad-format="fluid"
+       data-ad-client="${ADSENSE_CLIENT}"
+       data-ad-slot="${ADSENSE_SLOT}"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+`;
+}
+
+function insertAdsAfterH2Sections(html) {
+  const headings = [...html.matchAll(/<h2\b[^>]*>[\s\S]*?<\/h2>/gi)];
+  let result = html;
+
+  for (let index = headings.length - 1; index >= 0; index -= 1) {
+    const heading = headings[index];
+    const nextHeading = headings[index + 1];
+    const sectionStart = heading.index + heading[0].length;
+    const sectionEnd = nextHeading ? nextHeading.index : html.length;
+    const sectionText = plainText(html.slice(sectionStart, sectionEnd))
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    if (sectionText.length >= MIN_AD_SECTION_TEXT_LENGTH) {
+      result = result.slice(0, sectionEnd) + articleAdHtml() + result.slice(sectionEnd);
+    }
+  }
+
+  return result;
+}
+
+function normalizeGeneratedHtml(html) {
+  return html
+    .replace(/[ \t]+$/gm, '')
+    .replace(/(?:\r?\n)+$/, '\n');
+}
+
 function renderMarkdown(markdown) {
   const withoutTitle = markdown
     .replace(/^\s*#\s+[^\r\n]+\r?\n+/, '')
@@ -73,7 +119,7 @@ ${toc.map((item, index) => `                <li class="flex items-baseline group
                 </li>`).join('\n')}
             </ul>
         </nav>\n` : '';
-  return { html: tocHtml + html, toc };
+  return { html: tocHtml + insertAdsAfterH2Sections(html), toc };
 }
 
 function isoPublished(date) {
@@ -161,7 +207,7 @@ function main() {
         updatedAt: dateModified
       };
       const ld = jsonLd(post);
-      const html = replaceTemplate(template, {
+      const html = normalizeGeneratedHtml(replaceTemplate(template, {
         title: escapeHtml(post.title), alt_title: escapeHtml(post.title),
         description: escapeHtml(post.description), category: escapeHtml(post.category),
         categoryColor: escapeHtml(post.categoryColor), date: escapeHtml(post.date),
@@ -170,7 +216,7 @@ function main() {
         ogImage: escapeHtml(post.ogImage), url: escapeHtml(`${SITE_URL}/${post.url}`),
         articleJsonLd: ld.article.replace(/</g, '\\u003c'),
         breadcrumbJsonLd: ld.breadcrumb.replace(/</g, '\\u003c'), content: rendered.html
-      });
+      }));
       const thumbPath = path.join(ROOT, 'thumbnails', `${slug}.png`);
       if (!fs.existsSync(thumbPath)) throw new Error(`${filename}: サムネイルがありません (${thumbPath})`);
       generated.push({ post, html, filename });
