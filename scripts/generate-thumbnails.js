@@ -215,9 +215,6 @@ function buildHtml({ title, category, date }) {
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
     html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
@@ -225,7 +222,7 @@ function buildHtml({ title, category, date }) {
       position: relative;
       background: ${BRAND.paper};
       color: ${BRAND.ink};
-      font-family: "Noto Sans JP", "Yu Gothic", "YuGothic", "Meiryo", sans-serif;
+      font-family: "Noto Sans CJK JP", "Noto Sans JP", "Yu Gothic", "YuGothic", "Meiryo", sans-serif;
       -webkit-font-smoothing: antialiased;
     }
     .frame {
@@ -295,7 +292,7 @@ function buildHtml({ title, category, date }) {
       font-size: 35px;
       line-height: 1;
       font-weight: 700;
-      font-family: "Noto Sans JP", sans-serif;
+      font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
       white-space: nowrap;
       letter-spacing: -.04em;
     }
@@ -322,7 +319,7 @@ function buildHtml({ title, category, date }) {
       margin: 0;
       font-size: ${style.size}px;
       font-weight: 700;
-      font-family: "Noto Sans JP", sans-serif;
+      font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
       line-height: 1.2;
       letter-spacing: -.045em;
       overflow-wrap: anywhere;
