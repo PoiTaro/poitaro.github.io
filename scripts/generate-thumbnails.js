@@ -413,8 +413,13 @@ async function main() {
         date: fm.date || '',
       });
 
-      await page.setContent(html, { waitUntil: ['domcontentloaded', 'networkidle0'] });
-      await page.evaluate(() => document.fonts.ready);
+      await page.setContent(html, { waitUntil: 'domcontentloaded' });
+      await page.evaluate(async () => {
+        await Promise.race([
+          document.fonts.ready,
+          new Promise(resolve => setTimeout(resolve, 10000)),
+        ]);
+      });
       await page.screenshot({
         path: path.join(OUT_DIR, `${slug}.png`),
         type: 'png',
