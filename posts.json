@@ -49,6 +49,77 @@
     "updatedAt": "2026-09-04T04:02:12.115Z"
   },
   {
+    "slug": "sim-card-vs-esim-difference-travel-2026",
+    "url": "articles_html/sim-card-vs-esim-difference-travel-2026.html",
+    "title": "SIMカードとeSIMの違いは？メリット・デメリットと海外旅行での選び方【2026年版】",
+    "date": "2026-09-08",
+    "datePublished": "2026-09-07T15:00:00.000Z",
+    "dateModified": "2026-09-08T12:02:42.498Z",
+    "dateModifiedLabel": "2026-09-08",
+    "category": "ガジェット",
+    "categoryColor": "#0a0a0a",
+    "image": "../thumbnails/sim-card-vs-esim-difference-travel-2026.png",
+    "imageAbsolute": "https://poitaro.com/thumbnails/sim-card-vs-esim-difference-travel-2026.png",
+    "ogImage": "https://poitaro.com/thumbnails/sim-card-vs-esim-difference-travel-2026.png",
+    "description": "SIMカードとeSIMは何が違う？差し替え、設定、対応端末、安全性、デュアルSIM、海外旅行での使いやすさを比較し、どちらを選ぶべきか分かりやすく解説します。",
+    "tags": [
+      "eSIM",
+      "SIMカード",
+      "海外旅行",
+      "デュアルSIM",
+      "iPhone",
+      "Android",
+      "グロモバeSIM"
+    ],
+    "toc": [
+      {
+        "text": "海外旅行ならeSIM、端末間の移動ならSIMカードが分かりやすい",
+        "id": "海外旅行ならesim端末間の移動ならsimカードが分かりやすい"
+      },
+      {
+        "text": "SIMカードとeSIMの違いを比較",
+        "id": "simカードとesimの違いを比較"
+      },
+      {
+        "text": "物理SIMカードのメリット・デメリット",
+        "id": "物理simカードのメリットデメリット"
+      },
+      {
+        "text": "eSIMのメリット・デメリット",
+        "id": "esimのメリットデメリット"
+      },
+      {
+        "text": "海外旅行ではSIMカードとeSIMのどちらが便利？",
+        "id": "海外旅行ではsimカードとesimのどちらが便利"
+      },
+      {
+        "text": "日本の電話番号を残せる「デュアルSIM」",
+        "id": "日本の電話番号を残せるデュアルsim"
+      },
+      {
+        "text": "eSIMを購入する前の7項目",
+        "id": "esimを購入する前の7項目"
+      },
+      {
+        "text": "結局どちらを選ぶ？向いている人",
+        "id": "結局どちらを選ぶ向いている人"
+      },
+      {
+        "text": "よくある質問",
+        "id": "よくある質問"
+      },
+      {
+        "text": "まとめ：海外ではeSIMが便利。ただし対応確認が先",
+        "id": "まとめ海外ではesimが便利ただし対応確認が先"
+      },
+      {
+        "text": "参考にした公式情報",
+        "id": "参考にした公式情報"
+      }
+    ],
+    "updatedAt": "2026-09-08T12:02:42.498Z"
+  },
+  {
     "slug": "lm-studio-quantization-q4-q5-q8-2026",
     "url": "articles_html/lm-studio-quantization-q4-q5-q8-2026.html",
     "title": "LM StudioのQ4・Q5・Q8は何が違う？量子化とモデルサイズの選び方【2026年版】",
