@@ -54,7 +54,7 @@
     "title": "グロモバeSIMの使い方は？購入・設定・現地接続と注意点【2026年版】",
     "date": "2026-09-08",
     "datePublished": "2026-09-07T15:00:00.000Z",
-    "dateModified": "2026-09-08T12:43:52.768Z",
+    "dateModified": "2026-09-08T13:09:45.017Z",
     "dateModifiedLabel": "2026-09-08",
     "category": "ガジェット",
     "categoryColor": "#0a0a0a",
@@ -121,7 +121,7 @@
         "id": "参考にした公式情報"
       }
     ],
-    "updatedAt": "2026-09-08T12:43:52.768Z"
+    "updatedAt": "2026-09-08T13:09:45.017Z"
   },
   {
     "slug": "sim-card-vs-esim-difference-travel-2026",
@@ -129,7 +129,7 @@
     "title": "SIMカードとeSIMの違いは？メリット・デメリットと海外旅行での選び方【2026年版】",
     "date": "2026-09-08",
     "datePublished": "2026-09-07T15:00:00.000Z",
-    "dateModified": "2026-09-08T12:43:52.773Z",
+    "dateModified": "2026-09-08T13:09:45.023Z",
     "dateModifiedLabel": "2026-09-08",
     "category": "ガジェット",
     "categoryColor": "#0a0a0a",
@@ -192,7 +192,78 @@
         "id": "参考にした公式情報"
       }
     ],
-    "updatedAt": "2026-09-08T12:43:52.773Z"
+    "updatedAt": "2026-09-08T13:09:45.023Z"
+  },
+  {
+    "slug": "travel-esim-how-many-gb-2026",
+    "url": "articles_html/travel-esim-how-many-gb-2026.html",
+    "title": "海外旅行のeSIMは何GB必要？3日・5日・7日の容量目安と選び方【2026年版】",
+    "date": "2026-09-08",
+    "datePublished": "2026-09-07T15:00:00.000Z",
+    "dateModified": "2026-09-08T13:09:45.024Z",
+    "dateModifiedLabel": "2026-09-08",
+    "category": "ガジェット",
+    "categoryColor": "#0a0a0a",
+    "image": "../thumbnails/travel-esim-how-many-gb-2026.png",
+    "imageAbsolute": "https://poitaro.com/thumbnails/travel-esim-how-many-gb-2026.png",
+    "ogImage": "https://poitaro.com/thumbnails/travel-esim-how-many-gb-2026.png",
+    "description": "海外旅行用eSIMは何GBあれば足りるのか。3日・5日・7日・10日の容量目安を、地図・SNS・動画・テザリングなど用途別に整理。無制限プランの速度制限や節約設定も解説します。",
+    "tags": [
+      "eSIM",
+      "海外旅行",
+      "データ容量",
+      "ギガ",
+      "グロモバeSIM",
+      "テザリング",
+      "動画"
+    ],
+    "toc": [
+      {
+        "text": "迷ったら「1日1GB」を基準にする",
+        "id": "迷ったら1日1gbを基準にする"
+      },
+      {
+        "text": "海外旅行のeSIMは1日何GB必要？",
+        "id": "海外旅行のesimは1日何gb必要"
+      },
+      {
+        "text": "3日・5日・7日・10日旅行の容量目安",
+        "id": "3日5日7日10日旅行の容量目安"
+      },
+      {
+        "text": "用途別：何がギガを使う？",
+        "id": "用途別何がギガを使う"
+      },
+      {
+        "text": "必要な容量を決める3ステップ",
+        "id": "必要な容量を決める3ステップ"
+      },
+      {
+        "text": "無制限プランでも高速通信は無制限とは限らない",
+        "id": "無制限プランでも高速通信は無制限とは限らない"
+      },
+      {
+        "text": "海外でギガ不足を防ぐ7つの設定",
+        "id": "海外でギガ不足を防ぐ7つの設定"
+      },
+      {
+        "text": "グロモバeSIMで容量を選ぶときの確認点",
+        "id": "グロモバesimで容量を選ぶときの確認点"
+      },
+      {
+        "text": "よくある質問",
+        "id": "よくある質問"
+      },
+      {
+        "text": "まとめ：1日1GBを基準に、動画とテザリングで増やす",
+        "id": "まとめ1日1gbを基準に動画とテザリングで増やす"
+      },
+      {
+        "text": "参考にした公式情報",
+        "id": "参考にした公式情報"
+      }
+    ],
+    "updatedAt": "2026-09-08T13:09:45.024Z"
   },
   {
     "slug": "lm-studio-quantization-q4-q5-q8-2026",
