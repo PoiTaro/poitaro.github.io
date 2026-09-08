@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T12:03:09.064Z",
+  "generatedAt": "2026-09-08T12:04:35.676Z",
   "source": "poitaro-maximize-working",
   "productionTouched": false,
   "excludedLegacyFiles": [
@@ -556,7 +556,7 @@
     {
       "path": "articles_html/sim-card-vs-esim-difference-travel-2026.html",
       "bytes": 85197,
-      "sha256": "f9adc5533d07cecde1286b94c8881bd7abcba232edba5b48a9d38b19ab962354"
+      "sha256": "205218310295b69db1ff7129b4cedd1c39d28625a83cd65642e12bd385e5bdb2"
     },
     {
       "path": "articles_html/SmartTV.html",
@@ -1006,7 +1006,7 @@
     {
       "path": "posts.json",
       "bytes": 273363,
-      "sha256": "97e0ca877413dd9494d527a5e6a3f5c2800ad3b20a470574d79095d712a19ae5"
+      "sha256": "31ec1cf342af4458be9003854db90180f54ba8beb6adbe226952142a92900c8f"
     },
     {
       "path": "robots.txt",
@@ -1026,7 +1026,7 @@
     {
       "path": "sitemap.xml",
       "bytes": 25752,
-      "sha256": "b3e5ee4c55371f8e15390d52c6cd98497e42c138c4940344181bfe61cfe6eb95"
+      "sha256": "293cb5ebb16619fd6e8d4170ff472509b983e591c680293ff0972afc82513f3f"
     },
     {
       "path": "thumbnails/-iosaltstore-pal.png",
