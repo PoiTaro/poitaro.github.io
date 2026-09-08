@@ -74,14 +74,14 @@ description: "SIMカードとeSIMは何が違う？差し替え、設定、対�
 <nav aria-label="目次" class="my-10 p-8 border-4 border-[#0a0a0a] bg-white relative shadow-sm">
 <div class="absolute -top-5 left-6 bg-[#0a0a0a] text-[#ccff00] font-anton text-2xl px-6 py-1 tracking-widest">INDEX</div>
 <ul class="list-none pl-0 space-y-3 mt-2">
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#difference" class="font-bold hover:text-[#6d55d8]">SIMカードとeSIMの違い</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#physical-sim" class="font-bold hover:text-[#6d55d8]">SIMカードのメリット・デメリット</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#esim" class="font-bold hover:text-[#6d55d8]">eSIMのメリット・デメリット</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#travel" class="font-bold hover:text-[#6d55d8]">海外旅行ではどちらが便利か</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#dual-sim" class="font-bold hover:text-[#6d55d8]">日本の回線を残すデュアルSIM</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#check" class="font-bold hover:text-[#6d55d8]">eSIM購入前の確認項目</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#choose" class="font-bold hover:text-[#6d55d8]">向いている人の選び方</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#faq" class="font-bold hover:text-[#6d55d8]">よくある質問</a></li>
+<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#simカードとesimの違いを比較" class="font-bold hover:text-[#6d55d8]">SIMカードとeSIMの違い</a></li>
+<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#物理simカードのメリットデメリット" class="font-bold hover:text-[#6d55d8]">SIMカードのメリット・デメリット</a></li>
+<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#esimのメリットデメリット" class="font-bold hover:text-[#6d55d8]">eSIMのメリット・デメリット</a></li>
+<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#海外旅行ではsimカードとesimのどちらが便利" class="font-bold hover:text-[#6d55d8]">海外旅行ではどちらが便利か</a></li>
+<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#日本の電話番号を残せるデュアルsim" class="font-bold hover:text-[#6d55d8]">日本の回線を残すデュアルSIM</a></li>
+<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#esimを購入する前の7項目" class="font-bold hover:text-[#6d55d8]">eSIM購入前の確認項目</a></li>
+<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#結局どちらを選ぶ向いている人" class="font-bold hover:text-[#6d55d8]">向いている人の選び方</a></li>
+<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#よくある質問" class="font-bold hover:text-[#6d55d8]">よくある質問</a></li>
 </ul>
 </nav>
 
