@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-08T12:34:22.109Z",
+  "generatedAt": "2026-09-08T12:44:20.753Z",
   "source": "poitaro-maximize-working",
   "productionTouched": false,
   "excludedLegacyFiles": [
     "articles_html/recommended-point-sites.html"
   ],
   "payloadFileCount": 338,
-  "totalBytes": 125057353,
+  "totalBytes": 125147596,
   "files": [
     {
       "path": ".nojekyll",
@@ -216,7 +216,7 @@
     {
       "path": "articles_html/gmobile-esim-how-to-use-2026.html",
       "bytes": 90045,
-      "sha256": "656499053ea87f2033a9fac44e2ac83aa0a9cf968f1f68aeefc14d0df15aea06"
+      "sha256": "5694617e9063ff9ac2c19918d3433e012fc2683f4920a797505c11e094d78faf"
     },
     {
       "path": "articles_html/GPT56_Codex_Cost_Performance_2026-07.html",
@@ -561,7 +561,7 @@
     {
       "path": "articles_html/sim-card-vs-esim-difference-travel-2026.html",
       "bytes": 85460,
-      "sha256": "517059f47f84aa18e6ed0471705a297a14a044d7150766ac29c857e8705c19ca"
+      "sha256": "48195c9ee3126909fc64772d5485153c56b5d4a32447e2e46571db4b729425a1"
     },
     {
       "path": "articles_html/SmartTV.html",
@@ -1016,7 +1016,7 @@
     {
       "path": "posts.json",
       "bytes": 276048,
-      "sha256": "d01025a236cac6a6dc8a1bc9ef5e832d77f15b4c99d90e505e6da05ed9bbdd04"
+      "sha256": "ac387aba33ac38788d9b072c337b30aa3ba32e349a9018fec2f23c8c12a34f06"
     },
     {
       "path": "robots.txt",
@@ -1036,7 +1036,7 @@
     {
       "path": "sitemap.xml",
       "bytes": 25966,
-      "sha256": "d3205f18f534443f81870697cc4737b665d19b3522c4c1df7a93bc902e0ded38"
+      "sha256": "6842a697431ab37802cc5444bc3e103a93d43968b1e60a69ecbc686f6e241efd"
     },
     {
       "path": "thumbnails/-iosaltstore-pal.png",
@@ -1210,8 +1210,8 @@
     },
     {
       "path": "thumbnails/gmobile-esim-how-to-use-2026.png",
-      "bytes": 42580,
-      "sha256": "5e3d8fa64651747940b40c2565799b8a201e7c04fa2d281746894af61769265e"
+      "bytes": 80018,
+      "sha256": "0274733b0c3b8ff44f0762f7a4130dc2e6ae5389afcc068f3b462cdf80ea9667"
     },
     {
       "path": "thumbnails/GPT56_Codex_Cost_Performance_2026-07.png",
@@ -1575,8 +1575,8 @@
     },
     {
       "path": "thumbnails/sim-card-vs-esim-difference-travel-2026.png",
-      "bytes": 52866,
-      "sha256": "dd472b0f2c75325eecf6b38dfa9b524f1be68553eb9c8cb6fe7ba21c1e355839"
+      "bytes": 105671,
+      "sha256": "0daf05e6b216e256b36134b3ca48478d9b0205bd3c9244f76d3b601c6ef06f43"
     },
     {
       "path": "thumbnails/SmartTV.png",
