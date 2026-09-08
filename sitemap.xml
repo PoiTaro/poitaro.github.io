@@ -2,25 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://poitaro.com/</loc>
-    <lastmod>2026-09-08T12:04:14.916Z</lastmod>
+    <lastmod>2026-09-08T12:34:04.153Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://poitaro.com/about.html</loc>
-    <lastmod>2026-09-08T12:04:14.570Z</lastmod>
+    <lastmod>2026-09-08T12:34:03.834Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://poitaro.com/contact.html</loc>
-    <lastmod>2026-09-08T12:04:14.627Z</lastmod>
+    <lastmod>2026-09-08T12:34:03.881Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://poitaro.com/shindan.html</loc>
-    <lastmod>2026-09-08T12:04:14.918Z</lastmod>
+    <lastmod>2026-09-08T12:34:04.155Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -31,8 +31,14 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://poitaro.com/articles_html/gmobile-esim-how-to-use-2026.html</loc>
+    <lastmod>2026-09-08T12:34:03.853Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://poitaro.com/articles_html/sim-card-vs-esim-difference-travel-2026.html</loc>
-    <lastmod>2026-09-08T12:04:14.599Z</lastmod>
+    <lastmod>2026-09-08T12:34:03.858Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

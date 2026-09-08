@@ -49,12 +49,87 @@
     "updatedAt": "2026-09-04T04:02:12.115Z"
   },
   {
+    "slug": "gmobile-esim-how-to-use-2026",
+    "url": "articles_html/gmobile-esim-how-to-use-2026.html",
+    "title": "グロモバeSIMの使い方は？購入・設定・現地接続と注意点【2026年版】",
+    "date": "2026-09-08",
+    "datePublished": "2026-09-07T15:00:00.000Z",
+    "dateModified": "2026-09-08T12:34:03.853Z",
+    "dateModifiedLabel": "2026-09-08",
+    "category": "ガジェット",
+    "categoryColor": "#0a0a0a",
+    "image": "../thumbnails/gmobile-esim-how-to-use-2026.png",
+    "imageAbsolute": "https://poitaro.com/thumbnails/gmobile-esim-how-to-use-2026.png",
+    "ogImage": "https://poitaro.com/thumbnails/gmobile-esim-how-to-use-2026.png",
+    "description": "グロモバeSIMの使い方を、購入前の確認、プラン選択、QRコードによる設定、現地での回線切り替え、つながらないときの対処まで順番に解説します。",
+    "tags": [
+      "グロモバeSIM",
+      "eSIM",
+      "海外旅行",
+      "iPhone",
+      "Android",
+      "データローミング",
+      "SIMロック"
+    ],
+    "toc": [
+      {
+        "text": "グロモバeSIMは4段階で使う",
+        "id": "グロモバesimは4段階で使う"
+      },
+      {
+        "text": "グロモバeSIMとは",
+        "id": "グロモバesimとは"
+      },
+      {
+        "text": "購入前に確認すること",
+        "id": "購入前に確認すること"
+      },
+      {
+        "text": "購入からQRコード受け取りまで",
+        "id": "購入からqrコード受け取りまで"
+      },
+      {
+        "text": "グロモバeSIMはいつ設定する？",
+        "id": "グロモバesimはいつ設定する"
+      },
+      {
+        "text": "iPhoneでグロモバeSIMを設定する手順",
+        "id": "iphoneでグロモバesimを設定する手順"
+      },
+      {
+        "text": "AndroidでグロモバeSIMを設定する手順",
+        "id": "androidでグロモバesimを設定する手順"
+      },
+      {
+        "text": "現地でつながらないときの確認順",
+        "id": "現地でつながらないときの確認順"
+      },
+      {
+        "text": "グロモバeSIMのメリットと注意点",
+        "id": "グロモバesimのメリットと注意点"
+      },
+      {
+        "text": "よくある質問",
+        "id": "よくある質問"
+      },
+      {
+        "text": "まとめ：先に確認、設定は商品案内どおり",
+        "id": "まとめ先に確認設定は商品案内どおり"
+      },
+      {
+        "text": "参考にした公式情報",
+        "id": "参考にした公式情報"
+      }
+    ],
+    "updatedAt": "2026-09-08T12:34:03.853Z"
+  },
+  {
     "slug": "sim-card-vs-esim-difference-travel-2026",
     "url": "articles_html/sim-card-vs-esim-difference-travel-2026.html",
     "title": "SIMカードとeSIMの違いは？メリット・デメリットと海外旅行での選び方【2026年版】",
     "date": "2026-09-08",
     "datePublished": "2026-09-07T15:00:00.000Z",
-    "dateModified": "2026-09-08T12:04:14.599Z",
+    "dateModified": "2026-09-08T12:34:03.858Z",
     "dateModifiedLabel": "2026-09-08",
     "category": "ガジェット",
     "categoryColor": "#0a0a0a",
@@ -117,7 +192,7 @@
         "id": "参考にした公式情報"
       }
     ],
-    "updatedAt": "2026-09-08T12:04:14.599Z"
+    "updatedAt": "2026-09-08T12:34:03.858Z"
   },
   {
     "slug": "lm-studio-quantization-q4-q5-q8-2026",
