@@ -73,21 +73,6 @@ description: "グロモバeSIMの使い方を、購入前の確認、プラン�
 <figcaption class="text-xs text-gray-500 mt-2">設定には安定したインターネット接続が必要です。画像はAI生成による利用イメージで、実際の設定画面とは異なります。</figcaption>
 </figure>
 
-<nav aria-label="目次" class="my-10 p-8 border-4 border-[#0a0a0a] bg-white relative shadow-sm">
-<div class="absolute -top-5 left-6 bg-[#0a0a0a] text-[#ccff00] font-anton text-2xl px-6 py-1 tracking-widest">INDEX</div>
-<ul class="list-none pl-0 space-y-3 mt-2">
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#グロモバesimとは" class="font-bold hover:text-[#6d55d8]">グロモバeSIMとは</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#購入前に確認すること" class="font-bold hover:text-[#6d55d8]">購入前に確認すること</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#購入からqrコード受け取りまで" class="font-bold hover:text-[#6d55d8]">購入から受け取りまで</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#グロモバesimはいつ設定する" class="font-bold hover:text-[#6d55d8]">設定するタイミング</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#iphoneでグロモバesimを設定する手順" class="font-bold hover:text-[#6d55d8]">iPhoneの設定手順</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#androidでグロモバesimを設定する手順" class="font-bold hover:text-[#6d55d8]">Androidの設定手順</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#現地でつながらないときの確認順" class="font-bold hover:text-[#6d55d8]">つながらないときの確認</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#グロモバesimのメリットと注意点" class="font-bold hover:text-[#6d55d8]">メリット・注意点</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#よくある質問" class="font-bold hover:text-[#6d55d8]">よくある質問</a></li>
-</ul>
-</nav>
-
 <h2 id="what">グロモバeSIMとは</h2>
 
 <p class="text-base leading-loose mb-6 text-justify">グロモバeSIMは、株式会社インバウンドプラットフォームが提供するeSIMサービスです。公式サイトで渡航する国・地域を探し、商品ごとにデータ容量や利用日数を選んで購入します。購入後は、案内されたQRコードまたは手動設定情報を使って、対応スマホへ通信プランを追加します。</p>

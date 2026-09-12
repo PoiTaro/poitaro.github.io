@@ -55,19 +55,6 @@ description: "LM Studioで表示されるQ4・Q5・Q8、K・S・M・Lは何を�
 </div>
 </section>
 
-<nav aria-label="目次" class="my-10 p-8 border-4 border-[#0a0a0a] bg-white relative shadow-sm">
-<div class="absolute -top-5 left-6 bg-[#0a0a0a] text-[#ccff00] font-anton text-2xl px-6 py-1 tracking-widest">INDEX</div>
-<ul class="list-none pl-0 space-y-3 mt-2">
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#what-is-quantization" class="font-bold hover:text-[#6d55d8]">量子化とは何か</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#q-guide" class="font-bold hover:text-[#6d55d8]">Q2・Q3・Q4・Q5・Q6・Q8の違い</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#suffix" class="font-bold hover:text-[#6d55d8]">K・S・M・Lの意味</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#size-guide" class="font-bold hover:text-[#6d55d8]">7B・14B・32B・70Bの容量目安</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#choose" class="font-bold hover:text-[#6d55d8]">LM Studioでの選び方</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#mistakes" class="font-bold hover:text-[#6d55d8]">よくある失敗</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#faq" class="font-bold hover:text-[#6d55d8]">よくある質問</a></li>
-</ul>
-</nav>
-
 <h2 id="what-is-quantization">量子化とは、モデルを軽くする圧縮のようなもの</h2>
 
 <p class="text-base leading-loose mb-6 text-justify">LLMは、膨大な数のパラメータを数値として持っています。元の高精度な数値を、より少ないビット数で表現してモデルを小さくするのが<strong>量子化</strong>です。一般には、ビット数を下げるほどファイルと必要メモリを減らせますが、回答品質が変化する可能性があります。</p>

@@ -71,20 +71,6 @@ description: "SIMカードとeSIMは何が違う？差し替え、設定、対�
 <figcaption class="text-xs text-gray-500 mt-2">左が差し替えて使う物理SIM、右がQRコードなどで通信プランを追加するeSIMのイメージです。画像はAI生成です。</figcaption>
 </figure>
 
-<nav aria-label="目次" class="my-10 p-8 border-4 border-[#0a0a0a] bg-white relative shadow-sm">
-<div class="absolute -top-5 left-6 bg-[#0a0a0a] text-[#ccff00] font-anton text-2xl px-6 py-1 tracking-widest">INDEX</div>
-<ul class="list-none pl-0 space-y-3 mt-2">
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#simカードとesimの違いを比較" class="font-bold hover:text-[#6d55d8]">SIMカードとeSIMの違い</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#物理simカードのメリットデメリット" class="font-bold hover:text-[#6d55d8]">SIMカードのメリット・デメリット</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#esimのメリットデメリット" class="font-bold hover:text-[#6d55d8]">eSIMのメリット・デメリット</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#海外旅行ではsimカードとesimのどちらが便利" class="font-bold hover:text-[#6d55d8]">海外旅行ではどちらが便利か</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#日本の電話番号を残せるデュアルsim" class="font-bold hover:text-[#6d55d8]">日本の回線を残すデュアルSIM</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#esimを購入する前の7項目" class="font-bold hover:text-[#6d55d8]">eSIM購入前の確認項目</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#結局どちらを選ぶ向いている人" class="font-bold hover:text-[#6d55d8]">向いている人の選び方</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#よくある質問" class="font-bold hover:text-[#6d55d8]">よくある質問</a></li>
-</ul>
-</nav>
-
 <h2 id="difference">SIMカードとeSIMの違いを比較</h2>
 
 <p class="text-base leading-loose mb-6 text-justify">SIMは、契約している通信回線を端末で利用するために必要な仕組みです。物理SIMでは小さなICカードをスマホへ挿します。eSIMは「embedded SIM」の略で、端末に組み込まれたSIMへ通信プランの情報を追加します。「eSIMカード」と呼ばれることもありますが、通常は差し込むカードそのものはありません。</p>

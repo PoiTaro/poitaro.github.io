@@ -73,20 +73,6 @@ description: "海外旅行用eSIMは何GBあれば足りるのか。3日・5日�
 <figcaption class="text-xs text-gray-500 mt-2">地図、メッセージ、写真投稿、動画の順にデータ消費は増えやすくなります。画像はAI生成による利用イメージです。</figcaption>
 </figure>
 
-<nav aria-label="目次" class="my-10 p-8 border-4 border-[#0a0a0a] bg-white relative shadow-sm">
-<div class="absolute -top-5 left-6 bg-[#0a0a0a] text-[#ccff00] font-anton text-2xl px-6 py-1 tracking-widest">INDEX</div>
-<ul class="list-none pl-0 space-y-3 mt-2">
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#海外旅行のesimは1日何gb必要" class="font-bold hover:text-[#6d55d8]">1日に必要な容量</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#3日5日7日10日旅行の容量目安" class="font-bold hover:text-[#6d55d8]">日数別の容量目安</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#用途別何がギガを使う" class="font-bold hover:text-[#6d55d8]">用途別の消費量</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#必要な容量を決める3ステップ" class="font-bold hover:text-[#6d55d8]">容量を決める3ステップ</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#無制限プランでも高速通信は無制限とは限らない" class="font-bold hover:text-[#6d55d8]">無制限プランの注意点</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#海外でギガ不足を防ぐ7つの設定" class="font-bold hover:text-[#6d55d8]">ギガ不足を防ぐ設定</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#グロモバesimで容量を選ぶときの確認点" class="font-bold hover:text-[#6d55d8]">グロモバeSIMの選び方</a></li>
-<li class="relative pl-6"><span class="absolute left-0 text-[#ccff00] font-bold">▸</span><a href="#よくある質問" class="font-bold hover:text-[#6d55d8]">よくある質問</a></li>
-</ul>
-</nav>
-
 <h2>海外旅行のeSIMは1日何GB必要？</h2>
 
 <p class="text-base leading-loose mb-6 text-justify">海外旅行で地図、乗換案内、Web検索、メッセージを使い、SNSも時々見る程度なら、<strong>1日0.7〜1GB</strong>を基準にすると選びやすくなります。地図と連絡だけに絞れば0.3〜0.5GB程度へ抑えられる可能性がありますが、写真の自動バックアップやアプリ更新が動くと想定より早く減ります。</p>
