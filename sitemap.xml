@@ -2,25 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://poitaro.com/</loc>
-    <lastmod>2026-09-12T00:12:56.196Z</lastmod>
+    <lastmod>2026-09-12T00:39:28.828Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://poitaro.com/about.html</loc>
-    <lastmod>2026-09-12T00:12:55.882Z</lastmod>
+    <lastmod>2026-09-12T00:39:28.482Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://poitaro.com/contact.html</loc>
-    <lastmod>2026-09-12T00:12:55.936Z</lastmod>
+    <lastmod>2026-09-12T00:39:28.538Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://poitaro.com/shindan.html</loc>
-    <lastmod>2026-09-12T00:12:56.198Z</lastmod>
+    <lastmod>2026-09-12T00:39:28.830Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -31,20 +31,26 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://poitaro.com/articles_html/kauche-farm-vegetables-invite-2026.html</loc>
+    <lastmod>2026-09-12T00:39:28.506Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://poitaro.com/articles_html/gmobile-esim-how-to-use-2026.html</loc>
-    <lastmod>2026-09-12T00:12:55.903Z</lastmod>
+    <lastmod>2026-09-12T00:39:28.504Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://poitaro.com/articles_html/sim-card-vs-esim-difference-travel-2026.html</loc>
-    <lastmod>2026-09-12T00:12:55.908Z</lastmod>
+    <lastmod>2026-09-12T00:39:28.510Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://poitaro.com/articles_html/travel-esim-how-many-gb-2026.html</loc>
-    <lastmod>2026-09-12T00:12:55.909Z</lastmod>
+    <lastmod>2026-09-12T00:39:28.511Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

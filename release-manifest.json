@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-12T00:13:19.216Z",
+  "generatedAt": "2026-09-12T00:39:53.998Z",
   "source": "poitaro-maximize-working",
   "productionTouched": false,
   "excludedLegacyFiles": [
     "articles_html/recommended-point-sites.html"
   ],
-  "payloadFileCount": 341,
-  "totalBytes": 125447638,
+  "payloadFileCount": 344,
+  "totalBytes": 125795949,
   "files": [
     {
       "path": ".nojekyll",
@@ -216,7 +216,7 @@
     {
       "path": "articles_html/gmobile-esim-how-to-use-2026.html",
       "bytes": 87844,
-      "sha256": "7ec87712416e907d0daf56dcf147bb5cbc5012227664479c759fbbb76c10e537"
+      "sha256": "aeb8ee0b757aeda1d54caa2bbc789717fd9bbed3d6a27330cdbef0125dd44fd8"
     },
     {
       "path": "articles_html/GPT56_Codex_Cost_Performance_2026-07.html",
@@ -282,6 +282,11 @@
       "path": "articles_html/Kanji.html",
       "bytes": 76292,
       "sha256": "d30a6aee4981870f481357016a54fdd8e7d82af02995c244a369deafbe6f6642"
+    },
+    {
+      "path": "articles_html/kauche-farm-vegetables-invite-2026.html",
+      "bytes": 93568,
+      "sha256": "9d322cdba41d2d3441d40ccfb8bfba59f0e0b29f27ba255547e6d6de6761b701"
     },
     {
       "path": "articles_html/Kurashiru.html",
@@ -561,7 +566,7 @@
     {
       "path": "articles_html/sim-card-vs-esim-difference-travel-2026.html",
       "bytes": 83386,
-      "sha256": "224886a072af658deac5430599d2c0ed0dce2496e117fc748e22d0924d39f210"
+      "sha256": "8eb1fbd07a6a94c094d523054f1418f5663ae5bbd7c3affc31279d996ab7c987"
     },
     {
       "path": "articles_html/SmartTV.html",
@@ -621,7 +626,7 @@
     {
       "path": "articles_html/travel-esim-how-many-gb-2026.html",
       "bytes": 87694,
-      "sha256": "4206d01f3d65dbc042d22e322e150916c3fe05cb22a243db760ec0f24f026f2f"
+      "sha256": "94ef030aa5aa366ede1de60eca770fc09f578518c1c808446bcc4cbf552f4cdc"
     },
     {
       "path": "articles_html/tumutumu.html",
@@ -894,6 +899,11 @@
       "sha256": "883920013bbb0332ee79042feccc8a3df326da8862a1344473ffd524d7523c96"
     },
     {
+      "path": "images/kauche-farm-invite-za4y6qh-2026.jpg",
+      "bytes": 157227,
+      "sha256": "b5a418052f9e82c50e94a0a1339b6d52eb97caa075fedfd93cb378c273b58928"
+    },
+    {
       "path": "images/line_point_urawaza_img1.png",
       "bytes": 1154833,
       "sha256": "f569053567522a756932800f06c01ed1321d6c201213866dba6ac09233fcbebb"
@@ -1025,8 +1035,8 @@
     },
     {
       "path": "posts.json",
-      "bytes": 278753,
-      "sha256": "49dcc5ad0859286a5bff85fde70c8e6c52a99bbb1be42a6b66b083c27829711b"
+      "bytes": 281802,
+      "sha256": "df910ede192f1d90b0a93ecb8d339dc74f7640dd7b4174f473c556739ee45fdd"
     },
     {
       "path": "robots.txt",
@@ -1045,8 +1055,8 @@
     },
     {
       "path": "sitemap.xml",
-      "bytes": 26180,
-      "sha256": "b900079d190b9830375e7554134eb329767064df77dce02861e888e7c427fff8"
+      "bytes": 26400,
+      "sha256": "66756eab3234bc1165309d3eb6e584574f2fa614771e583fb1ff61ff3f645f27"
     },
     {
       "path": "thumbnails/-iosaltstore-pal.png",
@@ -1287,6 +1297,11 @@
       "path": "thumbnails/Kanji.png",
       "bytes": 122859,
       "sha256": "3517737447e9605ddf2dabe3e316480c43129d22be9f4aeeb66c428708ba7df0"
+    },
+    {
+      "path": "thumbnails/kauche-farm-vegetables-invite-2026.png",
+      "bytes": 94247,
+      "sha256": "4f07f95efa8d7e2c29c0e87f42c035e62c18cd299408c0a1a7a8661aeafa9d41"
     },
     {
       "path": "thumbnails/Kurashiru.png",
