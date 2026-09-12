@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-08T13:10:13.974Z",
+  "generatedAt": "2026-09-12T00:13:19.216Z",
   "source": "poitaro-maximize-working",
   "productionTouched": false,
   "excludedLegacyFiles": [
     "articles_html/recommended-point-sites.html"
   ],
   "payloadFileCount": 341,
-  "totalBytes": 125461950,
+  "totalBytes": 125447638,
   "files": [
     {
       "path": ".nojekyll",
@@ -215,8 +215,8 @@
     },
     {
       "path": "articles_html/gmobile-esim-how-to-use-2026.html",
-      "bytes": 90045,
-      "sha256": "a54cd179ce661fdb1b069fb6bb3a916c6406061312fe252924e4286e5b64c49a"
+      "bytes": 87844,
+      "sha256": "7ec87712416e907d0daf56dcf147bb5cbc5012227664479c759fbbb76c10e537"
     },
     {
       "path": "articles_html/GPT56_Codex_Cost_Performance_2026-07.html",
@@ -305,23 +305,23 @@
     },
     {
       "path": "articles_html/lm-studio-quantization-q4-q5-q8-2026.html",
-      "bytes": 87333,
-      "sha256": "6479c641e711711c6f6ad6446c804dab520b45536b61936f019465d1217c0462"
+      "bytes": 85758,
+      "sha256": "e89648632ba0671c9b6cbd400606b8ef6a7c2f6ca8e6f9c756b369e83c41b642"
     },
     {
       "path": "articles_html/lm-studio-windows-how-to-use-2026.html",
-      "bytes": 90056,
-      "sha256": "935afc96ad40ddf8687c957513de884716852da239ec38c267844491832c5cc9"
+      "bytes": 87709,
+      "sha256": "9a1d57cb5fd5b536ea4504e0e41b9295bd4ee7df520eae7f81437899ec348f09"
     },
     {
       "path": "articles_html/local-llm-memory-32gb-64gb-128gb-2026.html",
-      "bytes": 88766,
-      "sha256": "975cc1e6e6de6af0d7f48b7770e3f474af20e4266799b50b2c61a6f17672f49b"
+      "bytes": 86800,
+      "sha256": "ce94473bcd612ed5b4a398c222b652424cf6ef3e38ac6eed01d5b5cdf9fa1801"
     },
     {
       "path": "articles_html/local-llm-mini-pc-gmktec-2026.html",
-      "bytes": 92646,
-      "sha256": "7f372c230712de12018ed5c50a60dc2ac5859a1803d37695a8f64b6fa4d6b066"
+      "bytes": 90515,
+      "sha256": "c59f8536cff2a5ee230085a023afa91dc283725bcb1d6c3279e497efbd5f8656"
     },
     {
       "path": "articles_html/lolipop.html",
@@ -560,8 +560,8 @@
     },
     {
       "path": "articles_html/sim-card-vs-esim-difference-travel-2026.html",
-      "bytes": 85460,
-      "sha256": "432dbe83090077bcb34867dfda871bca667cfc55a39f9bb403556ee45237e27f"
+      "bytes": 83386,
+      "sha256": "224886a072af658deac5430599d2c0ed0dce2496e117fc748e22d0924d39f210"
     },
     {
       "path": "articles_html/SmartTV.html",
@@ -620,8 +620,8 @@
     },
     {
       "path": "articles_html/travel-esim-how-many-gb-2026.html",
-      "bytes": 89712,
-      "sha256": "657e4899ab381fe91b6ee9e644df94ab03d8cdbbc7c42148332f8677a77180ff"
+      "bytes": 87694,
+      "sha256": "4206d01f3d65dbc042d22e322e150916c3fe05cb22a243db760ec0f24f026f2f"
     },
     {
       "path": "articles_html/tumutumu.html",
@@ -1026,7 +1026,7 @@
     {
       "path": "posts.json",
       "bytes": 278753,
-      "sha256": "a9449ec222462fd0258d36fc83c576a6f26f3709385a384815c745c474bb77fd"
+      "sha256": "49dcc5ad0859286a5bff85fde70c8e6c52a99bbb1be42a6b66b083c27829711b"
     },
     {
       "path": "robots.txt",
@@ -1046,7 +1046,7 @@
     {
       "path": "sitemap.xml",
       "bytes": 26180,
-      "sha256": "7b2165d1fc66fcf0a1b61b0712def7aa75fe9528c56ecd8791c0731adc99ba21"
+      "sha256": "b900079d190b9830375e7554134eb329767064df77dce02861e888e7c427fff8"
     },
     {
       "path": "thumbnails/-iosaltstore-pal.png",
