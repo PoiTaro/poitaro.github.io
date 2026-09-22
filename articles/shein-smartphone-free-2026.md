@@ -147,8 +147,9 @@ SHEIN公式には無料トライアルやSHEIN CLUBの無料ギフトがあり�
     href="https://onelink.shein.com/53/62t64uqq2z2n?shc=2_RvRADccnqAh&amp;channel=copyInviteLink"
     target="_blank"
     rel="nofollow sponsored noopener noreferrer"
-    class="inline-flex justify-center border-2 border-[#1F2937] bg-[#2F6FB3] px-6 py-3 font-black text-white hover:bg-[#1F2937]">
-    SHEINの紹介特典を確認する
+    class="border-2 border-[#1F2937]"
+    style="display:inline-flex;align-items:center;justify-content:center;background:#2F6FB3;color:#FFFFFF !important;padding:14px 24px;font-weight:900;font-size:16px;line-height:1.5;text-decoration:none;min-width:240px;">
+    <span style="color:#FFFFFF !important;display:block;">SHEINの紹介特典を確認する</span>
   </a>
   <p class="text-xs text-gray-500 leading-relaxed mt-4 mb-0">
     ※特典内容・対象条件・期限は変わることがあります。リンクを開いた後にSHEINアプリ内の最新表示を確認してください。
@@ -404,8 +405,9 @@ SHEINの「10点無料」や友達招待の具体的な流れを知りたい場�
     href="https://onelink.shein.com/53/62t64uqq2z2n?shc=2_RvRADccnqAh&amp;channel=copyInviteLink"
     target="_blank"
     rel="nofollow sponsored noopener noreferrer"
-    class="inline-flex justify-center border-2 border-[#1F2937] bg-[#2F6FB3] px-6 py-3 font-black text-white hover:bg-[#1F2937]">
-    SHEINの紹介特典を見る
+    class="border-2 border-[#1F2937]"
+    style="display:inline-flex;align-items:center;justify-content:center;background:#2F6FB3;color:#FFFFFF !important;padding:14px 24px;font-weight:900;font-size:16px;line-height:1.5;text-decoration:none;min-width:240px;">
+    <span style="color:#FFFFFF !important;display:block;">SHEINの紹介特典を見る</span>
   </a>
   <p class="text-xs text-gray-500 leading-relaxed mt-4 mb-0">
     ※僕の紹介リンクです。条件達成時には僕にも特典が付く場合があります。表示額・対象条件はSHEIN側の最新画面を優先してください。
