@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-22T13:26:12.212Z",
+  "generatedAt": "2026-09-22T14:27:18.621Z",
   "source": "poitaro-maximize-working",
   "productionTouched": false,
   "excludedLegacyFiles": [
     "articles_html/recommended-point-sites.html"
   ],
   "payloadFileCount": 350,
-  "totalBytes": 126043636,
+  "totalBytes": 126044018,
   "files": [
     {
       "path": ".nojekyll",
@@ -216,7 +216,7 @@
     {
       "path": "articles_html/gmobile-esim-how-to-use-2026.html",
       "bytes": 87844,
-      "sha256": "c8695de01ac463f8a78418d8be3a08bfbd376ab618f3ce2237c692ff66b7d7db"
+      "sha256": "b2862b50f279ecf5d6122b4d832c7d7b245ec409c9d2998c2c93e936a898b55e"
     },
     {
       "path": "articles_html/GPT56_Codex_Cost_Performance_2026-07.html",
@@ -286,7 +286,7 @@
     {
       "path": "articles_html/kauche-farm-vegetables-invite-2026.html",
       "bytes": 93568,
-      "sha256": "2e81cccbd0e7d3e1c6b5049138f496b444d660e2d709bccd079ec5a98e835054"
+      "sha256": "a5f77016854e03d8eb9476f706d92cf0f1f1c850f5c3dc0adce7c48ac5130ad5"
     },
     {
       "path": "articles_html/Kurashiru.html",
@@ -545,8 +545,8 @@
     },
     {
       "path": "articles_html/shein-smartphone-free-2026.html",
-      "bytes": 91745,
-      "sha256": "a62627b778d0b396d2ae4375d8c4e63314ca689680e232f68d1176c1dceba3df"
+      "bytes": 92127,
+      "sha256": "588a84f11da22d87f63f5f620bb9ffc1255dc8ee885c2ed8f23bd215c9fbea83"
     },
     {
       "path": "articles_html/SHEIN.html",
@@ -571,7 +571,7 @@
     {
       "path": "articles_html/sim-card-vs-esim-difference-travel-2026.html",
       "bytes": 83386,
-      "sha256": "ac3565781f1bf5275d0991c38cd68abae3691ba2b7812321ba3b2a54e9218f6d"
+      "sha256": "bc5e23c949a6e8565d27357ac56bad494f37f3e8b892f82b48662778a787957d"
     },
     {
       "path": "articles_html/SmartTV.html",
@@ -631,7 +631,7 @@
     {
       "path": "articles_html/travel-esim-how-many-gb-2026.html",
       "bytes": 87694,
-      "sha256": "5ed3bad767d455e400772fe0b64e1bb4293119a6eafa0f8935dec59f66322b86"
+      "sha256": "d567cc4dc5c0a5d3258e8ab2fd4b3c8e8f8dd4baedd38a162d21f8ac1bfa6340"
     },
     {
       "path": "articles_html/tumutumu.html",
@@ -1061,7 +1061,7 @@
     {
       "path": "posts.json",
       "bytes": 285249,
-      "sha256": "63373b03f0608e9d41ae15bb96f2a72e16ce2b24369b939125358e24b9f07436"
+      "sha256": "c5fe0c82f5f46421dc5e44f877806cc2926b8bc66e9891893bc731f4ddf8810b"
     },
     {
       "path": "robots.txt",
@@ -1081,7 +1081,7 @@
     {
       "path": "sitemap.xml",
       "bytes": 26612,
-      "sha256": "a9bd7bae4e59c88644a9de1d4c4c9755fa315b89e3ea0402a42755b0ed87a5ed"
+      "sha256": "436d8092a8533440cfb476d11fd32e47f40866a0435950ad62805341ed648d00"
     },
     {
       "path": "thumbnails/-iosaltstore-pal.png",
