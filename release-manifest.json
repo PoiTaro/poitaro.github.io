@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-22T14:27:18.621Z",
+  "generatedAt": "2026-09-23T00:49:51.077Z",
   "source": "poitaro-maximize-working",
   "productionTouched": false,
   "excludedLegacyFiles": [
     "articles_html/recommended-point-sites.html"
   ],
-  "payloadFileCount": 350,
-  "totalBytes": 126044018,
+  "payloadFileCount": 347,
+  "totalBytes": 122199963,
   "files": [
     {
       "path": ".nojekyll",
@@ -216,7 +216,7 @@
     {
       "path": "articles_html/gmobile-esim-how-to-use-2026.html",
       "bytes": 87844,
-      "sha256": "b2862b50f279ecf5d6122b4d832c7d7b245ec409c9d2998c2c93e936a898b55e"
+      "sha256": "a60a092c584e4ae8aa63dacffd6b791b31bf6648e65d8c0fc6c9d4832730a6c8"
     },
     {
       "path": "articles_html/GPT56_Codex_Cost_Performance_2026-07.html",
@@ -286,7 +286,7 @@
     {
       "path": "articles_html/kauche-farm-vegetables-invite-2026.html",
       "bytes": 93568,
-      "sha256": "a5f77016854e03d8eb9476f706d92cf0f1f1c850f5c3dc0adce7c48ac5130ad5"
+      "sha256": "cea6cc1ae577771c7c9fc4e918694892654e837cb5b75a09fccc9757175ca5fa"
     },
     {
       "path": "articles_html/Kurashiru.html",
@@ -546,7 +546,7 @@
     {
       "path": "articles_html/shein-smartphone-free-2026.html",
       "bytes": 92127,
-      "sha256": "588a84f11da22d87f63f5f620bb9ffc1255dc8ee885c2ed8f23bd215c9fbea83"
+      "sha256": "1096a9fbed3014b37455b99e5b3f88a852b0c4ae1f12c0d7d36720e1e2a70854"
     },
     {
       "path": "articles_html/SHEIN.html",
@@ -560,8 +560,8 @@
     },
     {
       "path": "articles_html/SHEINPayPay.html",
-      "bytes": 65976,
-      "sha256": "cca846f9204fdbf5dc122b331748ed837308edb4aee025a6ebaed2ff8d1a00f9"
+      "bytes": 81725,
+      "sha256": "1e28a9488098e59bc05b8c3ccf3194137e4de7fee13b16d6d4ae5f13453028d0"
     },
     {
       "path": "articles_html/Sideloading.html",
@@ -571,7 +571,7 @@
     {
       "path": "articles_html/sim-card-vs-esim-difference-travel-2026.html",
       "bytes": 83386,
-      "sha256": "bc5e23c949a6e8565d27357ac56bad494f37f3e8b892f82b48662778a787957d"
+      "sha256": "fb6a9e016827c5ac68f1226dc86b26bd6931a6d3906d3ad5746093d2584e30fa"
     },
     {
       "path": "articles_html/SmartTV.html",
@@ -631,7 +631,7 @@
     {
       "path": "articles_html/travel-esim-how-many-gb-2026.html",
       "bytes": 87694,
-      "sha256": "d567cc4dc5c0a5d3258e8ab2fd4b3c8e8f8dd4baedd38a162d21f8ac1bfa6340"
+      "sha256": "9183972ea7ba612ee3e52188e5420d28c2423466f924f6d9aa048bfe8a180b34"
     },
     {
       "path": "articles_html/tumutumu.html",
@@ -964,21 +964,6 @@
       "sha256": "f2661e58375769f33d0dcd21b921bf13051eba2a144eb772ad7e743ab0942b5c"
     },
     {
-      "path": "images/shein_free10_img1.png",
-      "bytes": 1090807,
-      "sha256": "fa86d51b0b738cd951d579bb11c3c559481a213d3f0a2de9c81b0803e06afc17"
-    },
-    {
-      "path": "images/shein_free10_img2.png",
-      "bytes": 1564844,
-      "sha256": "0df4738491ba9298ffb44c7976b230ed2cd92feb411a4cbd46c819ca58d4cd92"
-    },
-    {
-      "path": "images/shein_free10_img3.png",
-      "bytes": 1205154,
-      "sha256": "55faad0da368f1f4c60bd518ecd63723f8063a672c38acf0b133757b141bc2b0"
-    },
-    {
       "path": "images/shein-referral-3000-paypay.webp",
       "bytes": 19858,
       "sha256": "61a766514f57c88c73116d1354c8cdaf8a2ea5416ce31fd01eb10aef677b8672"
@@ -1060,8 +1045,8 @@
     },
     {
       "path": "posts.json",
-      "bytes": 285249,
-      "sha256": "c5fe0c82f5f46421dc5e44f877806cc2926b8bc66e9891893bc731f4ddf8810b"
+      "bytes": 286250,
+      "sha256": "e7bb71c5ef708030afd9d1b38a8bffec13d93396b33d278126769605107669a9"
     },
     {
       "path": "robots.txt",
@@ -1081,7 +1066,7 @@
     {
       "path": "sitemap.xml",
       "bytes": 26612,
-      "sha256": "436d8092a8533440cfb476d11fd32e47f40866a0435950ad62805341ed648d00"
+      "sha256": "893859e92413156ec6561ab015a8b848f6670664299cc1ddecff7dd47daed0f5"
     },
     {
       "path": "thumbnails/-iosaltstore-pal.png",

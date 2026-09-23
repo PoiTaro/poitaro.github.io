@@ -2,25 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://poitaro.com/</loc>
-    <lastmod>2026-09-22T14:26:51.195Z</lastmod>
+    <lastmod>2026-09-23T00:49:28.365Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://poitaro.com/about.html</loc>
-    <lastmod>2026-09-22T14:26:50.849Z</lastmod>
+    <lastmod>2026-09-23T00:49:28.096Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://poitaro.com/contact.html</loc>
-    <lastmod>2026-09-22T14:26:50.905Z</lastmod>
+    <lastmod>2026-09-23T00:49:28.141Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://poitaro.com/shindan.html</loc>
-    <lastmod>2026-09-22T14:26:51.199Z</lastmod>
+    <lastmod>2026-09-23T00:49:28.368Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -31,32 +31,38 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://poitaro.com/articles_html/SHEINPayPay.html</loc>
+    <lastmod>2026-09-04T04:02:12.110Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://poitaro.com/articles_html/shein-smartphone-free-2026.html</loc>
-    <lastmod>2026-09-22T14:26:50.877Z</lastmod>
+    <lastmod>2026-09-23T00:49:28.118Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://poitaro.com/articles_html/kauche-farm-vegetables-invite-2026.html</loc>
-    <lastmod>2026-09-22T14:26:50.872Z</lastmod>
+    <lastmod>2026-09-23T00:49:28.115Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://poitaro.com/articles_html/gmobile-esim-how-to-use-2026.html</loc>
-    <lastmod>2026-09-22T14:26:50.871Z</lastmod>
+    <lastmod>2026-09-23T00:49:28.113Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://poitaro.com/articles_html/sim-card-vs-esim-difference-travel-2026.html</loc>
-    <lastmod>2026-09-22T14:26:50.877Z</lastmod>
+    <lastmod>2026-09-23T00:49:28.118Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://poitaro.com/articles_html/travel-esim-how-many-gb-2026.html</loc>
-    <lastmod>2026-09-22T14:26:50.877Z</lastmod>
+    <lastmod>2026-09-23T00:49:28.119Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -243,12 +249,6 @@
   <url>
     <loc>https://poitaro.com/articles_html/moppy2026newlife.html</loc>
     <lastmod>2026-09-04T04:02:12.122Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://poitaro.com/articles_html/SHEINPayPay.html</loc>
-    <lastmod>2026-09-04T04:02:12.110Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
