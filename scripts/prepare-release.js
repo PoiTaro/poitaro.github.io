@@ -10,7 +10,7 @@ const FILES = [
   'site.webmanifest', 'favicon.ico', 'posts.json',
   'announcement.html', 'announcement-config.json', 'announcement-content.html', 'contact-config.json'
 ];
-const DIRECTORIES = ['articles_html'];
+const DIRECTORIES = ['articles_html', 'hockey'];
 const EXCLUDED_ARTICLES = new Set(['recommended-point-sites.html']);
 
 if (path.resolve(OUT) !== path.resolve(ROOT, 'release-candidate')) throw new Error('公開候補の出力先が不正です');
