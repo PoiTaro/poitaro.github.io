@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-23T00:49:51.077Z",
+  "generatedAt": "2026-10-06T03:56:49.708Z",
   "source": "poitaro-maximize-working",
   "productionTouched": false,
   "excludedLegacyFiles": [
     "articles_html/recommended-point-sites.html"
   ],
-  "payloadFileCount": 347,
-  "totalBytes": 122199963,
+  "payloadFileCount": 348,
+  "totalBytes": 124557505,
   "files": [
     {
       "path": ".nojekyll",
@@ -216,7 +216,7 @@
     {
       "path": "articles_html/gmobile-esim-how-to-use-2026.html",
       "bytes": 87844,
-      "sha256": "a60a092c584e4ae8aa63dacffd6b791b31bf6648e65d8c0fc6c9d4832730a6c8"
+      "sha256": "f794aabd4132394751cee6886135683a8a03df40060e16a181cff408be0816b2"
     },
     {
       "path": "articles_html/GPT56_Codex_Cost_Performance_2026-07.html",
@@ -286,7 +286,7 @@
     {
       "path": "articles_html/kauche-farm-vegetables-invite-2026.html",
       "bytes": 93568,
-      "sha256": "cea6cc1ae577771c7c9fc4e918694892654e837cb5b75a09fccc9757175ca5fa"
+      "sha256": "56b7524e6c0463b3ba17495ddd988e55eaf081d6b95f9a04309224b3e6d1a0e5"
     },
     {
       "path": "articles_html/Kurashiru.html",
@@ -546,7 +546,7 @@
     {
       "path": "articles_html/shein-smartphone-free-2026.html",
       "bytes": 92127,
-      "sha256": "1096a9fbed3014b37455b99e5b3f88a852b0c4ae1f12c0d7d36720e1e2a70854"
+      "sha256": "00513878947b35fa13d69fa69b10826d6670cdd603c233af1f722c8d2983698e"
     },
     {
       "path": "articles_html/SHEIN.html",
@@ -571,7 +571,7 @@
     {
       "path": "articles_html/sim-card-vs-esim-difference-travel-2026.html",
       "bytes": 83386,
-      "sha256": "fb6a9e016827c5ac68f1226dc86b26bd6931a6d3906d3ad5746093d2584e30fa"
+      "sha256": "a179d2b62625f17c44511d522bec71bddacc59dccb0b53a74d7e4672b6f3f59f"
     },
     {
       "path": "articles_html/SmartTV.html",
@@ -631,7 +631,7 @@
     {
       "path": "articles_html/travel-esim-how-many-gb-2026.html",
       "bytes": 87694,
-      "sha256": "9183972ea7ba612ee3e52188e5420d28c2423466f924f6d9aa048bfe8a180b34"
+      "sha256": "16d3b3f7e07be80b5271023f27afd63e08f12c5b47911967fa8a7f53436e3384"
     },
     {
       "path": "articles_html/tumutumu.html",
@@ -712,6 +712,11 @@
       "path": "favicon.ico",
       "bytes": 1912,
       "sha256": "2b28a95c0fb9331f7a2132296fa49304fe6ef2c41552ee1b085974fbe957f7ca"
+    },
+    {
+      "path": "hockey/index.html",
+      "bytes": 2357542,
+      "sha256": "90286ca31ebb4277438048e5a1d5559a7546c3bb9ce2fd7e5f1b8b1eeb3ebcbe"
     },
     {
       "path": "images/ai-side-hustle-2026_img1.png",
@@ -1046,7 +1051,7 @@
     {
       "path": "posts.json",
       "bytes": 286250,
-      "sha256": "e7bb71c5ef708030afd9d1b38a8bffec13d93396b33d278126769605107669a9"
+      "sha256": "b959c69be1dcf6c7a2317b3309184e497dc088c88494584431611246b9b26bc6"
     },
     {
       "path": "robots.txt",
@@ -1066,7 +1071,7 @@
     {
       "path": "sitemap.xml",
       "bytes": 26612,
-      "sha256": "893859e92413156ec6561ab015a8b848f6670664299cc1ddecff7dd47daed0f5"
+      "sha256": "be5c3a3c2a291ea41fd7da44f900e383fdd7fb0f8ac0ab6b2a86a2ecee20ca5e"
     },
     {
       "path": "thumbnails/-iosaltstore-pal.png",
